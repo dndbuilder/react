@@ -106,9 +106,9 @@ const TypographyControl: FC<Props> = ({
       className={classNames("mt-4 flex items-center", className)}
       ref={rootRef}
     >
-      {label && <Label className="flex-grow">{label}</Label>}
+      {label && <Label className="grow">{label}</Label>}
 
-      <ToggleGroup.Root className="inline-flex rounded border" type="single">
+      <ToggleGroup.Root className="inline-flex rounded-sm border" type="single">
         {showPresets && (
           <ToggleGroup.Item value="" className="border-r last:border-r-0">
             <Popover onOpenChange={(open: boolean) => onOpenChange(open)}>
@@ -248,7 +248,7 @@ const TypographyControl: FC<Props> = ({
                           .map((font) => (
                             <div
                               key={font}
-                              className="flex items-center whitespace-nowrap rounded p-2 text-xs font-normal text-dark-700 hover:bg-dark-100 "
+                              className="flex items-center whitespace-nowrap rounded-sm p-2 text-xs font-normal text-dark-700 hover:bg-dark-100 "
                               onClick={() => {
                                 setTypography({
                                   ...typography,

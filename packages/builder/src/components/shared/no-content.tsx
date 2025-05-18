@@ -9,7 +9,7 @@ const NoContent: FC<NoContentProps> = ({ children, className, ...rest }) => {
   return (
     <div
       className={twMerge(
-        'no-content flex h-20 items-center justify-center rounded border text-sm text-dark-500',
+        'no-content flex h-20 items-center justify-center rounded-sm border text-sm text-dark-500',
         className
       )}
     >

@@ -10,7 +10,7 @@ const NotSupportedBlock: FC<NotSupportedBlockProps> = ({ className, children }) 
   return (
     <div
       className={classNames(
-        'px-4 py-2 border border-dashed rounded border-danger-500 text-danger-500 text-center',
+        'px-4 py-2 border border-dashed rounded-sm border-danger-500 text-danger-500 text-center',
         className
       )}
     >

@@ -98,7 +98,7 @@ const ColorControl: FC<Props> = ({
     >
       {label && <Label>{label}</Label>}
 
-      <div className="flex rounded border">
+      <div className="flex rounded-sm border">
         {/* Global Colors */}
         <Popover onOpenChange={(open: boolean) => onOpenChange(open)}>
           <Tooltip>
@@ -215,7 +215,7 @@ const ColorControl: FC<Props> = ({
           <Popover.Trigger asChild>
             <div
               className={classNames("relative cursor-pointer px-[10px] py-2", {
-                "bg-slate-50 after:absolute after:left-[50%] after:top-[50%] after:h-[1px] after:w-8 after:translate-x-[-50%] after:translate-y-[-50%] after:-rotate-45 after:bg-red-500 after:content-['']":
+                "bg-slate-50 after:absolute after:left-[50%] after:top-[50%] after:h-px after:w-8 after:translate-x-[-50%] after:translate-y-[-50%] after:-rotate-45 after:bg-red-500 after:content-['']":
                   !color,
               })}
             >

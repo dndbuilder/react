@@ -83,7 +83,7 @@ const IconControl: FC<Props> = ({
 
               {!value && <HiPlusCircle />}
             </div>
-            <div className="absolute bottom-[-100%] z-10 flex w-full justify-between bg-dark-700 p-1 text-center text-xs text-dark-50 transition-all duration-200 group-hover:bottom-0">
+            <div className="absolute -bottom-full z-10 flex w-full justify-between bg-dark-700 p-1 text-center text-xs text-dark-50 transition-all duration-200 group-hover:bottom-0">
               <span>Icon Library</span>
 
               {value && (
@@ -102,7 +102,7 @@ const IconControl: FC<Props> = ({
         </Dialog.Trigger>
         <Dialog.Portal>
           <Dialog.Overlay className="fixed inset-0 z-50 bg-[rgba(0,0,0,0.7)] data-[state=open]:animate-overlay-show" />
-          <Dialog.Content className="fixed left-[50%] top-[50%] z-[60] w-[750px] lg:w-[1000px]  xl:w-[1150px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-white focus:outline-none data-[state=open]:animate-content-show">
+          <Dialog.Content className="fixed left-[50%] top-[50%] z-60 w-[750px] lg:w-[1000px]  xl:w-[1150px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-white focus:outline-hidden data-[state=open]:animate-content-show">
             <div className="flex justify-between pb-2 ps-5 pe-4 pt-5 border-b">
               <p className="text-xl font-semibold">Insert Icon</p>
 
@@ -208,7 +208,7 @@ function IconSetViewer({
                 >
                   <div
                     className={classNames(
-                      "flex justify-center items-center shadow rounded py-5 group-hover:shadow-md",
+                      "flex justify-center items-center shadow-sm rounded-sm py-5 group-hover:shadow-md",
                       {
                         "ring-2 ring-violet-500 selected": selectedIcon === key,
                       }

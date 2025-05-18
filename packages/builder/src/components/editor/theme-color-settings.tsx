@@ -59,7 +59,7 @@ const ThemeColorSettings: FC<Props> = ({ setCurrentSetting }) => {
               {/* <span className="me-1 text-xs text-dark-700">{backgroundColor}</span> */}
 
               <Popover>
-                <Popover.Trigger className="cursor-pointer rounded border p-1.5">
+                <Popover.Trigger className="cursor-pointer rounded-sm border p-1.5">
                   <BsFillSquareFill
                     color={backgroundColor}
                     className=" text-sm"
@@ -93,7 +93,7 @@ const ThemeColorSettings: FC<Props> = ({ setCurrentSetting }) => {
               {/* <span className="me-1 text-xs text-dark-700">{accentColor}</span> */}
 
               <Popover>
-                <Popover.Trigger className="cursor-pointer rounded border p-1.5">
+                <Popover.Trigger className="cursor-pointer rounded-sm border p-1.5">
                   <BsFillSquareFill color={accentColor} className=" text-sm" />
                 </Popover.Trigger>
 
@@ -125,7 +125,7 @@ const ThemeColorSettings: FC<Props> = ({ setCurrentSetting }) => {
               {/* <span className="me-1 text-xs text-dark-700">{textColor}</span> */}
 
               <Popover>
-                <Popover.Trigger className="cursor-pointer rounded border p-1.5">
+                <Popover.Trigger className="cursor-pointer rounded-sm border p-1.5">
                   <BsFillSquareFill color={textColor} className=" text-sm" />
                 </Popover.Trigger>
 
@@ -168,7 +168,7 @@ const ThemeColorSettings: FC<Props> = ({ setCurrentSetting }) => {
                   }
                   html={preset.name}
                   tagName="p"
-                  className="me-auto rounded border border-transparent px-2 py-1 text-xs hover:border-dark-100 focus-visible:border-dark-100 focus-visible:outline-0"
+                  className="me-auto rounded-sm border border-transparent px-2 py-1 text-xs hover:border-dark-100 focus-visible:border-dark-100 focus-visible:outline-0"
                 />
                 <Label>
                   {/* <span className="group-hover:hidden">{preset.value}</span> */}
@@ -183,7 +183,7 @@ const ThemeColorSettings: FC<Props> = ({ setCurrentSetting }) => {
                 </Label>
 
                 <Popover>
-                  <Popover.Trigger className="cursor-pointer rounded border p-1.5">
+                  <Popover.Trigger className="cursor-pointer rounded-sm border p-1.5">
                     <BsFillSquareFill
                       color={preset.value}
                       className=" text-sm"

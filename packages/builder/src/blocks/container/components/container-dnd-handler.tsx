@@ -344,7 +344,7 @@ const ContainerDndHandler: FC<BlockProps<ContainerSettingsType>> = ({
         <div
           className={classNames(
             "content relative flex w-full mx-auto max-w-[1140px]",
-            isDragging && "opacity-30 [&>*]:pointer-events-none",
+            isDragging && "opacity-30 *:pointer-events-none",
             isOverInner && children.length === 0 && "bg-dokan-50"
           )}
           ref={innerRef}

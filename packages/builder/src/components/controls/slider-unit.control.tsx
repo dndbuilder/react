@@ -124,7 +124,7 @@ const SliderUnitControl: FC<SliderControlProps> = ({
         />
         <div
           className={classNames(
-            "flex h-7 items-center justify-between rounded border text-dark-800"
+            "flex h-7 items-center justify-between rounded-sm border text-dark-800"
           )}
         >
           <Tooltip>
@@ -136,7 +136,7 @@ const SliderUnitControl: FC<SliderControlProps> = ({
                   )
                 }
                 value={innerValue?.value ?? ""}
-                className="remove-spinner bg-transparent w-[46px] rounded border-0 p-0 pl-1.5 pt-[3px] text-[11px] leading-3 focus:ring-0"
+                className="remove-spinner bg-transparent w-[46px] rounded-sm border-0 p-0 pl-1.5 pt-[3px] text-[11px] leading-3 focus:ring-0"
                 type="number"
                 min={minimum}
                 max={maximum}

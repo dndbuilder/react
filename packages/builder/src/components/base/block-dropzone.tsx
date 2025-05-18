@@ -90,7 +90,7 @@ const BlockDropzone: FC<BlockDropzoneProps> = ({
   return (
     <div
       className={classNames(
-        "flex w-full justify-center rounded border border-dashed py-6",
+        "flex w-full justify-center rounded-sm border border-dashed py-6",
         isOver ? "border-dokan-500" : "border-dark-300",
         className
       )}

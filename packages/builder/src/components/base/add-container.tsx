@@ -120,7 +120,7 @@ const AddContainer: FC<AddContainerProps> = ({
         <Popover.Content
           asChild
           sideOffset={10}
-          className="w-[600px] rounded bg-white p-4 shadow-[5px_5px_20px_rgb(0,0,0,0.05)]"
+          className="w-[600px] rounded-sm bg-white p-4 shadow-[5px_5px_20px_rgb(0,0,0,0.05)]"
         >
           <div onClick={(e) => e.stopPropagation()}>
             <div className="grid grid-cols-4 gap-4">

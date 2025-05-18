@@ -85,7 +85,7 @@ const TextShadowControl: FC<Props> = ({
       {/* <ResetControl /> */}
       <Popover>
         <Popover.Trigger asChild>
-          <div className="cursor-pointer rounded bg-slate-50 px-3 py-1.5 transition-colors duration-200 hover:bg-dark-300">
+          <div className="cursor-pointer rounded-sm bg-slate-50 px-3 py-1.5 transition-colors duration-200 hover:bg-dark-300">
             <CiEdit />
           </div>
         </Popover.Trigger>
@@ -99,11 +99,11 @@ const TextShadowControl: FC<Props> = ({
             <div className="flex items-center justify-between">
               <Label>Color</Label>
               <Popover>
-                <Popover.Trigger asChild className="rounded-sm border p-1">
+                <Popover.Trigger asChild className="rounded-xs border p-1">
                   <div>
                     <BsFillSquareFill
                       style={{ color: innerValue.color }}
-                      className="rounded-sm"
+                      className="rounded-xs"
                     />
                   </div>
                 </Popover.Trigger>
@@ -136,7 +136,7 @@ const TextShadowControl: FC<Props> = ({
                     //   ...innerValue,
                     //   blur: val[0],
                     // });
-                    handleValueChange(val[0], "blur");
+                    handleValueChange(val[0], "blur-sm");
                   }}
                   max={100}
                   step={1}
@@ -150,7 +150,7 @@ const TextShadowControl: FC<Props> = ({
                     //   ...innerValue,
                     //   blur: Number(e.target.value),
                     // });
-                    handleValueChange(Number(e.target.value), "blur");
+                    handleValueChange(Number(e.target.value), "blur-sm");
                   }}
                   min={0}
                   max={100}

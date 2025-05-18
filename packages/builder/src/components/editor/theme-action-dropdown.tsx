@@ -103,9 +103,9 @@ const ThemeActionDropdown: FC = () => {
   }, []);
 
   return (
-    <div className="flex h-9 bg-dokan-600 rounded text-white divide-x divide-dokan-700 overflow-hidden">
+    <div className="flex h-9 bg-dokan-600 rounded-sm text-white divide-x divide-dokan-700 overflow-hidden">
       <button
-        className="px-5 h-full flex-grow text-sm flex justify-center items-center gap-2 enabled:hover:bg-dokan-700 disabled:cursor-not-allowed disabled:opacity-50"
+        className="px-5 h-full grow text-sm flex justify-center items-center gap-2 enabled:hover:bg-dokan-700 disabled:cursor-not-allowed disabled:opacity-50"
         onClick={save}
         disabled={isSaving}
       >

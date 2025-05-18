@@ -119,7 +119,7 @@ const TypographySettings: FC<Props> = ({ setCurrentSetting }) => {
                   }
                   html={preset.name}
                   tagName="p"
-                  className="me-auto rounded border border-transparent px-2 py-1 text-xs hover:border-dark-100 focus-visible:border-dark-100 focus-visible:outline-0"
+                  className="me-auto rounded-sm border border-transparent px-2 py-1 text-xs hover:border-dark-100 focus-visible:border-dark-100 focus-visible:outline-0"
                 />
 
                 <Label>

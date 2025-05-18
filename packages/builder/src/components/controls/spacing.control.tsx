@@ -186,7 +186,7 @@ const SpacingControl: FC<Props> = ({
         </div>
         <div>
           <div
-            className={classNames("w-full rounded border border-dark-300", {
+            className={classNames("w-full rounded-sm border border-dark-300", {
               "bg-dark-100": !innerValue?.linked,
             })}
           >
@@ -195,14 +195,14 @@ const SpacingControl: FC<Props> = ({
                 {innerValue?.linked ? (
                   <div
                     onClick={() => handleLinkedChange(false)}
-                    className="cursor-pointer rounded px-3 py-[7px] hover:bg-dark-100"
+                    className="cursor-pointer rounded-sm px-3 py-[7px] hover:bg-dark-100"
                   >
                     <MdLink className="text-dark-600" />
                   </div>
                 ) : (
                   <div
                     onClick={() => handleLinkedChange(true)}
-                    className="cursor-pointer rounded px-3 py-[7px] hover:bg-dark-100"
+                    className="cursor-pointer rounded-sm px-3 py-[7px] hover:bg-dark-100"
                   >
                     <MdLinkOff className="text-dark-600" />
                   </div>

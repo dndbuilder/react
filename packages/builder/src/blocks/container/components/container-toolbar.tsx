@@ -44,20 +44,20 @@ const ContainerToolbar: FC<Props> = memo(
           <Popover.Content
             sideOffset={3}
             side={"top"}
-            className="p-0 max-w-fit outline-none"
+            className="p-0 max-w-fit outline-hidden"
             collisionPadding={{ top: 100 }}
             hideWhenDetached
           >
             <div
               className={classNames(
-                "flex items-center rounded justify-between bg-dokan-500 px-1"
+                "flex items-center rounded-sm justify-between bg-dokan-500 px-1"
               )}
             >
               <>
                 <div
                   role="button"
                   className={classNames(
-                    "flex !cursor-grab items-center gap-1 text-dark-100 hover:bg-transparent hover:text-white py-1 px-1"
+                    "flex cursor-grab! items-center gap-1 text-dark-100 hover:bg-transparent hover:text-white py-1 px-1"
                   )}
                   // @ts-ignore-disable-next-line
                   ref={dragRef} // TODO: Fix this

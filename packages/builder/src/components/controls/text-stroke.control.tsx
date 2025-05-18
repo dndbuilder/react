@@ -22,7 +22,7 @@ const TextStrokeControl: FC<Props> = ({ label, type, fieldName }) => {
       <Popover>
         <Popover.Trigger
           asChild
-          className="cursor-pointer rounded border bg-slate-50 px-3 py-1.5 transition-colors duration-200 hover:bg-dark-300"
+          className="cursor-pointer rounded-sm border bg-slate-50 px-3 py-1.5 transition-colors duration-200 hover:bg-dark-300"
         >
           <div>
             <CiEdit />

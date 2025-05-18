@@ -41,7 +41,7 @@ const BlockToolbar: FC<Props> = memo(
             side={"top"}
             align="start"
             alignOffset={-1}
-            className="p-0 max-w-fit outline-none"
+            className="p-0 max-w-fit outline-hidden"
             collisionPadding={{ top: 100 }}
             hideWhenDetached
             avoidCollisions
@@ -69,14 +69,14 @@ const BlockToolbar: FC<Props> = memo(
 
                 <div
                   className={classNames(
-                    "flex items-center bg-dokan-500 px-1 text-dark-200 rounded"
+                    "flex items-center bg-dokan-500 px-1 text-dark-200 rounded-sm"
                   )}
                 >
                   {/* Toolbar Controls */}
                   <div
                     role="button"
                     className={classNames(
-                      "flex !cursor-grab items-center gap-1 text-dark-100 hover:bg-transparent py-1 px-1 hover:text-white"
+                      "flex cursor-grab! items-center gap-1 text-dark-100 hover:bg-transparent py-1 px-1 hover:text-white"
                     )}
                     // @ts-ignore-disable-next-line
                     ref={dragRef} // TODO: Fix this

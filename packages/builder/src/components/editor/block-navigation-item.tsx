@@ -31,7 +31,7 @@ const BlockNavigationItem = ({ block }: Props) => {
     <div
       ref={dragRef}
       style={{ opacity }}
-      className="h-[88px] flex cursor-move flex-col items-center overflow-hidden rounded border border-dark-200 bg-dark-50 py-4 text-dark-800 transition-colors duration-200 hover:border-dokan-500 hover:bg-dokan-50 hover:text-dokan-500"
+      className="h-[88px] flex cursor-move flex-col items-center overflow-hidden rounded-sm border border-dark-200 bg-dark-50 py-4 text-dark-800 transition-colors duration-200 hover:border-dokan-500 hover:bg-dokan-50 hover:text-dokan-500"
     >
       <div className="text-[22px] mb-1">
         <Suspense fallback={null}>

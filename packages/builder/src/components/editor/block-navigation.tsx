@@ -33,7 +33,7 @@ const BlockNavigation = () => {
   return (
     <div>
       <div className="h-14 w-full bg-white px-4 mt-4">
-        <div className="flex items-center border focus-within:border-dokan-500 rounded overflow-hidden focus-within:ring-1 focus-within:ring-dokan-500">
+        <div className="flex items-center border focus-within:border-dokan-500 rounded-sm overflow-hidden focus-within:ring-1 focus-within:ring-dokan-500">
           <div className="ms-2.5 flex w-7 items-center justify-center">
             <BiSearch className=" text-dark-500" size={18} />
           </div>
@@ -43,7 +43,7 @@ const BlockNavigation = () => {
               setSearch(e.target.value);
             }}
             type="text"
-            className="w-full border-0 px-1 rounded focus:ring-0 placeholder:text-sm text-sm"
+            className="w-full border-0 px-1 py-2 rounded-sm focus:ring-0 focus:outline-hidden placeholder:text-sm text-sm"
             placeholder="Search..."
           />
         </div>

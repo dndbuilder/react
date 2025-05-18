@@ -42,7 +42,7 @@ const BlockPagination = ({ current, totalPage, onPageChange, className, ...rest 
     <div className={classNames('inline-flex items-center justify-between gap-2 text-sm', className)} {...rest}>
       <button
         className={classNames(
-          'reset flex h-8 items-center justify-center rounded border border-dark-200 px-4 text-dark-800',
+          'reset flex h-8 items-center justify-center rounded-sm border border-dark-200 px-4 text-dark-800',
           !hasPreviousPage
             ? 'cursor-not-allowed text-dark-400 hover:bg-transparent'
             : 'hover:border-primary-500 hover:bg-primary-50 hover:text-primary-500'
@@ -60,7 +60,7 @@ const BlockPagination = ({ current, totalPage, onPageChange, className, ...rest 
             <button
               disabled
               key={index}
-              className="reset flex h-8 w-8 items-center justify-center rounded border cursor-not-allowed text-dark-400 hover:bg-transparent active"
+              className="reset flex h-8 w-8 items-center justify-center rounded-sm border cursor-not-allowed text-dark-400 hover:bg-transparent active"
             >
               {pageNo}{' '}
             </button>
@@ -72,7 +72,7 @@ const BlockPagination = ({ current, totalPage, onPageChange, className, ...rest 
               onPageChange?.(pageNo);
             }}
             key={index}
-            className="reset flex h-8 w-8 items-center justify-center rounded border text-dark-800 hover:border-primary-500 hover:bg-primary-50 hover:text-primary-500"
+            className="reset flex h-8 w-8 items-center justify-center rounded-sm border text-dark-800 hover:border-primary-500 hover:bg-primary-50 hover:text-primary-500"
           >
             {pageNo}{' '}
           </button>
@@ -80,7 +80,7 @@ const BlockPagination = ({ current, totalPage, onPageChange, className, ...rest 
       })}
       <button
         className={classNames(
-          'reset flex h-8 items-center justify-center rounded border border-dark-200 px-4 text-dark-800',
+          'reset flex h-8 items-center justify-center rounded-sm border border-dark-200 px-4 text-dark-800',
           !hasNextPage
             ? 'cursor-not-allowed text-dark-400 hover:bg-transparent'
             : 'hover:border-primary-500 hover:bg-primary-50 hover:text-primary-500'

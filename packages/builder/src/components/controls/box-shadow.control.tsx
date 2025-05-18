@@ -109,10 +109,10 @@ const BoxShadowControl: FC<Props> = ({
             <div className="flex items-center justify-between">
               <Label>Color</Label>
               <Popover>
-                <Popover.Trigger className="rounded-sm border p-1">
+                <Popover.Trigger className="rounded-xs border p-1">
                   <BsFillSquareFill
                     style={{ color: innerValue.color }}
-                    className="rounded-sm"
+                    className="rounded-xs"
                   />
                 </Popover.Trigger>
                 <Popover.Content className="p-0">
@@ -214,7 +214,7 @@ const BoxShadowControl: FC<Props> = ({
                     //   ...innerValue,
                     //   blur: val[0],
                     // });
-                    handleValueChange(val[0], "blur");
+                    handleValueChange(val[0], "blur-sm");
                   }}
                   max={100}
                   step={1}
@@ -228,7 +228,7 @@ const BoxShadowControl: FC<Props> = ({
                     //   ...innerValue,
                     //   blur: Number(e.target.value),
                     // });
-                    handleValueChange(Number(e.target.value), "blur");
+                    handleValueChange(Number(e.target.value), "blur-sm");
                   }}
                   min={0}
                   max={100}

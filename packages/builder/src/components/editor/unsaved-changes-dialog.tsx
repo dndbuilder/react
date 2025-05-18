@@ -26,13 +26,13 @@ const UnsaveChangesDialog: FC<UnsaveChangesDialogProps> = ({
           <div className="flex justify-center gap-2 mt-4">
             <button
               onClick={onCancel}
-              className="text-dark-800 bg-dark-100 hover:bg-dark-200 transition-colors duration-150 px-4 py-2 rounded"
+              className="text-dark-800 bg-dark-100 hover:bg-dark-200 transition-colors duration-150 px-4 py-2 rounded-sm"
             >
               No, cancel
             </button>
             <button
               onClick={onConfirm}
-              className="text-dark-100 hover:text-white bg-danger-600 hover:bg-danger-700 px-4 py-2 rounded transition-colors duration-150"
+              className="text-dark-100 hover:text-white bg-danger-600 hover:bg-danger-700 px-4 py-2 rounded-sm transition-colors duration-150"
             >
               Yes, leave
             </button>

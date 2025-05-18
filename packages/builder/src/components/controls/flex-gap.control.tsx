@@ -119,20 +119,20 @@ const FlexGapControl: FC<Props> = ({
           <p className="mt-0.5 text-center text-[10px] text-dark-400">Column</p>
         </div>
         <div>
-          <div className="w-full rounded border border-dark-300 ">
+          <div className="w-full rounded-sm border border-dark-300 ">
             <Tooltip>
               <Tooltip.Trigger asChild>
                 {value?.linked ? (
                   <div
                     onClick={() => handleLinkedChange(false)}
-                    className="cursor-pointer rounded px-3 py-[7px] hover:bg-dark-100"
+                    className="cursor-pointer rounded-sm px-3 py-[7px] hover:bg-dark-100"
                   >
                     <MdLink className="text-dark-600" />
                   </div>
                 ) : (
                   <div
                     onClick={() => handleLinkedChange(true)}
-                    className="cursor-pointer rounded px-3 py-[7px] hover:bg-dark-100"
+                    className="cursor-pointer rounded-sm px-3 py-[7px] hover:bg-dark-100"
                   >
                     <MdLinkOff className="text-dark-600" />
                   </div>

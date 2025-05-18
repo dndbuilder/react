@@ -217,7 +217,7 @@ const Structure = () => {
             )}
           </div>
         ) : (
-          <div className="text-center m-4 rounded p-4">
+          <div className="text-center m-4 rounded-sm p-4">
             <h4 className="text-lg mb-1 font-medium text-dark-600">
               No Elements
             </h4>

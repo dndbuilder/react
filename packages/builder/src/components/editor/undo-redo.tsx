@@ -10,7 +10,7 @@ const UndoRedo: FC<{ className?: string }> = ({ className }) => {
   return (
     <div
       className={classNames(
-        "flex rounded bg-dark-800 divide-x divide-dark-700 h-10",
+        "flex rounded-sm bg-dark-800 divide-x divide-dark-700 h-10",
         className
       )}
     >

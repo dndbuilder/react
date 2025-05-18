@@ -41,7 +41,7 @@ interface Props
 }
 
 const toggleGroupItemClasses =
-  "hover:bg-dark-100  controls-[state=on]:bg-dark-100 flex h-[28px] w-[35px] items-center justify-center bg-white text-base leading-4 first:rounded-l last:rounded-r focus:z-10 focus:outline-none";
+  "hover:bg-dark-100  controls-[state=on]:bg-dark-100 flex h-[28px] w-[35px] items-center justify-center bg-white text-base leading-4 first:rounded-l last:rounded-r focus:z-10 focus:outline-hidden";
 
 const ToggleGroupControl = forwardRef<HTMLDivElement, Props>(
   (
@@ -93,7 +93,7 @@ const ToggleGroupControl = forwardRef<HTMLDivElement, Props>(
             onValueChange={(val) => {
               defaultValue && !val ? setValue(defaultValue) : setValue(val);
             }}
-            className="inline-flex rounded border"
+            className="inline-flex rounded-sm border"
             type="single"
           >
             {controls.map(

@@ -38,7 +38,7 @@ const ToastBody: FunctionComponent<ToastBodyProps> = (props) => {
         >
           <div className="w-0 flex-1 p-4">
             <div className={classNames('flex', props.subtitle ? 'items-start' : 'items-center')}>
-              <div className={`${colorClasses[props.type]} flex-shrink-0 pt-0.5`}>
+              <div className={`${colorClasses[props.type]} shrink-0 pt-0.5`}>
                 {props.type == 'success' && <HiCheckCircle className="h-10 w-10" />}
                 {props.type == 'error' && <HiXCircle className="h-10 w-10" />}
                 {props.type == 'warning' && <HiExclamationCircle className="h-10 w-10" />}

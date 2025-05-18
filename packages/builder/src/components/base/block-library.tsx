@@ -17,7 +17,7 @@ const BlockLibrary: FC<BlockLibraryProps> = ({ children }) => {
             <div className="font-bold text-xl">Block Library</div>
             <Dialog.Close asChild>
               <button
-                className="text-dark-500 hover:text-dark-700 transition-colors duration-150 focus:outline-none"
+                className="text-dark-500 hover:text-dark-700 transition-colors duration-150 focus:outline-hidden"
                 aria-label="Close"
               >
                 <FiX size={20} />
@@ -25,7 +25,7 @@ const BlockLibrary: FC<BlockLibraryProps> = ({ children }) => {
             </Dialog.Close>
           </Dialog.Title>
 
-          <div className="p-4 flex-grow text-center pt-20 pb-28">
+          <div className="p-4 grow text-center pt-20 pb-28">
             <p className="text-3xl font-semibold tracking-wide">Coming Soon</p>
             <p className="mt-2 text-dark-600">
               Our block library is under construction. Stay tuned!

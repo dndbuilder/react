@@ -15,7 +15,6 @@ import {
   getCurrentBreakpoint,
   getCurrentLocale,
 } from "@/store/selectors";
-import { BuilderResourceType } from "@/types";
 import { Breakpoint } from "@/types/responsive";
 import { classNames } from "@/utils";
 import { CSSProperties, FC, useEffect, useRef, useState } from "react";
@@ -94,7 +93,7 @@ const CanvasArea: FC = () => {
   return (
     <div
       className={classNames(
-        "relative flex flex-grow justify-center p-4 transition-all duration-300 bg-dark-100",
+        "relative flex grow justify-center p-4 transition-all duration-300 bg-dark-100",
         !isLeftPanelOpen ? "ms-0" : "ms-[290px]",
         !activeRightPanel ? "me-0" : "me-[290px]"
       )}
@@ -102,7 +101,7 @@ const CanvasArea: FC = () => {
       <ErrorBoundary fallbackRender={ErrorFallback}>
         <div
           className={classNames(
-            "relative flex h-full w-full border shadow transition-width duration-300"
+            "relative flex h-full w-full border shadow-sm transition-width duration-300"
           )}
           onClick={handleUnselect}
           ref={frameWrapperRef}
@@ -131,10 +130,10 @@ const CanvasArea: FC = () => {
       </ErrorBoundary>
 
       {/* Overlay */}
-      <div className="fixed left-0 top-0 z-[111] flex h-screen w-screen items-center justify-center bg-[#00000095] text-white lg:hidden">
+      {/* <div className="fixed left-0 top-0 z-111 flex h-screen w-screen items-center justify-center bg-[#00000095] text-white lg:hidden">
         Resize your browser to be at least 1024px wide to get back into design
         mode.
-      </div>
+      </div> */}
     </div>
   );
 };

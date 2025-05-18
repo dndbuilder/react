@@ -26,7 +26,7 @@ const BreakpointSwitch: FC<BreakpointSwitcherProps> = ({ className }) => {
   return (
     <div
       className={classNames(
-        "flex items-center rounded bg-dark-800 px-2 h-10",
+        "flex items-center rounded-sm bg-dark-800 px-2 h-10",
         className
       )}
     >

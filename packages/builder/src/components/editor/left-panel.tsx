@@ -24,7 +24,7 @@ const LeftPanel = () => {
   return (
     <div
       className={classNames(
-        "absolute z-30 h-full w-[290px] bg-white shadow transition-all duration-300",
+        "absolute z-30 h-full w-[290px] bg-white shadow-sm transition-all duration-300",
         !isLeftPanelOpen ? "left-[-290px]" : "left-0"
       )}
     >

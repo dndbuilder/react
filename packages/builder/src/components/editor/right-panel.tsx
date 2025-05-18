@@ -10,7 +10,7 @@ const RightPanel = () => {
   return (
     <div
       className={classNames(
-        "absolute z-30 flex h-full w-[290px] flex-col bg-white shadow transition-all duration-300",
+        "absolute z-30 flex h-full w-[290px] flex-col bg-white shadow-sm transition-all duration-300",
         activeRightPanel !== null ? "right-0" : "right-[-290px]"
       )}
     >

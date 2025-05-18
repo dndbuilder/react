@@ -85,7 +85,7 @@ const ActionDropdown: FC = () => {
   const { isSaving, save } = useActionContext();
 
   return (
-    <div className="flex h-9 bg-dokan-600 rounded text-white divide-x divide-dokan-700 overflow-hidden">
+    <div className="flex h-9 bg-dokan-600 rounded-sm text-white divide-x divide-dokan-700 overflow-hidden">
       <Tooltip>
         <Tooltip.Trigger asChild>
           <button

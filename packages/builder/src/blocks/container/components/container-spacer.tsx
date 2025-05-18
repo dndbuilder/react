@@ -195,7 +195,7 @@ const ContainerSpacer: FC<ContainerSpacerProps> = ({
     >
       <div
         className={classNames(
-          "z-50 hidden rounded bg-dark-900 p-1 text-xs leading-none text-white group-hover/spacer:inline-block",
+          "z-50 hidden rounded-sm bg-dark-900 p-1 text-xs leading-none text-white group-hover/spacer:inline-block",
           isDragging && "inline-block"
         )}
         style={{

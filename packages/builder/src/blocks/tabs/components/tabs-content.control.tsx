@@ -84,7 +84,7 @@ const TabsContentControl = () => {
             {tabs?.map((tab, index) => (
               <div key={tab.id} className="mb-1.5">
                 <SortableItem key={tab.id}>
-                  <div className="bg-[#F8F9F8] z-[99] px-2" key={index}>
+                  <div className="bg-[#F8F9F8] z-99 px-2" key={index}>
                     <div className="min-h-[40px] flex  items-center">
                       <button className={"me-1 cursor-move"}>
                         <BiGridVertical size={14} color={"#828282"} />
