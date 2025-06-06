@@ -1,7 +1,6 @@
 import { useAppDispatch } from "@/hooks/use-app-dispatch";
 import { useAppSelector } from "@/hooks/use-app-selector";
 import useLocalstorage from "@/hooks/use-localstorage";
-import useToast from "@/hooks/use-toast";
 import { BuilderRightPanelType } from "@/store/app-slice";
 import { getSelectedBlock } from "@/store/selectors";
 import {
@@ -12,6 +11,7 @@ import {
   useContext,
   useState,
 } from "react";
+import toast from "react-hot-toast";
 import { useHotkeys } from "react-hotkeys-hook";
 import { ActionCreators } from "redux-undo";
 import { useContainerSettings } from "../hooks/use-container-settings";
@@ -46,7 +46,6 @@ export const ActionContext = createContext<ActionContextType | undefined>(
 );
 
 export const ActionProvider = ({ children }: { children: ReactNode }) => {
-  const toast = useToast();
   const containerSettings = useContainerSettings();
   const selectedBlock = useAppSelector(getSelectedBlock);
 
@@ -89,18 +88,10 @@ export const ActionProvider = ({ children }: { children: ReactNode }) => {
       await saveModel();
       setIsSaving(false);
 
-      toast({
-        type: "success",
-        title: "Saved successfully",
-        subtitle: "Your changes have been saved.",
-      });
+      toast.success("Saved successfully");
     } catch (e) {
       setIsSaving(false);
-      toast({
-        type: "error",
-        title: "Failed to save",
-        subtitle: "Something went wrong. Please try again.",
-      });
+      toast.error("Failed to save content.");
     }
   };
 

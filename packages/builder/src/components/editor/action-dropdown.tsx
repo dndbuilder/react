@@ -1,19 +1,17 @@
 import Popover from "@/components/shared/popover";
 import Tooltip from "@/components/shared/tooltip";
 import { useActionContext } from "@/contexts/action-context";
-import { clearContent, setContent } from "@/store/builder-slice";
-import { getContent } from "@/store/selectors";
 import { useAppDispatch } from "@/hooks/use-app-dispatch";
 import { useAppSelector } from "@/hooks/use-app-selector";
-import useToast from "@/hooks/use-toast";
-import { singularize } from "@/utils";
+import { clearContent, setContent } from "@/store/builder-slice";
+import { getContent } from "@/store/selectors";
 import { FC, useCallback } from "react";
+import toast from "react-hot-toast";
 import { AiOutlineClear } from "react-icons/ai";
 import { CiExport, CiImport } from "react-icons/ci";
 import { FiChevronDown, FiSave } from "react-icons/fi";
 
 const ActionDropdown: FC = () => {
-  const toast = useToast();
   const content = useAppSelector(getContent);
   const dispatch = useAppDispatch();
 
@@ -30,18 +28,10 @@ const ActionDropdown: FC = () => {
       a.download = `content-${Date.now()}.json`;
       a.click();
 
-      toast({
-        type: "success",
-        title: "Export successfully",
-        subtitle: "Your data have been downloaded.",
-      });
+      toast.success("Exported successfully");
     } catch (error) {
       console.error("Error exporting content:", error);
-      toast({
-        type: "error",
-        title: "Export failed",
-        subtitle: "An error occurred while exporting your data.",
-      });
+      toast.error("Failed to export content");
     }
   }, [content, toast]);
 
@@ -73,27 +63,16 @@ const ActionDropdown: FC = () => {
 
             // Validating content
             if (!parsedContent.root?.id || !parsedContent.root?.type) {
-              toast({
-                type: "error",
-                title: "Invalid file",
-              });
+              toast.error("Invalid content format");
               return;
             }
 
             dispatch(setContent(parsedContent));
 
-            toast({
-              type: "success",
-              title: "Import successfully",
-              subtitle: "Your data have been imported.",
-            });
+            toast.success("Content imported successfully");
           } catch (error) {
             console.error("Error parsing imported content:", error);
-            toast({
-              type: "error",
-              title: "Import failed",
-              subtitle: "The file format is invalid.",
-            });
+            toast.error("Failed to parse imported content");
           }
         };
       };
@@ -101,11 +80,7 @@ const ActionDropdown: FC = () => {
       input.click();
     } catch (error) {
       console.error("Error importing content:", error);
-      toast({
-        type: "error",
-        title: "Import failed",
-        subtitle: "An error occurred while importing your data.",
-      });
+      toast.error("Failed to import content");
     }
   }, [dispatch, toast]);
 

@@ -1,16 +1,15 @@
 import Popover from "@/components/shared/popover";
-import { getActiveTheme } from "@/store/selectors";
-import { setActiveThemeSettings } from "@/store/theme-slice";
 import { useAppDispatch } from "@/hooks/use-app-dispatch";
 import { useAppSelector } from "@/hooks/use-app-selector";
-import useToast from "@/hooks/use-toast";
+import { getActiveTheme } from "@/store/selectors";
+import { setActiveThemeSettings } from "@/store/theme-slice";
 import { FC, useCallback, useState } from "react";
+import toast from "react-hot-toast";
 import { AiOutlineExport, AiOutlineImport } from "react-icons/ai";
 import { BsThreeDots } from "react-icons/bs";
 import { FiSave } from "react-icons/fi";
 
 const ThemeActionDropdown: FC = () => {
-  const toast = useToast();
   const theme = useAppSelector(getActiveTheme);
   const dispatch = useAppDispatch();
   const [isSaving, setIsSaving] = useState(false);
@@ -25,20 +24,10 @@ const ThemeActionDropdown: FC = () => {
       await saveTheme();
       setIsSaving(false);
 
-      toast({
-        type: "success",
-        title: "Saved successfully",
-        subtitle: "Your changes have been saved.",
-        position: "top-right",
-      });
+      toast.success("Theme settings saved successfully");
     } catch (e) {
       setIsSaving(false);
-      toast({
-        type: "error",
-        title: "Failed to save",
-        subtitle: "Something went wrong. Please try again.",
-        position: "top-right",
-      });
+      toast.error("Failed to save theme settings.");
     }
   };
 
@@ -55,18 +44,10 @@ const ThemeActionDropdown: FC = () => {
       a.download = `theme-${theme.name.toLowerCase().split(" ").join("-")}-${Date.now()}.json`;
       a.click();
 
-      toast({
-        type: 'success',
-        title: 'Export successfully',
-        subtitle: 'Your theme settings have been downloaded.',
-      });
+      toast.success("Theme settings exported successfully");
     } catch (error) {
       console.error("Error exporting theme settings:", error);
-      toast({
-        type: "error",
-        title: "Export failed",
-        subtitle: "An error occurred while exporting your theme settings.",
-      });
+      toast.error("Failed to export theme settings");
     }
   }, [theme.settings, theme.name, toast]);
 
@@ -98,27 +79,15 @@ const ThemeActionDropdown: FC = () => {
 
             // Validating content
             if (!parsedContent.color && !parsedContent.typography) {
-              toast({
-                type: "error",
-                title: "Invalid file",
-                subtitle: "The file does not contain valid theme settings.",
-              });
+              toast.error("Invalid theme settings format");
               return;
             }
 
             dispatch(setActiveThemeSettings(parsedContent));
-            toast({
-              type: "success",
-              title: "Import successfully",
-              subtitle: "Your theme settings have been imported.",
-            });
+            toast.success("Theme settings imported successfully");
           } catch (error) {
             console.error("Error parsing imported theme settings:", error);
-            toast({
-              type: "error",
-              title: "Import failed",
-              subtitle: "The file format is invalid.",
-            });
+            toast.error("Failed to parse imported theme settings");
           }
         };
       };
@@ -126,11 +95,7 @@ const ThemeActionDropdown: FC = () => {
       input.click();
     } catch (error) {
       console.error("Error importing theme settings:", error);
-      toast({
-        type: "error",
-        title: "Import failed",
-        subtitle: "An error occurred while importing your theme settings.",
-      });
+      toast.error("Failed to import theme settings");
     }
   }, [dispatch, toast]);
 
