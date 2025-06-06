@@ -1,7 +1,7 @@
 "use client";
 
-import "@repo/builder/dist/style.css";
-import { BuilderProvider, store, Editor } from "@repo/builder";
+import "@repo/builder/dist/index.css";
+import { BuilderProvider, store, Editor, Block } from "@repo/builder";
 import { Header } from "./_components/header";
 
 export default function HomePage() {
@@ -10,7 +10,7 @@ export default function HomePage() {
       <BuilderProvider store={store}>
         <Header />
 
-        <Editor content={{}} />
+        <Editor content={{} as Record<string, Block>} />
       </BuilderProvider>
     </div>
   );

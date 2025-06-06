@@ -13,7 +13,8 @@ import { classNames } from "@/utils";
 
 export type EditorProps = {
   content: Record<string, Block>;
-} & React.HTMLAttributes<HTMLDivElement>;
+  className?: string;
+} & Omit<React.HTMLAttributes<HTMLDivElement>, "content" | "className">;
 
 export const Editor: FC<EditorProps> = ({ content, className, ...props }) => {
   const dispatch = useAppDispatch();

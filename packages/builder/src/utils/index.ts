@@ -84,14 +84,14 @@ export async function getIcons(iconSet: string) {
     //   const icons = await import('react-icons/ai');
     //   return icons;
     // }
-    case "fi": {
-      const icons = await import("react-icons/fi");
-      return icons;
-    }
-    case "fa6": {
-      const icons = await import("react-icons/fa6");
-      return icons;
-    }
+    // case "fi": {
+    //   const icons = await import("react-icons/fi");
+    //   return icons;
+    // }
+    // case "fa6": {
+    //   const icons = await import("react-icons/fa6");
+    //   return icons;
+    // }
     // case 'hi2': {
     //   const icons = await import('react-icons/hi2');
     //   return icons;
