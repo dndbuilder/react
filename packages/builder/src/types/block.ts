@@ -1,7 +1,6 @@
 import { Theme } from "@/types/theme";
 import { AnyObject } from "@/types";
 import { Styles } from "free-style";
-import { ParsedQs } from "qs";
 import { ComponentType } from "react";
 import { ConnectDragPreview, ConnectDragSource } from "react-dnd";
 import { BreakpointConfig, ResponsiveValue } from "./responsive";

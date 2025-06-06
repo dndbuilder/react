@@ -1,6 +1,6 @@
 import { useAppDispatch } from "@/hooks/use-app-dispatch";
 import { useAppSelector } from "@/hooks/use-app-selector";
-import { setContent } from "@/store/builder-slice";
+import { clearContent, setContent } from "@/store/builder-slice";
 import { getContent } from "@/store/selectors";
 import { Block } from "@/types/block";
 import React, { FC, useEffect, useMemo } from "react";
@@ -26,10 +26,10 @@ export const Editor: FC<EditorProps> = ({ content, className, ...props }) => {
   }, [content, contentState]);
 
   useEffect(() => {
-    // if (!content) {
-    //   dispatch(clearContent());
-    //   return;
-    // }
+    if (!content) {
+      dispatch(clearContent());
+      return;
+    }
 
     dispatch(setContent(content));
   }, [content]);
