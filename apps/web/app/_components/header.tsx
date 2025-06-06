@@ -1,7 +1,26 @@
 import { useContent } from "@repo/builder";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
 export const Header = () => {
-  const content = useContent();
+  const [content] = useContent();
+
+  const [isSaving, setIsSaving] = useState(false);
+
+  const handleSave = () => {
+    setIsSaving(true);
+    setTimeout(() => {
+      // Simulate saving process
+      try {
+        localStorage.setItem("builder-content", JSON.stringify(content));
+        toast.success("Content saved successfully!");
+      } catch (error) {
+        console.error("Error saving content to localStorage:", error);
+      } finally {
+        setIsSaving(false);
+      }
+    }, 1000); // Simulate a delay for saving
+  };
 
   return (
     <header className="h-[60px] w-full bg-slate-800 flex items-center justify-between px-4">
@@ -24,13 +43,11 @@ export const Header = () => {
         </span>
       </div>
       <button
-        className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
-        onClick={() => {
-          // Save functionality would go here
-          alert("Save button clicked");
-        }}
+        className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        onClick={handleSave}
+        disabled={isSaving}
       >
-        Save
+        {isSaving ? "Saving..." : "Save"}
       </button>
     </header>
   );

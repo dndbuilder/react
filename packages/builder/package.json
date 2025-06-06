@@ -22,11 +22,9 @@
   "scripts": {
     "lint": "eslint *.ts*",
     "build": "vite build",
-    "dev": "vite build --watch",
-    "test": "jest"
+    "dev": "vite build --watch"
   },
   "devDependencies": {
-    "@jest/globals": "^29.7.0",
     "@monaco-editor/react": "^4.7.0",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
