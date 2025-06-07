@@ -17,7 +17,7 @@ import {
 } from "@/store/selectors";
 import { Breakpoint } from "@/types/responsive";
 import { classNames } from "@/utils";
-import { CSSProperties, FC, useEffect, useRef, useState } from "react";
+import { CSSProperties, FC, useEffect, useMemo, useRef, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 
 const CanvasArea: FC = () => {
@@ -46,7 +46,7 @@ const CanvasArea: FC = () => {
     dispatch(unselectBlock());
   };
 
-  const meta = { locale: currentLocale };
+  const meta = useMemo(() => ({ locale: currentLocale }), [currentLocale]);
 
   useEffect(() => {
     if (!frameWrapperRef.current) return;

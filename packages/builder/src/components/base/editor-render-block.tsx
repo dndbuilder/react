@@ -17,8 +17,8 @@ type EditorRenderBlockProps = {
   isDragging?: boolean;
 };
 
-const EditorRenderBlock: FC<EditorRenderBlockProps> = (props) => {
-  const { block, index, isEditable, meta, isDragging = false } = props;
+const EditorRenderBlock: FC<EditorRenderBlockProps> = memo((props) => {
+  const { block, index, isEditable, meta } = props;
 
   if (typeof block === "string") {
     return (
@@ -39,7 +39,7 @@ const EditorRenderBlock: FC<EditorRenderBlockProps> = (props) => {
       meta={meta}
     />
   );
-};
+});
 
 type RenderBlockProps = {
   block: Block;
@@ -48,48 +48,45 @@ type RenderBlockProps = {
   meta: BlockMeta;
 };
 
-const RenderBlock: FC<RenderBlockProps> = ({
-  block,
-  index,
-  isEditable,
-  meta,
-}) => {
-  const blockConfig = BlockConfiguration.getBlock(block.type);
+const RenderBlock: FC<RenderBlockProps> = memo(
+  ({ block, index, isEditable, meta }) => {
+    const blockConfig = BlockConfiguration.getBlock(block.type);
 
-  if (!blockConfig) {
-    return null;
-  }
+    if (!blockConfig) {
+      return null;
+    }
 
-  const { component: Component } = blockConfig;
+    const { component: Component } = blockConfig;
 
-  const blockProps = generateBlockProps({ block, index, isEditable, meta });
+    const blockProps = generateBlockProps({ block, index, isEditable, meta });
 
-  if (block.type === BlockType.CONTAINER) {
+    if (block.type === BlockType.CONTAINER) {
+      return (
+        <ErrorBoundary fallbackRender={ErrorFallback}>
+          <Suspense>
+            <Component {...blockProps} />
+          </Suspense>
+        </ErrorBoundary>
+      );
+    }
+
+    const Wrapper = isEditable ? EditorBlockWrapper : BlockWrapper;
+
     return (
-      <ErrorBoundary fallbackRender={ErrorFallback}>
-        <Suspense>
+      <Suspense>
+        <Wrapper
+          index={index}
+          blockId={block.id}
+          parentId={block.parentId}
+          blockType={block.type}
+          attributes={blockProps.attributes}
+        >
           <Component {...blockProps} />
-        </Suspense>
-      </ErrorBoundary>
+        </Wrapper>
+      </Suspense>
     );
   }
-
-  const Wrapper = isEditable ? EditorBlockWrapper : BlockWrapper;
-
-  return (
-    <Suspense>
-      <Wrapper
-        index={index}
-        blockId={block.id}
-        parentId={block.parentId}
-        blockType={block.type}
-        attributes={blockProps.attributes}
-      >
-        <Component {...blockProps} />
-      </Wrapper>
-    </Suspense>
-  );
-};
+);
 
 type RenderBlockFromIdProps = {
   blockId: string;
