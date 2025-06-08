@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { useEffect, useMemo, useRef } from 'react';
-import type { CSSProperties, FC, ReactNode } from 'react';
-import '@/assets/styles/drawer.css';
+import { useEffect, useMemo, useRef } from "react";
+import type { CSSProperties, FC, ReactNode } from "react";
+// import '@/assets/styles/drawer.css';
 
 export type DrawerProps = {
   open?: boolean;
   onClose?: () => void;
-  direction: 'left' | 'right' | 'top' | 'bottom';
+  direction: "left" | "right" | "top" | "bottom";
   lockBackgroundScroll?: boolean;
   children?: ReactNode;
   duration?: number;
@@ -21,40 +21,43 @@ export type DrawerProps = {
   overlayClassName?: string;
 };
 
-const getDirectionStyle = (dir: string, size?: number | string): {} | CSSProperties => {
+const getDirectionStyle = (
+  dir: string,
+  size?: number | string
+): {} | CSSProperties => {
   switch (dir) {
-    case 'left':
+    case "left":
       return {
         top: 0,
         left: 0,
-        transform: 'translate3d(-100%, 0, 0)',
+        transform: "translate3d(-100%, 0, 0)",
         width: size,
-        height: '100svh',
+        height: "100svh",
       };
-    case 'right':
+    case "right":
       return {
         top: 0,
         right: 0,
-        transform: 'translate3d(100%, 0, 0)',
+        transform: "translate3d(100%, 0, 0)",
         width: size,
-        height: '100svh',
+        height: "100svh",
       };
-    case 'bottom':
+    case "bottom":
       return {
         left: 0,
         right: 0,
         bottom: 0,
-        transform: 'translate3d(0, 100%, 0)',
-        width: '100%',
+        transform: "translate3d(0, 100%, 0)",
+        width: "100%",
         height: size,
       };
-    case 'top':
+    case "top":
       return {
         left: 0,
         right: 0,
         top: 0,
-        transform: 'translate3d(0, -100%, 0)',
-        width: '100%',
+        transform: "translate3d(0, -100%, 0)",
+        width: "100%",
         height: size,
       };
 
@@ -70,7 +73,7 @@ export const Drawer: FC<DrawerProps> = (props) => {
     children,
     style,
     enableOverlay = true,
-    overlayColor = '#000',
+    overlayColor = "#000",
     zIndex = 100,
     duration = 500,
     direction,
@@ -78,24 +81,25 @@ export const Drawer: FC<DrawerProps> = (props) => {
     className,
     customIdSuffix,
     lockBackgroundScroll = true,
-    overlayClassName = '',
+    overlayClassName = "",
   } = props;
 
   const bodyRef = useRef<HTMLBodyElement | null>(null);
 
   useEffect(() => {
     // Only run in browser environment
-    if (typeof window === "undefined" || typeof document === "undefined") return;
+    if (typeof window === "undefined" || typeof document === "undefined")
+      return;
 
     const updatePageScroll = () => {
       try {
-        bodyRef.current = window.document.querySelector('body');
+        bodyRef.current = window.document.querySelector("body");
 
         if (bodyRef.current && lockBackgroundScroll) {
           if (open) {
-            bodyRef.current.style.overflow = 'hidden';
+            bodyRef.current.style.overflow = "hidden";
           } else {
-            bodyRef.current.style.overflow = '';
+            bodyRef.current.style.overflow = "";
           }
         }
       } catch (error) {
@@ -123,26 +127,29 @@ export const Drawer: FC<DrawerProps> = (props) => {
   };
 
   return (
-    <div id={'drawer' + idSuffix} className="drawer">
+    <div id={"drawer" + idSuffix} className="drawer">
       <input
         type="checkbox"
-        id={'drawer-checkbox' + idSuffix}
+        id={"drawer-checkbox" + idSuffix}
         className="drawer-checkbox"
         onChange={onClose}
         checked={open}
       />
       {enableOverlay && (
         <label
-          htmlFor={'drawer-checkbox' + idSuffix}
-          id={'drawer-overlay' + idSuffix}
-          className={'drawer-overlay ' + overlayClassName}
+          htmlFor={"drawer-checkbox" + idSuffix}
+          id={"drawer-overlay" + idSuffix}
+          className={"drawer-overlay " + overlayClassName}
           style={overlayStyles}
         />
       )}
-      <div id={'drawer-container' + idSuffix} style={drawerStyles} className={'drawer-container ' + className}>
+      <div
+        id={"drawer-container" + idSuffix}
+        style={drawerStyles}
+        className={"drawer-container " + className}
+      >
         {children}
       </div>
     </div>
   );
 };
-

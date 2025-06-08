@@ -1,27 +1,41 @@
-import { FC, useEffect, useState } from "react";
-import { getIcons } from "@/utils";
-import { IconBaseProps } from "react-icons";
+import { FC } from "react";
 
 export type RenderIconProps = {
   iconSet?: string;
   iconName?: string;
-} & IconBaseProps;
+  size?: number | string;
+  color?: string;
+  className?: string;
+  style?: React.CSSProperties;
+};
+
 export const RenderIcon: FC<RenderIconProps> = ({
   iconName,
   iconSet,
+  size,
+  color,
+  className,
+  style,
   ...props
 }) => {
-  const [icons, setIcons] = useState<any>();
-
-  useEffect(() => {
-    getIcons(iconSet ?? "fi").then((icons) => {
-      setIcons(icons);
-    });
-  }, [iconSet]);
-
-  const Icon = icons?.[iconName ?? ""];
-  if (icons && iconSet && iconName && Icon) {
-    return <Icon {...props}></Icon>;
+  if (!iconSet || !iconName) {
+    return null;
   }
-  return null;
+
+  const iconString = `${iconSet}:${iconName}`;
+
+  return (
+    <>
+      {/* @ts-expect-error: Custom web component, not recognized by TSX */}
+      <iconify-icon
+        icon={iconString}
+        width={size}
+        height={size}
+        color={color}
+        class={className}
+        style={style}
+        {...props}
+      />
+    </>
+  );
 };

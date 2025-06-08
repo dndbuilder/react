@@ -1,19 +1,23 @@
+import {
+  BreakpointSelector,
+  Button,
+  Input,
+  Label,
+  ScrollArea,
+} from "@/components";
+import { collections } from "@/config/icon.config";
+import { useSettings } from "@/hooks";
 import { useAppSelector } from "@/hooks/use-app-selector";
+import { getCurrentBreakpoint } from "@/store/selectors";
+import { IconType, SettingsType } from "@/types";
 import { classNames } from "@/utils";
 import * as Dialog from "@radix-ui/react-dialog";
-import { FC, useEffect, useRef, useState } from "react";
+import * as Tabs from "@radix-ui/react-tabs";
+import { FC, useRef, useState } from "react";
 import { BsTrash } from "react-icons/bs";
 import { FiX } from "react-icons/fi";
 import { HiPlusCircle } from "react-icons/hi";
-import { useSettings } from "../../hooks/use-settings";
-import { getCurrentBreakpoint } from "../../store/selectors";
-import { IconType, SettingsType } from "../../types";
-import { getIcons } from "../../utils";
-import { BreakpointSelector } from "../shared/breakpoint-selector";
-import { Button } from "../shared/button";
-import { Input } from "../shared/input";
-import { Label } from "../shared/label";
-import { ScrollArea } from "../shared/scroll-area";
+
 
 export type IconControlProps = {
   label?: string;
@@ -32,6 +36,7 @@ export const IconControl: FC<IconControlProps> = ({
   type,
   className,
 }) => {
+  const iconCollections = collections;
   const currentBreakpoint = useAppSelector(getCurrentBreakpoint);
   const [value, setValue] = useSettings<IconType | undefined>(
     responsive && mode
@@ -44,26 +49,27 @@ export const IconControl: FC<IconControlProps> = ({
     type
   );
 
-  const [searchText, setSearchText] = useState<string>("");
   const [open, setOpen] = useState(false);
   const [selectedIcon, setSelectedIcon] = useState<string>(
     value?.iconName ?? ""
   );
-  const [icons, setIcons] = useState<any>();
+  const [selectedCollection, setSelectedCollection] = useState<string>(
+    value?.iconSet ?? iconCollections[0]?.value ?? ""
+  );
 
-  useEffect(() => {
-    getIcons(value?.iconSet ?? "fi").then((icons) => {
-      setIcons(icons);
-    });
-  }, []);
+  // useEffect(() => {
+  //   getIcons(value?.iconSet ?? "fi").then((icons) => {
+  //     setIcons(icons);
+  //   });
+  // }, []);
 
-  const renderIcon = () => {
-    const Icon = icons?.[value?.iconName ?? ""];
-    if (icons && value?.iconSet && value.iconName && Icon) {
-      return <Icon size={50}></Icon>;
-    }
-    return null;
-  };
+  // const renderIcon = () => {
+  //   const Icon = icons?.[value?.iconName ?? ""];
+  //   if (icons && value?.iconSet && value.iconName && Icon) {
+  //     return <Icon size={50}></Icon>;
+  //   }
+  //   return null;
+  // };
 
   return (
     <div className={classNames("mt-4", className)}>
@@ -77,7 +83,7 @@ export const IconControl: FC<IconControlProps> = ({
         <Dialog.Trigger asChild>
           <div className="group p-0  relative h-32 w-full cursor-pointer overflow-hidden  transition duration-200 control-media-area">
             <div className="flex h-full w-full items-center justify-center text-2xl text-slate-600">
-              {value && renderIcon()}
+              {/* {value && renderIcon()} */}
 
               {!value && <HiPlusCircle />}
             </div>
@@ -109,27 +115,17 @@ export const IconControl: FC<IconControlProps> = ({
               </Dialog.Close>
             </Dialog.Title>
 
-            <div className="flex justify-end py-3 pe-5">
-              <Input
-                placeholder="Search..."
-                className="w-[200px]"
-                value={searchText}
-                onChange={(e) => setSearchText(e.target.value)}
-              />
-            </div>
-
             <div className="h-[500px]">
-              {/* Right side Icon list */}
-              <ScrollArea className="h-[450px]">
-                <div className="p-5">
-                  <IconSetViewer
-                    searchText={searchText}
-                    selectedIcon={selectedIcon}
-                    setSelectedIcon={setSelectedIcon}
-                    icons={icons}
-                  />
-                </div>
-              </ScrollArea>
+              {/* Icon collections and list */}
+              <div className="flex h-[450px]">
+                <IconSetViewer
+                  selectedIcon={selectedIcon}
+                  setSelectedIcon={setSelectedIcon}
+                  iconCollections={iconCollections}
+                  selectedCollection={selectedCollection}
+                  setSelectedCollection={setSelectedCollection}
+                />
+              </div>
 
               {/* Footer */}
               <div className={" border-t border-[#E9E9E9]"}>
@@ -146,7 +142,7 @@ export const IconControl: FC<IconControlProps> = ({
                       setOpen(false);
                       setValue({
                         ...value,
-                        iconSet: value?.iconSet ?? "fi",
+                        iconSet: selectedCollection,
                         iconName: selectedIcon as string,
                       });
                     }}
@@ -164,67 +160,109 @@ export const IconControl: FC<IconControlProps> = ({
   );
 };
 
-type IconSetViewerProps = {
-  icons: any;
+export type IconSetViewerProps = {
+  iconCollections: { name: string; value: string }[];
+  selectedCollection: string;
+  setSelectedCollection: (value: string) => void;
   selectedIcon?: string;
-  searchText?: string;
   setSelectedIcon: (key: string) => void;
 };
 
-function IconSetViewer({
-  icons,
+export function IconSetViewer({
+  iconCollections,
+  selectedCollection,
+  setSelectedCollection,
   selectedIcon,
   setSelectedIcon,
-  searchText,
 }: IconSetViewerProps) {
   const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const selected = ref.current?.querySelector(".selected");
-    if (selected) {
-      selected.scrollIntoView({ block: "center" });
-    }
-  }, []);
+  const [searchText, setSearchText] = useState<string>("");
 
   return (
-    <>
-      <div ref={ref} className="grid grid-cols-7 gap-4">
-        {icons &&
-          Object.keys(icons)
-            .filter((key) => {
-              if (searchText) {
-                return key.toLowerCase().includes(searchText.toLowerCase());
-              }
-              return true;
-            })
-            ?.map((key) => {
-              const Icon = icons[key];
-              return (
-                <div
-                  key={key}
-                  onClick={() => setSelectedIcon(key)}
-                  className="cursor-pointer group"
-                >
-                  <div
-                    className={classNames(
-                      "flex justify-center items-center shadow-sm rounded-sm py-5 group-hover:shadow-md",
-                      {
-                        "ring-2 ring-violet-500 selected": selectedIcon === key,
-                      }
-                    )}
-                  >
-                    <Icon size={35} />
+    <Tabs.Root
+      value={selectedCollection}
+      onValueChange={setSelectedCollection}
+      className="flex w-full h-full"
+    >
+      {/* Vertical tabs for icon collections */}
+      <Tabs.List className="flex flex-col w-[200px] border-r overflow-y-auto">
+        {iconCollections.map((collection) => (
+          <Tabs.Trigger
+            key={collection.value}
+            value={collection.value}
+            className="px-4 py-3 text-left border-l-2 border-transparent hover:bg-slate-100 data-[state=active]:border-indigo-500 data-[state=active]:bg-slate-100 text-sm"
+          >
+            {collection.name}
+          </Tabs.Trigger>
+        ))}
+      </Tabs.List>
+
+      {/* Content area for icons */}
+      <div className="flex-1 overflow-hidden">
+        {iconCollections.map((collection) => (
+          <Tabs.Content
+            key={collection.value}
+            value={collection.value}
+            className="h-full"
+          >
+            <div className="flex flex-col h-full">
+              {/* Search bar inside the IconSetViewer */}
+              <div className="flex justify-end py-3 px-5">
+                <Input
+                  placeholder="Search..."
+                  className="w-[200px]"
+                  value={searchText}
+                  onChange={(e) => setSearchText(e.target.value)}
+                />
+              </div>
+
+              {/* Icons grid */}
+              <ScrollArea className="flex-1">
+                <div className="p-5">
+                  <div ref={ref} className="grid grid-cols-7 gap-4">
+                    {/* This is a placeholder. In a real implementation, you would fetch icons for the selected collection */}
+                    {Array.from({ length: 30 })
+                      .map((_, index) => `icon-${index}`)
+                      .filter((key) => {
+                        if (searchText) {
+                          return key.toLowerCase().includes(searchText.toLowerCase());
+                        }
+                        return true;
+                      })
+                      .map((key) => {
+                        return (
+                          <div
+                            key={key}
+                            onClick={() => setSelectedIcon(key)}
+                            className="cursor-pointer group"
+                          >
+                            <div
+                              className={classNames(
+                                "flex justify-center items-center shadow-sm rounded-sm py-5 group-hover:shadow-md",
+                                {
+                                  "ring-2 ring-indigo-500 selected": selectedIcon === key,
+                                }
+                              )}
+                            >
+                              Icon
+                            </div>
+                            <p
+                              className={classNames("text-[12px] text-center mt-2", {
+                                "text-indigo-500": selectedIcon === key,
+                              })}
+                            >
+                              {key}
+                            </p>
+                          </div>
+                        );
+                      })}
                   </div>
-                  <p
-                    className={classNames("text-[12px] text-center mt-2", {
-                      "text-violet-500": selectedIcon === key,
-                    })}
-                  >
-                    {key}
-                  </p>
                 </div>
-              );
-            })}
+              </ScrollArea>
+            </div>
+          </Tabs.Content>
+        ))}
       </div>
-    </>
+    </Tabs.Root>
   );
 }

@@ -43,7 +43,6 @@ const LeftPanel = () => {
           </span>
         </button>
       )}
-
       {/* Body */}
       <div className="relative h-full">
         {selectedBlock ? (

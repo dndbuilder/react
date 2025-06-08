@@ -72,10 +72,8 @@ export const Editor: FC<EditorProps> = ({ content, className, ...props }) => {
       >
         {/* Builder Left Sidebar Panel */}
         <LeftPanel />
-
         {/* Builder Canvas */}
         <CanvasArea />
-
         {/* Builder Right Sidebar Panel */}
         <RightPanel />
       </div>
