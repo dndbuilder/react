@@ -203,7 +203,7 @@ export function IconSetViewer({
     isFetchingNextPage,
   } = useIcons({
     collection: selectedCollection,
-    pageSize: 72,
+    pageSize: 36,
     searchText: debouncedSearchText,
   });
 
@@ -295,7 +295,7 @@ export function IconSetViewer({
                 <div ref={scrollRef}>
                   <div
                     ref={ref}
-                    className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 px-4 py-2 gap-4"
+                    className="grid grid-cols-4 sm:grid-cols-4 lg:grid-cols-6 px-4 py-2 gap-4"
                   >
                     {/* Render actual icons */}
                     {iconData?.pages &&
@@ -308,7 +308,7 @@ export function IconSetViewer({
                           <div
                             key={iconName}
                             className={classNames(
-                              "p-4 cursor-pointer rounded text-center transition-colors",
+                              "p-4 cursor-pointer rounded text-center transition-colors border border-slate-200",
                               selectedIcon === iconName
                                 ? "bg-slate-100 ring-2 ring-slate-600"
                                 : "hover:bg-slate-100"
@@ -321,6 +321,9 @@ export function IconSetViewer({
                               size="1.5rem"
                               className="text-slate-800"
                             />
+                            <div className="text-xs text-slate-600 mt-1">
+                              {iconName}
+                            </div>
                           </div>
                         ))
                       )
@@ -335,14 +338,18 @@ export function IconSetViewer({
                         </div>
                       </div>
                     ) : isLoading ? (
-                      Array.from({ length: 48 })
+                      Array.from({ length: 36 })
                         .fill(null)
                         .map((_, index) => (
                           <div
                             key={index}
-                            className="p-4 cursor-pointer rounded flex items-center justify-center transition-colors"
+                            className="h-20 flex-col cursor-pointer rounded flex items-center justify-center transition-colors border border-slate-200"
                           >
-                            <div className="h-12 w-12 bg-slate-200 animate-pulse rounded" />
+                            {/* Placeholder for loading state */}
+                            <div className="h-[1.5rem] w-[1.5rem] bg-slate-200 animate-pulse rounded"></div>
+                            <div className="text-xs text-slate-600 mt-2 text-center  w-16">
+                              Loading...
+                            </div>
                           </div>
                         ))
                     ) : (
