@@ -3,7 +3,7 @@ export const collections = [
   { name: "Bootstrap Icons", value: "bi" },
   { name: "Boxicons", value: "bx" },
   { name: "Codicons", value: "codicon" },
-  { name: "Feather Icons", value: "fi" },
+  { name: "Feather Icons", value: "fe" },
   { name: "Font Awesome Solid", value: "fa6-solid" },
   { name: "Font Awesome Regular", value: "fa6-regular" },
   { name: "Heroicons", value: "heroicons" },
