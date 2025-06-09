@@ -44,6 +44,7 @@ const TabsBlock: FC<BlockProps<TabsSettingsType>> = ({
               <RenderIcon
                 iconSet={tab.icon?.iconSet}
                 iconName={tab.icon?.iconName}
+                size={24}
               ></RenderIcon>
               {tab.label?.[locale] || tab.label?.en}
             </div>

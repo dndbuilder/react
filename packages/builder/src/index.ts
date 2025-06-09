@@ -1,5 +1,7 @@
 import "./index.css";
 
+import "iconify-icon";
+
 export * from "./types";
 
 export * from "./components/editor";

@@ -125,8 +125,6 @@ const CanvasArea: FC = () => {
                 content={content}
                 themeSettings={themeSettings}
               />
-
-              <script src="/scripts/drawer.js" defer />
             </FrameContextManager>
           </ClientOnlyRenderFrame>
         </div>

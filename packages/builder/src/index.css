@@ -16,4 +16,37 @@
   ::file-selector-button {
     border-color: var(--color-slate-200, currentcolor);
   }
+
+  body {
+    @apply bg-white text-slate-800;
+  }
+}
+
+.control-media-area {
+  --e-a-border-color-bold: #d5d8dc;
+  --e-a-bg-default: #fff;
+  --e-a-border-bold: 1px solid var(--e-a-border-color-bold);
+  background-image:
+    linear-gradient(
+      45deg,
+      var(--e-a-border-color-bold) 25%,
+      transparent 0,
+      transparent 75%,
+      var(--e-a-border-color-bold) 0,
+      var(--e-a-border-color-bold)
+    ),
+    linear-gradient(
+      45deg,
+      var(--e-a-border-color-bold) 25%,
+      transparent 0,
+      transparent 75%,
+      var(--e-a-border-color-bold) 0,
+      var(--e-a-border-color-bold)
+    );
+  background-size: 16px 16px;
+  background-position:
+    0 0,
+    calc(16px / 2) calc(16px / 2);
+  background-color: var(--e-a-bg-default);
+  border: var(--e-a-border-bold);
 }
