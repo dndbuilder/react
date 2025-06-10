@@ -46,7 +46,7 @@ export const LinkControl: FC<LinkControlProps> = ({
         />
         <button
           onClick={() => setShowSettings((prevState) => !prevState)}
-          className="rounded-r-md border border-l-0 border-slate-300 bg-slate-100 px-2 hover:bg-slate-200"
+          className="rounded-r-md border border-l-0 border-slate-300 bg-slate-100 px-2 hover:bg-slate-300"
         >
           <CiSettings />
         </button>

@@ -9,7 +9,7 @@ import { SpacingControl } from "@/components/controls/spacing.control";
 import { ToggleGroupControl } from "@/components/controls/toggle-group.control";
 import { TypographyControl } from "@/components/controls/typography.control";
 import { Accordion } from "@/components/shared/accordion";
-import { Separator } from "@/components/shared/seperator";
+import { Separator } from "@/components/shared/separator";
 import { Tabs } from "@/components/shared/tabs";
 import { SettingsType } from "@/types";
 import { PseudoClass, Unit } from "@/types/style";

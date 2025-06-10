@@ -28,7 +28,7 @@ export * from "./shared/rating";
 export * from "./shared/render-icon";
 export * from "./shared/scroll-area";
 export * from "./shared/select";
-export * from "./shared/seperator";
+export * from "./shared/separator";
 export * from "./shared/spinner";
 export * from "./shared/switch";
 export * from "./shared/tabs";

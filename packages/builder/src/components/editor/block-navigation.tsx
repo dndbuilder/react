@@ -33,9 +33,12 @@ const BlockNavigation = () => {
   return (
     <div>
       <div className="h-14 w-full bg-white px-4 mt-4">
-        <div className="flex items-center border focus-within:border-indigo-500 rounded-sm overflow-hidden focus-within:ring-1 focus-within:ring-indigo-500">
+        <div className="group flex items-center  rounded-sm overflow-hidden  ring-1 ring-slate-300 focus-within:ring-2 focus-within:ring-slate-600">
           <div className="ms-2.5 flex w-7 items-center justify-center">
-            <BiSearch className=" text-slate-500" size={18} />
+            <BiSearch
+              className=" text-slate-500 group-focus-within:text-slate-700"
+              size={18}
+            />
           </div>
           <input
             value={search}
@@ -43,7 +46,7 @@ const BlockNavigation = () => {
               setSearch(e.target.value);
             }}
             type="text"
-            className="w-full border-0 px-1 py-2 rounded-sm focus:ring-0 focus:outline-hidden placeholder:text-sm text-sm"
+            className="w-full border-0 px-1 py-2 rounded-sm focus:ring-0 focus:outline-hidden placeholder:text-sm text-sm placeholder:text-slate-500"
             placeholder="Search..."
           />
         </div>
@@ -74,7 +77,7 @@ const BlockNavigation = () => {
                     {group}
                   </Accordion.Trigger>
                   <Accordion.Content className="px-4">
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-2 gap-3 py-2">
                       {availableGroups[group].map((block) => {
                         return (
                           <BlockNavigationItem block={block} key={block.type} />

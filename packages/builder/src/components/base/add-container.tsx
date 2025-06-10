@@ -133,7 +133,7 @@ const AddContainer: FC<AddContainerProps> = ({
                     {layout.size.map((item, index) => (
                       <div
                         style={{ width: `${item}%` }}
-                        className={`flex h-[45px] cursor-pointer items-center justify-center rounded-[2px] bg-slate-200 text-white transition-colors duration-300 group-hover:bg-indigo-500`}
+                        className={`flex h-[45px] cursor-pointer items-center justify-center rounded-[2px] bg-slate-300 text-white transition-colors duration-300 group-hover:bg-indigo-500`}
                         key={index}
                       >
                         {layout.content}

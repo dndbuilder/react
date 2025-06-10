@@ -31,7 +31,7 @@ const TabsToolbar: FC<BlockToolbarProps> = memo(
     return (
       <div
         className={classNames(
-          "flex items-center gap-3 bg-indigo-500 px-2 py-1 text-slate-200 rounded-sm"
+          "flex items-center gap-3 bg-indigo-500 px-2 py-1 text-slate-300 rounded-sm"
         )}
       >
         <div

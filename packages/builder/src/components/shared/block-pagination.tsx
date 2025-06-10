@@ -52,7 +52,7 @@ export const BlockPagination = ({
     >
       <button
         className={classNames(
-          "reset flex h-8 items-center justify-center rounded-sm border border-slate-200 px-4 text-slate-800",
+          "reset flex h-8 items-center justify-center rounded-sm border border-slate-300 px-4 text-slate-800",
           !hasPreviousPage
             ? "cursor-not-allowed text-slate-400 hover:bg-transparent"
             : "hover:border-primary-500 hover:bg-primary-50 hover:text-primary-500"
@@ -90,7 +90,7 @@ export const BlockPagination = ({
       })}
       <button
         className={classNames(
-          "reset flex h-8 items-center justify-center rounded-sm border border-slate-200 px-4 text-slate-800",
+          "reset flex h-8 items-center justify-center rounded-sm border border-slate-300 px-4 text-slate-800",
           !hasNextPage
             ? "cursor-not-allowed text-slate-400 hover:bg-transparent"
             : "hover:border-primary-500 hover:bg-primary-50 hover:text-primary-500"
@@ -105,4 +105,3 @@ export const BlockPagination = ({
     </div>
   );
 };
-

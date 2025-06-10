@@ -1,15 +1,14 @@
-import * as ToggleGroup from "@radix-ui/react-toggle-group";
-import { Tooltip } from "@/components/shared/tooltip";
-import { classNames } from "@/utils";
-import { HTMLAttributes, ReactNode, forwardRef } from "react";
-import { PseudoClass } from "@/types/style";
-import { useAppSelector } from "@/hooks/use-app-selector";
-import { getCurrentBreakpoint } from "@/store/selectors";
-import { VariantProps, cva } from "class-variance-authority";
 import { Label } from "@/components/shared/label";
-import { BreakpointSelector } from "../shared/breakpoint-selector";
-import { SettingsType } from "@/types";
+import { Tooltip } from "@/components/shared/tooltip";
+import { useAppSelector } from "@/hooks/use-app-selector";
 import { useSettings } from "@/hooks/use-settings";
+import { getCurrentBreakpoint } from "@/store/selectors";
+import { SettingsType } from "@/types";
+import { classNames } from "@/utils";
+import * as ToggleGroup from "@radix-ui/react-toggle-group";
+import { VariantProps, cva } from "class-variance-authority";
+import { HTMLAttributes, ReactNode, forwardRef } from "react";
+import { BreakpointSelector } from "../shared/breakpoint-selector";
 
 const controlVariants = cva("", {
   variants: {

@@ -3,7 +3,7 @@ import { SliderInputControl } from "@/components/controls/slider-input.control";
 import { SpacingControl } from "@/components/controls/spacing.control";
 import { TypographyControl } from "@/components/controls/typography.control";
 import { Accordion } from "@/components/shared/accordion";
-import { Separator } from "@/components/shared/seperator";
+import { Separator } from "@/components/shared/separator";
 import { Tabs } from "@/components/shared/tabs";
 import { SettingsType } from "@/types";
 import { PseudoClass } from "@/types/style";
