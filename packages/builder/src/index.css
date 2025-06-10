@@ -18,7 +18,7 @@
   }
 
   body {
-    @apply bg-white text-slate-800;
+    @apply bg-white text-slate-800 text-sm;
   }
 
   /* Reset dialog default styles */
@@ -149,6 +149,26 @@
     }
   }
   --backdrop-fade-out: backdrop-fade-out 0.3s ease-in;
+
+  @keyframes accordion-up {
+    from: {
+      height: var(--radix-accordion-content-height);
+    }
+    to: {
+      height: 0;
+    }
+  }
+  --animate-accordion-up: accordion-up 0.3s ease-in-out;
+
+  @keyframes accordion-down {
+    from: {
+      height: 0;
+    }
+    to: {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  --animate-accordion-down: accordion-down 0.3s ease-in-out;
 }
 
 @layer components {

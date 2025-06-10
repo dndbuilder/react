@@ -23,25 +23,23 @@ const DrawerBlock: FC<BlockProps<DrawerSettingsType>> = ({
   };
 
   // Determine the direction of the drawer
-  const direction = settings.direction?.desktop || "left";
+  const direction = settings.content?.direction?.desktop || "left";
 
   return (
     <Drawer open={open} onOpenChange={handleOpenChange}>
-      <Drawer.Trigger asChild>
-        <div className="cursor-pointer">
-          {settings.trigger?.desktop === "icon" ? (
-            <RenderIcon
-              iconSet={settings.icon?.iconSet}
-              iconName={settings.icon?.iconName}
-              size={settings.icon?.size?.desktop}
-              color={settings.icon?.color?.default}
-            />
-          ) : (
-            <div>
-              {settings.text?.value?.[locale] || settings.text?.value?.en}
-            </div>
-          )}
-        </div>
+      <Drawer.Trigger className="reset flex items-center gap-2">
+        {settings.trigger?.icon && (
+          <RenderIcon
+            iconSet={settings.trigger.icon.iconSet}
+            iconName={settings.trigger.icon.iconName}
+            color={settings.trigger.icon.color?.default}
+            className="drawer-trigger-icon"
+          />
+        )}
+        <span className="drawer-trigger-text">
+          {settings.trigger?.text?.content?.[locale] ||
+            settings.trigger?.text?.content?.en}
+        </span>
       </Drawer.Trigger>
       <Drawer.Content direction={direction}>
         <EditorRenderChildren

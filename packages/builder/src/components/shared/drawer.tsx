@@ -1,7 +1,7 @@
 "use client";
 
 import { classNames } from "@/utils";
-import { Slot } from "@radix-ui/react-slot";
+import { Root as SlotRoot } from "@radix-ui/react-slot";
 import React, {
   createContext,
   ReactNode,
@@ -97,11 +97,11 @@ Drawer.Trigger = function DrawerTrigger({
   const ctx = useContext(DrawerContext);
   if (!ctx) throw new Error("Drawer.Trigger must be used within Drawer");
 
-  const Comp = asChild ? Slot : "button";
+  const Comp = asChild ? SlotRoot : "button";
 
   return (
     <Comp
-      className={classNames("drawer-trigger")}
+      className={classNames("drawer-trigger", className)}
       onClick={ctx.open}
       {...props}
     >
@@ -202,7 +202,7 @@ Drawer.Content = function DrawerContent({
     <dialog
       ref={ctx.dialogRef}
       onKeyDown={handleKeyDown}
-      className={"drawer w-full h-full bg-transparent fixed inset-0 z-50"}
+      className={"w-full h-full bg-transparent fixed inset-0 z-50"}
     >
       <div
         className={classNames(
