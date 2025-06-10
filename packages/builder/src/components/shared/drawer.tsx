@@ -103,6 +103,7 @@ Drawer.Trigger = function DrawerTrigger({
     <Comp
       className={classNames("drawer-trigger", className)}
       onClick={ctx.open}
+      {...(Comp === "button" ? { type: "button" } : {})}
       {...props}
     >
       {children}
