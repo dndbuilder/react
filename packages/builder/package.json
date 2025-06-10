@@ -115,6 +115,7 @@
     "redux-undo": "^1.1.0",
     "sanitize-html": "^2.17.0",
     "slick-carousel": "^1.8.1",
+    "vaul": "^1.1.2",
     "webfontloader": "^1.6.28"
   }
 }

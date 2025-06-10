@@ -35,79 +35,79 @@ const BlockToolbar: FC<Props> = memo(
         <EditorContextMenu blockId={blockId}>
           <Popover.Trigger asChild>{children}</Popover.Trigger>
         </EditorContextMenu>
-        <Popover.Portal>
-          <Popover.Content
-            sideOffset={4}
-            side={"top"}
-            align="start"
-            alignOffset={-1}
-            className="p-0 max-w-fit outline-hidden"
-            collisionPadding={{ top: 100 }}
-            hideWhenDetached
-            avoidCollisions
-          >
-            {blockConfig.toolbar ? (
-              <>
-                <Suspense fallback={null}>
-                  <blockConfig.toolbar
-                    blockType={blockType}
-                    blockId={blockId}
-                    isSelected={isSelected}
-                    dragRef={dragRef}
-                    previewRef={previewRef}
-                  />
-                </Suspense>
-              </>
-            ) : (
-              <>
-                {blockConfig.previewImage && (
-                  <DragPreviewImage
-                    connect={previewRef}
-                    src={blockConfig.previewImage}
-                  />
-                )}
+        {/* <Popover.Portal> */}
+        <Popover.Content
+          sideOffset={4}
+          side={"top"}
+          align="start"
+          alignOffset={-1}
+          className="p-0 max-w-fit outline-hidden"
+          collisionPadding={{ top: 100 }}
+          hideWhenDetached
+          avoidCollisions
+        >
+          {blockConfig.toolbar ? (
+            <>
+              <Suspense fallback={null}>
+                <blockConfig.toolbar
+                  blockType={blockType}
+                  blockId={blockId}
+                  isSelected={isSelected}
+                  dragRef={dragRef}
+                  previewRef={previewRef}
+                />
+              </Suspense>
+            </>
+          ) : (
+            <>
+              {blockConfig.previewImage && (
+                <DragPreviewImage
+                  connect={previewRef}
+                  src={blockConfig.previewImage}
+                />
+              )}
 
+              <div
+                className={classNames(
+                  "flex items-center bg-indigo-500 px-1 text-slate-200 rounded-sm"
+                )}
+              >
+                {/* Toolbar Controls */}
                 <div
+                  role="button"
                   className={classNames(
-                    "flex items-center bg-indigo-500 px-1 text-slate-200 rounded-sm"
+                    "flex cursor-grab! items-center gap-1 text-slate-100 hover:bg-transparent py-1 px-1 hover:text-white"
                   )}
+                  // @ts-ignore-disable-next-line
+                  ref={dragRef} // TODO: Fix this
                 >
-                  {/* Toolbar Controls */}
-                  <div
-                    role="button"
-                    className={classNames(
-                      "flex cursor-grab! items-center gap-1 text-slate-100 hover:bg-transparent py-1 px-1 hover:text-white"
-                    )}
-                    // @ts-ignore-disable-next-line
-                    ref={dragRef} // TODO: Fix this
-                  >
-                    <FiMove className="rotate-90" />
-                    <span className="text-xs">{blockConfig.label}</span>
-                  </div>
-                  {/* Duplicate */}
-                  <div
-                    role="button"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      console.log("Duplicate block", blockId);
-                    }}
-                    className="rounded-tr text-slate-100 hover:bg-transparent py-1 hover:text-white mx-1"
-                  >
-                    <IoDuplicateOutline size={16} />
-                  </div>
-                  {/* Remove */}
-                  <div
-                    role="button"
-                    onClick={remove}
-                    className="rounded-tr text-slate-100 hover:bg-transparent py-1 hover:text-white mx-1"
-                  >
-                    <FiTrash2 size={16} />
-                  </div>
+                  <FiMove className="rotate-90" />
+                  <span className="text-xs">{blockConfig.label}</span>
                 </div>
-              </>
-            )}
-          </Popover.Content>
-        </Popover.Portal>
+                {/* Duplicate */}
+                <div
+                  role="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    console.log("Duplicate block", blockId);
+                  }}
+                  className="rounded-tr text-slate-100 hover:bg-transparent py-1 hover:text-white mx-1"
+                >
+                  <IoDuplicateOutline size={16} />
+                </div>
+                {/* Remove */}
+                <div
+                  role="button"
+                  onClick={remove}
+                  className="rounded-tr text-slate-100 hover:bg-transparent py-1 hover:text-white mx-1"
+                >
+                  <FiTrash2 size={16} />
+                </div>
+              </div>
+            </>
+          )}
+        </Popover.Content>
+        {/* </Popover.Portal> */}
       </Popover.Root>
     );
   }

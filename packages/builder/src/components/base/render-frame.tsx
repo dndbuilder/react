@@ -42,7 +42,7 @@ const RenderFrame: FC<RenderFrameProps> = ({
 /**
  * Client-side only wrapper for RenderFrame to prevent hydration mismatches
  * in server-side rendering environments like Next.js.
- * 
+ *
  * This component uses the useEffect hook to initialize browser-specific code
  * only on the client side, and ensures the initial server render matches
  * what will be rendered on the client before any effects run.

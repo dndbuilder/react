@@ -1,83 +1,97 @@
-# Turborepo starter with Rollup
+# Page Builder
 
-This is a community-maintained example. If you experience a problem, please submit a pull request with a fix. GitHub Issues will be closed.
+A modern, extensible drag-and-drop page builder for React, built as a monorepo using pnpm workspaces and Turborepo.
 
-## Using this example
+## Project Structure
 
-Run the following command:
+- **apps/web**: Next.js application that uses the page builder
+- **packages/builder**: The main drag-and-drop page builder library
+- **packages/config-eslint**: Shared ESLint configurations
+- **packages/config-typescript**: Shared TypeScript configurations
 
-```sh
-npx create-turbo@latest -e with-rollup
+## Features
+
+- Drag-and-drop editor for building pages visually
+- Customizable blocks (Button, Container, Drawer, Heading, Icon, Image, Link, Tabs, Text, etc.)
+- Responsive design with configurable breakpoints
+- Built with React, TypeScript, Tailwind CSS, and Vite
+- State management with Redux Toolkit
+- Extensible via custom blocks and configuration
+- Monorepo structure for scalable development
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (latest LTS recommended)
+- pnpm v9.1.1 or later
+
+### Setup
+
+1. Install dependencies:
+   ```bash
+   pnpm install
+   ```
+2. Build all packages:
+   ```bash
+   pnpm build
+   ```
+3. Start the development server:
+   ```bash
+   pnpm dev
+   ```
+
+### Package-specific Commands
+
+#### Builder Package
+
+```bash
+cd packages/builder
+pnpm build
 ```
 
-## What's inside?
+#### Web Application
 
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `web`: a [Next.js](https://nextjs.org) app
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-- `@repo/builder`: a React component library used by the `web` application, compiled with Rollup
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm run build
+```bash
+cd apps/web
+pnpm build
+pnpm start
 ```
 
-### Develop
+## Testing
 
-To develop all apps and packages, run the following command:
+- Uses Jest and React Testing Library
+- To run tests for a package:
+  ```bash
+  cd packages/builder
+  pnpm test
+  ```
 
-```
-cd my-turborepo
-pnpm run dev
-```
+## Code Style & Development
 
-### Remote Caching
+- TypeScript with strict type checking
+- ESLint for linting
+- Tailwind CSS for styling
+- Follow feature-branch workflow and ensure all tests pass before merging
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+## Troubleshooting
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.org/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+- **Build Failures**: Clean cache with `rm -rf .turbo` and rebuild
+- **Dependency Issues**: Remove `node_modules` and reinstall with `pnpm install`
+- **TypeScript Errors**: Ensure code follows the shared TypeScript config
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+## License
 
-```
-cd my-turborepo
-npx turbo login
-```
+MIT
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+## TODO
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Pipelines](https://turborepo.org/docs/core-concepts/pipelines)
-- [Caching](https://turborepo.org/docs/core-concepts/caching)
-- [Remote Caching](https://turborepo.org/docs/core-concepts/remote-caching)
-- [Scoped Tasks](https://turborepo.org/docs/core-concepts/scopes)
-- [Configuration Options](https://turborepo.org/docs/reference/configuration)
-- [CLI Usage](https://turborepo.org/docs/reference/command-line-reference)
+- [ ] Refactor `.reset` class to reset global styles
+- [ ] Add more pre-built blocks/components
+- [ ] Improve documentation and usage examples
+- [ ] Add support for block-level theming
+- [ ] Enhance accessibility (a11y) features
+- [ ] Add export/import functionality for page data
+- [ ] Add integration tests for the builder UI
+- [ ] Enable collaborative editing
+- [ ] Add plugin system for third-party extensions

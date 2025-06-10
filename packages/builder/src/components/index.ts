@@ -9,6 +9,7 @@ export * from "./shared/checkbox";
 export * from "./shared/color-picker";
 export * from "./shared/context-menu";
 export * from "./shared/dialog";
+export * from "./shared/drawer";
 export * from "./shared/editor-context-menu";
 export * from "./shared/error-fallback";
 export * from "./shared/hover-card";
