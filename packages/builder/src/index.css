@@ -20,33 +20,165 @@
   body {
     @apply bg-white text-slate-800;
   }
+
+  /* Reset dialog default styles */
+  dialog {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    max-width: none;
+    max-height: none;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Hide default backdrop since we're using custom */
+  dialog::backdrop {
+    display: none;
+  }
+
+  /* Ensure dialog opens with animation */
+  dialog[open] {
+    display: block;
+  }
 }
 
-.control-media-area {
-  --e-a-border-color-bold: #d5d8dc;
-  --e-a-bg-default: #fff;
-  --e-a-border-bold: 1px solid var(--e-a-border-color-bold);
-  background-image:
-    linear-gradient(
-      45deg,
-      var(--e-a-border-color-bold) 25%,
-      transparent 0,
-      transparent 75%,
-      var(--e-a-border-color-bold) 0,
-      var(--e-a-border-color-bold)
-    ),
-    linear-gradient(
-      45deg,
-      var(--e-a-border-color-bold) 25%,
-      transparent 0,
-      transparent 75%,
-      var(--e-a-border-color-bold) 0,
-      var(--e-a-border-color-bold)
-    );
-  background-size: 16px 16px;
-  background-position:
-    0 0,
-    calc(16px / 2) calc(16px / 2);
-  background-color: var(--e-a-bg-default);
-  border: var(--e-a-border-bold);
+@theme {
+  @keyframes slide-in-left {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  --animate-slide-in-left: slide-in-left 0.3s ease-out;
+
+  @keyframes slide-out-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  --animate-slide-out-left: slide-out-left 0.3s ease-in;
+
+  @keyframes slide-in-right {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  --animate-slide-in-right: slide-in-right 0.3s ease-out;
+
+  @keyframes slide-out-right {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+  --animate-slide-out-right: slide-out-right 0.3s ease-in;
+
+  @keyframes slide-in-top {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  --animate-slide-in-top: slide-in-top 0.3s ease-out;
+
+  @keyframes slide-out-top {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+  --animate-slide-out-top: slide-out-top 0.3s ease-in;
+
+  @keyframes slide-in-bottom {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  --animate-slide-in-bottom: slide-in-bottom 0.3s ease-out;
+
+  @keyframes slide-out-bottom {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(100%);
+    }
+  }
+  --animate-slide-out-bottom: slide-out-bottom 0.3s ease-in;
+
+  @keyframes backdrop-fade-in {
+    from {
+      background-color: rgba(0, 0, 0, 0);
+      backdrop-filter: blur(0px);
+    }
+    to {
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+    }
+  }
+  --backdrop-fade-in: backdrop-fade-in 0.3s ease-out;
+
+  @keyframes backdrop-fade-out {
+    from {
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+    }
+    to {
+      background-color: rgba(0, 0, 0, 0);
+      backdrop-filter: blur(0px);
+    }
+  }
+  --backdrop-fade-out: backdrop-fade-out 0.3s ease-in;
+}
+
+@layer components {
+  /* Custom styles for the control media area */
+  .control-media-area {
+    --e-a-border-color-bold: #d5d8dc;
+    --e-a-bg-default: #fff;
+    --e-a-border-bold: 1px solid var(--e-a-border-color-bold);
+    background-image:
+      linear-gradient(
+        45deg,
+        var(--e-a-border-color-bold) 25%,
+        transparent 0,
+        transparent 75%,
+        var(--e-a-border-color-bold) 0,
+        var(--e-a-border-color-bold)
+      ),
+      linear-gradient(
+        45deg,
+        var(--e-a-border-color-bold) 25%,
+        transparent 0,
+        transparent 75%,
+        var(--e-a-border-color-bold) 0,
+        var(--e-a-border-color-bold)
+      );
+    background-size: 16px 16px;
+    background-position:
+      0 0,
+      calc(16px / 2) calc(16px / 2);
+    background-color: var(--e-a-bg-default);
+    border: var(--e-a-border-bold);
+  }
 }
