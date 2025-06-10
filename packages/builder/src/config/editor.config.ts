@@ -3,6 +3,7 @@ import { ButtonConfig } from "@/blocks/button";
 import { ContainerConfig } from "@/blocks/container";
 import { DrawerConfig } from "@/blocks/drawer";
 import { DropdownConfig } from "@/blocks/dropdown";
+import { FaqConfig } from "@/blocks/faq";
 import { HeadingConfig } from "@/blocks/heading";
 import { HtmlConfig } from "@/blocks/html";
 import { IconConfig } from "@/blocks/icon";
@@ -29,4 +30,5 @@ export const BlockConfiguration = registerEditorBlocks([
   HtmlConfig,
   BannerConfig,
   SliderConfig,
+  FaqConfig,
 ]);
