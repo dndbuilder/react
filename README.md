@@ -87,7 +87,7 @@ MIT
 ## TODO
 
 - [ ] Refactor `.reset` class to reset global styles
-- [ ] Add more pre-built blocks/components
+- [ ] Refactor `slider-block` to use `Swiper React` component
 - [ ] Improve documentation and usage examples
 - [ ] Add support for block-level theming
 - [ ] Enhance accessibility (a11y) features
