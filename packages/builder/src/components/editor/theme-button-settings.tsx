@@ -13,7 +13,7 @@ import ThemeButtonPresets from "./theme-button-presets";
 import { SelectControl } from "@/components/controls/select.control";
 import { useSettings } from "@/hooks/use-settings";
 import { SpacingControl } from "@/components/controls/spacing.control";
-import { Separator } from "@/components/shared/seperator";
+import { Separator } from "@/components/shared/separator";
 
 type Props = {
   setCurrentSetting: React.Dispatch<React.SetStateAction<ThemeSettingsType>>;

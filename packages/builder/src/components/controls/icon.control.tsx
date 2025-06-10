@@ -143,7 +143,7 @@ export const IconControl: FC<IconControlProps> = ({
                 {/* Footer */}
                 <div
                   className={
-                    " border-t border-slate-200 flex justify-end gap-2 p-4"
+                    " border-t border-slate-300 flex justify-end gap-2 p-4"
                   }
                 >
                   <Button onClick={() => setOpen(false)} variant={"secondary"}>
@@ -308,7 +308,7 @@ export function IconSetViewer({
                           <div
                             key={iconName}
                             className={classNames(
-                              "p-4 cursor-pointer rounded text-center transition-colors border border-slate-200",
+                              "p-4 cursor-pointer rounded text-center transition-colors border border-slate-300",
                               selectedIcon === iconName
                                 ? "bg-slate-100 ring-2 ring-slate-600"
                                 : "hover:bg-slate-100"
@@ -343,10 +343,10 @@ export function IconSetViewer({
                         .map((_, index) => (
                           <div
                             key={index}
-                            className="h-20 flex-col cursor-pointer rounded flex items-center justify-center transition-colors border border-slate-200"
+                            className="h-20 flex-col cursor-pointer rounded flex items-center justify-center transition-colors border border-slate-300"
                           >
                             {/* Placeholder for loading state */}
-                            <div className="h-[1.5rem] w-[1.5rem] bg-slate-200 animate-pulse rounded"></div>
+                            <div className="h-[1.5rem] w-[1.5rem] bg-slate-300 animate-pulse rounded"></div>
                             <div className="text-xs text-slate-600 mt-2 text-center  w-16">
                               Loading...
                             </div>

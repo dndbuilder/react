@@ -1,5 +1,5 @@
 import { Accordion } from "@/components/shared/accordion";
-import { Separator } from "@/components/shared/seperator";
+import { Separator } from "@/components/shared/separator";
 
 import { LinkControl } from "@/components/controls/link.control";
 import { SelectControl } from "@/components/controls/select.control";

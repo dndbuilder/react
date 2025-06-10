@@ -14,7 +14,7 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-slate-200, currentcolor);
+    border-color: var(--color-slate-300, currentcolor);
   }
 
   body {
@@ -151,20 +151,20 @@
   --backdrop-fade-out: backdrop-fade-out 0.3s ease-in;
 
   @keyframes accordion-up {
-    from: {
+    from {
       height: var(--radix-accordion-content-height);
     }
-    to: {
+    to {
       height: 0;
     }
   }
   --animate-accordion-up: accordion-up 0.3s ease-in-out;
 
   @keyframes accordion-down {
-    from: {
+    from {
       height: 0;
     }
-    to: {
+    to {
       height: var(--radix-accordion-content-height);
     }
   }

@@ -4,7 +4,7 @@ import { SliderUnitControl } from "@/components/controls/slider-unit.control";
 import { ToggleGroupControl } from "@/components/controls/toggle-group.control";
 import { Accordion } from "@/components/shared/accordion";
 import { InfoMessage } from "@/components/shared/info-message";
-import { Separator } from "@/components/shared/seperator";
+import { Separator } from "@/components/shared/separator";
 import { useAppSelector } from "@/hooks/use-app-selector";
 import { useSettings } from "@/hooks/use-settings";
 import { getCurrentBreakpoint } from "@/store/selectors";

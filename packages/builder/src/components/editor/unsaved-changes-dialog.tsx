@@ -26,7 +26,7 @@ const UnsaveChangesDialog: FC<UnsaveChangesDialogProps> = ({
           <div className="flex justify-center gap-2 mt-4">
             <button
               onClick={onCancel}
-              className="text-slate-800 bg-slate-100 hover:bg-slate-200 transition-colors duration-150 px-4 py-2 rounded-sm"
+              className="text-slate-800 bg-slate-100 hover:bg-slate-300 transition-colors duration-150 px-4 py-2 rounded-sm"
             >
               No, cancel
             </button>

@@ -10,7 +10,7 @@ export const Spinner: FC<SpinnerProps> = ({ className, ...rest }) => {
     <svg
       aria-hidden="true"
       className={classNames(
-        "h-6 w-6 animate-spin fill-indigo-600 text-slate-200",
+        "h-6 w-6 animate-spin fill-indigo-600 text-slate-300",
         className
       )}
       viewBox="0 0 100 101"

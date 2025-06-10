@@ -1,7 +1,7 @@
 import { Accordion } from "@/components/shared/accordion";
 import { InfoMessage } from "@/components/shared/info-message";
 import { Label } from "@/components/shared/label";
-import { Separator } from "@/components/shared/seperator";
+import { Separator } from "@/components/shared/separator";
 import { Tabs } from "@/components/shared/tabs";
 import { SettingsType } from "@/types";
 import { PseudoClass, Unit } from "@/types/style";
@@ -11,7 +11,7 @@ import {
   MdOutlineAlignHorizontalCenter,
 } from "react-icons/md";
 import { BackgroundControl } from "./background.control";
-import {BorderControl} from "./border.control";
+import { BorderControl } from "./border.control";
 import { BoxShadowControl } from "./box-shadow.control";
 import { CustomAttributeControl } from "./custom-attributes.control";
 import { CustomCSSControl } from "./custom-css.control";

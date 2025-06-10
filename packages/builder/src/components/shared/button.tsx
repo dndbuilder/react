@@ -14,7 +14,7 @@ const buttonVariants = cva(
         outline:
           "border border-input hover:border-slate-400 focus:border-slate-600 text-slate-800",
         secondary:
-          "bg-slate-100 text-slate-800 hover:bg-slate-200 focus:bg-slate-300",
+          "bg-slate-100 text-slate-800 hover:bg-slate-300 focus:bg-slate-300",
         link: "text-indigo-500 underline-offset-4 hover:underline",
       },
       size: {

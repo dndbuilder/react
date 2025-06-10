@@ -16,7 +16,7 @@ const TabsList = React.forwardRef<
   <TabsPrimitive.List
     ref={ref}
     className={classNames(
-      "inline-flex h-10 items-center justify-center rounded-sm bg-slate-200 p-1 text-slate-600",
+      "inline-flex h-10 items-center justify-center rounded-sm bg-slate-300 p-1 text-slate-600",
       className
     )}
     {...props}
@@ -57,4 +57,3 @@ TabsContent.displayName = TabsPrimitive.Content.displayName;
 Tabs.List = TabsList;
 Tabs.Trigger = TabsTrigger;
 Tabs.Content = TabsContent;
-

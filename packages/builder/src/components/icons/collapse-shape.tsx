@@ -13,7 +13,7 @@ const CollapseShape: FC<CollapseShapeProps> = () => {
         setIsLeftPanelOpen(!isLeftPanelOpen);
       }}
       className={classNames(
-        "absolute right-[-20px] top-[50%] z-[-1] flex h-[50px] w-[20px] translate-y-[-50%] cursor-pointer items-center justify-center rounded-r bg-[#F1F1F4] shadow-[rgba(0,0,0,15%)_1px_0px_2px] hover:bg-slate-200"
+        "absolute right-[-20px] top-[50%] z-[-1] flex h-[50px] w-[20px] translate-y-[-50%] cursor-pointer items-center justify-center rounded-r bg-[#F1F1F4] shadow-[rgba(0,0,0,15%)_1px_0px_2px] hover:bg-slate-300"
       )}
     >
       <VscTriangleLeft

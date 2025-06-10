@@ -16,7 +16,7 @@ export const Separator = React.forwardRef<
       decorative={decorative}
       orientation={orientation}
       className={classNames(
-        "shrink-0 bg-slate-200",
+        "shrink-0 bg-slate-300",
         orientation === "horizontal" ? "h-px w-full" : "h-full w-px",
         className
       )}
@@ -25,4 +25,3 @@ export const Separator = React.forwardRef<
   )
 );
 Separator.displayName = SeparatorPrimitive.Root.displayName;
-

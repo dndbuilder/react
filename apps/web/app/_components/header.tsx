@@ -23,7 +23,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="h-[60px] w-full bg-slate-800 flex items-center justify-between px-4">
+    <header className="h-[60px] w-full bg-slate-900 flex items-center justify-between px-4">
       <div className="text-white font-bold text-xl">
         {/* Placeholder logo */}
         <span className="flex items-center">

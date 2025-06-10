@@ -190,7 +190,7 @@ export const MediaControl: FC<MediaProps> = ({
 
       <Dialog.Root open={open} onOpenChange={setOpen}>
         <Dialog.Trigger asChild>
-          <div className="group relative h-32 w-full cursor-pointer overflow-hidden bg-slate-200 transition duration-200 hover:bg-slate-400">
+          <div className="group relative h-32 w-full cursor-pointer overflow-hidden bg-slate-300 transition duration-200 hover:bg-slate-400">
             {value?.url && (
               <img
                 src={value.url}
