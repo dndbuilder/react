@@ -14,6 +14,7 @@ import { Accept, useDropzone } from "react-dropzone";
 import { BsTrash, BsUpload } from "react-icons/bs";
 import { FiX } from "react-icons/fi";
 import { HiPlusCircle } from "react-icons/hi";
+import { Button } from "../shared/button";
 
 export type MediaProps = {
   label?: string;
@@ -236,13 +237,13 @@ export const MediaControl: FC<MediaProps> = ({
               <Tabs.List className="flex border-b">
                 <Tabs.Trigger
                   value="url"
-                  className="px-4 py-2 border-b-2 border-transparent data-[state=active]:border-indigo-500 data-[state=active]:text-indigo-500 text-sm font-medium"
+                  className="px-4 py-2 border-b-2 border-transparent data-[state=active]:border-slate-500 data-[state=active]:font-semibold text-sm font-medium"
                 >
                   From URL
                 </Tabs.Trigger>
                 <Tabs.Trigger
                   value="local"
-                  className="px-4 py-2 border-b-2 border-transparent data-[state=active]:border-indigo-500 data-[state=active]:text-indigo-500 text-sm font-medium"
+                  className="px-4 py-2 border-b-2 border-transparent data-[state=active]:border-slate-500 data-[state=active]:font-semibold text-sm font-medium"
                 >
                   From Device
                 </Tabs.Trigger>
@@ -257,19 +258,19 @@ export const MediaControl: FC<MediaProps> = ({
                     value={urlInput}
                     onChange={handleUrlInputChange}
                     placeholder="https://example.com/image.jpg"
-                    className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm placeholder:text-sm"
+                    className="w-full px-3 py-2 ring-1 rounded focus:outline-none focus:ring-2 focus:ring-slate-600 text-sm placeholder:text-sm"
                   />
                 </div>
 
                 {error && <p className="text-danger-500 text-sm">{error}</p>}
 
-                <button
+                <Button
                   onClick={handleUrlSubmit}
                   disabled={isLoading}
-                  className="px-4 py-2 bg-indigo-500 text-white rounded hover:bg-indigo-600 disabled:opacity-50 disabled:cursor-not-allowed text-sm transition-colors"
+                  className="w-full"
                 >
                   {isLoading ? "Loading..." : "Upload Image"}
-                </button>
+                </Button>
               </Tabs.Content>
 
               <Tabs.Content value="local" className="flex flex-col gap-4 p-4">
@@ -278,8 +279,8 @@ export const MediaControl: FC<MediaProps> = ({
                   className={classNames(
                     "border-2 border-dashed rounded p-8 text-center cursor-pointer transition-colors",
                     isDragActive
-                      ? "border-indigo-500 bg-indigo-50"
-                      : "border-slate-300 hover:border-indigo-500"
+                      ? "border-slate-600 bg-slate-50"
+                      : "border-slate-300 hover:border-slate-600"
                   )}
                 >
                   <input {...getInputProps()} />

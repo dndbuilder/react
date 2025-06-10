@@ -1,3 +1,4 @@
+import { BannerConfig } from "@/blocks/banner";
 import { ButtonConfig } from "@/blocks/button";
 import { ContainerConfig } from "@/blocks/container";
 import { DrawerConfig } from "@/blocks/drawer";
@@ -21,4 +22,7 @@ export const BlockConfiguration = registerEditorBlocks([
   TabsConfig,
   DrawerConfig,
   DropdownConfig,
+
+  // Advanced blocks
+  BannerConfig,
 ]);

@@ -12,7 +12,6 @@ const Button: FC<BlockProps<ButtonSettingsType>> = ({
     <div className="button-wrapper">
       {settings.link?.url ? (
         <a
-          onClick={(e) => e.preventDefault()}
           href={settings.link.url}
           target={settings.link.newWindow ? "_blank" : undefined}
           rel={settings.link.nofollow ? "nofollow" : undefined}

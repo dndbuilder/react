@@ -22,7 +22,6 @@ const LinkBlock: FC<BlockProps<LinkSettingsType>> = ({
         href={url ?? "#"}
         target={settings.link?.newWindow ? "_blank" : undefined}
         rel={settings.link?.nofollow ? "nofollow" : undefined}
-        onClick={(e) => e.preventDefault()}
       >
         {settings.text?.[locale] || settings.text?.en}
       </a>

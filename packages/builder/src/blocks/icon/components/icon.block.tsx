@@ -21,7 +21,6 @@ const Icon: FC<BlockProps<IconSettingsType>> = ({ settings }) => {
             href={settings.link.url}
             target={settings.link.newWindow ? "_blank" : undefined}
             rel={settings.link.nofollow ? "nofollow" : undefined}
-            onClick={(e) => e.preventDefault()}
           >
             {icon}
           </a>
