@@ -357,7 +357,6 @@ const ContainerLayoutControl = () => {
             label="Overflow"
             className="mt-0"
             options={[
-              { content: "Default", value: "" },
               { content: "Hidden", value: "hidden" },
               { content: "Auto", value: "auto" },
               { content: "Scroll", value: "scroll" },
@@ -371,7 +370,6 @@ const ContainerLayoutControl = () => {
             label="HTML Tag"
             type={SettingsType.BLOCK}
             options={[
-              { content: "Default", value: "" },
               { content: "div", value: "div" },
               { content: "header", value: "header" },
               { content: "footer", value: "footer" },

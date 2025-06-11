@@ -109,7 +109,6 @@ const ThemeButtonSettings: FC<Props> = ({ setCurrentSetting }) => {
               type={SettingsType.THEME}
               mode={PseudoClass.DEFAULT}
               options={[
-                { content: "Select", value: "select" },
                 { content: "None", value: "none" },
                 { content: "Solid", value: "solid" },
                 { content: "Double", value: "double" },

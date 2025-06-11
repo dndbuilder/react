@@ -48,6 +48,7 @@ export const enum BlockType {
   SOCIAL_LINKS = "social-links",
   COLLECTION_GRID = "collection-grid",
   TABS = "tabs",
+  PROGRESS_BAR = "progress-bar",
   PRICE_FILTER = "price-filter",
   RATING_FILTER = "rating-filter",
   AVAILABLITY_FILTER = "availablity-filter",

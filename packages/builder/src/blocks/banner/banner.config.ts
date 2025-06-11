@@ -1,22 +1,22 @@
-import { createBlockConfig } from "@/utils";
 import { BlockGroup, BlockType } from "@/types/block";
+import { TextAlignType, Unit } from "@/types/style";
+import { createBlockConfig } from "@/utils";
 import {
   generatePseudoStyle,
   generateResponsiveStyle,
   generateTypography,
   generateUnitValue,
 } from "@/utils/style";
-import { PiFlagBannerThin } from "react-icons/pi";
-import { BannerSettingsType } from "./types";
+import { lazy } from "react";
+import { PiRectangleDashed } from "react-icons/pi";
 import BannerContentControl from "./components/banner-content.control";
 import BannerStyleControl from "./components/banner-style.control";
-import { TextAlignType, Unit } from "@/types/style";
-import { lazy } from "react";
+import { BannerSettingsType } from "./types";
 
 const BannerConfig = createBlockConfig<BannerSettingsType>({
   type: BlockType.BANNER,
   label: "Banner",
-  icon: PiFlagBannerThin,
+  icon: PiRectangleDashed,
   component: lazy(() => import("./components/banner.block")),
   group: BlockGroup.ADVANCED,
   settings: {

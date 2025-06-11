@@ -13,7 +13,12 @@ export type BorderProps = {
   type: SettingsType;
 } & HTMLAttributes<HTMLDivElement>;
 
-export const BorderControl: FC<BorderProps> = ({ fieldName, mode, type, className }) => {
+export const BorderControl: FC<BorderProps> = ({
+  fieldName,
+  mode,
+  type,
+  className,
+}) => {
   const [borderType] = useSettings<string | undefined>(
     mode ? `${fieldName}.type.${mode}` : `${fieldName}.type`,
     type
@@ -25,7 +30,6 @@ export const BorderControl: FC<BorderProps> = ({ fieldName, mode, type, classNam
       <SelectControl
         type={type}
         options={[
-          { content: "Select", value: "select" },
           { content: "None", value: "none" },
           { content: "Solid", value: "solid" },
           { content: "Double", value: "double" },
