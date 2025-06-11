@@ -9,6 +9,7 @@ import { HtmlConfig } from "@/blocks/html";
 import { IconConfig } from "@/blocks/icon";
 import { ImageConfig } from "@/blocks/image";
 import { LinkConfig } from "@/blocks/link";
+import { ProgressBarConfig } from "@/blocks/progress-bar";
 import { SliderConfig } from "@/blocks/slider";
 import { TabsConfig } from "@/blocks/tabs";
 import { TestimonialConfig } from "@/blocks/testimonial";
@@ -33,4 +34,5 @@ export const BlockConfiguration = registerEditorBlocks([
   SliderConfig,
   FaqConfig,
   TestimonialConfig,
+  ProgressBarConfig,
 ]);

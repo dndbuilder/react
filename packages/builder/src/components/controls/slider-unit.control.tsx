@@ -136,7 +136,7 @@ export const SliderUnitControl: FC<SliderControlProps> = ({
                   )
                 }
                 value={innerValue?.value ?? ""}
-                className="remove-spinner bg-transparent w-[46px] rounded-sm border-0 p-0 pl-1.5 pt-[3px] text-[11px] leading-3 focus:ring-0"
+                className="remove-spinner bg-transparent w-[46px] rounded-sm border-0 p-0 pl-1.5 pt-[3px] text-[11px] outline-none shadow-none leading-3 focus:ring-0"
                 type="number"
                 min={minimum}
                 max={maximum}

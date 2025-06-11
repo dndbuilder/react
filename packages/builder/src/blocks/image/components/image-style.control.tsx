@@ -70,7 +70,6 @@ const ImageStyleControl = () => {
             label="Object Fit"
             responsive
             options={[
-              { content: "Default", value: "" },
               { content: "Fill", value: "fill" },
               { content: "Contain", value: "contain" },
               { content: "Cover", value: "cover" },

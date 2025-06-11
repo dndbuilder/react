@@ -95,7 +95,6 @@ export const BackgroundControl: FC<BackgroundProps> = ({
                 label="Position"
                 mode={mode}
                 options={[
-                  { content: "Default", value: "" },
                   { content: "Center Center", value: "center center" },
                   { content: "Center Left", value: "center left" },
                   { content: "Center Right", value: "center right" },
@@ -137,7 +136,6 @@ export const BackgroundControl: FC<BackgroundProps> = ({
                 fieldName={`${fieldName}.attachment`}
                 label="Attachment"
                 options={[
-                  { content: "Default", value: "" },
                   { content: "Fixed", value: "fixed" },
                   { content: "Scroll", value: "scroll" },
                 ]}
@@ -152,7 +150,6 @@ export const BackgroundControl: FC<BackgroundProps> = ({
                 mode={mode}
                 responsive
                 options={[
-                  { content: "Default", value: "" },
                   { content: "No Repeat", value: "no-repeat" },
                   { content: "Repeat", value: "repeat" },
                   { content: "Repeat X", value: "repeat-x" },
@@ -168,7 +165,6 @@ export const BackgroundControl: FC<BackgroundProps> = ({
                 fieldName={`${fieldName}.size`}
                 label="Size"
                 options={[
-                  { content: "Default", value: "" },
                   { content: "Auto", value: "auto" },
                   { content: "Cover", value: "cover" },
                   { content: "Contain", value: "contain" },

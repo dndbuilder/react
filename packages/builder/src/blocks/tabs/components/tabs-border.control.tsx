@@ -31,7 +31,6 @@ export const TabsBorderControl: FC<TabsBorderControlProps> = ({
       <SelectControl
         type={type}
         options={[
-          { content: "Select", value: "select" },
           { content: "None", value: "none" },
           { content: "Solid", value: "solid" },
           { content: "Double", value: "double" },

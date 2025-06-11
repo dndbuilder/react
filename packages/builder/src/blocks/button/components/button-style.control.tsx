@@ -103,7 +103,6 @@ const ButtonStyleControl = () => {
           {/* Border Type */}
           <SelectControl
             options={[
-              { content: "Select", value: "select" },
               { content: "None", value: "none" },
               { content: "Solid", value: "solid" },
               { content: "Double", value: "double" },
