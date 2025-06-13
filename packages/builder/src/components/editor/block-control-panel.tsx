@@ -2,10 +2,19 @@ import { ScrollArea } from "@/components/shared/scroll-area";
 import { Tabs } from "@/components/shared/tabs";
 import { BlockConfiguration } from "@/config/editor.config";
 import { FC, lazy, Suspense, useState } from "react";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { CgSpinner } from "react-icons/cg";
 
 type Props = {
   type: string;
 };
+
+const LoadingFallback = () => (
+  <div className="flex flex-col items-center justify-center p-8">
+    <CgSpinner size={24} className="animate-spin text-slate-600" />
+    <span className="mt-2 text-slate-600 text-sm">Loading...</span>
+  </div>
+);
 
 const AdvancedSettingsControl = lazy(
   () => import("@/components/controls/advance-settings.control")
@@ -59,7 +68,11 @@ const BlockControlPanel: FC<Props> = ({ type }) => {
           <Tabs.Content value={String(index)} key={index}>
             <ScrollArea className="h-[calc(100vh-175px)]">
               <div className="panel-scroll-content">
-                {<Suspense fallback={null}>{<tab.component />}</Suspense>}
+                {
+                  <Suspense fallback={<LoadingFallback />}>
+                    {<tab.component />}
+                  </Suspense>
+                }
               </div>
             </ScrollArea>
           </Tabs.Content>
@@ -68,7 +81,7 @@ const BlockControlPanel: FC<Props> = ({ type }) => {
           <Tabs.Content value={String(controls.length)}>
             <ScrollArea className="h-[calc(100vh-175px)]">
               <div className="panel-scroll-content">
-                <Suspense fallback={null}>
+                <Suspense fallback={<LoadingFallback />}>
                   <AdvancedSettingsControl />
                 </Suspense>
               </div>
