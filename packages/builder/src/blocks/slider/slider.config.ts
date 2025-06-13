@@ -10,13 +10,11 @@ import {
   generateTypographyFromBreakpoint,
   generateUnitValue,
 } from "@/utils/style";
+import { lazy } from "react";
 import { TfiLayoutSlider } from "react-icons/tfi";
 import { createBlockConfig, createId } from "../../utils";
 import { generateSize } from "../button/utils";
-import SliderContentControl from "./components/controls/slider-content.control";
-import SliderStyleControl from "./components/controls/slider-style.control";
 import { SliderPresets, SliderSettingsType } from "./types";
-import { lazy } from "react";
 
 const SliderConfig = createBlockConfig<SliderSettingsType>({
   type: BlockType.SLIDER,
@@ -571,11 +569,15 @@ const SliderConfig = createBlockConfig<SliderSettingsType>({
   controls: [
     {
       label: "Content",
-      component: SliderContentControl,
+      component: lazy(
+        () => import("./components/controls/slider-content.control")
+      ),
     },
     {
       label: "Style",
-      component: SliderStyleControl,
+      component: lazy(
+        () => import("./components/controls/slider-style.control")
+      ),
     },
   ],
 });

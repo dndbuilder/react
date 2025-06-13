@@ -1,12 +1,15 @@
-import { AdvancedSettingsControl } from "@/components/controls/advance-settings.control";
 import { ScrollArea } from "@/components/shared/scroll-area";
 import { Tabs } from "@/components/shared/tabs";
 import { BlockConfiguration } from "@/config/editor.config";
-import { FC, Suspense, useState } from "react";
+import { FC, lazy, Suspense, useState } from "react";
 
 type Props = {
   type: string;
 };
+
+const AdvancedSettingsControl = lazy(
+  () => import("@/components/controls/advance-settings.control")
+);
 
 const BlockControlPanel: FC<Props> = ({ type }) => {
   const [currentTabIndex, setCurrentTabIndex] = useState(0);
@@ -65,7 +68,9 @@ const BlockControlPanel: FC<Props> = ({ type }) => {
           <Tabs.Content value={String(controls.length)}>
             <ScrollArea className="h-[calc(100vh-175px)]">
               <div className="panel-scroll-content">
-                <AdvancedSettingsControl />
+                <Suspense fallback={null}>
+                  <AdvancedSettingsControl />
+                </Suspense>
               </div>
             </ScrollArea>
           </Tabs.Content>

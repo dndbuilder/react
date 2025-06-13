@@ -26,7 +26,7 @@
   "scripts": {
     "lint": "eslint *.ts*",
     "build": "vite build",
-    "dev": "vite build --watch"
+    "dev": "vite build --watch --emptyOutDir=false"
   },
   "devDependencies": {
     "@monaco-editor/react": "^4.7.0",

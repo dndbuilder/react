@@ -12,8 +12,6 @@ import deepmerge from "deepmerge";
 import { lazy } from "react";
 
 import { RxHeading } from "react-icons/rx";
-import HeadingContentControl from "./components/heading-content.control";
-import HeadingStyleControl from "./components/heading-style.control";
 import { HeadingSettingsType } from "./types";
 
 const HeadingConfig = createBlockConfig<HeadingSettingsType>({
@@ -128,11 +126,11 @@ const HeadingConfig = createBlockConfig<HeadingSettingsType>({
   controls: [
     {
       label: "Content",
-      component: HeadingContentControl,
+      component: lazy(() => import("./components/heading-content.control")),
     },
     {
       label: "Style",
-      component: HeadingStyleControl,
+      component: lazy(() => import("./components/heading-style.control")),
     },
   ],
 });

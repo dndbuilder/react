@@ -8,12 +8,10 @@ import {
   generateTypography,
   generateUnitValue,
 } from "@/utils/style";
-import { TfiLayoutTabWindow } from "react-icons/tfi";
-import TabsContentControl from "./components/tabs-content.control";
-import TabsStyleControl from "./components/tabs-style.control";
-import { TabsSettingsType } from "./types";
-import TabsToolbar from "./components/tabs-toolbar";
 import { lazy } from "react";
+import { TfiLayoutTabWindow } from "react-icons/tfi";
+import TabsToolbar from "./components/tabs-toolbar";
+import { TabsSettingsType } from "./types";
 
 const TabsConfig = createBlockConfig<TabsSettingsType>({
   type: BlockType.TABS,
@@ -273,11 +271,11 @@ const TabsConfig = createBlockConfig<TabsSettingsType>({
   controls: [
     {
       label: "Content",
-      component: TabsContentControl,
+      component: lazy(() => import("./components/tabs-content.control")),
     },
     {
       label: "Style",
-      component: TabsStyleControl,
+      component: lazy(() => import("./components/tabs-style.control")),
     },
   ],
   toolbar: TabsToolbar,

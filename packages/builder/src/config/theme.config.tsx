@@ -10,13 +10,13 @@ export const ThemeConfiguration: ThemeConfig = {
     color: {
       backgroundColor: colors.white,
       textColor: "#000000",
-      accentColor: "#8460EF",
+      accentColor: "#1e293b",
       presets: [
-        { id: createId(), name: "Primary", value: "#8460EF" },
+        { id: createId(), name: "Primary", value: "#1e293b" },
         {
           id: createId(),
           name: "Secondary",
-          value: "#828282",
+          value: "#cbd5e1",
         },
       ],
     },
@@ -94,7 +94,7 @@ export const ThemeConfiguration: ThemeConfig = {
       },
       background: {
         color: {
-          [PseudoClass.DEFAULT]: "#8460EF",
+          [PseudoClass.DEFAULT]: "#1e293b",
           [PseudoClass.HOVER]: "#7047EB",
         },
         type: {
@@ -151,7 +151,7 @@ export const ThemeConfiguration: ThemeConfig = {
             },
             background: {
               color: {
-                [PseudoClass.DEFAULT]: "#8460EF",
+                [PseudoClass.DEFAULT]: "#1e293b",
                 [PseudoClass.HOVER]: "#7047EB",
               },
               type: {
@@ -165,7 +165,7 @@ export const ThemeConfiguration: ThemeConfig = {
     },
     link: {
       color: {
-        [PseudoClass.DEFAULT]: "#8460EF",
+        [PseudoClass.DEFAULT]: "#1e293b",
         [PseudoClass.HOVER]: "#7047EB",
       },
     },
@@ -222,7 +222,7 @@ export const ThemeConfiguration: ThemeConfig = {
         },
         borderColor: {
           [PseudoClass.DEFAULT]: "#E0E0E0",
-          [PseudoClass.FOCUS]: "#8460EF",
+          [PseudoClass.FOCUS]: "#1e293b",
         },
         boxShadow: {
           [PseudoClass.DEFAULT]: {

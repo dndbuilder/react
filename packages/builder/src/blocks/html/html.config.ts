@@ -1,9 +1,8 @@
-import { createBlockConfig } from "@/utils";
 import { BlockGroup, BlockType } from "@/types/block";
-import { IoCodeSlashOutline } from "react-icons/io5";
-import HtmlContentControl from "./components/html-content.control";
-import { HtmlSettingsType } from "./types";
+import { createBlockConfig } from "@/utils";
 import { lazy } from "react";
+import { IoCodeSlashOutline } from "react-icons/io5";
+import { HtmlSettingsType } from "./types";
 
 const HtmlConfig = createBlockConfig<HtmlSettingsType>({
   type: BlockType.HTML,
@@ -15,7 +14,7 @@ const HtmlConfig = createBlockConfig<HtmlSettingsType>({
   controls: [
     {
       label: "Content",
-      component: HtmlContentControl,
+      component: lazy(() => import("./components/html-content.control")),
     },
   ],
 });

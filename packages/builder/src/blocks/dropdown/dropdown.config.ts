@@ -273,11 +273,11 @@ const DropdownConfig = createBlockConfig<DropdownSettingsType>({
   controls: [
     {
       label: "Content",
-      component: DropdownContentControl,
+      component: lazy(() => import("./components/dropdown-content.control")),
     },
     {
       label: "Style",
-      component: DropdownStyleControl,
+      component: lazy(() => import("./components/dropdown-style.control")),
     },
   ],
 });

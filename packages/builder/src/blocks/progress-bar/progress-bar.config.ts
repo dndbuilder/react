@@ -1,11 +1,5 @@
 import { BlockGroup, BlockType } from "@/types/block";
 import { createBlockConfig } from "@/utils";
-import { lazy } from "react";
-import { MdOutlineLinearScale } from "react-icons/md";
-import ProgressBarContentControl from "./components/progress-bar-content.control";
-import ProgressBarStyleControl from "./components/progress-bar-style.control";
-import { ProgressBarSettingsType } from "./types";
-import ProgressBarIcon from "./components/progress-bar-icon";
 import {
   generatePseudoStyle,
   generateResponsiveStyle,
@@ -13,6 +7,10 @@ import {
   generateTypography,
   generateUnitValue,
 } from "@/utils/style";
+import { lazy } from "react";
+import ProgressBarIcon from "./components/progress-bar-icon";
+import ProgressBarStyleControl from "./components/progress-bar-style.control";
+import { ProgressBarSettingsType } from "./types";
 
 const ProgressBarConfig = createBlockConfig<ProgressBarSettingsType>({
   type: BlockType.PROGRESS_BAR,
@@ -284,11 +282,13 @@ const ProgressBarConfig = createBlockConfig<ProgressBarSettingsType>({
   controls: [
     {
       label: "Content",
-      component: ProgressBarContentControl,
+      component: lazy(
+        () => import("./components/progress-bar-content.control")
+      ),
     },
     {
       label: "Style",
-      component: ProgressBarStyleControl,
+      component: lazy(() => import("./components/progress-bar-style.control")),
     },
   ],
 });

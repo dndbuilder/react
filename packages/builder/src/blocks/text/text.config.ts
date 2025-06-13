@@ -1,12 +1,10 @@
 import { BlockGroup, BlockType } from "@/types/block";
 import { createBlockConfig } from "@/utils";
 import { generateResponsiveStyle, generateTypography } from "@/utils/style";
+import { lazy } from "react";
 import { RxText } from "react-icons/rx";
-import TextContentControl from "./components/controls/text-content.control";
-import TextStyleControl from "./components/controls/text-style.control";
 import { TextSettingsType } from "./types";
 import { generateDropCap } from "./utils";
-import { lazy } from "react";
 
 const TextConfig = createBlockConfig<TextSettingsType>({
   type: BlockType.TEXT,
@@ -40,11 +38,13 @@ const TextConfig = createBlockConfig<TextSettingsType>({
   controls: [
     {
       label: "Content",
-      component: TextContentControl,
+      component: lazy(
+        () => import("./components/controls/text-content.control")
+      ),
     },
     {
       label: "Style",
-      component: TextStyleControl,
+      component: lazy(() => import("./components/controls/text-style.control")),
     },
   ],
 });

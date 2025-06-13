@@ -167,11 +167,11 @@ const BannerConfig = createBlockConfig<BannerSettingsType>({
   controls: [
     {
       label: "Content",
-      component: BannerContentControl,
+      component: lazy(() => import("./components/banner-content.control")),
     },
     {
       label: "Style",
-      component: BannerStyleControl,
+      component: lazy(() => import("./components/banner-style.control")),
     },
   ],
 });

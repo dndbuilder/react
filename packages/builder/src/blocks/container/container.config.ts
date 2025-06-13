@@ -11,8 +11,6 @@ import {
 } from "@/utils/style";
 import { lazy } from "react";
 import { LuContainer } from "react-icons/lu";
-import ContainerLayoutControl from "./components/controls/container-layout.control";
-import ContainerStyleControl from "./components/controls/container-style.control";
 import { ContainerSettingsType } from "./types";
 
 const ContainerConfig = createBlockConfig<ContainerSettingsType>({
@@ -231,11 +229,15 @@ const ContainerConfig = createBlockConfig<ContainerSettingsType>({
   controls: [
     {
       label: "Layout",
-      component: ContainerLayoutControl,
+      component: lazy(
+        () => import("./components/controls/container-layout.control")
+      ),
     },
     {
       label: "Style",
-      component: ContainerStyleControl,
+      component: lazy(
+        () => import("./components/controls/container-style.control")
+      ),
     },
   ],
 });

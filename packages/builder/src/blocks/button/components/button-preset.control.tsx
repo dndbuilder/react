@@ -19,7 +19,6 @@ const ButtonPresetControl: FC<Props> = ({ label, fieldName, type }) => {
       fieldName={fieldName}
       label={label}
       options={[
-        { content: "Default", value: "" },
         ...presets.map((preset) => ({
           content: preset.name,
           value: preset.id,

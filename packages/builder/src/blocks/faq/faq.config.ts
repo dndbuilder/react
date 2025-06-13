@@ -7,12 +7,9 @@ import {
   generateTypography,
   generateUnitValue,
 } from "@/utils/style";
-import { GoRows } from "react-icons/go";
-import FaqContentControl from "./components/faq-content.control";
-import FaqStyleControl from "./components/faq-style.control";
-import { FaqSettingsType } from "./types";
 import { lazy } from "react";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
+import { FaqSettingsType } from "./types";
 
 const FaqConfig = createBlockConfig<FaqSettingsType>({
   type: BlockType.FAQ,
@@ -214,11 +211,11 @@ const FaqConfig = createBlockConfig<FaqSettingsType>({
   controls: [
     {
       label: "Content",
-      component: FaqContentControl,
+      component: lazy(() => import("./components/faq-content.control")),
     },
     {
       label: "Style",
-      component: FaqStyleControl,
+      component: lazy(() => import("./components/faq-style.control")),
     },
   ],
 });

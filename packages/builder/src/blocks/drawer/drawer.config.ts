@@ -10,8 +10,6 @@ import {
 } from "@/utils/style";
 import { lazy } from "react";
 import { GoSidebarCollapse } from "react-icons/go";
-import DrawerContentControl from "./components/drawer-content.control";
-import DrawerStyleControl from "./components/drawer-style.control";
 import { DrawerSettingsType } from "./types";
 
 const DrawerConfig = createBlockConfig<DrawerSettingsType>({
@@ -237,11 +235,11 @@ const DrawerConfig = createBlockConfig<DrawerSettingsType>({
   controls: [
     {
       label: "Content",
-      component: DrawerContentControl,
+      component: lazy(() => import("./components/drawer-content.control")),
     },
     {
       label: "Style",
-      component: DrawerStyleControl,
+      component: lazy(() => import("./components/drawer-style.control")),
     },
   ],
 });

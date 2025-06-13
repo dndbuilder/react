@@ -285,3 +285,5 @@ export const AdvancedSettingsControl = () => {
     </Accordion>
   );
 };
+
+export default AdvancedSettingsControl;

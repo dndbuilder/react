@@ -7,11 +7,9 @@ import {
   generateSpacingValue,
   generateUnitValue,
 } from "@/utils/style";
-import { TbIcons } from "react-icons/tb";
-import IconContentControl from "./components/icon-content.control";
-import IconStyleControl from "./components/icon-style.control";
-import { IconSettingsType } from "./types";
 import { lazy } from "react";
+import { TbIcons } from "react-icons/tb";
+import { IconSettingsType } from "./types";
 
 const IconConfig = createBlockConfig<IconSettingsType>({
   type: BlockType.ICON,
@@ -155,11 +153,11 @@ const IconConfig = createBlockConfig<IconSettingsType>({
   controls: [
     {
       label: "Content",
-      component: IconContentControl,
+      component: lazy(() => import("./components/icon-content.control")),
     },
     {
       label: "Style",
-      component: IconStyleControl,
+      component: lazy(() => import("./components/icon-style.control")),
     },
   ],
 });

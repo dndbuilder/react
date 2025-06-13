@@ -15,8 +15,6 @@ import { clean } from "deep-cleaner";
 import deepMerge from "deepmerge";
 import { lazy } from "react";
 import { MdSmartButton } from "react-icons/md";
-import ButtonContentControl from "./components/button-content.control";
-import ButtonStyleControl from "./components/button-style.control";
 import { ButtonSettingsType } from "./types";
 import { generatePresetStyle } from "./utils";
 
@@ -185,11 +183,11 @@ const ButtonConfig = createBlockConfig<ButtonSettingsType>({
   controls: [
     {
       label: "Content",
-      component: ButtonContentControl,
+      component: lazy(() => import("./components/button-content.control")),
     },
     {
       label: "Style",
-      component: ButtonStyleControl,
+      component: lazy(() => import("./components/button-style.control")),
     },
   ],
 });

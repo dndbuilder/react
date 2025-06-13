@@ -7,11 +7,9 @@ import {
   generateTypography,
   generateUnitValue,
 } from "@/utils/style";
-import { FiImage } from "react-icons/fi";
-import ImageContentControl from "./components/image-content.control";
-import ImageStyleControl from "./components/image-style.control";
-import { ImageSettingsType } from "./types";
 import { lazy } from "react";
+import { FiImage } from "react-icons/fi";
+import { ImageSettingsType } from "./types";
 
 const ImageConfig = createBlockConfig<ImageSettingsType>({
   type: BlockType.IMAGE,
@@ -204,11 +202,11 @@ const ImageConfig = createBlockConfig<ImageSettingsType>({
   controls: [
     {
       label: "Content",
-      component: ImageContentControl,
+      component: lazy(() => import("./components/image-content.control")),
     },
     {
       label: "Style",
-      component: ImageStyleControl,
+      component: lazy(() => import("./components/image-style.control")),
     },
   ],
 });

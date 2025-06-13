@@ -1,16 +1,14 @@
-import { CiLink } from "react-icons/ci";
-import { BlockGroup, BlockType } from "../../types/block";
-import { createBlockConfig } from "../../utils";
-import { LinkSettingsType } from "./types";
-import LinkContentControl from "./components/link-content-control";
 import {
   generatePseudoStyle,
   generateResponsiveStyle,
   generateSpacingValue,
   generateTypography,
 } from "@/utils/style";
-import LinkStyleControl from "./components/link-style-control";
 import { lazy } from "react";
+import { CiLink } from "react-icons/ci";
+import { BlockGroup, BlockType } from "../../types/block";
+import { createBlockConfig } from "../../utils";
+import { LinkSettingsType } from "./types";
 
 const LinkConfig = createBlockConfig<LinkSettingsType>({
   type: BlockType.LINK,
@@ -70,11 +68,11 @@ const LinkConfig = createBlockConfig<LinkSettingsType>({
   controls: [
     {
       label: "Content",
-      component: LinkContentControl,
+      component: lazy(() => import("./components/link-content-control")),
     },
     {
       label: "Style",
-      component: LinkStyleControl,
+      component: lazy(() => import("./components/link-style-control")),
     },
   ],
 });

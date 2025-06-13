@@ -1,5 +1,6 @@
 import { BlockGroup, BlockType } from "@/types/block";
 import { Unit } from "@/types/style";
+import { createBlockConfig, createId } from "@/utils";
 import {
   generateBorderRadius,
   generateBoxShadow,
@@ -9,12 +10,9 @@ import {
   generateTypography,
   generateUnitValue,
 } from "@/utils/style";
-import { LuQuote } from "react-icons/lu";
-import { createBlockConfig, createId } from "@/utils";
-import TestimonialContentControl from "./components/testimonial-content.control";
-import TestimonialStyleControl from "./components/testimonial-style.control";
-import { TestimonialPresets, TestimonialSettingsType } from "./types";
 import { lazy } from "react";
+import { LuQuote } from "react-icons/lu";
+import { TestimonialPresets, TestimonialSettingsType } from "./types";
 
 const TestimonialConfig = createBlockConfig<TestimonialSettingsType>({
   type: BlockType.TESTIMONIAL,
@@ -379,11 +377,11 @@ const TestimonialConfig = createBlockConfig<TestimonialSettingsType>({
   controls: [
     {
       label: "Content",
-      component: TestimonialContentControl,
+      component: lazy(() => import("./components/testimonial-content.control")),
     },
     {
       label: "Style",
-      component: TestimonialStyleControl,
+      component: lazy(() => import("./components/testimonial-style.control")),
     },
   ],
 });
