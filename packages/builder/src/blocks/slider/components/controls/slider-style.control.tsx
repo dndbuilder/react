@@ -108,7 +108,7 @@ const SliderStyleControl = () => {
           <SelectControl
             responsive
             options={[
-              { content: "Default", value: SizeType.DEFAULT },
+              // { content: "Default", value: SizeType.DEFAULT },
               { content: "Small", value: SizeType.SM },
               { content: "Medium", value: SizeType.MD },
               { content: "Large", value: SizeType.LG },

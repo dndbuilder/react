@@ -157,7 +157,7 @@ const ButtonSizeControl: FC<Props> = ({
     <SelectControl
       type={SettingsType.BLOCK}
       options={[
-        { content: "Default", value: SizeType.DEFAULT },
+        // { content: "Default", value: SizeType.DEFAULT },
         { content: "Small", value: SizeType.SM },
         { content: "Medium", value: SizeType.MD },
         { content: "Large", value: SizeType.LG },

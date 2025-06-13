@@ -42,7 +42,6 @@ const IconContentControl = () => {
             label="View"
             fieldName="view.desktop"
             options={[
-              { content: "Default", value: "default" },
               { content: "Stacked", value: "stacked" },
               { content: "Framed", value: "framed" },
             ]}
