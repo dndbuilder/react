@@ -1,6 +1,6 @@
 import "./globals.css";
 import React from "react";
-import { Open_Sans, Poppins } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 
 const openSans = Open_Sans({
@@ -9,13 +9,6 @@ const openSans = Open_Sans({
   subsets: ["latin"],
   display: "swap",
 });
-
-// const poppins = Poppins({
-//   weight: ["300", "400", "500", "600", "700", "800"],
-//   style: ["normal", "italic"],
-//   subsets: ["latin"],
-//   display: "swap",
-// });
 
 export default function RootLayout({
   children,

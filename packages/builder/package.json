@@ -19,10 +19,6 @@
       "import": "./dist/hooks.js",
       "types": "./dist/hooks/index.d.ts"
     },
-    "./components": {
-      "import": "./dist/components.js",
-      "types": "./dist/components/index.d.ts"
-    },
     "./dist/builder.css": {
       "import": "./dist/builder.css"
     }

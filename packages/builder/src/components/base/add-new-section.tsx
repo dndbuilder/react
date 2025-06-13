@@ -13,7 +13,7 @@ type Props = {
 };
 
 const AddNewSection: FC<Props> = memo(
-  ({ blockId, showBlockLibrary = false, className, onBlockAdded }) => {
+  ({ blockId, showBlockLibrary = true, className, onBlockAdded }) => {
     return (
       <div className={className}>
         <BlockDropzone blockId={blockId} onBlockAdded={onBlockAdded}>
@@ -25,11 +25,11 @@ const AddNewSection: FC<Props> = memo(
             <AddContainer blockId={blockId} onBlockAdded={onBlockAdded}>
               <div
                 role="button"
-                className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-800 hover:bg-slate-900 transition-colors duration-150"
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-indigo-600 hover:bg-indigo-500 transition-colors duration-150"
                 aria-label="Select Container"
               >
                 <span className="inline-block rounded-full bg-white p-[3px]">
-                  <AiOutlinePlus className="text-slate-900" size={12} />
+                  <AiOutlinePlus className="text-slate-950" size={12} />
                 </span>
               </div>
             </AddContainer>

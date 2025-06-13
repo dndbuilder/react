@@ -10,7 +10,6 @@ export default defineConfig({
       entry: {
         index: resolve(__dirname, "src/index.ts"),
         hooks: resolve(__dirname, "src/hooks/index.ts"),
-        components: resolve(__dirname, "src/components/index.ts"),
       },
       formats: ["es"],
       fileName: (format, entryName) => `${entryName}.js`,
