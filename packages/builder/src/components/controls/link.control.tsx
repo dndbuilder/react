@@ -89,7 +89,7 @@ export const LinkControl: FC<LinkControlProps> = ({
 
           <InfoMessage>
             Set custom attributes for the link element. Separate attribute keys from values using the | (pipe)
-            character. Separate key-value pairs with a comma. <span className="text-indigo-500">Learn More</span>
+            character. Separate key-value pairs with a comma. <span className="text-slate-800">Learn More</span>
           </InfoMessage> */}
         </div>
       </div>

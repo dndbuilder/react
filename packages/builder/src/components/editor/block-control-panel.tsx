@@ -48,7 +48,7 @@ const BlockControlPanel: FC<Props> = ({ type }) => {
           {controls.map((tab, index) => (
             <Tabs.Trigger
               value={String(index)}
-              className="h-full w-full rounded-none border-t-2 border-t-transparent font-medium text-slate-700 data-[state=active]:border-t-indigo-500 data-[state=active]:shadow-none"
+              className="h-full w-full rounded-none border-t-2 border-t-transparent font-medium text-slate-700 data-[state=active]:border-t-slate-800 data-[state=active]:shadow-none"
               key={index}
             >
               {tab.label}
@@ -57,7 +57,7 @@ const BlockControlPanel: FC<Props> = ({ type }) => {
           {!disableAdvancedSettings && (
             <Tabs.Trigger
               value={String(controls.length)}
-              className="h-full w-full rounded-none border-t-2 border-t-transparent font-medium text-slate-700 data-[state=active]:border-t-indigo-500 data-[state=active]:shadow-none"
+              className="h-full w-full rounded-none border-t-2 border-t-transparent font-medium text-slate-700 data-[state=active]:border-t-slate-800 data-[state=active]:shadow-none"
             >
               Advanced
             </Tabs.Trigger>

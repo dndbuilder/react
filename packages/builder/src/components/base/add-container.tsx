@@ -116,11 +116,11 @@ const AddContainer: FC<AddContainerProps> = ({
     <Popover modal>
       <Popover.Trigger asChild>{children}</Popover.Trigger>
 
-      <Popover.Portal>
+      <Popover.Portal container={window.frameDocument?.body || document.body}>
         <Popover.Content
           asChild
           sideOffset={10}
-          className="w-[600px] rounded-sm bg-white p-4 shadow-[5px_5px_20px_rgb(0,0,0,0.05)]"
+          className="w-[600px] rounded border-slate-300 bg-white p-4 shadow-sm border-slate-200 border"
         >
           <div onClick={(e) => e.stopPropagation()}>
             <div className="grid grid-cols-4 gap-4">
@@ -133,7 +133,7 @@ const AddContainer: FC<AddContainerProps> = ({
                     {layout.size.map((item, index) => (
                       <div
                         style={{ width: `${item}%` }}
-                        className={`flex h-[45px] cursor-pointer items-center justify-center rounded-[2px] bg-slate-300 text-white transition-colors duration-300 group-hover:bg-indigo-500`}
+                        className={`flex h-[45px] cursor-pointer items-center justify-center rounded-[2px] bg-slate-200 text-white transition-colors duration-300 group-hover:bg-slate-300`}
                         key={index}
                       >
                         {layout.content}

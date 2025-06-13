@@ -18,7 +18,7 @@ const UndoRedo: FC<{ className?: string }> = ({ className }) => {
       <Tooltip>
         <Tooltip.Trigger
           type="button"
-          className="px-2.5 text-slate-100 enabled:hover:text-indigo-500 disabled:cursor-not-allowed disabled:opacity-50"
+          className="px-2.5 text-slate-100 enabled:hover:text-slate-800 disabled:cursor-not-allowed disabled:opacity-50"
           onClick={undo}
           disabled={!isUndoable}
         >
@@ -32,7 +32,7 @@ const UndoRedo: FC<{ className?: string }> = ({ className }) => {
       <Tooltip>
         <Tooltip.Trigger
           type="button"
-          className="px-2.5 text-slate-100 enabled:hover:text-indigo-500 disabled:cursor-not-allowed disabled:opacity-50"
+          className="px-2.5 text-slate-100 enabled:hover:text-slate-800 disabled:cursor-not-allowed disabled:opacity-50"
           onClick={redo}
           disabled={!isRedoable}
         >

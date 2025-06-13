@@ -23,8 +23,8 @@ const StructureToggle: FC<StructureToggleProps> = ({ className }) => {
         onClick={() => {
           toggleRightPanel(BuilderRightPanelType.LAYER);
         }}
-        className={classNames("text-slate-100 hover:text-indigo-500", {
-          "text-indigo-500": activeRightPanel === BuilderRightPanelType.LAYER,
+        className={classNames("text-slate-100 hover:text-slate-800", {
+          "text-slate-800": activeRightPanel === BuilderRightPanelType.LAYER,
           className,
         })}
       >

@@ -1,6 +1,7 @@
 import { useActionContext } from "@/contexts/action-context";
 import { classNames } from "@/utils";
 import { FC, HTMLAttributes } from "react";
+import { FiChevronLeft } from "react-icons/fi";
 import { VscTriangleLeft } from "react-icons/vsc";
 
 interface CollapseShapeProps extends HTMLAttributes<SVGAElement> {}
@@ -13,11 +14,11 @@ const CollapseShape: FC<CollapseShapeProps> = () => {
         setIsLeftPanelOpen(!isLeftPanelOpen);
       }}
       className={classNames(
-        "absolute right-[-20px] top-[50%] z-[-1] flex h-[50px] w-[20px] translate-y-[-50%] cursor-pointer items-center justify-center rounded-r bg-[#F1F1F4] shadow-[rgba(0,0,0,15%)_1px_0px_2px] hover:bg-slate-300"
+        "absolute right-[-18px] top-[50%] z-[1000] flex h-[50px] w-[18px] translate-y-[-50%] cursor-pointer items-center justify-center rounded-r bg-white border border-l-0 shadow-[rgba(0,0,0,15%)_1px_0px_2px] hover:bg-slate-200"
       )}
     >
-      <VscTriangleLeft
-        className={classNames("text-[#6C747A]", {
+      <FiChevronLeft
+        className={classNames("text-slate-600", {
           "rotate-180": !isLeftPanelOpen,
         })}
       />

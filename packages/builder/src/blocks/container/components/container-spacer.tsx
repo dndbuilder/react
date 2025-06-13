@@ -188,9 +188,9 @@ const ContainerSpacer: FC<ContainerSpacerProps> = ({
     <div
       ref={spacerRef}
       className={classNames(
-        "group/spacer absolute flex items-center justify-center overflow-visible hover:bg-indigo-50",
+        "group/spacer absolute flex items-center justify-center overflow-visible hover:bg-slate-50",
         positionClassMap[position],
-        isDragging && "bg-primary-50"
+        isDragging && "bg-slate-50"
       )}
     >
       <div

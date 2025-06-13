@@ -100,7 +100,7 @@ const ThemeActionDropdown: FC = () => {
   }, [dispatch, toast]);
 
   return (
-    <div className="flex h-9 bg-indigo-600 rounded-sm text-white divide-x divide-indigo-700 overflow-hidden">
+    <div className="flex h-9 bg-slate-900 rounded-sm text-white divide-x divide-indigo-700 overflow-hidden">
       <button
         className="px-5 h-full grow text-sm flex justify-center items-center gap-2 enabled:hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
         onClick={save}

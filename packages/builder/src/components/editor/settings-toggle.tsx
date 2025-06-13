@@ -24,9 +24,9 @@ const SettingsToggle: FC<SettingsToggleProps> = ({ className }) => {
           toggleRightPanel(BuilderRightPanelType.SETTINGS);
         }}
         className={classNames(
-          "text-slate-100 hover:text-indigo-500",
+          "text-slate-100 hover:text-slate-800",
           activeRightPanel === BuilderRightPanelType.SETTINGS &&
-            "text-indigo-500",
+            "text-slate-800",
           className
         )}
       >

@@ -69,7 +69,7 @@ const BlockToolbar: FC<Props> = memo(
 
               <div
                 className={classNames(
-                  "flex items-center bg-indigo-500 px-1 text-slate-300 rounded-sm"
+                  "flex items-center bg-slate-800 px-1 text-slate-300 rounded-sm"
                 )}
               >
                 {/* Toolbar Controls */}

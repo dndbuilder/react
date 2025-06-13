@@ -101,7 +101,7 @@ const CanvasArea: FC = () => {
       <ErrorBoundary fallbackRender={ErrorFallback}>
         <div
           className={classNames(
-            "relative flex h-full w-full border shadow-sm transition-width duration-300"
+            "relative flex h-full w-full shadow-sm border border-slate-200 transition-width duration-300"
           )}
           onClick={handleUnselect}
           ref={frameWrapperRef}

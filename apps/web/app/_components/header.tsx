@@ -1,6 +1,8 @@
 import { useContent } from "@repo/builder/hooks";
+import Link from "next/link";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { TbDragDrop } from "react-icons/tb";
 
 export const Header = () => {
   const [content] = useContent();
@@ -23,27 +25,16 @@ export const Header = () => {
   };
 
   return (
-    <header className="h-[60px] w-full bg-slate-900 flex items-center justify-between px-4">
+    <header className="h-[60px] fixed top-0 left-0 z-[100] border-b shadow-sm w-full bg-white flex items-center justify-between px-4">
       <div className="text-white font-bold text-xl">
         {/* Placeholder logo */}
-        <span className="flex items-center">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="mr-2"
-          >
-            <rect width="24" height="24" rx="4" fill="#4F46E5" />
-            <path d="M7 12H17" stroke="white" strokeWidth="2" />
-            <path d="M12 7L12 17" stroke="white" strokeWidth="2" />
-          </svg>
-          Page Builder
-        </span>
+        <Link href={"/"} className="flex items-center text-slate-800">
+          <TbDragDrop size={32} className="mr-2" />
+          <span className="font-bold">DnD Builder</span>
+        </Link>
       </div>
       <button
-        className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        className="bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         onClick={handleSave}
         disabled={isSaving}
       >

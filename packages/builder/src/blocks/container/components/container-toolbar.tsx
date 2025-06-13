@@ -50,7 +50,7 @@ const ContainerToolbar: FC<Props> = memo(
           >
             <div
               className={classNames(
-                "flex items-center rounded-sm justify-between bg-indigo-500 px-1"
+                "flex items-center rounded-sm justify-between bg-slate-800 px-1"
               )}
             >
               <>

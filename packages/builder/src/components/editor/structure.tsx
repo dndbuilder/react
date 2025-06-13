@@ -67,7 +67,8 @@ const StructureItem = ({ blockId, index }: LayterItemProps) => {
   };
 
   const handleMouseEnter = () => {
-    if (selectedblock?.id === blockId || typeof document === "undefined") return;
+    if (selectedblock?.id === blockId || typeof document === "undefined")
+      return;
 
     try {
       const iframe = document.querySelector("iframe") as HTMLIFrameElement;
@@ -80,9 +81,9 @@ const StructureItem = ({ blockId, index }: LayterItemProps) => {
       if (!el) return;
 
       if (el.classList.contains("after:ring-inset")) {
-        el.classList.add("after:ring-1", "after:ring-indigo-500");
+        el.classList.add("after:ring-1", "after:ring-slate-800");
       } else {
-        el.classList.add("ring-1", "ring-indigo-500");
+        el.classList.add("ring-1", "ring-slate-800");
       }
     } catch (error) {
       console.error("Error in handleMouseEnter:", error);
@@ -90,7 +91,8 @@ const StructureItem = ({ blockId, index }: LayterItemProps) => {
   };
 
   const handleMouseLeave = () => {
-    if (selectedblock?.id === blockId || typeof document === "undefined") return;
+    if (selectedblock?.id === blockId || typeof document === "undefined")
+      return;
 
     try {
       const iframe = document.querySelector("iframe") as HTMLIFrameElement;
@@ -103,9 +105,9 @@ const StructureItem = ({ blockId, index }: LayterItemProps) => {
       if (!el) return;
 
       if (el.classList.contains("after:ring-inset")) {
-        el.classList.remove("after:ring-1", "after:ring-indigo-500");
+        el.classList.remove("after:ring-1", "after:ring-slate-800");
       } else {
-        el.classList.remove("ring-1", "ring-indigo-500");
+        el.classList.remove("ring-1", "ring-slate-800");
       }
     } catch (error) {
       console.error("Error in handleMouseLeave:", error);

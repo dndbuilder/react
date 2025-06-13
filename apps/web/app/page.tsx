@@ -24,17 +24,19 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="h-screen">
+    <>
       <BuilderProvider store={store}>
         <Header />
 
-        <Editor
-          content={initialContent}
-          style={{
-            height: "calc(100vh - 60px)", // Adjust height to account for header
-          }}
-        />
+        <main className="mt-[60px]">
+          <Editor
+            content={initialContent}
+            style={{
+              height: "calc(100vh - 60px)", // Adjust height to account for header
+            }}
+          />
+        </main>
       </BuilderProvider>
-    </div>
+    </>
   );
 }
