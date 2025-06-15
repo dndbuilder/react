@@ -114,12 +114,6 @@ export class BuilderRegistry {
     breakpoints.forEach((breakpoint) => {
       this.registerBreakpoint(breakpoint);
     });
-    // Ensure breakpoints are sorted by minWidth
-    this.breakpoints = Object.fromEntries(
-      Object.entries(this.breakpoints).sort(
-        (a, b) => a[1].minWidth - b[1].minWidth
-      )
-    );
 
     return this;
   }

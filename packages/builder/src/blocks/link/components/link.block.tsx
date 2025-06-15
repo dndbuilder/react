@@ -22,6 +22,7 @@ const LinkBlock: FC<BlockProps<LinkSettingsType>> = ({
         href={url ?? "#"}
         target={settings.link?.newWindow ? "_blank" : undefined}
         rel={settings.link?.nofollow ? "nofollow" : undefined}
+        className="hover:underline"
       >
         {settings.text?.[locale] || settings.text?.en}
       </a>

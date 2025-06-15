@@ -1,3 +1,5 @@
+"use client";
+
 import { ColorControl } from "@/components/controls/color.control";
 import { TextShadowControl } from "@/components/controls/text-shadow.control";
 import { TypographyControl } from "@/components/controls/typography.control";

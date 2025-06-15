@@ -1,3 +1,5 @@
+"use client";
+
 import { BackgroundControl } from "@/components/controls/background.control";
 import { BorderControl } from "@/components/controls/border.control";
 import { BoxShadowControl } from "@/components/controls/box-shadow.control";

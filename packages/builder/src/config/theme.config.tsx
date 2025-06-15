@@ -95,7 +95,7 @@ export const ThemeConfiguration: ThemeConfig = {
       background: {
         color: {
           [PseudoClass.DEFAULT]: "#1e293b",
-          [PseudoClass.HOVER]: "#7047EB",
+          [PseudoClass.HOVER]: "#09090b",
         },
         type: {
           [PseudoClass.DEFAULT]: BackgroundType.CLASSIC,
@@ -152,7 +152,7 @@ export const ThemeConfiguration: ThemeConfig = {
             background: {
               color: {
                 [PseudoClass.DEFAULT]: "#1e293b",
-                [PseudoClass.HOVER]: "#7047EB",
+                [PseudoClass.HOVER]: "#09090b",
               },
               type: {
                 [PseudoClass.DEFAULT]: BackgroundType.CLASSIC,
@@ -166,7 +166,7 @@ export const ThemeConfiguration: ThemeConfig = {
     link: {
       color: {
         [PseudoClass.DEFAULT]: "#1e293b",
-        [PseudoClass.HOVER]: "#7047EB",
+        [PseudoClass.HOVER]: "#09090b",
       },
     },
     form: {

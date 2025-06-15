@@ -1,4 +1,3 @@
-import { BreakpointConfiguration } from "@/config/breakpoints.config";
 import { BuilderConfiguration } from "@/config/editor.config";
 import { Block } from "@/types/block";
 import { Breakpoint } from "@/types/responsive";
@@ -16,25 +15,25 @@ type Props = {
 };
 
 const StyleManager: FC<Props> = memo(({ content, themeSettings }) => {
-  const breakpoints = BreakpointConfiguration.getBreakpoints();
+  const breakpoints = BuilderConfiguration.getBreakpoints();
 
   const style = createStyle();
 
   style.register({
     $global: true,
     ".hide-on-desktop": {
-      [BreakpointConfiguration.getMediaQuery(Breakpoint.DESKTOP)]: {
-        display: "none",
+      [BuilderConfiguration.getMediaQuery(Breakpoint.DESKTOP)]: {
+        display: "none !important",
       },
     },
     ".hide-on-tablet": {
-      [BreakpointConfiguration.getMediaQuery(Breakpoint.TABLET)]: {
-        display: "none",
+      [BuilderConfiguration.getMediaQuery(Breakpoint.TABLET)]: {
+        display: "none !important",
       },
     },
     ".hide-on-mobile": {
-      [BreakpointConfiguration.getMediaQuery(Breakpoint.MOBILE)]: {
-        display: "none",
+      [BuilderConfiguration.getMediaQuery(Breakpoint.MOBILE)]: {
+        display: "none !important",
       },
     },
   });

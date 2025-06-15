@@ -1,5 +1,4 @@
 import { Tooltip } from "@/components/shared/tooltip";
-// import { BreakpointConfiguration } from "@/config/breakpoints.config";
 import { setCurrentBreakpoint } from "@/store/builder-slice";
 import { getCurrentBreakpoint } from "@/store/selectors";
 import { Breakpoint } from "@/types/responsive";
@@ -7,6 +6,7 @@ import { useAppDispatch } from "@/hooks/use-app-dispatch";
 import { useAppSelector } from "@/hooks/use-app-selector";
 import { classNames } from "@/utils";
 import { FC } from "react";
+import { BuilderConfiguration } from "@/config/editor.config";
 
 type BreakpointSwitcherProps = {
   className?: string;
@@ -17,7 +17,7 @@ const BreakpointSwitch: FC<BreakpointSwitcherProps> = ({ className }) => {
 
   const dispatch = useAppDispatch();
 
-  const breakpoints = BreakpointConfiguration.getBreakpoints();
+  const breakpoints = BuilderConfiguration.getBreakpoints();
 
   const changeBreakpoint = (val: Breakpoint) => {
     dispatch(setCurrentBreakpoint(val));
@@ -43,7 +43,7 @@ const BreakpointSwitch: FC<BreakpointSwitcherProps> = ({ className }) => {
                   }
                 )}
               >
-                {breakpoint.icon}
+                {<breakpoint.icon />}
               </div>
               <Tooltip.Content>{breakpoint.label}</Tooltip.Content>
             </Tooltip.Trigger>

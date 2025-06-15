@@ -4,7 +4,7 @@ import EditorStyleManager from "@/components/base/editor-style-manager";
 import { FrameContextManager } from "@/components/base/frame-context-manager";
 import ClientOnlyRenderFrame from "@/components/base/render-frame";
 import { ErrorFallback } from "@/components/shared/error-fallback";
-import { BreakpointConfiguration } from "@/config/breakpoints.config";
+import { BuilderConfiguration } from "@/config/editor.config";
 import { useActionContext } from "@/contexts/action-context";
 import { useAppDispatch } from "@/hooks/use-app-dispatch";
 import { useAppSelector } from "@/hooks/use-app-selector";
@@ -34,7 +34,7 @@ const CanvasArea: FC = () => {
   const currentLocale = useAppSelector(getCurrentLocale);
 
   const { previewWidth } =
-    BreakpointConfiguration.getBreakpoint(currentBreakpoint);
+    BuilderConfiguration.getBreakpoint(currentBreakpoint);
 
   const frameWrapperRef = useRef<HTMLDivElement>(null);
 
