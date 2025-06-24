@@ -1,3 +1,4 @@
+"use client";
 import { FlexGapControl } from "@/components/controls/flex-gap.control";
 import { SliderUnitControl } from "@/components/controls/slider-unit.control";
 import { SpacingControl } from "@/components/controls/spacing.control";

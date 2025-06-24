@@ -1,3 +1,4 @@
+"use client";
 import { Dialog } from "@/components/shared/dialog";
 import { FC } from "react";
 import { FiX } from "react-icons/fi";

@@ -1,3 +1,4 @@
+"use client";
 import { Tooltip } from "@/components/shared/tooltip";
 import { useActionContext } from "@/contexts/action-context";
 import { classNames } from "@/utils";

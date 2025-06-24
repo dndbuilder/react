@@ -31,6 +31,10 @@
       "import": "./dist/store.js",
       "types": "./dist/store/index.d.ts"
     },
+    "./config": {
+      "import": "./dist/config.js",
+      "types": "./dist/config/index.d.ts"
+    },
     "./store/selectors": {
       "import": "./dist/selectors.js",
       "types": "./dist/store/selectors.d.ts"

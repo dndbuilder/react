@@ -1,3 +1,4 @@
+"use client";
 import { BreakpointSelector } from "@/components/shared/breakpoint-selector";
 import { ToggleGroupControl } from "@/components/controls/toggle-group.control";
 import { Input } from "@/components/shared/input";

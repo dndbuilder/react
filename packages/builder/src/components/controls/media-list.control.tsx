@@ -1,3 +1,4 @@
+"use client";
 import { Label } from "@/components/shared/label";
 import { Input } from "@/components/shared/input";
 import { ScrollArea } from "@/components/shared/scroll-area";

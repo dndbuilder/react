@@ -1,3 +1,4 @@
+"use client";
 import { BuilderConfiguration } from "@/config/builder.config";
 import { useActionContext } from "@/contexts/action-context";
 import { unselectBlock } from "@/store/builder-slice";

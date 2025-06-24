@@ -1,3 +1,4 @@
+"use client";
 import { classNames } from '@/utils';
 import { FC } from 'react';
 import { FiChevronRight } from 'react-icons/fi';

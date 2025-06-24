@@ -1,3 +1,4 @@
+"use client";
 import { FrameContextProvider } from "@/contexts/frame-context";
 import React, {
   FunctionComponent,

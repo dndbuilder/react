@@ -1,3 +1,4 @@
+"use client";
 import { Label } from "@/components/shared/label";
 import { Tooltip } from "@/components/shared/tooltip";
 import { useAppSelector } from "@/hooks/use-app-selector";

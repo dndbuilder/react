@@ -1,3 +1,4 @@
+"use client";
 import { FC } from "react";
 import { Spinner } from "./spinner";
 import { classNames } from "@/utils";

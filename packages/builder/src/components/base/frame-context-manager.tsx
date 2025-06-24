@@ -1,3 +1,4 @@
+"use client";
 import { useFrame } from "@/hooks/use-frame";
 import { FC, ReactNode, useEffect } from "react";
 import { useDragDropManager } from "react-dnd";

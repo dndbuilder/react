@@ -1,3 +1,4 @@
+"use client";
 import { classNames } from '@/utils';
 import React, { FC, HtmlHTMLAttributes } from 'react';
 import { ChromePicker, RGBColor } from 'react-color';

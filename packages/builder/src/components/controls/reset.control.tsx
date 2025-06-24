@@ -1,3 +1,4 @@
+"use client";
 import { ComponentPropsWithoutRef, FC } from "react";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { CiUndo } from "react-icons/ci";

@@ -1,3 +1,4 @@
+"use client";
 import { Label } from "@/components/shared/label";
 import { Popover } from "@/components/shared/popover";
 import { SettingsType } from "@/types";

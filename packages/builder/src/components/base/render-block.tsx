@@ -1,3 +1,4 @@
+"use client";
 import { PreviewBlockConfiguration } from "@/config/preview.config";
 import { Block, BlockMeta } from "@/types/block";
 import { generateBlockProps } from "@/utils/block";

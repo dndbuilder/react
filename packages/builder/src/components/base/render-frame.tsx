@@ -1,3 +1,4 @@
+"use client";
 import { classNames } from "@/utils";
 import { FC, ReactNode, useEffect, useState } from "react";
 import Frame, { type FrameProps } from "./frame";

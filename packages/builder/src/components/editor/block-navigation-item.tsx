@@ -1,3 +1,4 @@
+"use client";
 import { EditorBlockConfig } from "@/types/block";
 import { Suspense, useRef } from "react";
 import { useDrag } from "react-dnd";

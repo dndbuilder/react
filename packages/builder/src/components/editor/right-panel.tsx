@@ -1,3 +1,4 @@
+"use client";
 import { useActionContext } from "@/contexts/action-context";
 import { BuilderRightPanelType } from "@/store/app-slice";
 import { classNames } from "@/utils";

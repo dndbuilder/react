@@ -1,3 +1,4 @@
+"use client";
 import { createBlock } from "@/utils";
 import { Popover } from "@/components/shared/popover";
 import { BuilderConfiguration } from "@/config/builder.config";

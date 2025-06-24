@@ -1,3 +1,4 @@
+"use client";
 import { classNames } from "@/utils";
 
 export type LinkButtonProps = {

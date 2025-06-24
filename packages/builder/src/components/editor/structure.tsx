@@ -1,3 +1,4 @@
+"use client";
 import { ScrollArea } from "@/components/shared/scroll-area";
 import { BuilderConfiguration } from "@/config/builder.config";
 import { useActionContext } from "@/contexts/action-context";

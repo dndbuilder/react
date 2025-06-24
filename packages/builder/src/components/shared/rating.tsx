@@ -1,3 +1,4 @@
+"use client";
 import React, { Fragment } from "react";
 import { BsStar, BsStarFill, BsStarHalf } from "react-icons/bs";
 import { IconType } from "react-icons/lib";

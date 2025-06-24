@@ -1,3 +1,4 @@
+"use client";
 import { classNames } from "@/utils";
 import * as ScrollArea from "@radix-ui/react-scroll-area";
 import { useVirtualizer } from "@tanstack/react-virtual";

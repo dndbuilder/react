@@ -18,6 +18,8 @@ export type StyleManagerProps = {
 
 export const StyleManager: FC<StyleManagerProps> = memo(
   ({ content, themeSettings }) => {
+    if (typeof window === "undefined") return null;
+
     const breakpoints = BuilderConfiguration.getBreakpoints();
 
     const style = createStyle();

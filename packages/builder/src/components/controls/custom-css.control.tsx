@@ -1,3 +1,4 @@
+"use client";
 import { Label } from "@/components/shared/label";
 import { useSettings } from "@/hooks/use-settings";
 import { SettingsType } from "@/types";

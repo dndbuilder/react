@@ -1,3 +1,4 @@
+"use client";
 import { BuilderConfiguration } from "@/config/builder.config";
 import { addBlock, addBlocks } from "@/store/builder-slice";
 import { Block, BlockType } from "@/types/block";

@@ -1,3 +1,4 @@
+"use client";
 import { FC, lazy } from "react";
 import type ReactQuill from "react-quill-new";
 import "react-quill-new/dist/quill.snow.css";

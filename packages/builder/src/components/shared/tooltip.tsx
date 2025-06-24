@@ -1,3 +1,4 @@
+"use client";
 import { classNames } from "@/utils";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { ComponentPropsWithoutRef, ElementRef, forwardRef } from "react";

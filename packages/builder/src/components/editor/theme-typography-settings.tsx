@@ -1,3 +1,4 @@
+"use client";
 import { TypographyControl } from "@/components/controls/typography.control";
 import { Accordion } from "@/components/shared/accordion";
 import { Button } from "@/components/shared/button";

@@ -1,3 +1,4 @@
+"use client";
 import { Position } from "@/types";
 import { FC } from "react";
 

@@ -1,3 +1,4 @@
+"use client";
 import { Popover } from "@/components/shared/popover";
 import { useAppDispatch } from "@/hooks/use-app-dispatch";
 import { useAppSelector } from "@/hooks/use-app-selector";

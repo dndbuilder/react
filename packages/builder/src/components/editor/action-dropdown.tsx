@@ -1,3 +1,4 @@
+"use client";
 import { Popover } from "@/components/shared/popover";
 import { Tooltip } from "@/components/shared/tooltip";
 import { useActionContext } from "@/contexts/action-context";

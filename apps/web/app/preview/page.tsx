@@ -1,6 +1,8 @@
 import clientPromise from "@/lib/mongodb";
 import { Block } from "@repo/builder";
+import { StyleManager } from "@repo/builder/components";
 import { RenderContent } from "@repo/builder/components/server";
+import { ThemeConfiguration } from "@repo/builder/config";
 import "@repo/builder/dist/builder.css";
 
 // This is a server component
@@ -33,10 +35,10 @@ export default async function PreviewPage() {
       <RenderContent content={content} />
 
       {/* Render the StyleManager to apply styles (client component) */}
-      {/* <StyleManager
+      <StyleManager
         content={content}
         themeSettings={ThemeConfiguration.settings}
-      /> */}
+      />
     </>
   );
 }

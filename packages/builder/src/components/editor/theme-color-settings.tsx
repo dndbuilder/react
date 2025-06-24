@@ -1,3 +1,4 @@
+"use client";
 import { Accordion } from "@/components/shared/accordion";
 import { Button } from "@/components/shared/button";
 import { ColorPicker } from "@/components/shared/color-picker";

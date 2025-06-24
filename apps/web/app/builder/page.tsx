@@ -1,10 +1,12 @@
 "use client";
 
 import "@repo/builder/dist/builder.css";
-import { BuilderProvider, store, Editor, Block } from "@repo/builder";
+import { Block } from "@repo/builder";
 import { Header } from "./_components/header";
 import { useEffect, useState } from "react";
 import { CgSpinner } from "react-icons/cg";
+import { BuilderProvider, Editor } from "@repo/builder/components";
+import { store } from "@repo/builder/store";
 
 export default function BuilderPage() {
   const [initialContent, setInitialContent] = useState<Record<string, Block>>(

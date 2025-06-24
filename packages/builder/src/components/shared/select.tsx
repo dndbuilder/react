@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import * as SelectPrimitive from "@radix-ui/react-select";
 import { HiChevronDown } from "react-icons/hi";

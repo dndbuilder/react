@@ -1,3 +1,4 @@
+"use client";
 import { ColorPicker } from "@/components/shared/color-picker";
 import { Input } from "@/components/shared/input";
 import { Label } from "@/components/shared/label";

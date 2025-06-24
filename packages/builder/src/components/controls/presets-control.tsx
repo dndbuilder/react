@@ -1,3 +1,4 @@
+"use client";
 import { classNames } from "@/utils";
 import { HTMLAttributes } from "react";
 import { useSettings } from "../../hooks/use-settings";

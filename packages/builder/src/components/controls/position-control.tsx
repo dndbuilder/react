@@ -1,3 +1,4 @@
+"use client";
 import { useAppSelector } from "@/hooks/use-app-selector";
 import { FC } from "react";
 import { CgPushLeft, CgPushRight } from "react-icons/cg";

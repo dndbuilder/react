@@ -1,3 +1,4 @@
+"use client";
 import { FC, useState } from "react";
 import ActionDropdown from "./action-dropdown";
 import { BreakpointSwitch } from "./breakpoint-switch";

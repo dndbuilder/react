@@ -1,3 +1,4 @@
+"use client";
 import { BuilderConfiguration } from "@/config/builder.config";
 import BlockNavigationItem from "./block-navigation-item";
 import { Accordion } from "@/components/shared/accordion";
