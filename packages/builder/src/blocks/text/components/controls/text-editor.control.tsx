@@ -52,7 +52,7 @@ const TextEditorContent: FC<Props> = ({
           {...labelProps}
         >
           {label} {responsive && <BreakpointSelector />}{" "}
-          {isLocalized && <LanguageSelector />}
+          {isLocalized && <LanguageSelector className="ms-auto" />}
         </Label>
       )}
       <TextEditor
