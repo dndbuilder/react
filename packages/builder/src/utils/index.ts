@@ -1,4 +1,4 @@
-import { Block, EditorBlockConfig } from "@/types/block";
+import { Block, BlockConfig } from "@/types/block";
 import { AnyObject, OptionalKeys } from "@/types";
 import { init } from "@paralleldrive/cuid2";
 import { create } from "free-style";
@@ -53,7 +53,7 @@ export const createBlock = <T extends object = AnyObject>(
 };
 
 export const createBlockConfig = <T extends object>(
-  config: OptionalKeys<EditorBlockConfig<T>, "label" | "settings" | "controls">
+  config: OptionalKeys<BlockConfig<T>, "label" | "settings" | "controls">
 ) => {
   return {
     label: config.label ?? startCase(config.type),

@@ -5,20 +5,28 @@ import { useAppSelector } from "@/hooks/use-app-selector";
 import { clearContent, setContent } from "@/store/builder-slice";
 import { getContent } from "@/store/selectors";
 import { Block } from "@/types/block";
-import React, { FC, useEffect, useMemo } from "react";
+import { FC, useEffect, useMemo } from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import { CanvasArea } from "./canvas-area";
-import LeftPanel from "./left-panel";
-import RightPanel from "./right-panel";
+import { CanvasArea } from "@/components";
+import { LeftPanel } from "./left-panel";
+import { RightPanel } from "./right-panel";
 import { classNames } from "@/utils";
+import { BuilderConfiguration } from "@/config";
+import { BuilderConfig } from "@/types";
 
 export type EditorProps = {
   content: Record<string, Block>;
   className?: string;
+  builderConfig?: BuilderConfig; // Add builderConfig prop
 } & Omit<React.HTMLAttributes<HTMLDivElement>, "content" | "className">;
 
-export const Editor: FC<EditorProps> = ({ content, className, ...props }) => {
+export const Editor: FC<EditorProps> = ({
+  content,
+  className,
+  builderConfig,
+  ...props
+}) => {
   const dispatch = useAppDispatch();
 
   const contentState = useAppSelector(getContent);
@@ -36,6 +44,13 @@ export const Editor: FC<EditorProps> = ({ content, className, ...props }) => {
 
     dispatch(setContent(content));
   }, [content]);
+
+  // Apply custom builder configuration if provided
+  useEffect(() => {
+    if (builderConfig) {
+      BuilderConfiguration.mergeConfig(builderConfig);
+    }
+  }, [builderConfig]);
 
   // Call onChange when contentState changes
   // useEffect(() => {

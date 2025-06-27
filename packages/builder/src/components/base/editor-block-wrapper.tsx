@@ -9,7 +9,8 @@ import {
   selectBlock as setSelectedBlock,
 } from "@/store/builder-slice";
 import { getIsBlockSelected } from "@/store/selectors";
-import { Direction, Position } from "@/types";
+import { Direction } from "@/types";
+import { Position } from "@/types/style";
 import { Block, BlockType } from "@/types/block";
 import { FlexDirection } from "@/types/style";
 import { createBlock } from "@/utils";

@@ -1,8 +1,6 @@
 import clientPromise from "@/lib/mongodb";
 import { Block } from "@repo/builder";
-import { StyleManager } from "@repo/builder/components";
 import { RenderContent } from "@repo/builder/components/server";
-import { ThemeConfiguration } from "@repo/builder/config";
 import "@repo/builder/dist/builder.css";
 
 // This is a server component
@@ -29,16 +27,12 @@ export default async function PreviewPage() {
     // The client-side fallback will be handled in a client component if needed
   }
 
+  // return null;
+
   return (
     <>
-      {/* Render the content */}
+      {/* Render the content with custom builder configuration */}
       <RenderContent content={content} />
-
-      {/* Render the StyleManager to apply styles (client component) */}
-      <StyleManager
-        content={content}
-        themeSettings={ThemeConfiguration.settings}
-      />
     </>
   );
 }

@@ -1,25 +1,21 @@
-"use client";
-
+import { ThemeConfiguration } from "@/config";
 import { BuilderConfiguration } from "@/config/builder.config";
 import { Block } from "@/types/block";
 import { Breakpoint } from "@/types/responsive";
+import { ThemeSettings } from "@/types/theme";
 import { createStyle } from "@/utils";
 import { generateContentStyles, generateFontsUrl } from "@/utils/style";
 import { generateThemeStyles } from "@/utils/theme";
-import { ThemeSettings } from "@/types/theme";
 import cssBeautify from "cssbeautify";
 import { FC, memo } from "react";
-import { createPortal } from "react-dom";
 
 export type StyleManagerProps = {
   content: Record<string, Block>;
-  themeSettings: ThemeSettings;
+  themeSettings?: ThemeSettings;
 };
 
 export const StyleManager: FC<StyleManagerProps> = memo(
-  ({ content, themeSettings }) => {
-    if (typeof window === "undefined") return null;
-
+  ({ content, themeSettings = ThemeConfiguration.settings }) => {
     const breakpoints = BuilderConfiguration.getBreakpoints();
 
     const style = createStyle();
@@ -65,15 +61,8 @@ export const StyleManager: FC<StyleManagerProps> = memo(
 
     return (
       <>
-        {createPortal(
-          <>
-            <link href={fontsUrl} id="fonts" rel="stylesheet"></link>
-            <style
-              dangerouslySetInnerHTML={{ __html: beautifiedStyles }}
-            ></style>
-          </>,
-          document.head
-        )}
+        <link href={fontsUrl} id="fonts" rel="stylesheet"></link>
+        <style dangerouslySetInnerHTML={{ __html: beautifiedStyles }}></style>
       </>
     );
   }

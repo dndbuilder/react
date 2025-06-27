@@ -5,7 +5,7 @@ import { BuilderConfiguration } from "@/config/builder.config";
 import { useAppDispatch } from "@/hooks/use-app-dispatch";
 import { addBlocks } from "@/store/builder-slice";
 import { Unit } from "@/types/style";
-import { Block, BlockType, EditorBlockConfig } from "@/types/block";
+import { Block, BlockType, BlockConfig } from "@/types/block";
 import { Breakpoint } from "@/types/responsive";
 import { CSSProperties, FC, ReactNode } from "react";
 import { AiOutlineArrowDown, AiOutlineArrowRight } from "react-icons/ai";
@@ -55,7 +55,7 @@ const AddContainer: FC<AddContainerProps> = ({
 
   const { settings, advancedSettings } = BuilderConfiguration.getBlock(
     BlockType.CONTAINER
-  ) as EditorBlockConfig;
+  ) as BlockConfig;
 
   const addContainer = ({ size, direction }: LayoutType) => {
     const parent: Block = createBlock({

@@ -2,7 +2,7 @@ import { Media } from "@/types/media";
 import { CSSProperties } from "react";
 import { ResponsiveValue } from "./responsive";
 
-export const enum Unit {
+export enum Unit {
   PX = "px",
   PERCENTAGE = "%",
   EM = "em",
@@ -15,7 +15,7 @@ export const enum Unit {
   TURN = "turn",
 }
 
-export const enum SpacingUnit {
+export enum SpacingUnit {
   PX = "px",
   PERCENT = "%",
   EM = "em",
@@ -23,7 +23,7 @@ export const enum SpacingUnit {
   VW = "vw",
 }
 
-export const enum BorderStyle {
+export enum BorderStyle {
   NONE = "none",
   SOLID = "solid",
   DOTTED = "dotted",
@@ -35,7 +35,7 @@ export const enum BorderStyle {
   OUTSET = "outset",
 }
 
-export const enum FlexDirection {
+export enum FlexDirection {
   ROW = "row",
   COLUMN = "column",
   ROW_REVERSE = "row-reverse",
@@ -49,7 +49,7 @@ export type FlexGapType = {
   y?: number;
 };
 
-export const enum JustifyContent {
+export enum JustifyContent {
   START = "start",
   CENTER = "center",
   END = "end",
@@ -58,24 +58,24 @@ export const enum JustifyContent {
   SPACE_EVENTLY = "space-evently",
 }
 
-export const enum AlignItem {
+export enum AlignItem {
   START = "start",
   CENTER = "center",
   END = "end",
   STRETCH = "stretch",
 }
 
-export const enum FlexWrap {
+export enum FlexWrap {
   WRAP = "wrap",
   NOWRAP = "nowrap",
 }
 
-export const enum ColorType {
+export enum ColorType {
   GLOBAL = "Global",
   CUSTOM = "Custom",
 }
 
-export const enum BackgroundType {
+export enum BackgroundType {
   CLASSIC = "Classic",
   GRADIENT = "Gradient",
   VIDEO = "Video",
@@ -112,7 +112,7 @@ export interface TypographyType {
   letterSpacing?: ResponsiveValue<UnitValue>;
   wordSpacing?: ResponsiveValue<UnitValue>;
 }
-export const enum SizeType {
+export enum SizeType {
   XS = "xs",
   SM = "sm",
   MD = "md",
@@ -122,14 +122,14 @@ export const enum SizeType {
   DEFAULT = "default",
 }
 
-export const enum TextAlignType {
+export enum TextAlignType {
   LEFT = "left",
   CENTER = "center",
   RIGHT = "right",
   JUSTIFY = "justify",
 }
 
-export const enum DisplayType {
+export enum DisplayType {
   INLINE = "inline",
   BLOCK = "block",
   INLINE_BLOCK = "inline-block",
@@ -219,3 +219,12 @@ export type DisplayFieldType = {
   flexWrap?: ResponsiveValue<FlexWrap>;
   gap?: ResponsiveValue<FlexGapType>;
 };
+export enum Position {
+  TOP = "top",
+  RIGHT = "right",
+  BOTTOM = "bottom",
+  LEFT = "left",
+  START = "start",
+  END = "end",
+  CENTER = "center",
+}

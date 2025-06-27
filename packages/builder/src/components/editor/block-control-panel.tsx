@@ -6,7 +6,7 @@ import { BuilderConfiguration } from "@/config/builder.config";
 import { FC, lazy, Suspense, useState } from "react";
 import { CgSpinner } from "react-icons/cg";
 
-type Props = {
+export type BlockControlPanelProps = {
   type: string;
 };
 
@@ -21,7 +21,7 @@ const AdvancedSettingsControl = lazy(
   () => import("@/components/controls/advance-settings.control")
 );
 
-const BlockControlPanel: FC<Props> = ({ type }) => {
+export const BlockControlPanel: FC<BlockControlPanelProps> = ({ type }) => {
   const [currentTabIndex, setCurrentTabIndex] = useState(0);
 
   const config = BuilderConfiguration.getBlock(type);
@@ -94,4 +94,3 @@ const BlockControlPanel: FC<Props> = ({ type }) => {
   );
 };
 
-export default BlockControlPanel;

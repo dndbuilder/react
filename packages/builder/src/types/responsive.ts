@@ -1,6 +1,6 @@
 import React, { ComponentType } from "react";
 
-export const enum Breakpoint {
+export enum Breakpoint {
   MOBILE = "mobile",
   // MOBILE_LANDSCAPE = 'mobile-landscape',
   TABLET = "tablet",

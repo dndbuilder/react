@@ -71,9 +71,12 @@ export * from "./editor";
 export * from "./editor/canvas-area";
 export * from "./editor/breakpoint-switch";
 export * from "./editor/theme-settings";
+export * from "./editor/left-panel";
+export * from "./editor/right-panel";
+export * from "./editor/block-control-panel";
+export * from "./editor/block-navigation";
 
 // Base Components
-export * from "./base/style-manager";
 export * from "./base/editor-style-manager";
 export * from "./base/render-content";
 export * from "./base/render-block";

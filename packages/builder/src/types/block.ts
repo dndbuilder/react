@@ -16,7 +16,7 @@ import {
   WithPseudoClass,
 } from "./style";
 
-export const enum BlockType {
+export enum BlockType {
   HEADING = "heading",
   TEXT = "text",
   IMAGE = "image",
@@ -68,7 +68,7 @@ export const enum BlockType {
   BRAND_FILTER = "brand-filter",
 }
 
-export const enum BlockGroup {
+export enum BlockGroup {
   BASIC = "Basic",
   LAYOUT = "Layout",
   ECOMMERCE = "Ecommerce",
@@ -95,7 +95,7 @@ export type BlockProps<T extends object = AnyObject> = Block<T> & {
   meta?: BlockMeta;
 };
 
-export type EditorBlockConfig<
+export type BlockConfig<
   T extends object = any /* @typescript-eslint/no-explicit-any */,
 > = {
   type: string;
@@ -189,4 +189,16 @@ export type BlockAdvancedSettings = {
 
 export type BlockMeta = {
   locale: string;
+};
+
+export type LinkType = {
+  url?: string;
+  newWindow?: boolean;
+  nofollow?: boolean;
+  attributes?: string;
+};
+
+export type IconType = {
+  iconSet: string;
+  iconName: string;
 };

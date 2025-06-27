@@ -1,11 +1,11 @@
 "use client";
-import { EditorBlockConfig } from "@/types/block";
+import { BlockConfig } from "@/types/block";
 import { Suspense, useRef } from "react";
 import { useDrag } from "react-dnd";
 import { FiGrid } from "react-icons/fi";
 
 type Props = {
-  block: EditorBlockConfig;
+  block: BlockConfig;
 };
 
 const BlockNavigationItem = ({ block }: Props) => {

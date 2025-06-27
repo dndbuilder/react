@@ -6,7 +6,8 @@ import { FC, HTMLAttributes, useState } from "react";
 import { CiSettings } from "react-icons/ci";
 import { Checkbox } from "@/components/shared/checkbox";
 import { Label } from "@/components/shared/label";
-import { LinkType, SettingsType } from "@/types";
+import { SettingsType } from "@/types";
+import { LinkType } from "@/types/block";
 import { useSettings } from "@/hooks/use-settings";
 import { createId } from "@/utils";
 

@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "./index";
 
-export const enum BuilderRightPanelType {
+export enum BuilderRightPanelType {
   SETTINGS = "settings",
   LAYER = "layer",
 }

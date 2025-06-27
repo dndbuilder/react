@@ -28,7 +28,7 @@ import SlideOverlayControl from "./slide-overlay.control";
 import SlideTextAlignControl from "./slide-text-align.control";
 import SlideVerticalPosition from "./slide-vertical-position.control";
 
-const enum SlideTabType {
+enum SlideTabType {
   BACKGROUND = "Background",
   CONTENT = "Content",
   STYLE = "Style",

@@ -1,4 +1,4 @@
-import { IconType, LinkType } from "@/types";
+import { IconType, LinkType } from "@/types/block";
 import { ResponsiveValue } from "@/types/responsive";
 import { SpacingValue, UnitValue, WithPseudoClass } from "@/types/style";
 

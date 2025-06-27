@@ -6,9 +6,9 @@ import { ScrollArea } from "@/components/shared/scroll-area";
 import { BiSearch } from "react-icons/bi";
 import { useMemo, useState } from "react";
 import { classNames, objectKeys } from "@/utils";
-import { BlockGroup, EditorBlockConfig } from "@/types/block";
+import { BlockGroup, BlockConfig } from "@/types/block";
 
-const BlockNavigation = () => {
+export const BlockNavigation = () => {
   const [search, setSearch] = useState("");
 
   const availableGroups = useMemo(() => {
@@ -25,7 +25,7 @@ const BlockNavigation = () => {
           acc[group].push(block);
           return acc;
         },
-        {} as Record<BlockGroup, EditorBlockConfig[]>
+        {} as Record<BlockGroup, BlockConfig[]>
       );
   }, [search]);
 
@@ -103,5 +103,3 @@ const BlockNavigation = () => {
     </div>
   );
 };
-
-export default BlockNavigation;

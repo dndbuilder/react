@@ -1,3 +1,6 @@
+import { BlockGroup, BlockConfig } from "./block";
+import { BreakpointConfig } from "./responsive";
+
 export * from "./block";
 export * from "./responsive";
 export * from "./style";
@@ -11,17 +14,7 @@ export type OptionalKeys<T, K extends keyof T> = Omit<T, K> &
 export type RequiredKeys<T, K extends keyof T> = Omit<T, K> &
   Required<Pick<T, K>>;
 
-export const enum Position {
-  TOP = "top",
-  RIGHT = "right",
-  BOTTOM = "bottom",
-  LEFT = "left",
-  START = "start",
-  END = "end",
-  CENTER = "center",
-}
-
-export const enum Direction {
+export enum Direction {
   HORIZONTAL = "horizontal",
   VERTICAL = "vertical",
 }
@@ -31,25 +24,20 @@ export type SelectOption = {
   value: string;
 };
 
-export type LinkType = {
-  url?: string;
-  newWindow?: boolean;
-  nofollow?: boolean;
-  attributers?: string;
-};
-
-export type IconType = {
-  iconSet: string;
-  iconName: string;
-};
-
-export const enum SettingsType {
+export enum SettingsType {
   BLOCK = "block",
   ADVANCED = "advanced",
   THEME = "theme",
 }
 
-export const enum ThemeSettingsType {
+// Define the BuilderConfig type
+export type BuilderConfig = {
+  blocks?: BlockConfig[];
+  groups?: BlockGroup[];
+  breakpoints?: BreakpointConfig[];
+};
+
+export enum ThemeSettingsType {
   GLOBAL = "global",
   LAYOUT = "layout",
   COLOR = "color",

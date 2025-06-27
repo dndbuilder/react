@@ -39,7 +39,7 @@ import {
 } from "react-icons/md";
 import { PiArrowUUpRightLight } from "react-icons/pi";
 
-const enum AccordionGroup {
+enum AccordionGroup {
   CONTAINER = "Container",
   ADDITIONAL = "Additional",
 }

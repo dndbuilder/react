@@ -11,7 +11,8 @@ import {
   setBlockSettingsValueByKey,
 } from "@/store/builder-slice";
 import { getIsBlockSelected } from "@/store/selectors";
-import { Direction, Position } from "@/types";
+import { Direction } from "@/types";
+import { Position } from "@/types/style";
 import { Block, BlockMeta, BlockProps, BlockType } from "@/types/block";
 import { FlexDirection, Unit } from "@/types/style";
 import { createBlock } from "@/utils";

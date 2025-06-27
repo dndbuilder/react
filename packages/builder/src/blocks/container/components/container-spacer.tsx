@@ -1,5 +1,5 @@
 import { useFrame } from "@/hooks/use-frame";
-import { Position } from "@/types";
+import { Position } from "@/types/style";
 import { classNames } from "@/utils";
 import { FC, RefObject, useEffect, useRef, useState } from "react";
 

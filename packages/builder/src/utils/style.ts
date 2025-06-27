@@ -1,4 +1,4 @@
-import { Block, BlockAdvancedSettings, EditorBlockConfig } from "@/types/block";
+import { Block, BlockAdvancedSettings, BlockConfig } from "@/types/block";
 import { Breakpoint, BreakpointConfig } from "@/types/responsive";
 import {
   BackgroundType,
@@ -39,7 +39,7 @@ export const generateContentStyles = ({
   content: Record<string, Block>;
   themeSettings: ThemeSettings;
   breakpoints: BreakpointConfig[];
-  config: Record<string, EditorBlockConfig>;
+  config: Record<string, BlockConfig>;
 }) => {
   if (Object.keys(content).length === 0) return "";
 

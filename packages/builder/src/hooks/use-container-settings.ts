@@ -1,10 +1,6 @@
 import { useAppSelector } from "@/hooks/use-app-selector";
 import { BuilderConfiguration } from "@/config/builder.config";
-import {
-  BlockAdvancedSettings,
-  BlockType,
-  EditorBlockConfig,
-} from "@/types/block";
+import { BlockAdvancedSettings, BlockType, BlockConfig } from "@/types/block";
 import { getActiveThemeContainerSettings } from "@/store/selectors";
 import { ContainerSettingsType } from "@/blocks/container/types";
 import deepmerge from "deepmerge";
