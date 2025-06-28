@@ -2,13 +2,18 @@
 import { BlockConfig } from "@/types/block";
 import { Suspense, useRef } from "react";
 import { useDrag } from "react-dnd";
-import { FiGrid } from "react-icons/fi";
+import { FiGrid, FiLock } from "react-icons/fi";
+import { licenseManager } from "@/licensing";
+import { classNames } from "@/utils";
 
 type Props = {
   block: BlockConfig;
 };
 
 const BlockNavigationItem = ({ block }: Props) => {
+  const isPremium = licenseManager.isBlockPremium(block.type);
+  const canUseBlock = licenseManager.canUseBlock(block.type);
+
   const [{ opacity }, drag] = useDrag(
     () => ({
       type: block.type,
@@ -17,27 +22,48 @@ const BlockNavigationItem = ({ block }: Props) => {
         settings: block.settings,
         advancedSettings: block.advancedSettings,
       },
+      canDrag: canUseBlock, // Disable dragging for premium blocks if not licensed
       collect: (monitor) => ({
         opacity: monitor.isDragging() ? 0.5 : 1,
       }),
     }),
-    []
+    [canUseBlock]
   );
 
   const dragRef = useRef<HTMLDivElement>(null);
 
-  drag(dragRef);
+  // Only enable drag if the block can be used
+  if (canUseBlock) {
+    drag(dragRef);
+  }
 
   return (
     <div
       ref={dragRef}
       style={{ opacity }}
-      className="flex h-[88px] cursor-move flex-col items-center overflow-hidden rounded-sm bg-slate-50 py-4 text-slate-800 ring-1 ring-slate-300 transition-colors duration-300 hover:border-slate-600 hover:bg-slate-100 hover:text-slate-800 hover:ring-slate-600"
+      className={classNames(
+        "relative flex h-[88px] flex-col items-center overflow-hidden rounded-sm bg-slate-50 py-4 text-slate-800 ring-1 ring-slate-300 transition-colors duration-300",
+        canUseBlock
+          ? "cursor-move hover:border-slate-600 hover:bg-slate-100 hover:text-slate-800 hover:ring-slate-600"
+          : "cursor-not-allowed !opacity-70"
+      )}
     >
-      <div className="mb-1 text-[22px] text-slate-700">
+      {isPremium && (
+        <div className={classNames("absolute right-1 top-1")}>
+          <span
+            className={classNames(
+              "flex items-center rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-medium text-amber-800"
+            )}
+          >
+            <FiLock className="mr-0.5" size={10} />
+            PRO
+          </span>
+        </div>
+      )}
+      <div className={classNames("mb-1 text-[22px] text-slate-700")}>
         <Suspense fallback={null}>{block.icon ? <block.icon /> : <FiGrid />}</Suspense>
       </div>
-      <p className="mt-auto text-center text-xs">{block.label}</p>
+      <p className={classNames("mt-auto text-center text-xs")}>{block.label}</p>
     </div>
   );
 };

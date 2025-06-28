@@ -1,8 +1,7 @@
+import { LocalizedValue } from "@/types";
 import { IconType } from "@/types/block";
 import { ResponsiveValue } from "@/types/responsive";
-import { LocalizedValue } from "@/types";
 import {
-  BackgroundFieldType,
   BoxShadow,
   ExtendWithPseudoClass,
   SpacingValue,
