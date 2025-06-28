@@ -3,11 +3,11 @@ import { classNames } from "@/utils";
 import { FC, ReactNode, useEffect, useState } from "react";
 import Frame, { type FrameProps } from "./frame";
 
-type RenderFrameProps = {
+export type RenderFrameProps = {
   children: ReactNode;
 } & FrameProps;
 
-const RenderFrame: FC<RenderFrameProps> = ({ children, className, ...rest }) => {
+export const RenderFrame: FC<RenderFrameProps> = ({ children, className, ...rest }) => {
   const [frameContent, setFrameContent] = useState<string | null>();
 
   useEffect(() => {
@@ -44,7 +44,7 @@ const RenderFrame: FC<RenderFrameProps> = ({ children, className, ...rest }) => 
  * only on the client side, and ensures the initial server render matches
  * what will be rendered on the client before any effects run.
  */
-function ClientOnlyRenderFrame({ children, ...props }: RenderFrameProps) {
+export function ClientOnlyRenderFrame({ children, ...props }: RenderFrameProps) {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {

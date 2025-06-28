@@ -1,17 +1,16 @@
 "use client";
 
-import "@repo/builder/dist/builder.css";
 import { Block } from "@repo/builder";
-import { Header } from "./_components/header";
-import { useEffect, useState } from "react";
-import { CgSpinner } from "react-icons/cg";
 import { BuilderProvider, Editor } from "@repo/builder/components";
+import "@repo/builder/dist/builder.css";
 import { store } from "@repo/builder/store";
+import { useEffect, useState } from "react";
+import { Header } from "./_components/header";
 
 export default function BuilderPage() {
   const [initialContent, setInitialContent] = useState<Record<string, Block>>({});
 
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Load content from API instead of localStorage
@@ -39,20 +38,12 @@ export default function BuilderPage() {
           console.error("Error loading from localStorage:", localError);
         }
       } finally {
-        setIsLoading(false);
+        // setIsLoading(false);
       }
     };
 
     fetchContent();
   }, []);
-
-  if (isLoading) {
-    return (
-      <div className="flex h-screen items-center justify-center">
-        <CgSpinner className="animate-spin text-4xl text-gray-500" size={50} />
-      </div>
-    );
-  }
 
   return (
     <>

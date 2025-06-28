@@ -27,7 +27,7 @@ export const BreakpointSwitch: FC<BreakpointSwitcherProps> = ({ className }) => 
   return (
     <div
       className={classNames(
-        "flex h-10 items-center rounded-sm px-2 text-lg ring-1 ring-slate-300 hover:bg-slate-100 hover:ring-slate-600",
+        "flex h-10 items-center rounded-sm px-2 text-lg ring-1 ring-inset ring-slate-300 transition-colors duration-150 hover:bg-slate-100 hover:ring-slate-600",
         className
       )}
     >

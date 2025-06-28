@@ -4,7 +4,7 @@ import AddNewSection from "@/components/base/add-new-section";
 import EditorRenderContent from "@/components/base/editor-render-content";
 import { EditorStyleManager } from "@/components/base/editor-style-manager";
 import { FrameContextManager } from "@/components/base/frame-context-manager";
-import ClientOnlyRenderFrame from "@/components/base/render-frame";
+import { RenderFrame } from "@/components/base/render-frame";
 import { ErrorFallback } from "@/components/shared/error-fallback";
 import { BuilderConfiguration } from "@/config/builder.config";
 import { useActionContext } from "@/contexts/action-context";
@@ -110,7 +110,7 @@ export const CanvasArea: FC = () => {
             width: currentBreakpoint === Breakpoint.DESKTOP ? "100%" : `${previewWidth}px`,
           }}
         >
-          <ClientOnlyRenderFrame className="absolute mx-auto" style={frameStyles}>
+          <RenderFrame className="absolute mx-auto" style={frameStyles}>
             <FrameContextManager>
               <EditorRenderContent content={content} meta={meta} />
 
@@ -118,7 +118,7 @@ export const CanvasArea: FC = () => {
 
               <EditorStyleManager content={content} themeSettings={themeSettings} />
             </FrameContextManager>
-          </ClientOnlyRenderFrame>
+          </RenderFrame>
         </div>
       </ErrorBoundary>
     </div>
