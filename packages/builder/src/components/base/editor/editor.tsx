@@ -1,19 +1,17 @@
 "use client";
 
+import { CanvasArea } from "@/components";
+import { BuilderConfiguration } from "@/config";
 import { useAppDispatch } from "@/hooks/use-app-dispatch";
-import { useAppSelector } from "@/hooks/use-app-selector";
 import { clearContent, setContent } from "@/store/builder-slice";
-import { getContent } from "@/store/selectors";
+import { BuilderConfig } from "@/types";
 import { Block } from "@/types/block";
-import { FC, useEffect, useMemo } from "react";
+import { classNames } from "@/utils";
+import { FC, useEffect } from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import { CanvasArea } from "@/components";
 import { LeftPanel } from "./left-panel";
 import { RightPanel } from "./right-panel";
-import { classNames } from "@/utils";
-import { BuilderConfiguration } from "@/config";
-import { BuilderConfig } from "@/types";
 
 export type EditorProps = {
   content: Record<string, Block>;
@@ -86,6 +84,8 @@ export const Editor: FC<EditorProps> = ({ content, className, builderConfig, ...
         {/* Builder Right Sidebar Panel */}
         <RightPanel />
       </div>
+
+      {/* <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script> */}
     </DndProvider>
   );
 };

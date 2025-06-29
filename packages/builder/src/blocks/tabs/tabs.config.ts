@@ -18,6 +18,7 @@ const TabsConfig = createBlockConfig<TabsSettingsType>({
   label: "Tabs",
   group: BlockGroup.BASIC,
   component: lazy(() => import("./components/tabs.block")),
+  previewComponent: lazy(() => import("./components/tabs.preview")),
   settings: {
     tabs: [
       {

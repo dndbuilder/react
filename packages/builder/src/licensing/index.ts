@@ -8,8 +8,8 @@ import { BlockType } from "@/types/block";
 /**
  * Singleton class to manage the current license
  */
-class LicenseManager {
-  private static instance: LicenseManager;
+class LicenseService {
+  private static instance: LicenseService;
   private currentLicense: License = { tier: LicenseTier.FREE };
 
   private constructor() {}
@@ -18,11 +18,11 @@ class LicenseManager {
    * Get the singleton instance of the LicenseManager
    * @returns The LicenseManager instance
    */
-  public static getInstance(): LicenseManager {
-    if (!LicenseManager.instance) {
-      LicenseManager.instance = new LicenseManager();
+  public static getInstance(): LicenseService {
+    if (!LicenseService.instance) {
+      LicenseService.instance = new LicenseService();
     }
-    return LicenseManager.instance;
+    return LicenseService.instance;
   }
 
   /**
@@ -95,6 +95,4 @@ class LicenseManager {
 }
 
 // Export the singleton instance
-export const licenseManager = LicenseManager.getInstance();
-
-export { LicenseConfig } from "./license.config";
+export const LicenseManager = LicenseService.getInstance();

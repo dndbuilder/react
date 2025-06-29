@@ -10,7 +10,7 @@ import { FC, Suspense, memo } from "react";
 import BlockWrapper from "./block-wrapper";
 import { ErrorFallback } from "../shared/error-fallback";
 import EditorBlockWrapper from "./editor-block-wrapper";
-import { licenseManager } from "@/licensing";
+import { LicenseManager } from "@/licensing";
 import { FiLock } from "react-icons/fi";
 
 export type EditorRenderBlockProps = {
@@ -50,8 +50,8 @@ const RenderBlock: FC<RenderBlockProps> = memo(({ block, index, isEditable, meta
   const blockProps = generateBlockProps({ block, index, isEditable, meta });
 
   // Check if the block is premium and if the user can use it
-  const isPremium = licenseManager.isBlockPremium(block.type);
-  const canUseBlock = licenseManager.canUseBlock(block.type);
+  const isPremium = LicenseManager.isBlockPremium(block.type);
+  const canUseBlock = LicenseManager.canUseBlock(block.type);
 
   // If the block is premium and the user can't use it, show a premium message
   if (isPremium && !canUseBlock) {

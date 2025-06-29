@@ -9,12 +9,12 @@ import { generateThemeStyles } from "@/utils/theme";
 import cssBeautify from "cssbeautify";
 import { FC, memo } from "react";
 
-export type StyleManagerProps = {
+export type AssetManagerProps = {
   content: Record<string, Block>;
   themeSettings?: ThemeSettings;
 };
 
-export const StyleManager: FC<StyleManagerProps> = memo(
+export const AssetManager: FC<AssetManagerProps> = memo(
   ({ content, themeSettings = ThemeConfiguration.settings }) => {
     const breakpoints = BuilderConfiguration.getBreakpoints();
 
@@ -69,4 +69,4 @@ export const StyleManager: FC<StyleManagerProps> = memo(
   }
 );
 
-StyleManager.displayName = "StyleManager";
+AssetManager.displayName = "AssetManager";

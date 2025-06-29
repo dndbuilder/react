@@ -2,7 +2,6 @@
 
 import AddNewSection from "@/components/base/add-new-section";
 import EditorRenderContent from "@/components/base/editor-render-content";
-import { EditorStyleManager } from "@/components/base/editor-style-manager";
 import { FrameContextManager } from "@/components/base/frame-context-manager";
 import { RenderFrame } from "@/components/base/render-frame";
 import { ErrorFallback } from "@/components/shared/error-fallback";
@@ -21,6 +20,7 @@ import { Breakpoint } from "@/types/responsive";
 import { classNames } from "@/utils";
 import { CSSProperties, FC, useEffect, useMemo, useRef, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
+import { EditorAssetManager } from "../editor-asset-manager";
 
 export const CanvasArea: FC = () => {
   const content = useAppSelector(getContent);
@@ -116,7 +116,7 @@ export const CanvasArea: FC = () => {
 
               <AddNewSection className="p-10" />
 
-              <EditorStyleManager content={content} themeSettings={themeSettings} />
+              <EditorAssetManager content={content} themeSettings={themeSettings} />
             </FrameContextManager>
           </RenderFrame>
         </div>
