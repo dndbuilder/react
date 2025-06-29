@@ -9,8 +9,6 @@ import {
 } from "@/utils/style";
 import { lazy } from "react";
 import { PiRectangleDashed } from "react-icons/pi";
-import BannerContentControl from "./components/banner-content.control";
-import BannerStyleControl from "./components/banner-style.control";
 import { BannerSettingsType } from "./types";
 
 const BannerConfig = createBlockConfig<BannerSettingsType>({

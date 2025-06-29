@@ -11,6 +11,7 @@
   "files": [
     "dist"
   ],
+  "homepage": "https://dnd-builder-web.vercel.app/",
   "exports": {
     ".": {
       "import": "./dist/index.js"
@@ -36,11 +37,13 @@
     }
   },
   "scripts": {
-    "lint": "eslint *.ts*",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "build": "vite build",
     "dev": "vite build --watch --emptyOutDir=false"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.30.0",
     "@monaco-editor/react": "^4.7.0",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",

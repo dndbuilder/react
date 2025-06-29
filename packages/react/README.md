@@ -1,128 +1,76 @@
-# Block Registration System
+# DnD Page Builder
 
-This directory contains the block registration system for the page builder. It provides an extensible approach for loading block configurations.
+A powerful drag-and-drop page builder for React applications. This package provides a comprehensive set of components, hooks, and utilities for building customizable page editors with a block-based approach.
 
-## Directory Structure
+## Features
 
-- `registry.ts`: Contains the `BlockRegistry` class for managing block configurations
+- 🧩 **Block-Based Architecture**: Build pages using pre-defined or custom blocks
+- 🖱️ **Drag and Drop Interface**: Intuitive drag-and-drop functionality using React DND
+- 🔄 **Undo/Redo Support**: Built-in history management with Redux Undo
+- 📱 **Responsive Design**: Create responsive layouts that work across devices
+- 🎨 **Customizable UI**: Extensive styling options with Tailwind CSS
+- 🧰 **Extensible API**: Easily extend with custom blocks and functionality
+- 🔌 **Plugin System**: Support for third-party plugins and extensions
+- 📦 **Tree-Shakable**: Import only what you need
 
-## Usage
+## Installation
 
-### Registering Blocks
+```bash
+# Using npm
+npm install @dnd-page-builder/react
 
-```typescript
-import { blockRegistry } from "./blocks/registry";
-import { BlockGroup } from "@/types/block";
-import { BannerConfig } from "@/blocks/banner";
-import { ButtonConfig } from "@/blocks/button";
-import { ContainerConfig } from "@/blocks/container";
-// ... other block imports
+# Using yarn
+yarn add @dnd-page-builder/react
 
-// Register all blocks directly
-blockRegistry.registerBlocks([
-  ContainerConfig,
-  HeadingConfig,
-  TextConfig,
-  ButtonConfig,
-  // ... other blocks
-]);
-
-// Register blocks with a specific group
-blockRegistry.registerBlocks([IconConfig, ImageConfig], BlockGroup.BASIC);
-
-// Register a single block with a specific group
-blockRegistry.registerBlock(SliderConfig, BlockGroup.ADVANCED);
-
-// Export the block configuration
-export const BlockConfiguration = blockRegistry.getRegisteredBlocks();
+# Using pnpm
+pnpm add @dnd-page-builder/react
 ```
 
-### Accessing Blocks by Group
+## Quick Start
 
-```typescript
-// Get all blocks organized by group
-const allBlocksByGroup = blockRegistry.getBlocksByGroup();
+```jsx
+import React from "react";
+import { Builder, BuilderProvider } from "@dnd-page-builder/react";
+import "@dnd-page-builder/react/dist/style.css";
 
-// Get blocks from a specific group
-const layoutBlocks = blockRegistry.getBlocksByGroup("Layout");
-const ecommerceBlocks = blockRegistry.getBlocksByGroup("Ecommerce");
-
-// Get a specific block config
-const headingBlock = blockRegistry.getBlockConfig("heading");
-```
-
-### Conditional Block Loading
-
-```typescript
-import { blockRegistry } from "./blocks/registry";
-import { BannerConfig } from "@/blocks/banner";
-import { ButtonConfig } from "@/blocks/button";
-// ... other block imports
-
-// Register essential blocks (always included)
-blockRegistry.registerBlocks([ContainerConfig, HeadingConfig, TextConfig, ButtonConfig]);
-
-// Conditionally register additional blocks
-if (process.env.ENABLE_ADVANCED_FEATURES === "true") {
-  blockRegistry.registerBlocks([HtmlConfig, BannerConfig, SliderConfig]);
-}
-
-// Export the block configuration
-export const BlockConfiguration = blockRegistry.getRegisteredBlocks();
-```
-
-### Adding Custom Blocks from a Next.js App
-
-```typescript
-// apps/web/src/lib/page-builder.ts
-import { blockRegistry } from "@your-builder-package/config/blocks/registry";
-import CustomBlockConfig from "../blocks/custom-block/custom-block.config";
-
-export function registerCustomBlocks() {
-  blockRegistry.registerBlocks([
-    CustomBlockConfig,
-    // Other custom blocks
-  ]);
-
-  return blockRegistry.getRegisteredBlocks();
-}
-```
-
-### Using the Plugin System
-
-```typescript
-// apps/web/src/lib/page-builder.ts
-import { blockRegistry } from "@your-builder-package/config/blocks/registry";
-import { BlockGroup } from "@/types/block";
-import CustomBlockConfig from "../blocks/custom-block/custom-block.config";
-
-export function registerCustomBlocks() {
-  // Register as a plugin
-  blockRegistry.registerPlugin({
-    name: "my-app-extension",
-    blocks: [CustomBlockConfig],
-    enabled: true,
-  });
-
-  // Register as a plugin with a specific group
-  blockRegistry.registerPlugin(
-    {
-      name: "my-app-extension-advanced",
-      blocks: [AdvancedCustomBlockConfig],
-      enabled: true,
-    },
-    BlockGroup.ADVANCED
+function App() {
+  return (
+    <BuilderProvider blocks={myBlockConfigs}>
+      <Builder />
+    </BuilderProvider>
   );
+}
 
-  return blockRegistry.getRegisteredBlocks();
+export default App;
+```
+
+## Saving Content
+
+To save content, you can use the `useContent` hook to access the editor state.
+
+```jsx
+import { useContent } from "@dnd-page-builder/react";
+function MyComponent() {
+  const { content, saveContent } = useContent();
+
+  const handleSave = () => {
+    // Save content to your backend or local storage
+    console.log("Saving content:", content);
+    saveContent();
+  };
+
+  return <button onClick={handleSave}>Save Content</button>;
 }
 ```
 
-## Benefits
+## Rendering Content
 
-1. **Group Organization**: Blocks can be registered and accessed by groups
-2. **Flexibility**: Access all blocks, blocks by group, or individual block configs
-3. **Extensibility**: Easy to add new blocks without modifying existing files
-4. **Conditional Loading**: Blocks can be conditionally loaded based on features or context
-5. **Plugin Support**: Third-party blocks can be easily integrated
-6. **Maintainability**: Easier to maintain as the number of blocks grows
+To render content on the frontend, use the `RenderContent` component.
+
+```jsx
+import { RenderContent } from "@dnd-page-builder/react/components/server";
+async function MyPage() {
+  const content = await fetchContent(); // Fetch content from your backend
+  return <RenderContent content={content} />;
+}
+```
