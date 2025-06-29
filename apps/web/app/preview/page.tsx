@@ -1,7 +1,7 @@
 import clientPromise from "@/lib/mongodb";
-import { Block } from "@repo/builder";
-import { RenderContent } from "@repo/builder/components/server";
-import "@repo/builder/dist/builder.css";
+import { Block } from "@dnd-page-builder/react";
+import { RenderContent } from "@dnd-page-builder/react/components/server";
+import "@dnd-page-builder/react/dist/style.css";
 
 async function fetchContent(): Promise<Record<string, Block>> {
   let content: Record<string, Block> = {};

@@ -24,6 +24,13 @@ export default defineConfig({
       external: ["react", "react-dom", "react/jsx-runtime"],
       output: {
         preserveModules: true,
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.names.includes("react.css")) {
+            return "style.css";
+          }
+
+          return "[name][extname]";
+        },
       },
       plugins: [preserveDirectives()],
     },

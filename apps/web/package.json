@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@repo/builder": "workspace:*",
+    "@dnd-page-builder/react": "workspace:*",
     "@tailwindcss/postcss": "^4.1.7",
     "mongodb": "^6.17.0",
     "next": "^15.1.7",

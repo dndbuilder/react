@@ -1,9 +1,9 @@
 {
-  "name": "@repo/builder",
+  "name": "@dnd-page-builder/react",
   "description": "Drag and drop builder for React",
-  "author": "Mostafiz Rahman",
+  "author": "Mostafizur Rahman",
   "license": "MIT",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -27,20 +27,12 @@
       "import": "./dist/components/server.js",
       "types": "./dist/components/server.d.ts"
     },
-    "./store": {
-      "import": "./dist/store.js",
-      "types": "./dist/store/index.d.ts"
-    },
-    "./config": {
-      "import": "./dist/config.js",
-      "types": "./dist/config/index.d.ts"
-    },
     "./store/selectors": {
       "import": "./dist/selectors.js",
       "types": "./dist/store/selectors.d.ts"
     },
-    "./dist/builder.css": {
-      "import": "./dist/builder.css"
+    "./dist/style.css": {
+      "import": "./dist/style.css"
     }
   },
   "scripts": {
