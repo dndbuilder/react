@@ -63,6 +63,7 @@ export const StyleManager: FC<StyleManagerProps> = memo(
       <>
         <link href={fontsUrl} id="fonts" rel="stylesheet"></link>
         <style dangerouslySetInnerHTML={{ __html: beautifiedStyles }}></style>
+        <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
       </>
     );
   }

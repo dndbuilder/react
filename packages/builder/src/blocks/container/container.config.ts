@@ -19,6 +19,7 @@ const ContainerConfig = createBlockConfig<ContainerSettingsType>({
   icon: LuContainer,
   // previewImage: containerPreview.src,
   component: lazy(() => import("./components/container.block")),
+  previewComponent: lazy(() => import("./components/container.preview")),
   group: BlockGroup.BASIC,
   settings: {
     contentWidth: { desktop: "boxed", tablet: "boxed", mobile: "boxed" },

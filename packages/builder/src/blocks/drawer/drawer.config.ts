@@ -17,15 +17,18 @@ const DrawerConfig = createBlockConfig<DrawerSettingsType>({
   label: "Drawer",
   icon: GoSidebarCollapse,
   component: lazy(() => import("./components/drawer.block")),
+  previewComponent: lazy(() => import("./components/drawer.preview")),
   group: BlockGroup.BASIC,
   settings: {
     trigger: {
       icon: {
         iconSet: "ant-design",
         iconName: "menu-outlined",
+        show: { desktop: true },
       },
       text: {
         content: { en: "Drawer" },
+        show: { desktop: true },
       },
     },
     content: {
