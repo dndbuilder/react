@@ -1,4 +1,4 @@
-export * from "./editor";
+export * from "./base/editor";
 
 // Shared Components
 export * from "./shared/accordion";
@@ -67,21 +67,17 @@ export * from "./controls/typography.control";
 export * from "./controls/media.control";
 
 // Editor Components
-export * from "./editor";
-export * from "./editor/canvas-area";
-export * from "./editor/breakpoint-switch";
-export * from "./editor/theme-settings";
-export * from "./editor/left-panel";
-export * from "./editor/right-panel";
-export * from "./editor/block-control-panel";
-export * from "./editor/block-navigation";
+export * from "./base/editor/canvas-area";
+export * from "./base/editor/breakpoint-switch";
+export * from "./base/editor/theme-settings";
+export * from "./base/editor/left-panel";
+export * from "./base/editor/right-panel";
+export * from "./base/editor/block-control-panel";
+export * from "./base/editor/block-navigation";
 
 // Base Components
-export * from "./base/editor-style-manager";
+export * from "./base/editor-asset-manager";
 export * from "./base/render-content";
 export * from "./base/render-block";
 export * from "./base/editor-render-block";
 export * from "./base/block-toolbar";
-
-// Provider Components
-export { BuilderProvider } from "@/contexts/builder-context";

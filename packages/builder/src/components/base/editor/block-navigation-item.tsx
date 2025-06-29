@@ -3,7 +3,7 @@ import { BlockConfig } from "@/types/block";
 import { Suspense, useRef } from "react";
 import { useDrag } from "react-dnd";
 import { FiGrid, FiLock } from "react-icons/fi";
-import { licenseManager } from "@/licensing";
+import { LicenseManager } from "@/licensing";
 import { classNames } from "@/utils";
 
 type Props = {
@@ -11,8 +11,8 @@ type Props = {
 };
 
 const BlockNavigationItem = ({ block }: Props) => {
-  const isPremium = licenseManager.isBlockPremium(block.type);
-  const canUseBlock = licenseManager.canUseBlock(block.type);
+  const isPremium = LicenseManager.isBlockPremium(block.type);
+  const canUseBlock = LicenseManager.canUseBlock(block.type);
 
   const [{ opacity }, drag] = useDrag(
     () => ({

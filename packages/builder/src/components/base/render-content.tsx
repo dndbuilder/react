@@ -1,10 +1,10 @@
-import { StyleManager } from "@/components/server";
 import { BuilderConfiguration, ThemeConfiguration } from "@/config";
 import { BuilderConfig } from "@/types";
 import { Block, BlockMeta } from "@/types/block";
 import { generateBlockTree } from "@/utils/block";
 import { FC } from "react";
 import RenderBlock from "./render-block";
+import { AssetManager } from "./asset-manager";
 
 export type RenderContentProps = {
   content: Record<string, Block>;
@@ -35,7 +35,7 @@ export const RenderContent: FC<RenderContentProps> = ({ content, meta, builderCo
             )
         )}
       </main>
-      <StyleManager content={content} themeSettings={ThemeConfiguration.settings} />
+      <AssetManager content={content} themeSettings={ThemeConfiguration.settings} />
     </>
   );
 };

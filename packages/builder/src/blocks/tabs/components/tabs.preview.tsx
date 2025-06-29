@@ -29,7 +29,7 @@ const TabsBlock: FC<BlockProps<TabsSettingsType>> = ({ settings, meta, children 
   );
 
   return (
-    <Tabs.Root className="tabs" value={settings.tabs[0].id} orientation={orientation}>
+    <Tabs.Root className="tabs" defaultValue={settings.tabs[0].id} orientation={orientation}>
       <Tabs.List className="tab-list">
         {settings.tabs.map((tab) => (
           <Tabs.Trigger key={tab.id} value={tab.id} asChild>

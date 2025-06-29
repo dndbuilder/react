@@ -1,6 +1,6 @@
 "use client";
 
-import RenderChildren from "@/components/base/render-children";
+import { RenderChildren } from "@/components/base/render-children";
 import { Drawer } from "@/components/shared/drawer";
 import { RenderIcon } from "@/components/shared/render-icon";
 import { Block, BlockProps } from "@/types/block";

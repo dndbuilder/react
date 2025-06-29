@@ -1,9 +1,9 @@
 "use client";
 
 import { Block } from "@repo/builder";
-import { BuilderProvider, Editor } from "@repo/builder/components";
+import { BuilderProvider, Editor } from "@repo/builder";
 import "@repo/builder/dist/builder.css";
-import { store } from "@repo/builder/store";
+import { store } from "@repo/builder";
 import { useEffect, useState } from "react";
 import { Header } from "./_components/header";
 

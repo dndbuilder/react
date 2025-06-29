@@ -18,13 +18,6 @@ export const FrameContextManager: FC<{ children?: ReactNode }> = ({ children }) 
 
     // Set frame document to global
     window.frameDocument = frameDocument;
-
-    // Dynamically load Iconify script in the iframe
-    if (frameDocument) {
-      const iconifyScript = frameDocument.createElement("script");
-      iconifyScript.src = "https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js";
-      frameDocument.head.appendChild(iconifyScript);
-    }
   }, [manager, frameDocument, frameWindow]);
 
   return <>{children}</>;

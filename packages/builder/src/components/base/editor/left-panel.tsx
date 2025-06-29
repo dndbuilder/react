@@ -9,7 +9,7 @@ import { classNames } from "@/utils";
 import { FiChevronLeft } from "react-icons/fi";
 import { BlockControlPanel } from "./block-control-panel";
 import { BlockNavigation } from "./block-navigation";
-import CollapseShape from "../icons/collapse-shape";
+import CollapseShape from "../../icons/collapse-shape";
 
 export const LeftPanel = () => {
   const { isLeftPanelOpen } = useActionContext();

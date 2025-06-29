@@ -1,11 +1,9 @@
-"use client";
-
 import { Block, BlockMeta } from "@/types/block";
 import { generateBlockProps } from "@/utils/block";
 import { Suspense } from "react";
 import BlockWrapper from "./block-wrapper";
 import { BuilderConfiguration } from "@/config";
-import { licenseManager } from "@/licensing";
+import { LicenseManager } from "@/licensing";
 import { FiLock } from "react-icons/fi";
 
 export type RenderBlockProps = {
@@ -21,8 +19,8 @@ export const RenderBlock = ({ block, index, meta }: RenderBlockProps) => {
   const Component = config?.previewComponent || config?.component;
 
   // Check if the block is premium and if the user can use it
-  const isPremium = licenseManager.isBlockPremium(block.type);
-  const canUseBlock = licenseManager.canUseBlock(block.type);
+  const isPremium = LicenseManager.isBlockPremium(block.type);
+  const canUseBlock = LicenseManager.canUseBlock(block.type);
 
   if (!Component) {
     return (
@@ -35,14 +33,14 @@ export const RenderBlock = ({ block, index, meta }: RenderBlockProps) => {
   // If the block is premium and the user can't use it, show a premium message
   if (isPremium && !canUseBlock) {
     return (
-      <div className="border-amber-500 bg-amber-50 text-amber-700 rounded-sm border border-dashed px-4 py-4 text-center">
+      <div className="rounded-sm border border-dashed border-amber-500 bg-amber-50 px-4 py-4 text-center text-amber-700">
         <div className="flex flex-col items-center justify-center">
           <FiLock size={24} className="mb-2" />
           <p className="font-medium">Premium Block</p>
           <p className="mt-1 text-sm">This {block.type} block requires a premium license</p>
-          <button 
-            className="mt-3 px-3 py-1 bg-amber-500 text-white rounded hover:bg-amber-600 transition-colors"
-            onClick={() => window.open('https://your-upgrade-url.com', '_blank')}
+          <button
+            className="mt-3 rounded bg-amber-500 px-3 py-1 text-white transition-colors hover:bg-amber-600"
+            onClick={() => window.open("https://your-upgrade-url.com", "_blank")}
           >
             Upgrade to Premium
           </button>

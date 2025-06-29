@@ -11,12 +11,12 @@ import { generateThemeStyles } from "@/utils/theme";
 import cssBeautify from "cssbeautify";
 import { FC, memo, useEffect } from "react";
 
-export type EditorStyleManagerProps = {
+export type EditorAssetManagerProps = {
   content: Record<string, Block>;
   themeSettings: ThemeSettings;
 };
 
-export const EditorStyleManager: FC<EditorStyleManagerProps> = memo(
+export const EditorAssetManager: FC<EditorAssetManagerProps> = memo(
   ({ content, themeSettings }) => {
     const { document } = useFrame();
 
@@ -109,6 +109,11 @@ export const EditorStyleManager: FC<EditorStyleManagerProps> = memo(
 
       document.head.appendChild(newLinkElement);
 
+      // Add iconify script if not already present
+      const iconifyScript = document.createElement("script");
+      iconifyScript.src = "https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js";
+      document.head.appendChild(iconifyScript);
+
       return () => {
         document.head.removeChild(newLinkElement);
       };
@@ -118,4 +123,4 @@ export const EditorStyleManager: FC<EditorStyleManagerProps> = memo(
   }
 );
 
-EditorStyleManager.displayName = "StyleManager";
+EditorAssetManager.displayName = "StyleManager";

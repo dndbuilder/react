@@ -20,6 +20,7 @@ const DropdownConfig = createBlockConfig<DropdownSettingsType>({
   group: BlockGroup.BASIC,
   icon: IoIosArrowDropdown,
   component: lazy(() => import("./components/dropdown.block")),
+  previewComponent: lazy(() => import("./components/dropdown.preview")),
   settings: {
     button: {
       text: {
