@@ -3,6 +3,15 @@
   "description": "Drag and drop builder for React",
   "author": "DnD Builder",
   "license": "MIT",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://dndbuilder.com/",
   "keywords": [
     "react",
     "drag-and-drop",
@@ -19,15 +28,6 @@
     "react-builder",
     "site-builder"
   ],
-  "version": "0.0.1",
-  "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "homepage": "https://dndbuilder.com/",
   "exports": {
     ".": {
       "import": "./dist/index.js"
