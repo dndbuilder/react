@@ -13,9 +13,9 @@ const ProgressBar: FC<BlockProps<ProgressBarSettingsType>> = ({ settings, meta }
     <div className="progress-bar-wrapper">
       {title && <div className="progress-bar-title mb-1">{title}</div>}
 
-      <div className="progress-bar relative h-4 w-full overflow-hidden rounded-full bg-slate-200">
+      <div className="progress-bar relative h-4 w-full overflow-hidden rounded-full bg-gray-200">
         <div
-          className="progress-bar-fill h-full rounded-full bg-slate-800 text-white transition-all duration-500 ease-in-out"
+          className="progress-bar-fill h-full rounded-full bg-gray-800 text-white transition-all duration-500 ease-in-out"
           style={{ width: `${value}%` }}
         >
           {value > 0 && (

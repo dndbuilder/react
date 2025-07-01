@@ -12,8 +12,8 @@ export type BlockControlPanelProps = {
 
 const LoadingFallback = () => (
   <div className="flex flex-col items-center justify-center p-8">
-    <CgSpinner size={24} className="animate-spin text-slate-600" />
-    <span className="mt-2 text-sm text-slate-600">Loading...</span>
+    <CgSpinner size={24} className="animate-spin text-gray-600" />
+    <span className="mt-2 text-sm text-gray-600">Loading...</span>
   </div>
 );
 
@@ -31,7 +31,7 @@ export const BlockControlPanel: FC<BlockControlPanelProps> = ({ type }) => {
   const disableAdvancedSettings = config?.disableAdvancedSettings ?? false;
 
   if (controls.length === 0 && disableAdvancedSettings) {
-    return <div className="flex justify-center py-10 text-slate-400">No controls found</div>;
+    return <div className="flex justify-center py-10 text-gray-400">No controls found</div>;
   }
 
   return (
@@ -41,11 +41,11 @@ export const BlockControlPanel: FC<BlockControlPanelProps> = ({ type }) => {
         onValueChange={(val) => setCurrentTabIndex(Number(val))}
         className="w-full"
       >
-        <Tabs.List className="w-full rounded-none bg-slate-100 p-0">
+        <Tabs.List className="w-full rounded-none bg-gray-100 p-0">
           {controls.map((tab, index) => (
             <Tabs.Trigger
               value={String(index)}
-              className="h-full w-full rounded-none border-t-2 border-t-transparent font-medium text-slate-700 data-[state=active]:border-t-slate-800 data-[state=active]:shadow-none"
+              className="h-full w-full rounded-none border-t-2 border-t-transparent font-medium text-gray-700 data-[state=active]:border-t-gray-800 data-[state=active]:shadow-none"
               key={index}
             >
               {tab.label}
@@ -54,7 +54,7 @@ export const BlockControlPanel: FC<BlockControlPanelProps> = ({ type }) => {
           {!disableAdvancedSettings && (
             <Tabs.Trigger
               value={String(controls.length)}
-              className="h-full w-full rounded-none border-t-2 border-t-transparent font-medium text-slate-700 data-[state=active]:border-t-slate-800 data-[state=active]:shadow-none"
+              className="h-full w-full rounded-none border-t-2 border-t-transparent font-medium text-gray-700 data-[state=active]:border-t-gray-800 data-[state=active]:shadow-none"
             >
               Advanced
             </Tabs.Trigger>

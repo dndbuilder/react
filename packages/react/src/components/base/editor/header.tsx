@@ -12,7 +12,7 @@ const Header: FC = () => {
 
   return (
     <>
-      <div className="absolute top-0 z-50 flex h-[60px] w-full min-w-[1024px] items-center gap-4 bg-slate-900 px-4 shadow-sm">
+      <div className="absolute top-0 z-50 flex h-[60px] w-full min-w-[1024px] items-center gap-4 bg-gray-900 px-4 shadow-sm">
         <div className="flex items-center gap-4">
           {/* Logo */}
           <div className="flex h-full items-center lg:w-[290px]">Logo</div>

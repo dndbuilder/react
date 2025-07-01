@@ -8,7 +8,7 @@ export const InfoMessage: FC<InfoMessageProps> = ({ children, className }) => {
   return (
     <div
       className={classNames(
-        "my-2  text-[12px] font-light italic leading-4 text-slate-700",
+        "my-2  text-[12px] font-light italic leading-4 text-gray-700",
         className
       )}
     >

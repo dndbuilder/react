@@ -48,7 +48,7 @@ const SelectTrigger = React.forwardRef<
   <SelectPrimitive.Trigger
     ref={ref}
     className={classNames(
-      "focus:outline-hidden flex h-[30px]  w-full items-center justify-between whitespace-nowrap rounded-sm border border-slate-300  bg-transparent p-2 text-xs text-slate-800 placeholder:text-slate-300 focus:border-slate-500 focus:ring-0 disabled:cursor-not-allowed disabled:opacity-50",
+      "focus:outline-hidden flex h-[30px]  w-full items-center justify-between whitespace-nowrap rounded-sm border border-gray-300  bg-transparent p-2 text-xs text-gray-800 placeholder:text-gray-300 focus:border-gray-500 focus:ring-0 disabled:cursor-not-allowed disabled:opacity-50",
       className
     )}
     {...props}
@@ -118,7 +118,7 @@ const SelectItem = React.forwardRef<React.ElementRef<typeof SelectPrimitive.Item
     <SelectPrimitive.Item
       ref={ref}
       className={classNames(
-        "rounded-xs outline-hidden data-disabled:pointer-events-none data-disabled:opacity-50 relative flex w-full cursor-default select-none items-center py-1.5 pe-2 ps-8 text-xs text-slate-800 focus:bg-slate-100 focus:text-slate-900",
+        "rounded-xs outline-hidden data-disabled:pointer-events-none data-disabled:opacity-50 relative flex w-full cursor-default select-none items-center py-1.5 pe-2 ps-8 text-xs text-gray-800 focus:bg-gray-100 focus:text-gray-900",
         className
       )}
       {...props}
@@ -143,7 +143,7 @@ const SelectSeparator = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <SelectPrimitive.Separator
     ref={ref}
-    className={classNames("-mx-1 my-1 h-px bg-slate-300", className)}
+    className={classNames("-mx-1 my-1 h-px bg-gray-300", className)}
     {...props}
   >
     {children}

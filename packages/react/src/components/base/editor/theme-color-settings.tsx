@@ -40,7 +40,7 @@ const ThemeColorSettings: FC<Props> = ({ setCurrentSetting }) => {
           Global Colors
         </div>
         <button
-          className="text-slate-600 hover:text-slate-900"
+          className="text-gray-600 hover:text-gray-900"
           onClick={() => setCurrentSetting(ThemeSettingsType.GLOBAL)}
         >
           <FiX size={16} />
@@ -53,9 +53,9 @@ const ThemeColorSettings: FC<Props> = ({ setCurrentSetting }) => {
           <Accordion.Content className="px-4">
             {/* Background */}
             <div className="flex items-center gap-2 ">
-              <p className="me-auto text-xs text-slate-700">Background</p>
+              <p className="me-auto text-xs text-gray-700">Background</p>
 
-              {/* <span className="me-1 text-xs text-slate-700">{backgroundColor}</span> */}
+              {/* <span className="me-1 text-xs text-gray-700">{backgroundColor}</span> */}
 
               <Popover>
                 <Popover.Trigger className="cursor-pointer rounded-sm border p-1.5">
@@ -77,9 +77,9 @@ const ThemeColorSettings: FC<Props> = ({ setCurrentSetting }) => {
 
             {/* Accent */}
             <div className="mt-4 flex items-center gap-2 ">
-              <p className="me-auto text-xs text-slate-700">Accent</p>
+              <p className="me-auto text-xs text-gray-700">Accent</p>
 
-              {/* <span className="me-1 text-xs text-slate-700">{accentColor}</span> */}
+              {/* <span className="me-1 text-xs text-gray-700">{accentColor}</span> */}
 
               <Popover>
                 <Popover.Trigger className="cursor-pointer rounded-sm border p-1.5">
@@ -101,9 +101,9 @@ const ThemeColorSettings: FC<Props> = ({ setCurrentSetting }) => {
 
             {/* Text */}
             <div className="mt-4 flex items-center gap-2">
-              <p className="me-auto text-xs text-slate-700">Text</p>
+              <p className="me-auto text-xs text-gray-700">Text</p>
 
-              {/* <span className="me-1 text-xs text-slate-700">{textColor}</span> */}
+              {/* <span className="me-1 text-xs text-gray-700">{textColor}</span> */}
 
               <Popover>
                 <Popover.Trigger className="cursor-pointer rounded-sm border p-1.5">
@@ -140,7 +140,7 @@ const ThemeColorSettings: FC<Props> = ({ setCurrentSetting }) => {
                   onKeyDown={(e: React.KeyboardEvent) => e.key === "Enter" && e.preventDefault()}
                   html={preset.name}
                   tagName="p"
-                  className="me-auto rounded-sm border border-transparent px-2 py-1 text-xs hover:border-slate-100 focus-visible:border-slate-100 focus-visible:outline-0"
+                  className="me-auto rounded-sm border border-transparent px-2 py-1 text-xs hover:border-gray-100 focus-visible:border-gray-100 focus-visible:outline-0"
                 />
                 <Label>
                   {/* <span className="group-hover:hidden">{preset.value}</span> */}

@@ -67,7 +67,7 @@ const SlidesControl = () => {
                     onClick={() => {
                       setActiveSlide((prevState) => (prevState === slide.id ? "" : slide.id));
                     }}
-                    className="flex h-full flex-1 cursor-pointer items-center py-1 text-xs hover:bg-slate-50"
+                    className="flex h-full flex-1 cursor-pointer items-center py-1 text-xs hover:bg-gray-50"
                   >
                     {getTitle(slide.title?.[currentLocale] || slide.title?.en, index)}
                   </Label>
@@ -82,7 +82,7 @@ const SlidesControl = () => {
                       });
                       setSlides(newSlides);
                     }}
-                    className="me-1.5 flex h-full cursor-pointer items-center justify-center hover:bg-slate-50"
+                    className="me-1.5 flex h-full cursor-pointer items-center justify-center hover:bg-gray-50"
                   >
                     <FaRegCopy />
                   </div>
@@ -93,7 +93,7 @@ const SlidesControl = () => {
                       newSlides.splice(index, 1);
                       setSlides(newSlides);
                     }}
-                    className="flex h-full cursor-pointer items-center justify-center hover:bg-slate-50"
+                    className="flex h-full cursor-pointer items-center justify-center hover:bg-gray-50"
                   >
                     <BsTrash />
                   </div>

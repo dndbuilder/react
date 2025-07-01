@@ -30,7 +30,7 @@ const TypographySettings: FC<Props> = ({ setCurrentSetting }) => {
           Typography
         </div>
         <button
-          className="text-slate-600 hover:text-slate-900"
+          className="text-gray-600 hover:text-gray-900"
           onClick={() => setCurrentSetting(ThemeSettingsType.GLOBAL)}
         >
           <FiX size={16} />
@@ -115,7 +115,7 @@ const TypographySettings: FC<Props> = ({ setCurrentSetting }) => {
                   onKeyDown={(e: React.KeyboardEvent) => e.key === "Enter" && e.preventDefault()}
                   html={preset.name}
                   tagName="p"
-                  className="me-auto rounded-sm border border-transparent px-2 py-1 text-xs hover:border-slate-100 focus-visible:border-slate-100 focus-visible:outline-0"
+                  className="me-auto rounded-sm border border-transparent px-2 py-1 text-xs hover:border-gray-100 focus-visible:border-gray-100 focus-visible:outline-0"
                 />
 
                 <Label>

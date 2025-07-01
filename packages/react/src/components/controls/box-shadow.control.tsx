@@ -92,7 +92,7 @@ export const BoxShadowControl: FC<BoxShadowControlProps> = ({
       {/* Popover */}
       <Popover>
         <Popover.Trigger asChild>
-          <button className="rounded border bg-slate-50 px-3 py-1.5 transition-colors duration-200 hover:bg-slate-300">
+          <button className="rounded border bg-gray-50 px-3 py-1.5 transition-colors duration-200 hover:bg-gray-300">
             <CiEdit />
           </button>
         </Popover.Trigger>
@@ -123,7 +123,7 @@ export const BoxShadowControl: FC<BoxShadowControlProps> = ({
             </div>
             {/* Horizontal */}
             <div className="mt-4">
-              <Label className="mb-1.5 block text-xs text-slate-800">Horizontal</Label>
+              <Label className="mb-1.5 block text-xs text-gray-800">Horizontal</Label>
               <div className="flex gap-1.5">
                 <RangeSlider
                   defaultValue={[innerValue.horizontal ?? 0]}
@@ -157,7 +157,7 @@ export const BoxShadowControl: FC<BoxShadowControlProps> = ({
 
             {/* Vertical */}
             <div className="mt-3">
-              <Label className="mb-1.5 block text-xs text-slate-800">Vertical</Label>
+              <Label className="mb-1.5 block text-xs text-gray-800">Vertical</Label>
               <div className="flex gap-1.5">
                 <RangeSlider
                   defaultValue={[innerValue.vertical ?? 0]}
@@ -191,7 +191,7 @@ export const BoxShadowControl: FC<BoxShadowControlProps> = ({
 
             {/* Blur */}
             <div className="mt-3">
-              <Label className="mb-1.5 block text-xs text-slate-800">Blur</Label>
+              <Label className="mb-1.5 block text-xs text-gray-800">Blur</Label>
               <div className="flex gap-1.5">
                 <RangeSlider
                   defaultValue={[innerValue.blur ?? 0]}
@@ -225,7 +225,7 @@ export const BoxShadowControl: FC<BoxShadowControlProps> = ({
 
             {/* Spread */}
             <div className="mt-3">
-              <Label className="mb-1.5 block text-xs text-slate-800">Spread</Label>
+              <Label className="mb-1.5 block text-xs text-gray-800">Spread</Label>
               <div className="flex gap-1.5">
                 <RangeSlider
                   defaultValue={[innerValue.spread ?? 0]}

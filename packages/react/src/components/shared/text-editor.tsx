@@ -91,21 +91,21 @@ export const TextEditor: FC<TextEditorProps> = ({
   return (
     <div
       className={classNames(
-        "flex flex-col overflow-hidden rounded-md border border-slate-200",
+        "flex flex-col overflow-hidden rounded-md border border-gray-200",
         className
       )}
     >
       <div
         className={classNames(
-          "flex flex-wrap items-center border-b border-slate-200 bg-slate-50 p-2"
+          "flex flex-wrap items-center border-b border-gray-200 bg-gray-50 p-2"
         )}
       >
         <button
           onClick={() => editor?.chain().focus().toggleBold().run()}
           className={classNames(
-            "mb-1 mr-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded border-none bg-transparent p-2 text-sm text-slate-600 hover:bg-slate-200",
+            "mb-1 mr-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded border-none bg-transparent p-2 text-sm text-gray-600 hover:bg-gray-200",
             {
-              "bg-slate-200 font-medium text-slate-800": editor?.isActive("bold"),
+              "bg-gray-200 font-medium text-gray-800": editor?.isActive("bold"),
             }
           )}
           type="button"
@@ -116,9 +116,9 @@ export const TextEditor: FC<TextEditorProps> = ({
         <button
           onClick={() => editor?.chain().focus().toggleItalic().run()}
           className={classNames(
-            "mb-1 mr-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded border-none bg-transparent p-2 text-sm text-slate-600 hover:bg-slate-200",
+            "mb-1 mr-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded border-none bg-transparent p-2 text-sm text-gray-600 hover:bg-gray-200",
             {
-              "bg-slate-200 font-medium text-slate-800": editor?.isActive("italic"),
+              "bg-gray-200 font-medium text-gray-800": editor?.isActive("italic"),
             }
           )}
           type="button"
@@ -129,9 +129,9 @@ export const TextEditor: FC<TextEditorProps> = ({
         <button
           onClick={() => editor?.chain().focus().toggleStrike().run()}
           className={classNames(
-            "mb-1 mr-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded border-none bg-transparent p-2 text-sm text-slate-600 hover:bg-slate-200",
+            "mb-1 mr-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded border-none bg-transparent p-2 text-sm text-gray-600 hover:bg-gray-200",
             {
-              "bg-slate-200 font-medium text-slate-800": editor?.isActive("strike"),
+              "bg-gray-200 font-medium text-gray-800": editor?.isActive("strike"),
             }
           )}
           type="button"
@@ -140,14 +140,14 @@ export const TextEditor: FC<TextEditorProps> = ({
           <FaStrikethrough />
         </button>
 
-        <span className={classNames("mx-2 h-6 w-px bg-slate-200")}></span>
+        <span className={classNames("mx-2 h-6 w-px bg-gray-200")}></span>
 
         <button
           onClick={() => editor?.chain().focus().toggleHeading({ level: 1 }).run()}
           className={classNames(
-            "mb-1 mr-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded border-none bg-transparent p-2 text-sm text-slate-600 hover:bg-slate-200",
+            "mb-1 mr-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded border-none bg-transparent p-2 text-sm text-gray-600 hover:bg-gray-200",
             {
-              "bg-slate-200 font-medium text-slate-800": editor?.isActive("heading", { level: 1 }),
+              "bg-gray-200 font-medium text-gray-800": editor?.isActive("heading", { level: 1 }),
             }
           )}
           type="button"
@@ -158,9 +158,9 @@ export const TextEditor: FC<TextEditorProps> = ({
         <button
           onClick={() => editor?.chain().focus().toggleHeading({ level: 2 }).run()}
           className={classNames(
-            "mb-1 mr-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded border-none bg-transparent p-2 text-sm text-slate-600 hover:bg-slate-200",
+            "mb-1 mr-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded border-none bg-transparent p-2 text-sm text-gray-600 hover:bg-gray-200",
             {
-              "bg-slate-200 font-medium text-slate-800": editor?.isActive("heading", { level: 2 }),
+              "bg-gray-200 font-medium text-gray-800": editor?.isActive("heading", { level: 2 }),
             }
           )}
           type="button"
@@ -169,14 +169,14 @@ export const TextEditor: FC<TextEditorProps> = ({
           <FaHeading className="text-sm" />
         </button>
 
-        <span className={classNames("mx-2 h-6 w-px bg-slate-200")}></span>
+        <span className={classNames("mx-2 h-6 w-px bg-gray-200")}></span>
 
         <button
           onClick={() => editor?.chain().focus().toggleBulletList().run()}
           className={classNames(
-            "mb-1 mr-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded border-none bg-transparent p-2 text-sm text-slate-600 hover:bg-slate-200",
+            "mb-1 mr-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded border-none bg-transparent p-2 text-sm text-gray-600 hover:bg-gray-200",
             {
-              "bg-slate-200 font-medium text-slate-800": editor?.isActive("bulletList"),
+              "bg-gray-200 font-medium text-gray-800": editor?.isActive("bulletList"),
             }
           )}
           type="button"
@@ -187,9 +187,9 @@ export const TextEditor: FC<TextEditorProps> = ({
         <button
           onClick={() => editor?.chain().focus().toggleOrderedList().run()}
           className={classNames(
-            "mb-1 mr-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded border-none bg-transparent p-2 text-sm text-slate-600 hover:bg-slate-200",
+            "mb-1 mr-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded border-none bg-transparent p-2 text-sm text-gray-600 hover:bg-gray-200",
             {
-              "bg-slate-200 font-medium text-slate-800": editor?.isActive("orderedList"),
+              "bg-gray-200 font-medium text-gray-800": editor?.isActive("orderedList"),
             }
           )}
           type="button"
@@ -200,9 +200,9 @@ export const TextEditor: FC<TextEditorProps> = ({
         <button
           onClick={() => editor?.chain().focus().toggleBlockquote().run()}
           className={classNames(
-            "mb-1 mr-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded border-none bg-transparent p-2 text-sm text-slate-600 hover:bg-slate-200",
+            "mb-1 mr-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded border-none bg-transparent p-2 text-sm text-gray-600 hover:bg-gray-200",
             {
-              "bg-slate-200 font-medium text-slate-800": editor?.isActive("blockquote"),
+              "bg-gray-200 font-medium text-gray-800": editor?.isActive("blockquote"),
             }
           )}
           type="button"
@@ -211,7 +211,7 @@ export const TextEditor: FC<TextEditorProps> = ({
           <FaQuoteLeft />
         </button>
 
-        <span className={classNames("mx-2 h-6 w-px bg-slate-200")}></span>
+        <span className={classNames("mx-2 h-6 w-px bg-gray-200")}></span>
 
         {!showLinkInput ? (
           <>
@@ -224,9 +224,9 @@ export const TextEditor: FC<TextEditorProps> = ({
                 }
               }}
               className={classNames(
-                "mb-1 mr-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded border-none bg-transparent p-2 text-sm text-slate-600 hover:bg-slate-200",
+                "mb-1 mr-1 flex h-8 w-8 cursor-pointer items-center justify-center rounded border-none bg-transparent p-2 text-sm text-gray-600 hover:bg-gray-200",
                 {
-                  "bg-slate-200 font-medium text-slate-800": editor?.isActive("link"),
+                  "bg-gray-200 font-medium text-gray-800": editor?.isActive("link"),
                 }
               )}
               type="button"
@@ -244,7 +244,7 @@ export const TextEditor: FC<TextEditorProps> = ({
               placeholder="Enter URL"
               onKeyDown={handleKeyDown}
               className={classNames(
-                "placeholder:xs w-full rounded border border-slate-200 p-1 px-2 text-sm outline-none"
+                "placeholder:xs w-full rounded border border-gray-200 p-1 px-2 text-sm outline-none"
               )}
               autoFocus
             />
@@ -252,7 +252,7 @@ export const TextEditor: FC<TextEditorProps> = ({
               <button
                 onClick={setLink}
                 className={classNames(
-                  "text-whit mr-1 cursor-pointer rounded bg-slate-800 p-1 px-2 text-xs hover:bg-slate-900 focus:bg-slate-900"
+                  "text-whit mr-1 cursor-pointer rounded bg-gray-800 p-1 px-2 text-xs hover:bg-gray-900 focus:bg-gray-900"
                 )}
               >
                 Apply
@@ -263,7 +263,7 @@ export const TextEditor: FC<TextEditorProps> = ({
                   setShowLinkInput(false);
                 }}
                 className={classNames(
-                  "mr-1 cursor-pointer rounded border border-slate-200 bg-slate-100 p-1 px-2 text-xs hover:bg-slate-200"
+                  "mr-1 cursor-pointer rounded border border-gray-200 bg-gray-100 p-1 px-2 text-xs hover:bg-gray-200"
                 )}
               >
                 Cancel
@@ -272,7 +272,7 @@ export const TextEditor: FC<TextEditorProps> = ({
           </div>
         )}
 
-        <span className={classNames("mx-2 h-6 w-px bg-slate-200")}></span>
+        <span className={classNames("mx-2 h-6 w-px bg-gray-200")}></span>
       </div>
       <EditorContent editor={editor} {...props} />
     </div>

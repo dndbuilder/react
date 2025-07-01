@@ -48,7 +48,7 @@ const FaqsControl = () => {
                     onClick={() => {
                       setActiveItem((prevState) => (prevState === item.id ? "" : item.id));
                     }}
-                    className="line-clamp-2 flex h-full flex-1 cursor-pointer items-center py-1 text-xs hover:bg-slate-50"
+                    className="line-clamp-2 flex h-full flex-1 cursor-pointer items-center py-1 text-xs hover:bg-gray-50"
                   >
                     {getTitle(item.title?.text?.[currentLocale] || item.title?.text?.en, index)}
                   </Label>
@@ -63,7 +63,7 @@ const FaqsControl = () => {
                       });
                       setItems(newSlides);
                     }}
-                    className="me-1.5 flex h-full cursor-pointer items-center justify-center hover:bg-slate-50"
+                    className="me-1.5 flex h-full cursor-pointer items-center justify-center hover:bg-gray-50"
                   >
                     <FaRegCopy />
                   </div>
@@ -74,7 +74,7 @@ const FaqsControl = () => {
                       newSlides.splice(index, 1);
                       setItems(newSlides);
                     }}
-                    className="flex h-full cursor-pointer items-center justify-center hover:bg-slate-50"
+                    className="flex h-full cursor-pointer items-center justify-center hover:bg-gray-50"
                   >
                     <BsTrash />
                   </div>

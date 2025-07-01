@@ -121,7 +121,7 @@ const AddContainer: FC<AddContainerProps> = ({
         <Popover.Content
           asChild
           sideOffset={10}
-          className="w-[600px] rounded border border-slate-200 border-slate-300 bg-white p-4 shadow-sm"
+          className="w-[600px] rounded border border-gray-200 border-gray-300 bg-white p-4 shadow-sm"
         >
           <div onClick={(e) => e.stopPropagation()}>
             <div className="grid grid-cols-4 gap-4">
@@ -131,7 +131,7 @@ const AddContainer: FC<AddContainerProps> = ({
                     {layout.size.map((item, index) => (
                       <div
                         style={{ width: `${item}%` }}
-                        className={`flex h-[45px] cursor-pointer items-center justify-center rounded-[2px] bg-slate-200 text-white transition-colors duration-300 group-hover:bg-slate-300`}
+                        className={`flex h-[45px] cursor-pointer items-center justify-center rounded-[2px] bg-gray-200 text-white transition-colors duration-300 group-hover:bg-gray-300`}
                         key={index}
                       >
                         {layout.content}

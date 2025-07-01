@@ -295,12 +295,12 @@ const ContainerDndHandler: FC<BlockProps<ContainerSettingsType>> = ({
           "group relative flex w-full flex-col",
           !isInner &&
             "items-center justify-center after:pointer-events-none after:absolute after:left-0 after:top-0 after:z-10 after:h-full after:w-full after:ring-inset",
-          !isInner && isSelected && "after:ring-1  after:ring-inset after:ring-slate-800",
+          !isInner && isSelected && "after:ring-1  after:ring-inset after:ring-gray-800",
           !isInner &&
             !isSelected &&
-            "after:ring-inset hover:after:ring-1 hover:after:ring-slate-800",
-          isInner && isSelected && "ring-1 ring-inset ring-slate-800",
-          isInner && !isSelected && "ring-inset hover:ring-1 hover:ring-slate-800",
+            "after:ring-inset hover:after:ring-1 hover:after:ring-gray-800",
+          isInner && isSelected && "ring-1 ring-inset ring-gray-800",
+          isInner && !isSelected && "ring-inset hover:ring-1 hover:ring-gray-800",
           isOver && placeholderPosition === Position.TOP && "mt-2",
           isOver && placeholderPosition === Position.RIGHT && "me-2",
           isOver && placeholderPosition === Position.BOTTOM && "mb-2",
@@ -317,7 +317,7 @@ const ContainerDndHandler: FC<BlockProps<ContainerSettingsType>> = ({
           className={classNames(
             "content relative mx-auto flex w-full max-w-[1140px]",
             isDragging && "opacity-30 *:pointer-events-none",
-            isOverInner && children.length === 0 && "bg-slate-50"
+            isOverInner && children.length === 0 && "bg-gray-50"
           )}
           ref={innerRef}
         >
@@ -357,10 +357,10 @@ const RenderChildren: FC<RenderChildrenProps> = memo(({ blocks, meta, isEditable
     return (
       <div
         className={
-          "pointer-events-none flex h-full min-h-[80px] w-full items-center justify-center border border-dashed border-slate-300"
+          "pointer-events-none flex h-full min-h-[80px] w-full items-center justify-center border border-dashed border-gray-300"
         }
       >
-        <BiPlus size={30} className="text-slate-300" />
+        <BiPlus size={30} className="text-gray-300" />
       </div>
     );
   }

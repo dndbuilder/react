@@ -94,7 +94,7 @@ export const CanvasArea: FC = () => {
   return (
     <div
       className={classNames(
-        "relative flex grow justify-center bg-slate-100 p-4 transition-all duration-300",
+        "relative flex grow justify-center bg-gray-100 p-4 transition-all duration-300",
         !isLeftPanelOpen ? "ms-0" : "ms-[290px]",
         !activeRightPanel ? "me-0" : "me-[290px]"
       )}
@@ -102,7 +102,7 @@ export const CanvasArea: FC = () => {
       <ErrorBoundary fallbackRender={ErrorFallback}>
         <div
           className={classNames(
-            "transition-width relative flex h-full w-full border border-slate-200 shadow-sm duration-300"
+            "transition-width relative flex h-full w-full border border-gray-200 shadow-sm duration-300"
           )}
           onClick={handleUnselect}
           ref={frameWrapperRef}

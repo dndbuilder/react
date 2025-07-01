@@ -34,12 +34,12 @@ const ThemeButtonPresets = () => {
             onKeyDown={(e: React.KeyboardEvent) => e.key === "Enter" && e.preventDefault()}
             html={preset.name}
             tagName="p"
-            className="me-auto rounded-sm border border-transparent px-2 py-1 text-xs hover:border-slate-100 focus-visible:border-slate-100 focus-visible:outline-0"
+            className="me-auto rounded-sm border border-transparent px-2 py-1 text-xs hover:border-gray-100 focus-visible:border-gray-100 focus-visible:outline-0"
           />
 
           <Popover>
             <Popover.Trigger asChild>
-              <div className="cursor-pointer rounded-sm border bg-slate-50 px-3 py-1.5">
+              <div className="cursor-pointer rounded-sm border bg-gray-50 px-3 py-1.5">
                 <CiEdit />
               </div>
             </Popover.Trigger>

@@ -16,11 +16,11 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-slate-300, currentcolor);
+    border-color: var(--color-gray-300, currentcolor);
   }
 
   body {
-    @apply bg-white text-sm text-slate-800;
+    @apply bg-white text-sm text-gray-800;
   }
 
   /* Reset dialog default styles */

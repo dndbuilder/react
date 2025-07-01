@@ -3,7 +3,7 @@ import { Footer } from "../_components/footer";
 
 export default function ApiReferencePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-slate-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <Header />
       <main className="container mx-auto px-4 py-16">
         <div className="mx-auto max-w-4xl">

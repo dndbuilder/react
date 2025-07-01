@@ -107,7 +107,7 @@ export const FlexGapControl: FC<FlexGapsControlProps> = ({
             type="number"
             inputMode="numeric"
           />
-          <p className="mt-0.5 text-center text-[10px] text-slate-400">Row</p>
+          <p className="mt-0.5 text-center text-[10px] text-gray-400">Row</p>
         </div>
         <div>
           <Input
@@ -118,25 +118,25 @@ export const FlexGapControl: FC<FlexGapsControlProps> = ({
             type="number"
             inputMode="numeric"
           />
-          <p className="mt-0.5 text-center text-[10px] text-slate-400">Column</p>
+          <p className="mt-0.5 text-center text-[10px] text-gray-400">Column</p>
         </div>
         <div>
-          <div className="w-full rounded-sm border border-slate-300 ">
+          <div className="w-full rounded-sm border border-gray-300 ">
             <Tooltip>
               <Tooltip.Trigger asChild>
                 {value?.linked ? (
                   <div
                     onClick={() => handleLinkedChange(false)}
-                    className="cursor-pointer rounded-sm px-3 py-[7px] hover:bg-slate-100"
+                    className="cursor-pointer rounded-sm px-3 py-[7px] hover:bg-gray-100"
                   >
-                    <MdLink className="text-slate-600" />
+                    <MdLink className="text-gray-600" />
                   </div>
                 ) : (
                   <div
                     onClick={() => handleLinkedChange(true)}
-                    className="cursor-pointer rounded-sm px-3 py-[7px] hover:bg-slate-100"
+                    className="cursor-pointer rounded-sm px-3 py-[7px] hover:bg-gray-100"
                   >
-                    <MdLinkOff className="text-slate-600" />
+                    <MdLinkOff className="text-gray-600" />
                   </div>
                 )}
               </Tooltip.Trigger>
@@ -148,7 +148,7 @@ export const FlexGapControl: FC<FlexGapsControlProps> = ({
             onValueChange={(val) => handleUnitChange(val as Unit)}
           >
             <Select.Trigger
-              className="mx-auto h-auto w-auto border-none p-0 text-[10px] text-slate-400 hover:text-slate-600 hover:underline focus:underline"
+              className="mx-auto h-auto w-auto border-none p-0 text-[10px] text-gray-400 hover:text-gray-600 hover:underline focus:underline"
               chevronDown={false}
             >
               <Select.Value placeholder="px" />

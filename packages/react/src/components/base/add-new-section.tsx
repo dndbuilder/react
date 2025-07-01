@@ -23,11 +23,11 @@ const AddNewSection: FC<Props> = memo(
             <AddContainer blockId={blockId} onBlockAdded={onBlockAdded}>
               <div
                 role="button"
-                className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-800 transition-colors duration-150 hover:bg-slate-900"
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-800 transition-colors duration-150 hover:bg-gray-900"
                 aria-label="Select Container"
               >
                 <span className="inline-block rounded-full bg-white p-[3px]">
-                  <AiOutlinePlus className="text-slate-800" size={12} />
+                  <AiOutlinePlus className="text-gray-800" size={12} />
                 </span>
               </div>
             </AddContainer>
@@ -35,7 +35,7 @@ const AddNewSection: FC<Props> = memo(
               <BlockLibrary>
                 <div
                   role="button"
-                  className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-800 hover:bg-slate-900"
+                  className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-800 hover:bg-gray-900"
                 >
                   <AiFillFile size={20} className="text-white" />
                 </div>

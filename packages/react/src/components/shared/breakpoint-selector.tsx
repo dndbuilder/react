@@ -36,7 +36,7 @@ export const BreakpointSelector: FC<BreakpointSelectorProps> = ({ className }) =
           <Tooltip>
             <Tooltip.Trigger asChild>
               <span>
-                <FiMonitor className="text-slate-500" />
+                <FiMonitor className="text-gray-500" />
               </span>
             </Tooltip.Trigger>
             <Tooltip.Content side="right">Desktop</Tooltip.Content>
@@ -47,7 +47,7 @@ export const BreakpointSelector: FC<BreakpointSelectorProps> = ({ className }) =
           <Tooltip>
             <Tooltip.Trigger asChild>
               <span>
-                <FaTabletAlt className="text-slate-500" />
+                <FaTabletAlt className="text-gray-500" />
               </span>
             </Tooltip.Trigger>
             <Tooltip.Content side="right">Tablet</Tooltip.Content>
@@ -58,7 +58,7 @@ export const BreakpointSelector: FC<BreakpointSelectorProps> = ({ className }) =
           <Tooltip>
             <Tooltip.Trigger asChild>
               <span>
-                <FaMobileAlt className="text-slate-500" />
+                <FaMobileAlt className="text-gray-500" />
               </span>
             </Tooltip.Trigger>
             <Tooltip.Content side="right">Mobile</Tooltip.Content>
@@ -76,8 +76,8 @@ export const BreakpointSelector: FC<BreakpointSelectorProps> = ({ className }) =
             <Tooltip>
               <Tooltip.Trigger className="px-1">
                 <FiMonitor
-                  className={classNames("text-slate-500", {
-                    "text-slate-800": currentBreakpoint === Breakpoint.DESKTOP,
+                  className={classNames("text-gray-500", {
+                    "text-gray-800": currentBreakpoint === Breakpoint.DESKTOP,
                   })}
                 />
               </Tooltip.Trigger>
@@ -92,8 +92,8 @@ export const BreakpointSelector: FC<BreakpointSelectorProps> = ({ className }) =
             <Tooltip>
               <Tooltip.Trigger className="px-1">
                 <FaTabletAlt
-                  className={classNames("text-slate-500", {
-                    "text-slate-800": currentBreakpoint === Breakpoint.TABLET,
+                  className={classNames("text-gray-500", {
+                    "text-gray-800": currentBreakpoint === Breakpoint.TABLET,
                   })}
                 />
               </Tooltip.Trigger>
@@ -108,8 +108,8 @@ export const BreakpointSelector: FC<BreakpointSelectorProps> = ({ className }) =
             <Tooltip>
               <Tooltip.Trigger className="px-1">
                 <FaMobileAlt
-                  className={classNames("text-slate-500", {
-                    "text-slate-800": currentBreakpoint === Breakpoint.MOBILE,
+                  className={classNames("text-gray-500", {
+                    "text-gray-800": currentBreakpoint === Breakpoint.MOBILE,
                   })}
                 />
               </Tooltip.Trigger>

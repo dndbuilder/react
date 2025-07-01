@@ -32,12 +32,12 @@ const TabsToolbar: FC<BlockToolbarProps> = memo(({ blockId, blockType }) => {
   return (
     <div
       className={classNames(
-        "flex items-center gap-3 rounded-sm bg-slate-800 px-2 py-1 text-slate-300"
+        "flex items-center gap-3 rounded-sm bg-gray-800 px-2 py-1 text-gray-300"
       )}
     >
       <div
         role="button"
-        className="flex items-center gap-1 bg-transparent text-slate-100 hover:bg-transparent hover:text-white"
+        className="flex items-center gap-1 bg-transparent text-gray-100 hover:bg-transparent hover:text-white"
       >
         <Suspense fallback={null}>{blockConfig.icon && <blockConfig.icon />}</Suspense>
         <span className="text-xs">{blockConfig.label}</span>
@@ -46,7 +46,7 @@ const TabsToolbar: FC<BlockToolbarProps> = memo(({ blockId, blockType }) => {
       <div
         role="button"
         onClick={duplicate}
-        className="rounded-tr text-slate-100 hover:bg-transparent hover:text-white"
+        className="rounded-tr text-gray-100 hover:bg-transparent hover:text-white"
       >
         <IoDuplicateOutline size={16} />
       </div>
@@ -54,7 +54,7 @@ const TabsToolbar: FC<BlockToolbarProps> = memo(({ blockId, blockType }) => {
       <div
         role="button"
         onClick={remove}
-        className="rounded-tr text-slate-100 hover:bg-transparent hover:text-white"
+        className="rounded-tr text-gray-100 hover:bg-transparent hover:text-white"
       >
         <FiTrash2 size={16} />
       </div>

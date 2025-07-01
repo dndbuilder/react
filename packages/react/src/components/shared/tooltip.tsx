@@ -36,7 +36,7 @@ const TriggerContent = forwardRef<
     <TooltipPrimitive.Portal>
       <TooltipPrimitive.Content
         className={classNames(
-          "data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade z-[10000] select-none rounded-[4px] bg-black px-2 py-1.5 text-[10px] leading-none text-slate-50  will-change-[transform,opacity]",
+          "data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade z-[10000] select-none rounded-[4px] bg-black px-2 py-1.5 text-[10px] leading-none text-gray-50  will-change-[transform,opacity]",
           className
         )}
         sideOffset={5}

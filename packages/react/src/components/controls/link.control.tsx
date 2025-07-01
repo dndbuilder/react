@@ -49,7 +49,7 @@ export const LinkControl: FC<LinkControlProps> = ({
         />
         <button
           onClick={() => setShowSettings((prevState) => !prevState)}
-          className="rounded-r-md border border-l-0 border-slate-300 bg-slate-100 px-2 hover:bg-slate-300"
+          className="rounded-r-md border border-l-0 border-gray-300 bg-gray-100 px-2 hover:bg-gray-300"
         >
           <CiSettings />
         </button>
@@ -92,7 +92,7 @@ export const LinkControl: FC<LinkControlProps> = ({
 
           <InfoMessage>
             Set custom attributes for the link element. Separate attribute keys from values using the | (pipe)
-            character. Separate key-value pairs with a comma. <span className="text-slate-800">Learn More</span>
+            character. Separate key-value pairs with a comma. <span className="text-gray-800">Learn More</span>
           </InfoMessage> */}
         </div>
       </div>

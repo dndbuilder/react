@@ -103,13 +103,13 @@ export const ColorControl: FC<ColorControlProps> = ({
             {/* Text */}
             <Popover.Close className="w-full">
               <div
-                className="cursor-pointer px-5 py-3 hover:bg-slate-100"
+                className="cursor-pointer px-5 py-3 hover:bg-gray-100"
                 onClick={() => setColor(`var(--text-color)`)}
               >
                 <div className="flex items-center">
                   {getSquareColor(themeSettings.color.textColor)}
-                  <p className="ms-3 text-xs text-slate-500">Text</p>
-                  <p className="ms-auto text-xs text-slate-500">{themeSettings.color.textColor}</p>
+                  <p className="ms-3 text-xs text-gray-500">Text</p>
+                  <p className="ms-auto text-xs text-gray-500">{themeSettings.color.textColor}</p>
                 </div>
               </div>
             </Popover.Close>
@@ -117,14 +117,14 @@ export const ColorControl: FC<ColorControlProps> = ({
             {/* Background */}
             <Popover.Close className="w-full">
               <div
-                className="cursor-pointer px-5 py-3 hover:bg-slate-100"
+                className="cursor-pointer px-5 py-3 hover:bg-gray-100"
                 onClick={() => setColor(`var(--background-color)`)}
               >
                 <div className="flex items-center">
                   {getSquareColor(themeSettings.color.backgroundColor)}
 
-                  <p className="ms-3 text-xs text-slate-500">Background</p>
-                  <p className="ms-auto text-xs text-slate-500">
+                  <p className="ms-3 text-xs text-gray-500">Background</p>
+                  <p className="ms-auto text-xs text-gray-500">
                     {themeSettings.color.backgroundColor}
                   </p>
                 </div>
@@ -134,16 +134,14 @@ export const ColorControl: FC<ColorControlProps> = ({
             {/* Accent */}
             <Popover.Close className="w-full">
               <div
-                className="cursor-pointer px-5 py-3 hover:bg-slate-100"
+                className="cursor-pointer px-5 py-3 hover:bg-gray-100"
                 onClick={() => setColor(`var(--accent-color)`)}
               >
                 <div className="flex items-center">
                   {getSquareColor(themeSettings.color.accentColor)}
 
-                  <p className="ms-3 text-xs text-slate-500">Accent</p>
-                  <p className="ms-auto text-xs text-slate-500">
-                    {themeSettings.color.accentColor}
-                  </p>
+                  <p className="ms-3 text-xs text-gray-500">Accent</p>
+                  <p className="ms-auto text-xs text-gray-500">{themeSettings.color.accentColor}</p>
                 </div>
               </div>
             </Popover.Close>
@@ -152,14 +150,14 @@ export const ColorControl: FC<ColorControlProps> = ({
             {accentShades.map((shade, i) => (
               <Popover.Close className="w-full" key={i}>
                 <div
-                  className="cursor-pointer px-5 py-3 hover:bg-slate-100"
+                  className="cursor-pointer px-5 py-3 hover:bg-gray-100"
                   onClick={() => setColor(`var(--accent-color-${shade})`)}
                 >
                   <div className="flex items-center">
                     {getSquareColor(`var(--accent-color-${shade})`)}
 
-                    <p className="ms-3 text-xs text-slate-500">Accent {shade}</p>
-                    <p className="ms-auto text-xs text-slate-500">
+                    <p className="ms-3 text-xs text-gray-500">Accent {shade}</p>
+                    <p className="ms-auto text-xs text-gray-500">
                       {getColor(`var(--accent-color-${shade})`)}
                     </p>
                   </div>
@@ -170,13 +168,13 @@ export const ColorControl: FC<ColorControlProps> = ({
             {colorPresets?.map((preset, index) => (
               <Popover.Close className="w-full" key={index}>
                 <div
-                  className="cursor-pointer px-5 py-3 hover:bg-slate-100"
+                  className="cursor-pointer px-5 py-3 hover:bg-gray-100"
                   onClick={() => setColor(`var(--color-preset-${preset.id})`)}
                 >
                   <div className="flex items-center">
                     {getSquareColor(preset.value)}
-                    <p className="ms-3 text-xs text-slate-500">{preset.name}</p>
-                    <p className="ms-auto text-xs text-slate-500">{preset.value}</p>
+                    <p className="ms-3 text-xs text-gray-500">{preset.name}</p>
+                    <p className="ms-auto text-xs text-gray-500">{preset.value}</p>
                   </div>
                 </div>
               </Popover.Close>
@@ -191,7 +189,7 @@ export const ColorControl: FC<ColorControlProps> = ({
           <Popover.Trigger asChild>
             <div
               className={classNames("relative cursor-pointer px-[10px] py-2", {
-                "bg-slate-50 after:absolute after:left-[50%] after:top-[50%] after:h-px after:w-8 after:translate-x-[-50%] after:translate-y-[-50%] after:-rotate-45 after:bg-red-500 after:content-['']":
+                "bg-gray-50 after:absolute after:left-[50%] after:top-[50%] after:h-px after:w-8 after:translate-x-[-50%] after:translate-y-[-50%] after:-rotate-45 after:bg-red-500 after:content-['']":
                   !color,
               })}
             >

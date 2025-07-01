@@ -93,20 +93,20 @@ const TabsContentControl = () => {
                         onClick={() => {
                           setActiveTabId(tab.id);
                         }}
-                        className="flex h-full flex-1 cursor-pointer items-center py-1 text-xs hover:bg-slate-50"
+                        className="flex h-full flex-1 cursor-pointer items-center py-1 text-xs hover:bg-gray-50"
                       >
                         {getTitle(tab.label?.[currentLocale], index)}
                       </Label>
 
                       <button
                         onClick={() => duplicateTab(index)}
-                        className="me-1.5 flex h-full cursor-pointer items-center justify-center hover:bg-slate-50"
+                        className="me-1.5 flex h-full cursor-pointer items-center justify-center hover:bg-gray-50"
                       >
                         <FaRegCopy />
                       </button>
                       <button
                         onClick={() => deleteTab(index)}
-                        className="flex h-full cursor-pointer items-center justify-center hover:bg-slate-50"
+                        className="flex h-full cursor-pointer items-center justify-center hover:bg-gray-50"
                         disabled={tabs?.length === 1}
                       >
                         <BsTrash />

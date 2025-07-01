@@ -92,7 +92,7 @@ const ActionDropdown: FC = () => {
   const { isSaving, save } = useActionContext();
 
   return (
-    <div className="flex h-9 divide-x divide-indigo-700 overflow-hidden rounded-sm bg-slate-900 text-white">
+    <div className="flex h-9 divide-x divide-indigo-700 overflow-hidden rounded-sm bg-gray-900 text-white">
       <Tooltip>
         <Tooltip.Trigger asChild>
           <button
@@ -113,11 +113,11 @@ const ActionDropdown: FC = () => {
           </button>
         </Popover.Trigger>
         <Popover.Portal>
-          <Popover.Content className="w-[160px] overflow-hidden bg-slate-800 px-0 py-1" align="end">
+          <Popover.Content className="w-[160px] overflow-hidden bg-gray-800 px-0 py-1" align="end">
             {/* Import */}
             <Popover.Close
               onClick={importContent}
-              className="flex w-full items-center gap-2 px-4 py-2 text-sm text-slate-100 enabled:hover:bg-slate-700"
+              className="flex w-full items-center gap-2 px-4 py-2 text-sm text-gray-100 enabled:hover:bg-gray-700"
             >
               <CiImport /> Import Content
             </Popover.Close>
@@ -125,7 +125,7 @@ const ActionDropdown: FC = () => {
             {/* Export */}
             <Popover.Close
               onClick={exportContent}
-              className="flex w-full items-center gap-2 px-4 py-2 text-sm text-slate-100 enabled:hover:bg-slate-700"
+              className="flex w-full items-center gap-2 px-4 py-2 text-sm text-gray-100 enabled:hover:bg-gray-700"
             >
               <CiExport /> Export Content
             </Popover.Close>
@@ -133,7 +133,7 @@ const ActionDropdown: FC = () => {
             {/* Clear Content */}
             <Popover.Close
               onClick={clearPresentContent}
-              className="flex w-full items-center gap-2 px-4 py-2 text-sm text-slate-100 enabled:hover:bg-slate-700"
+              className="flex w-full items-center gap-2 px-4 py-2 text-sm text-gray-100 enabled:hover:bg-gray-700"
             >
               <AiOutlineClear /> Clear Content
             </Popover.Close>

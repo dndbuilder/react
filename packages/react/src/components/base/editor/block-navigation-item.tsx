@@ -42,9 +42,9 @@ const BlockNavigationItem = ({ block }: Props) => {
       ref={dragRef}
       style={{ opacity }}
       className={classNames(
-        "relative flex h-[88px] flex-col items-center overflow-hidden rounded-sm bg-slate-50 py-4 text-slate-800 ring-1 ring-slate-300 transition-colors duration-300",
+        "relative flex h-[88px] flex-col items-center overflow-hidden rounded-sm bg-gray-50 py-4 text-gray-800 ring-1 ring-gray-300 transition-colors duration-300",
         canUseBlock
-          ? "cursor-move hover:border-slate-600 hover:bg-slate-100 hover:text-slate-800 hover:ring-slate-600"
+          ? "cursor-move hover:border-gray-600 hover:bg-gray-100 hover:text-gray-800 hover:ring-gray-600"
           : "cursor-not-allowed !opacity-70"
       )}
     >
@@ -60,7 +60,7 @@ const BlockNavigationItem = ({ block }: Props) => {
           </span>
         </div>
       )}
-      <div className={classNames("mb-1 text-[22px] text-slate-700")}>
+      <div className={classNames("mb-1 text-[22px] text-gray-700")}>
         <Suspense fallback={null}>{block.icon ? <block.icon /> : <FiGrid />}</Suspense>
       </div>
       <p className={classNames("mt-auto text-center text-xs")}>{block.label}</p>

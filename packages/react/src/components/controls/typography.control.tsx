@@ -91,7 +91,7 @@ export const TypographyControl: FC<TypographyProps> = ({
                     });
                   }}
                   key={preset.id}
-                  className="flex cursor-pointer items-center p-3 hover:bg-slate-50"
+                  className="flex cursor-pointer items-center p-3 hover:bg-gray-50"
                 >
                   <BsCheck2
                     className={classNames(

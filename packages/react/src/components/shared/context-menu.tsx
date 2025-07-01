@@ -83,7 +83,7 @@ const ContextMenuItem = React.forwardRef<
   <ContextMenuPrimitive.Item
     ref={ref}
     className={classNames(
-      "rounded-xs outline-hidden data-disabled:pointer-events-none data-disabled:opacity-50 relative flex cursor-pointer select-none items-center truncate px-5 py-3 text-sm font-normal hover:bg-slate-100",
+      "rounded-xs outline-hidden data-disabled:pointer-events-none data-disabled:opacity-50 relative flex cursor-pointer select-none items-center truncate px-5 py-3 text-sm font-normal hover:bg-gray-100",
       inset && "pl-8",
       className
     )}
@@ -157,7 +157,7 @@ const ContextMenuSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ContextMenuPrimitive.Separator
     ref={ref}
-    className={classNames("-mx-1 h-px bg-slate-300", className)}
+    className={classNames("-mx-1 h-px bg-gray-300", className)}
     {...props}
   />
 ));
@@ -166,10 +166,7 @@ ContextMenuSeparator.displayName = ContextMenuPrimitive.Separator.displayName;
 const ContextMenuShortcut = ({ className, ...props }: React.HTMLAttributes<HTMLSpanElement>) => {
   return (
     <span
-      className={classNames(
-        "ml-auto text-sm font-normal tracking-widest text-slate-500",
-        className
-      )}
+      className={classNames("ml-auto text-sm font-normal tracking-widest text-gray-500", className)}
       {...props}
     />
   );

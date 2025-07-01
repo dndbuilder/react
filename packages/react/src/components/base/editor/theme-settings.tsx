@@ -29,7 +29,7 @@ const SettingItem = ({ label, icon, onClick }: SettingItemProps) => {
   return (
     <div
       onClick={onClick}
-      className="flex cursor-pointer items-center justify-between px-4 py-3 hover:bg-slate-50"
+      className="flex cursor-pointer items-center justify-between px-4 py-3 hover:bg-gray-50"
     >
       <div className="flex items-center">
         {icon && <div className="w-4">{icon}</div>}
@@ -73,7 +73,7 @@ const Navigation = () => {
               Theme Settings
             </div>
             <button
-              className="text-slate-600 hover:text-slate-900"
+              className="text-gray-600 hover:text-gray-900"
               onClick={() => {
                 toggleRightPanel(BuilderRightPanelType.SETTINGS);
               }}

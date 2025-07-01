@@ -63,14 +63,14 @@ const BlockToolbar: FC<BlockToolbarProps> = memo(
 
               <div
                 className={classNames(
-                  "flex items-center rounded-sm bg-slate-800 px-1 text-slate-300"
+                  "flex items-center rounded-sm bg-gray-800 px-1 text-gray-300"
                 )}
               >
                 {/* Toolbar Controls */}
                 <div
                   role="button"
                   className={classNames(
-                    "cursor-grab! flex items-center gap-1 px-1 py-1 text-slate-100 hover:bg-transparent hover:text-white"
+                    "cursor-grab! flex items-center gap-1 px-1 py-1 text-gray-100 hover:bg-transparent hover:text-white"
                   )}
                   // @ts-ignore-disable-next-line
                   ref={dragRef} // TODO: Fix this
@@ -85,7 +85,7 @@ const BlockToolbar: FC<BlockToolbarProps> = memo(
                     e.stopPropagation();
                     console.log("Duplicate block", blockId);
                   }}
-                  className="mx-1 rounded-tr py-1 text-slate-100 hover:bg-transparent hover:text-white"
+                  className="mx-1 rounded-tr py-1 text-gray-100 hover:bg-transparent hover:text-white"
                 >
                   <IoDuplicateOutline size={16} />
                 </div>
@@ -93,7 +93,7 @@ const BlockToolbar: FC<BlockToolbarProps> = memo(
                 <div
                   role="button"
                   onClick={remove}
-                  className="mx-1 rounded-tr py-1 text-slate-100 hover:bg-transparent hover:text-white"
+                  className="mx-1 rounded-tr py-1 text-gray-100 hover:bg-transparent hover:text-white"
                 >
                   <FiTrash2 size={16} />
                 </div>

@@ -28,7 +28,7 @@ export const MediaList: FC<MediaListProps> = ({ onImageSelect }) => {
             {images.map((image) => (
               <div key={image.id} onDoubleClick={() => onImageSelect(image.src)}>
                 <div
-                  className="relative w-full cursor-pointer overflow-hidden bg-slate-300 transition duration-200 hover:bg-slate-400 hover:shadow-xl"
+                  className="relative w-full cursor-pointer overflow-hidden bg-gray-300 transition duration-200 hover:bg-gray-400 hover:shadow-xl"
                   style={{ paddingBottom: "100%" }}
                 >
                   <img

@@ -30,9 +30,9 @@ export const BlockNavigation = () => {
   return (
     <div>
       <div className="mt-4 h-14 w-full bg-white px-4">
-        <div className="group flex items-center  overflow-hidden rounded-sm  ring-1 ring-slate-300 focus-within:ring-2 focus-within:ring-slate-600">
+        <div className="group flex items-center  overflow-hidden rounded-sm  ring-1 ring-gray-300 focus-within:ring-2 focus-within:ring-gray-600">
           <div className="ms-2.5 flex w-7 items-center justify-center">
-            <BiSearch className=" text-slate-500 group-focus-within:text-slate-700" size={18} />
+            <BiSearch className=" text-gray-500 group-focus-within:text-gray-700" size={18} />
           </div>
           <input
             value={search}
@@ -40,14 +40,14 @@ export const BlockNavigation = () => {
               setSearch(e.target.value);
             }}
             type="text"
-            className="focus:outline-hidden w-full rounded-sm border-0 px-1 py-2 text-sm placeholder:text-sm placeholder:text-slate-500 focus:ring-0"
+            className="focus:outline-hidden w-full rounded-sm border-0 px-1 py-2 text-sm placeholder:text-sm placeholder:text-gray-500 focus:ring-0"
             placeholder="Search..."
           />
         </div>
       </div>
 
       {objectKeys(availableGroups).length === 0 && (
-        <div className="py-2 text-center text-sm text-slate-600">No blocks found</div>
+        <div className="py-2 text-center text-sm text-gray-600">No blocks found</div>
       )}
 
       <ScrollArea className="h-[calc(100vh-145px)]">

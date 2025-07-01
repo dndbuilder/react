@@ -64,7 +64,7 @@ export const IconControl: FC<IconControlProps> = ({
             <div className="mb-1 text-2xl">
               <RenderIcon iconSet={value.iconSet} iconName={value.iconName} size="2em" />
             </div>
-            <div className="text-xs text-slate-600">
+            <div className="text-xs text-gray-600">
               {value.iconSet}:{value.iconName}
             </div>
           </div>
@@ -85,10 +85,10 @@ export const IconControl: FC<IconControlProps> = ({
       <Dialog.Root open={open} onOpenChange={setOpen}>
         <Dialog.Trigger asChild>
           <div className="control-media-area group  relative h-32 w-full cursor-pointer overflow-hidden  p-0 transition duration-200">
-            <div className="flex h-full w-full items-center justify-center text-2xl text-slate-600">
+            <div className="flex h-full w-full items-center justify-center text-2xl text-gray-600">
               {value ? renderIcon() : <HiPlusCircle />}
             </div>
-            <div className="absolute -bottom-full z-10 flex w-full justify-between bg-slate-700 p-1 text-center text-xs text-slate-50 transition-all duration-200 group-hover:bottom-0">
+            <div className="absolute -bottom-full z-10 flex w-full justify-between bg-gray-700 p-1 text-center text-xs text-gray-50 transition-all duration-200 group-hover:bottom-0">
               <span>Icon Library</span>
 
               {value && (
@@ -109,7 +109,7 @@ export const IconControl: FC<IconControlProps> = ({
           <Dialog.Overlay className="data-[state=open]:animate-overlay-show fixed inset-0 z-50 bg-[rgba(0,0,0,0.7)]" />
           <Dialog.Content className="z-60 focus:outline-hidden data-[state=open]:animate-content-show fixed left-[50%] top-[50%] w-full max-w-5xl translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-white">
             <Dialog.Title className="flex justify-between border-b p-4">
-              <p className="text-xl font-semibold text-slate-800">Insert Icon</p>
+              <p className="text-xl font-semibold text-gray-800">Insert Icon</p>
 
               <Dialog.Close className="cursor-pointer">
                 <FiX />
@@ -130,7 +130,7 @@ export const IconControl: FC<IconControlProps> = ({
                 </div>
 
                 {/* Footer */}
-                <div className={" flex justify-end gap-2 border-t border-slate-300 p-4"}>
+                <div className={" flex justify-end gap-2 border-t border-gray-300 p-4"}>
                   <Button onClick={() => setOpen(false)} variant={"secondary"}>
                     Cancel
                   </Button>
@@ -249,7 +249,7 @@ export function IconSetViewer({
           <Tabs.Trigger
             key={collection.value}
             value={collection.value}
-            className="border-l-2 border-transparent px-4 py-3 text-left text-sm font-medium text-slate-800 transition-colors  hover:bg-slate-100 data-[state=active]:border-slate-600 data-[state=active]:bg-slate-100"
+            className="border-l-2 border-transparent px-4 py-3 text-left text-sm font-medium text-gray-800 transition-colors  hover:bg-gray-100 data-[state=active]:border-gray-600 data-[state=active]:bg-gray-100"
           >
             {collection.name}
           </Tabs.Trigger>
@@ -287,10 +287,10 @@ export function IconSetViewer({
                           <div
                             key={iconName}
                             className={classNames(
-                              "cursor-pointer rounded border border-slate-300 p-4 text-center transition-colors",
+                              "cursor-pointer rounded border border-gray-300 p-4 text-center transition-colors",
                               selectedIcon === iconName
-                                ? "bg-slate-100 ring-2 ring-slate-600"
-                                : "hover:bg-slate-100"
+                                ? "bg-gray-100 ring-2 ring-gray-600"
+                                : "hover:bg-gray-100"
                             )}
                             onClick={() => setSelectedIcon(iconName)}
                           >
@@ -298,14 +298,14 @@ export function IconSetViewer({
                               iconSet={collection.value}
                               iconName={iconName}
                               size="1.5rem"
-                              className="text-slate-800"
+                              className="text-gray-800"
                             />
-                            <div className="mt-1 text-xs text-slate-600">{iconName}</div>
+                            <div className="mt-1 text-xs text-gray-600">{iconName}</div>
                           </div>
                         ))
                       )
                     ) : isError ? (
-                      <div className="col-span-full flex h-[350px] flex-col items-center justify-center py-10 text-slate-500">
+                      <div className="col-span-full flex h-[350px] flex-col items-center justify-center py-10 text-gray-500">
                         <MdErrorOutline className="mb-2 h-12 w-12" />
                         <div className="mb-1 text-lg font-semibold">Something went wrong</div>
                         <div className="text-sm">
@@ -318,17 +318,17 @@ export function IconSetViewer({
                         .map((_, index) => (
                           <div
                             key={index}
-                            className="flex h-20 cursor-pointer flex-col items-center justify-center rounded border border-slate-300 transition-colors"
+                            className="flex h-20 cursor-pointer flex-col items-center justify-center rounded border border-gray-300 transition-colors"
                           >
                             {/* Placeholder for loading state */}
-                            <div className="h-[1.5rem] w-[1.5rem] animate-pulse rounded bg-slate-300"></div>
-                            <div className="mt-2 w-16 text-center text-xs  text-slate-600">
+                            <div className="h-[1.5rem] w-[1.5rem] animate-pulse rounded bg-gray-300"></div>
+                            <div className="mt-2 w-16 text-center text-xs  text-gray-600">
                               Loading...
                             </div>
                           </div>
                         ))
                     ) : (
-                      <div className="col-span-full flex h-[350px] flex-col items-center justify-center py-10 text-slate-500">
+                      <div className="col-span-full flex h-[350px] flex-col items-center justify-center py-10 text-gray-500">
                         <LuSearchX className="mb-2 h-12 w-12" />
                         <div className="mb-1 text-lg font-semibold">No icons found</div>
                         <div className="text-sm">Try a different search or icon set.</div>
@@ -340,7 +340,7 @@ export function IconSetViewer({
                   {hasNextPage && (
                     <div ref={loadMoreRef} className="mb-2 mt-4 flex h-10 justify-center">
                       {isFetchingNextPage && (
-                        <CgSpinner className="animate-spin text-2xl text-slate-600" />
+                        <CgSpinner className="animate-spin text-2xl text-gray-600" />
                       )}
                     </div>
                   )}

@@ -191,7 +191,7 @@ export const MediaControl: FC<MediaProps> = ({
 
       <Dialog.Root open={open} onOpenChange={setOpen}>
         <Dialog.Trigger asChild>
-          <div className="group relative h-32 w-full cursor-pointer overflow-hidden bg-slate-300 transition duration-200 hover:bg-slate-400">
+          <div className="group relative h-32 w-full cursor-pointer overflow-hidden bg-gray-300 transition duration-200 hover:bg-gray-400">
             {value?.url && (
               <img
                 src={value.url}
@@ -205,7 +205,7 @@ export const MediaControl: FC<MediaProps> = ({
                 <HiPlusCircle />
               </div>
             )}
-            <div className="absolute bottom-[-100%] flex w-full justify-between bg-slate-700 p-1 text-center text-xs text-slate-50 transition-all duration-200 group-hover:bottom-0">
+            <div className="absolute bottom-[-100%] flex w-full justify-between bg-gray-700 p-1 text-center text-xs text-gray-50 transition-all duration-200 group-hover:bottom-0">
               <span>Choose Image</span>
 
               {value?.url && (
@@ -237,13 +237,13 @@ export const MediaControl: FC<MediaProps> = ({
               <Tabs.List className="flex border-b">
                 <Tabs.Trigger
                   value="url"
-                  className="border-b-2 border-transparent px-4 py-2 text-sm font-medium data-[state=active]:border-slate-500 data-[state=active]:font-semibold"
+                  className="border-b-2 border-transparent px-4 py-2 text-sm font-medium data-[state=active]:border-gray-500 data-[state=active]:font-semibold"
                 >
                   From URL
                 </Tabs.Trigger>
                 <Tabs.Trigger
                   value="local"
-                  className="border-b-2 border-transparent px-4 py-2 text-sm font-medium data-[state=active]:border-slate-500 data-[state=active]:font-semibold"
+                  className="border-b-2 border-transparent px-4 py-2 text-sm font-medium data-[state=active]:border-gray-500 data-[state=active]:font-semibold"
                 >
                   From Device
                 </Tabs.Trigger>
@@ -258,7 +258,7 @@ export const MediaControl: FC<MediaProps> = ({
                     value={urlInput}
                     onChange={handleUrlInputChange}
                     placeholder="https://example.com/image.jpg"
-                    className="w-full rounded px-3 py-2 text-sm ring-1 placeholder:text-sm focus:outline-none focus:ring-2 focus:ring-slate-600"
+                    className="w-full rounded px-3 py-2 text-sm ring-1 placeholder:text-sm focus:outline-none focus:ring-2 focus:ring-gray-600"
                   />
                 </div>
 
@@ -275,18 +275,18 @@ export const MediaControl: FC<MediaProps> = ({
                   className={classNames(
                     "cursor-pointer rounded border-2 border-dashed p-8 text-center transition-colors",
                     isDragActive
-                      ? "border-slate-600 bg-slate-50"
-                      : "border-slate-300 hover:border-slate-600"
+                      ? "border-gray-600 bg-gray-50"
+                      : "border-gray-300 hover:border-gray-600"
                   )}
                 >
                   <input {...getInputProps()} />
-                  <BsUpload className="mx-auto mb-2 text-3xl text-slate-400" />
-                  <p className="text-sm text-slate-600">
+                  <BsUpload className="mx-auto mb-2 text-3xl text-gray-400" />
+                  <p className="text-sm text-gray-600">
                     {isDragActive
                       ? "Drop the image here"
                       : "Drag and drop an image here, or click to select"}
                   </p>
-                  <p className="mt-2 text-xs text-slate-400">
+                  <p className="mt-2 text-xs text-gray-400">
                     Supported formats: JPG, PNG, GIF, WEBP (Max size: {maxSize / 1024 / 1024}MB)
                   </p>
                 </div>

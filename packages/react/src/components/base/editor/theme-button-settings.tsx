@@ -34,7 +34,7 @@ const ThemeButtonSettings: FC<Props> = ({ setCurrentSetting }) => {
           Button
         </div>
         <button
-          className="text-slate-600 hover:text-slate-900"
+          className="text-gray-600 hover:text-gray-900"
           onClick={() => setCurrentSetting(ThemeSettingsType.GLOBAL)}
         >
           <FiX size={16} />

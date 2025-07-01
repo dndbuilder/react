@@ -51,7 +51,7 @@ const Overlay = forwardRef<
   return (
     <DialogPrimitive.Overlay
       className={classNames(
-        "z-100 data-[state=open]:animate-overlay-show fixed inset-0 bg-slate-900 bg-opacity-10"
+        "z-100 data-[state=open]:animate-overlay-show fixed inset-0 bg-gray-900 bg-opacity-10"
       )}
       ref={ref}
       {...props}

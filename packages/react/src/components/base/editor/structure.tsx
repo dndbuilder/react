@@ -77,9 +77,9 @@ const StructureItem = ({ blockId, index }: LayterItemProps) => {
       if (!el) return;
 
       if (el.classList.contains("after:ring-inset")) {
-        el.classList.add("after:ring-1", "after:ring-slate-800");
+        el.classList.add("after:ring-1", "after:ring-gray-800");
       } else {
-        el.classList.add("ring-1", "ring-slate-800");
+        el.classList.add("ring-1", "ring-gray-800");
       }
     } catch (error) {
       console.error("Error in handleMouseEnter:", error);
@@ -100,9 +100,9 @@ const StructureItem = ({ blockId, index }: LayterItemProps) => {
       if (!el) return;
 
       if (el.classList.contains("after:ring-inset")) {
-        el.classList.remove("after:ring-1", "after:ring-slate-800");
+        el.classList.remove("after:ring-1", "after:ring-gray-800");
       } else {
-        el.classList.remove("ring-1", "ring-slate-800");
+        el.classList.remove("ring-1", "ring-gray-800");
       }
     } catch (error) {
       console.error("Error in handleMouseLeave:", error);
@@ -122,7 +122,7 @@ const StructureItem = ({ blockId, index }: LayterItemProps) => {
   return (
     <div
       className={classNames({
-        "bg-slate-50": isSelected,
+        "bg-gray-50": isSelected,
       })}
     >
       {/* // header // */}
@@ -132,7 +132,7 @@ const StructureItem = ({ blockId, index }: LayterItemProps) => {
         onClick={handleClick}
         className={classNames(
           "group flex cursor-pointer items-center py-3 pe-4 transition-colors duration-150",
-          isSelected ? "bg-slate-100" : "hover:bg-slate-100"
+          isSelected ? "bg-gray-100" : "hover:bg-gray-100"
         )}
         style={{
           paddingInlineStart: index === 1 ? "10px" : `${index * 16}px`,
@@ -159,10 +159,10 @@ const StructureItem = ({ blockId, index }: LayterItemProps) => {
               <IoDuplicateOutline
                 size={14}
                 onClick={duplicate}
-                className="text-slate-600 hover:text-slate-900"
+                className="text-gray-600 hover:text-gray-900"
               />
             )}
-            <FiTrash2 size={14} onClick={remove} className="text-slate-600 hover:text-slate-900" />
+            <FiTrash2 size={14} onClick={remove} className="text-gray-600 hover:text-gray-900" />
           </div>
         </div>
       </div>
@@ -204,7 +204,7 @@ const Structure = () => {
             Structure
           </div>
           <button
-            className="text-slate-600 hover:text-slate-900"
+            className="text-gray-600 hover:text-gray-900"
             onClick={() => {
               toggleRightPanel(BuilderRightPanelType.LAYER);
             }}
@@ -224,8 +224,8 @@ const Structure = () => {
           </div>
         ) : (
           <div className="m-4 rounded-sm p-4 text-center">
-            <h4 className="mb-1 text-lg font-medium text-slate-600">No Elements</h4>
-            <p className="text-slate-500">Add an element to your page and it will show up here.</p>
+            <h4 className="mb-1 text-lg font-medium text-gray-600">No Elements</h4>
+            <p className="text-gray-500">Add an element to your page and it will show up here.</p>
           </div>
         )}
       </div>

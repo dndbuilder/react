@@ -50,9 +50,9 @@ export const BlockPagination = ({
     >
       <button
         className={classNames(
-          "reset flex h-8 items-center justify-center rounded-sm border border-slate-300 px-4 text-slate-800",
+          "reset flex h-8 items-center justify-center rounded-sm border border-gray-300 px-4 text-gray-800",
           !hasPreviousPage
-            ? "cursor-not-allowed text-slate-400 hover:bg-transparent"
+            ? "cursor-not-allowed text-gray-400 hover:bg-transparent"
             : "hover:border-primary-500 hover:bg-primary-50 hover:text-primary-500"
         )}
         disabled={!hasPreviousPage}
@@ -68,7 +68,7 @@ export const BlockPagination = ({
             <button
               disabled
               key={index}
-              className="reset active flex h-8 w-8 cursor-not-allowed items-center justify-center rounded-sm border text-slate-400 hover:bg-transparent"
+              className="reset active flex h-8 w-8 cursor-not-allowed items-center justify-center rounded-sm border text-gray-400 hover:bg-transparent"
             >
               {pageNo}{" "}
             </button>
@@ -80,7 +80,7 @@ export const BlockPagination = ({
               onPageChange?.(pageNo);
             }}
             key={index}
-            className="reset hover:border-primary-500 hover:bg-primary-50 hover:text-primary-500 flex h-8 w-8 items-center justify-center rounded-sm border text-slate-800"
+            className="reset hover:border-primary-500 hover:bg-primary-50 hover:text-primary-500 flex h-8 w-8 items-center justify-center rounded-sm border text-gray-800"
           >
             {pageNo}{" "}
           </button>
@@ -88,9 +88,9 @@ export const BlockPagination = ({
       })}
       <button
         className={classNames(
-          "reset flex h-8 items-center justify-center rounded-sm border border-slate-300 px-4 text-slate-800",
+          "reset flex h-8 items-center justify-center rounded-sm border border-gray-300 px-4 text-gray-800",
           !hasNextPage
-            ? "cursor-not-allowed text-slate-400 hover:bg-transparent"
+            ? "cursor-not-allowed text-gray-400 hover:bg-transparent"
             : "hover:border-primary-500 hover:bg-primary-50 hover:text-primary-500"
         )}
         disabled={!hasNextPage}

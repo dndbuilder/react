@@ -56,7 +56,7 @@ export const Header = () => {
             <Link
               href={"/preview"}
               target="_blank"
-              className="flex items-center rounded p-2 text-slate-600 ring-1 ring-inset ring-slate-300 transition-colors hover:bg-slate-100 hover:text-slate-800 hover:ring-slate-600"
+              className="flex items-center rounded p-2 text-gray-600 ring-1 ring-inset ring-gray-300 transition-colors hover:bg-gray-100 hover:text-gray-800 hover:ring-gray-600"
             >
               <LuScanEye size={20} />
             </Link>
@@ -65,7 +65,7 @@ export const Header = () => {
         </Tooltip>
 
         <button
-          className="rounded bg-slate-800 px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-900 disabled:cursor-not-allowed disabled:opacity-50"
+          className="rounded bg-gray-800 px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-900 disabled:cursor-not-allowed disabled:opacity-50"
           onClick={handleSave}
           disabled={isSaving}
         >

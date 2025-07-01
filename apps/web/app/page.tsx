@@ -10,7 +10,7 @@ import { Footer } from "./_components/footer";
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-slate-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <Header />
       <HeroSection />
       <FeaturesSection />

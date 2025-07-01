@@ -27,7 +27,7 @@ export const BreakpointSwitch: FC<BreakpointSwitcherProps> = ({ className }) => 
   return (
     <div
       className={classNames(
-        "flex h-10 items-center rounded-sm px-2 text-lg ring-1 ring-inset ring-slate-300 transition-colors duration-150 hover:bg-slate-100 hover:ring-slate-600",
+        "flex h-10 items-center rounded-sm px-2 text-lg ring-1 ring-inset ring-gray-300 transition-colors duration-150 hover:bg-gray-100 hover:ring-gray-600",
         className
       )}
     >
@@ -37,8 +37,8 @@ export const BreakpointSwitch: FC<BreakpointSwitcherProps> = ({ className }) => 
             <Tooltip.Trigger>
               <div
                 onClick={() => changeBreakpoint(breakpoint.key)}
-                className={classNames("cursor-pointer p-2 text-slate-400 hover:text-slate-800", {
-                  "text-slate-800": currentBreakpoint === breakpoint.key,
+                className={classNames("cursor-pointer p-2 text-gray-400 hover:text-gray-800", {
+                  "text-gray-800": currentBreakpoint === breakpoint.key,
                 })}
               >
                 {<breakpoint.icon />}

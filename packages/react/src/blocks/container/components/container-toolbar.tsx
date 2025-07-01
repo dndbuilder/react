@@ -48,13 +48,13 @@ const ContainerToolbar: FC<Props> = memo(({ id, index, isInner, dragRef, childre
           hideWhenDetached
         >
           <div
-            className={classNames("flex items-center justify-between rounded-sm bg-slate-800 px-1")}
+            className={classNames("flex items-center justify-between rounded-sm bg-gray-800 px-1")}
           >
             <>
               <div
                 role="button"
                 className={classNames(
-                  "cursor-grab! flex items-center gap-1 px-1 py-1 text-slate-100 hover:bg-transparent hover:text-white"
+                  "cursor-grab! flex items-center gap-1 px-1 py-1 text-gray-100 hover:bg-transparent hover:text-white"
                 )}
                 // @ts-ignore-disable-next-line
                 ref={dragRef} // TODO: Fix this
@@ -67,7 +67,7 @@ const ContainerToolbar: FC<Props> = memo(({ id, index, isInner, dragRef, childre
               <AddContainer position={index}>
                 <div
                   role="button"
-                  className="me-2 ms-1 rounded-tl py-1 text-slate-100 hover:bg-transparent hover:text-white"
+                  className="me-2 ms-1 rounded-tl py-1 text-gray-100 hover:bg-transparent hover:text-white"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <FiPlusCircle size={16} />
@@ -78,7 +78,7 @@ const ContainerToolbar: FC<Props> = memo(({ id, index, isInner, dragRef, childre
             <div
               role="button"
               onClick={duplicate}
-              className="mx-1 rounded-tr py-1 text-slate-100 hover:bg-transparent hover:text-white"
+              className="mx-1 rounded-tr py-1 text-gray-100 hover:bg-transparent hover:text-white"
             >
               <IoDuplicateOutline size={16} />
             </div>
@@ -86,7 +86,7 @@ const ContainerToolbar: FC<Props> = memo(({ id, index, isInner, dragRef, childre
             <div
               role="button"
               onClick={remove}
-              className="mx-1 rounded-tr py-1 text-slate-100 hover:bg-transparent hover:text-white"
+              className="mx-1 rounded-tr py-1 text-gray-100 hover:bg-transparent hover:text-white"
             >
               <FiTrash2 size={16} />
             </div>

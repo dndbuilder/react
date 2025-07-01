@@ -223,7 +223,7 @@ export const AdvancedSettingsControl = () => {
       <Accordion.Item value="Responsive">
         <Accordion.Trigger className="p-4">Responsive</Accordion.Trigger>
         <Accordion.Content className="px-4">
-          <Label className="text-xs font-semibold text-slate-800">Visibility</Label>
+          <Label className="text-xs font-semibold text-gray-800">Visibility</Label>
           <InfoMessage>
             Responsive visibility will take effect only on preview mode or live page, and not while
             editing.
