@@ -77,8 +77,8 @@ export function Footer({ className }: FooterProps) {
                 </Link>
               </li>
               <li>
-                <Link href="/api-reference" className="transition-colors hover:text-white">
-                  API Reference
+                <Link href="/posts" className="transition-colors hover:text-white">
+                  Blog Posts
                 </Link>
               </li>
             </ul>

@@ -12,6 +12,10 @@
     "dist"
   ],
   "homepage": "https://dndbuilder.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dndbuilder/project"
+  },
   "keywords": [
     "react",
     "drag-and-drop",

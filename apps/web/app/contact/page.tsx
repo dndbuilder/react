@@ -22,9 +22,9 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Methods */}
-        <section className="py-12">
+        <section className="pb-12">
           <div className="container mx-auto px-4">
-            <div className="grid gap-8 md:grid-cols-3">
+            <div className="mb-16 grid gap-8 md:grid-cols-3">
               <Card className="border-0 text-center shadow-lg">
                 <Card.Header>
                   <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-gray-100">
@@ -69,7 +69,7 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <div className="mx-auto mb-16 max-w-2xl">
+            <div className="mx-auto max-w-2xl">
               <Card className="border-0 shadow-xl">
                 <Card.Header className="text-center">
                   <Card.Title className="text-2xl">Send us a Message</Card.Title>

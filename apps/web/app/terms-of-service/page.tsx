@@ -1,127 +1,259 @@
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import Link from "next/link";
+import { LuScale } from "react-icons/lu";
+
 export default function TermsOfServicePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      <main className="container mx-auto px-4 py-16">
-        <div className="mx-auto max-w-3xl">
-          <h1 className="mb-8 text-4xl font-bold text-gray-900">Terms of Service</h1>
+    <main className="min-h-screen bg-gradient-to-br from-gray-50 to-slate-100">
+      {/* Hero Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 text-center">
+          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gray-100">
+            <LuScale className="h-8 w-8 text-gray-800" />
+          </div>
+          <Badge variant="secondary" className="mb-4">
+            📋 Legal
+          </Badge>
+          <h1 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">Terms of Service</h1>
+          <p className="mx-auto mb-4 max-w-2xl text-xl text-gray-600">
+            Please read these terms carefully before using DnD Builder.
+          </p>
+          <p className="text-sm text-gray-500">Last updated: January 15, 2024</p>
+        </div>
+      </section>
 
-          <div className="rounded-lg bg-white p-8 shadow-md">
-            <p className="mb-6 text-lg text-gray-600">Last Updated: July 1, 2024</p>
+      {/* Terms Content */}
+      <section className="pb-12">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-4xl">
+            <Card className="border-0 shadow-lg">
+              <Card.Content className="space-y-8 p-8">
+                {/* Section 1 */}
+                <div>
+                  <h2 className="mb-4 text-2xl font-bold text-gray-900">1. Acceptance of Terms</h2>
+                  <p className="mb-4 leading-relaxed text-gray-700">
+                    By accessing and using DnD Builder ("the Service"), you accept and agree to be
+                    bound by the terms and provision of this agreement. If you do not agree to abide
+                    by the above, please do not use this service.
+                  </p>
+                  <p className="leading-relaxed text-gray-700">
+                    These Terms of Service ("Terms") govern your use of our website located at
+                    dndbuilder.com (the "Service") operated by DnD Builder ("us", "we", or "our").
+                  </p>
+                </div>
 
-            <div className="space-y-6">
-              <section>
-                <h2 className="mb-4 text-2xl font-semibold text-gray-900">Introduction</h2>
-                <p className="text-gray-700">
-                  Welcome to DnD Builder. These terms and conditions outline the rules and
-                  regulations for the use of our website and services. By accessing this website, we
-                  assume you accept these terms and conditions in full. Do not continue to use DnD
-                  Builder if you do not accept all of the terms and conditions stated on this page.
-                </p>
-              </section>
+                {/* Section 2 */}
+                <div>
+                  <h2 className="mb-4 text-2xl font-bold text-gray-900">
+                    2. Description of Service
+                  </h2>
+                  <p className="mb-4 leading-relaxed text-gray-700">
+                    DnD Builder is a React component library and page builder tool that allows
+                    developers to create drag-and-drop interfaces for building web pages and
+                    applications.
+                  </p>
+                  <p className="leading-relaxed text-gray-700">
+                    The Service includes both free and premium features, with premium features
+                    requiring a paid subscription.
+                  </p>
+                </div>
 
-              <section>
-                <h2 className="mb-4 text-2xl font-semibold text-gray-900">License to Use</h2>
-                <p className="text-gray-700">
-                  Unless otherwise stated, DnD Builder and/or its licensors own the intellectual
-                  property rights for all material on DnD Builder. All intellectual property rights
-                  are reserved.
-                </p>
-                <p className="mt-2 text-gray-700">
-                  You may view and/or print pages from the website for your own personal use subject
-                  to restrictions set in these terms and conditions.
-                </p>
-                <p className="mt-2 text-gray-700">You must not:</p>
-                <ul className="mt-2 list-disc pl-6 text-gray-700">
-                  <li>Republish material from this website</li>
-                  <li>Sell, rent or sub-license material from this website</li>
-                  <li>Reproduce, duplicate or copy material from this website</li>
-                  <li>
-                    Redistribute content from DnD Builder (unless content is specifically made for
-                    redistribution)
-                  </li>
-                </ul>
-              </section>
+                {/* Section 3 */}
+                <div>
+                  <h2 className="mb-4 text-2xl font-bold text-gray-900">3. User Accounts</h2>
+                  <p className="mb-4 leading-relaxed text-gray-700">
+                    When you create an account with us, you must provide information that is
+                    accurate, complete, and current at all times. You are responsible for
+                    safeguarding the password and for all activities that occur under your account.
+                  </p>
+                  <ul className="list-inside list-disc space-y-2 text-gray-700">
+                    <li>You must be at least 13 years old to use this Service</li>
+                    <li>You are responsible for maintaining the confidentiality of your account</li>
+                    <li>
+                      You agree to notify us immediately of any unauthorized use of your account
+                    </li>
+                    <li>We reserve the right to terminate accounts that violate these terms</li>
+                  </ul>
+                </div>
 
-              <section>
-                <h2 className="mb-4 text-2xl font-semibold text-gray-900">User Accounts</h2>
-                <p className="text-gray-700">
-                  When you create an account with us, you guarantee that the information you provide
-                  is accurate, complete, and current at all times. Inaccurate, incomplete, or
-                  obsolete information may result in the immediate termination of your account on
-                  the service.
-                </p>
-                <p className="mt-2 text-gray-700">
-                  You are responsible for maintaining the confidentiality of your account and
-                  password, including but not limited to the restriction of access to your computer
-                  and/or account. You agree to accept responsibility for any and all activities or
-                  actions that occur under your account and/or password.
-                </p>
-              </section>
+                {/* Section 4 */}
+                <div>
+                  <h2 className="mb-4 text-2xl font-bold text-gray-900">
+                    4. Subscription and Payment
+                  </h2>
+                  <p className="mb-4 leading-relaxed text-gray-700">
+                    Some parts of the Service are billed on a subscription basis
+                    ("Subscription(s)"). You will be billed in advance on a recurring and periodic
+                    basis ("Billing Cycle").
+                  </p>
+                  <ul className="list-inside list-disc space-y-2 text-gray-700">
+                    <li>Subscriptions are billed monthly or annually as selected</li>
+                    <li>Payment is due at the beginning of each billing cycle</li>
+                    <li>Refunds are handled according to our refund policy</li>
+                    <li>You may cancel your subscription at any time</li>
+                    <li>
+                      Upon cancellation, premium features will be disabled at the end of the billing
+                      period
+                    </li>
+                  </ul>
+                </div>
 
-              <section>
-                <h2 className="mb-4 text-2xl font-semibold text-gray-900">
-                  Limitation of Liability
-                </h2>
-                <p className="text-gray-700">
-                  In no event shall DnD Builder, nor any of its officers, directors and employees,
-                  be liable to you for anything arising out of or in any way connected with your use
-                  of this website, whether such liability is under contract, tort or otherwise, and
-                  DnD Builder shall not be liable for any indirect, consequential or special
-                  liability arising out of or in any way related to your use of this website.
-                </p>
-              </section>
+                {/* Section 5 */}
+                <div>
+                  <h2 className="mb-4 text-2xl font-bold text-gray-900">
+                    5. Intellectual Property Rights
+                  </h2>
+                  <p className="mb-4 leading-relaxed text-gray-700">
+                    The Service and its original content, features, and functionality are and will
+                    remain the exclusive property of DnD Builder and its licensors. The Service is
+                    protected by copyright, trademark, and other laws.
+                  </p>
+                  <ul className="list-inside list-disc space-y-2 text-gray-700">
+                    <li>You retain ownership of content you create using our Service</li>
+                    <li>We retain ownership of the DnD Builder software and components</li>
+                    <li>You may not reverse engineer, decompile, or disassemble our software</li>
+                    <li>
+                      Our trademarks and trade dress may not be used without our written permission
+                    </li>
+                  </ul>
+                </div>
 
-              <section>
-                <h2 className="mb-4 text-2xl font-semibold text-gray-900">Indemnification</h2>
-                <p className="text-gray-700">
-                  You hereby indemnify to the fullest extent DnD Builder from and against any and
-                  all liabilities, costs, demands, causes of action, damages and expenses (including
-                  reasonable attorney's fees) arising out of or in any way related to your breach of
-                  any of the provisions of these Terms.
-                </p>
-              </section>
+                {/* Section 6 */}
+                <div>
+                  <h2 className="mb-4 text-2xl font-bold text-gray-900">6. User Content</h2>
+                  <p className="mb-4 leading-relaxed text-gray-700">
+                    Our Service may allow you to post, link, store, share and otherwise make
+                    available certain information, text, graphics, videos, or other material
+                    ("Content").
+                  </p>
+                  <ul className="list-inside list-disc space-y-2 text-gray-700">
+                    <li>You are responsible for Content that you post to the Service</li>
+                    <li>You retain your rights to any Content you submit, post or display</li>
+                    <li>
+                      You grant us a license to use, modify, and display your Content as necessary
+                      to provide the Service
+                    </li>
+                    <li>You may not post Content that violates our community guidelines</li>
+                  </ul>
+                </div>
 
-              <section>
-                <h2 className="mb-4 text-2xl font-semibold text-gray-900">Governing Law</h2>
-                <p className="text-gray-700">
-                  These Terms shall be governed and construed in accordance with the laws of the
-                  United States, without regard to its conflict of law provisions.
-                </p>
-                <p className="mt-2 text-gray-700">
-                  Our failure to enforce any right or provision of these Terms will not be
-                  considered a waiver of those rights. If any provision of these Terms is held to be
-                  invalid or unenforceable by a court, the remaining provisions of these Terms will
-                  remain in effect.
-                </p>
-              </section>
+                {/* Section 7 */}
+                <div>
+                  <h2 className="mb-4 text-2xl font-bold text-gray-900">7. Prohibited Uses</h2>
+                  <p className="mb-4 leading-relaxed text-gray-700">You may not use our Service:</p>
+                  <ul className="list-inside list-disc space-y-2 text-gray-700">
+                    <li>For any unlawful purpose or to solicit others to perform unlawful acts</li>
+                    <li>
+                      To violate any international, federal, provincial, or state regulations,
+                      rules, laws, or local ordinances
+                    </li>
+                    <li>
+                      To infringe upon or violate our intellectual property rights or the
+                      intellectual property rights of others
+                    </li>
+                    <li>
+                      To harass, abuse, insult, harm, defame, slander, disparage, intimidate, or
+                      discriminate
+                    </li>
+                    <li>To submit false or misleading information</li>
+                    <li>To upload or transmit viruses or any other type of malicious code</li>
+                  </ul>
+                </div>
 
-              <section>
-                <h2 className="mb-4 text-2xl font-semibold text-gray-900">Changes to Terms</h2>
-                <p className="text-gray-700">
-                  We reserve the right, at our sole discretion, to modify or replace these Terms at
-                  any time. If a revision is material, we will provide at least 30 days' notice
-                  prior to any new terms taking effect. What constitutes a material change will be
-                  determined at our sole discretion.
-                </p>
-              </section>
+                {/* Section 8 */}
+                <div>
+                  <h2 className="mb-4 text-2xl font-bold text-gray-900">8. Disclaimer</h2>
+                  <p className="mb-4 leading-relaxed text-gray-700">
+                    The information on this website is provided on an "as is" basis. To the fullest
+                    extent permitted by law, this Company:
+                  </p>
+                  <ul className="list-inside list-disc space-y-2 text-gray-700">
+                    <li>
+                      Excludes all representations and warranties relating to this website and its
+                      contents
+                    </li>
+                    <li>Does not warrant that the Service will be uninterrupted or error-free</li>
+                    <li>
+                      Makes no representations about the accuracy or completeness of the content
+                    </li>
+                    <li>
+                      Disclaims all liability for damages arising from the use of this Service
+                    </li>
+                  </ul>
+                </div>
 
-              <section>
-                <h2 className="mb-4 text-2xl font-semibold text-gray-900">Contact Us</h2>
-                <p className="text-gray-700">
-                  If you have any questions about these Terms, please contact us at:
-                </p>
-                <p className="mt-2 text-gray-700">
-                  Email: legal@dndbuilder.com
-                  <br />
-                  Phone: +1 (555) 123-4567
-                  <br />
-                  Address: 123 Builder St, San Francisco, CA 94103
-                </p>
-              </section>
-            </div>
+                {/* Section 9 */}
+                <div>
+                  <h2 className="mb-4 text-2xl font-bold text-gray-900">
+                    9. Limitation of Liability
+                  </h2>
+                  <p className="leading-relaxed text-gray-700">
+                    In no event shall DnD Builder, nor its directors, employees, partners, agents,
+                    suppliers, or affiliates, be liable for any indirect, incidental, special,
+                    consequential, or punitive damages, including without limitation, loss of
+                    profits, data, use, goodwill, or other intangible losses, resulting from your
+                    use of the Service.
+                  </p>
+                </div>
+
+                {/* Section 10 */}
+                <div>
+                  <h2 className="mb-4 text-2xl font-bold text-gray-900">10. Termination</h2>
+                  <p className="mb-4 leading-relaxed text-gray-700">
+                    We may terminate or suspend your account and bar access to the Service
+                    immediately, without prior notice or liability, under our sole discretion, for
+                    any reason whatsoever and without limitation, including but not limited to a
+                    breach of the Terms.
+                  </p>
+                  <p className="leading-relaxed text-gray-700">
+                    If you wish to terminate your account, you may simply discontinue using the
+                    Service or contact us to request account deletion.
+                  </p>
+                </div>
+
+                {/* Section 11 */}
+                <div>
+                  <h2 className="mb-4 text-2xl font-bold text-gray-900">11. Changes to Terms</h2>
+                  <p className="mb-4 leading-relaxed text-gray-700">
+                    We reserve the right, at our sole discretion, to modify or replace these Terms
+                    at any time. If a revision is material, we will provide at least 30 days notice
+                    prior to any new terms taking effect.
+                  </p>
+                  <p className="leading-relaxed text-gray-700">
+                    What constitutes a material change will be determined at our sole discretion. By
+                    continuing to access or use our Service after any revisions become effective,
+                    you agree to be bound by the revised terms.
+                  </p>
+                </div>
+
+                {/* Section 12 */}
+                <div>
+                  <h2 className="mb-4 text-2xl font-bold text-gray-900">12. Contact Information</h2>
+                  <p className="mb-4 leading-relaxed text-gray-700">
+                    If you have any questions about these Terms of Service, please contact us:
+                  </p>
+                  <ul className="list-none space-y-2 text-gray-700">
+                    <li>• Email: legal@dndbuilder.com</li>
+                    <li>• Address: 123 Tech Street, San Francisco, CA 94105</li>
+                    <li>• Phone: +1 (555) 123-4567</li>
+                  </ul>
+                </div>
+              </Card.Content>
+            </Card>
           </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Back to Home */}
+      <section className="py-12">
+        <div className="container mx-auto px-4 text-center">
+          <Button variant="outline" size="lg" asChild>
+            <Link href="/">Back to Home</Link>
+          </Button>
+        </div>
+      </section>
+    </main>
   );
 }

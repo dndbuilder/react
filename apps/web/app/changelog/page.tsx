@@ -7,7 +7,7 @@ export default function ChangelogPage() {
   const releases = [
     {
       version: "v2.1.0",
-      date: "January 15, 2024",
+      date: "July 01, 2025",
       type: "major",
       changes: [
         {
