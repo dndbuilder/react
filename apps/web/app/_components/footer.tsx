@@ -107,13 +107,15 @@ export function Footer({ className }: FooterProps) {
         </div>
 
         <div className="mt-8 border-t border-gray-800 pt-8 text-gray-400">
-          <div className="mb-4 flex flex-wrap justify-center gap-4">
+          <div className="mb-4 flex flex-wrap items-center justify-center gap-2">
             <Link href="/privacy-policy" className="transition-colors hover:text-white">
               Privacy Policy
             </Link>
+            <span className="text-gray-500">•</span>
             <Link href="/terms-of-service" className="transition-colors hover:text-white">
               Terms of Service
             </Link>
+            <span className="text-gray-500">•</span>
             <Link href="/contact" className="transition-colors hover:text-white">
               Contact Us
             </Link>

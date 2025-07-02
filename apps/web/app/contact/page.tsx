@@ -1,9 +1,16 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { headers } from "next/headers";
 import { LuMail, LuMapPin, LuPhone, LuSend } from "react-icons/lu";
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const headersList = await headers();
+  const host = headersList.get("host");
+  const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
+  const origin = `${protocol}://${host}`;
+  const thankYouUrl = `${origin}/contact/thank-you`;
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <main className="container mx-auto px-4 py-16">
@@ -77,13 +84,17 @@ export default function ContactPage() {
                     Fill out the form below and we'll get back to you soon
                   </Card.Description>
                 </Card.Header>
-                <Card.Content className="space-y-6">
-                  <form action="https://formsubmit.co/support@dndbuilder.com" method="POST">
+                <Card.Content>
+                  <form
+                    className="space-y-6"
+                    action="https://formsubmit.co/support@dndbuilder.com"
+                    method="POST"
+                  >
                     {/* FormSubmit.co configuration */}
                     <input type="hidden" name="_subject" value="New contact form submission" />
                     <input type="hidden" name="_captcha" value="false" />
                     <input type="hidden" name="_template" value="table" />
-                    <input type="hidden" name="_next" value="/thank-you" />
+                    <input type="hidden" name="_next" value={thankYouUrl} />
 
                     <div className="grid gap-4 md:grid-cols-2">
                       <div>
@@ -122,8 +133,10 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label className="mb-2 block text-sm font-medium text-gray-700">Subject</label>
-                      <select 
+                      <label className="mb-2 block text-sm font-medium text-gray-700">
+                        Subject
+                      </label>
+                      <select
                         name="subject"
                         className="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-gray-900"
                         required
@@ -136,7 +149,9 @@ export default function ContactPage() {
                       </select>
                     </div>
                     <div>
-                      <label className="mb-2 block text-sm font-medium text-gray-700">Message</label>
+                      <label className="mb-2 block text-sm font-medium text-gray-700">
+                        Message
+                      </label>
                       <textarea
                         name="message"
                         rows={5}
