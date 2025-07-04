@@ -3,7 +3,6 @@
 import { BreakpointSelector, Button, Input, Label, ScrollArea } from "@/components";
 import { RenderIcon } from "@/components/shared/render-icon";
 import { collections } from "@/config/icon.config";
-import { useIcons, useSettings } from "@/hooks";
 import { useAppSelector } from "@/hooks/use-app-selector";
 import { getCurrentBreakpoint } from "@/store/selectors";
 import { SettingsType } from "@/types";
@@ -19,6 +18,8 @@ import { HiPlusCircle } from "react-icons/hi";
 import useDebounce from "@/hooks/use-debounce";
 import { LuSearchX } from "react-icons/lu";
 import { MdErrorOutline } from "react-icons/md";
+import { useSettings } from "@/hooks/use-settings";
+import { useIcons } from "@/hooks/use-icons";
 
 export type IconControlProps = {
   label?: string;
