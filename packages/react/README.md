@@ -94,66 +94,155 @@ To create a custom block, you need to:
 2. Define the block configuration using `createBlockConfig` utility
 3. Include the block in your editor configuration
 
-```jsx
-// 1. Create your block component (card.block.tsx)
-import { BlockProps } from "@dndbuilder.com/react";
-import { FC } from "react";
-import { CardSettingsType } from "../types";
+#### Example: Card Block
 
-export const CardBlock: FC<BlockProps<CardSettingsType>> = ({ settings, meta }) => {
+The Card block is a versatile component that can be used to display content in a structured format. Here's how it's implemented in the Testimonial block:
+
+```jsx
+// 1. Create your block component (testimonial-card.tsx)
+import { FC } from "react";
+import { TestimonialItemType, TestimonialSettingsType } from "../types";
+import { renderPreset } from "../utils";
+import { BlockMeta } from "@/types/block";
+
+type Props = {
+  data: TestimonialItemType;
+  settings: TestimonialSettingsType;
+  meta?: BlockMeta;
+};
+
+const TestimonialCard: FC<Props> = ({ data, settings, meta }) => {
+  return renderPreset(data, settings, meta);
+};
+
+export default TestimonialCard;
+
+// 2. Create a preset component (preset-one.tsx)
+const PresetOne: FC<PresetPropsType> = ({ data, meta }) => {
+  const locale = meta?.locale || "en";
+  const name = data.name?.[locale];
+  const position = data.position?.[locale];
+  const content = data.content?.[locale];
+
   return (
-    <div className="my-custom-card">
-      <h3>{settings.title}</h3>
-      <p>{settings.description}</p>
-    </div>
+    <figure className="testimonial-card">
+      <blockquote className="review-msg text-dark-800 text-lg tracking-tight">
+        <p>{content}</p>
+      </blockquote>
+
+      {data.showRating && (
+        <div className="text-dark-700 mt-3 flex gap-x-1">
+          <Rating count={5} value={data.rating ?? 0} size={14} />
+        </div>
+      )}
+
+      <figcaption className="mt-4 flex items-center gap-x-6">
+        {/* Image */}
+        <div className="image-wrapper flex h-12 w-12 items-center justify-center rounded-full border">
+          {data.image ? (
+            <img
+              className="bg-dark-50 h-full w-full rounded-full"
+              src={data.image.url}
+              alt={name}
+            />
+          ) : (
+            <MdFaceRetouchingNatural className="text-dark-400 text-lg" />
+          )}
+        </div>
+
+        <div className="text-sm leading-4">
+          {/* Name */}
+          <div className="text-dark-900 font-semibold">{name}</div>
+
+          {/* Position */}
+          {position && <div className="text-dark-600 mt-0.5">{position}</div>}
+        </div>
+      </figcaption>
+    </figure>
   );
 };
 
-export default CardBlock;
-
-// 2. Define your block configuration (card.config.ts)
-import { BlockGroup } from "@dndbuilder.com/react";
+// 3. Define your block configuration (testimonial.config.ts)
 import { createBlockConfig } from "@dndbuilder.com/react/utils";
 import { lazy } from "react";
-import { FiSquare } from "react-icons/fi";
-import { CardSettingsType } from "./types";
+import { FiMessageSquare } from "react-icons/fi";
+import { TestimonialSettingsType } from "./types";
 
-const CardConfig = createBlockConfig<CardSettingsType>({
-  type: "card", // Custom block type
-  label: "Card",
-  icon: FiSquare,
-  component: lazy(() => import("./components/card.block")),
+const TestimonialConfig = createBlockConfig<TestimonialSettingsType>({
+  type: "testimonial",
+  label: "Testimonial",
+  icon: FiMessageSquare,
+  component: lazy(() => import("./components/testimonial.block")),
   isVisible: () => true,
-  group: "Custom", // Group under Custom blocks
-  settings: {},
+  group: "Content",
+  settings: {
+    // Default settings including card configuration
+    card: {
+      alignment: { desktop: "left" },
+      backgroundColor: { desktop: { default: "#ffffff" } },
+      padding: { desktop: { top: 24, right: 24, bottom: 24, left: 24 } },
+      border: {
+        radius: { default: { topLeft: 8, topRight: 8, bottomRight: 8, bottomLeft: 8 } },
+        type: { default: "solid" },
+        color: { default: "#e5e7eb" },
+        width: { desktop: { default: { top: 1, right: 1, bottom: 1, left: 1 } } }
+      },
+      boxShadow: {
+        default: {
+          color: "#00000014",
+          horizontal: 0,
+          vertical: 1,
+          blur: 3,
+          spread: 0,
+          position: "outset"
+        }
+      }
+    },
+    // Other settings...
+  },
   style: ({ settings, breakpoints }) => {
-    return {};
+    // Generate styles for the card
+    return {
+      "& .testimonial-card": {
+        backgroundColor: settings.card?.backgroundColor?.desktop?.default,
+        textAlign: settings.card?.alignment?.desktop,
+        // Other styles...
+      }
+    };
   },
   controls: [
     {
       label: "Style",
-      component: lazy(() => import("./components/card-style.control")),
+      component: lazy(() => import("./components/testimonial-style.control")),
     },
     {
       label: "Content",
-      component: lazy(() => import("./components/card-content.control")),
+      component: lazy(() => import("./components/testimonial-content.control")),
     },
   ],
 });
 
-export default CardConfig;
+export default TestimonialConfig;
 
-// 3. Include the block in your editor configuration (editor.config.ts)
-import CardConfig from "../components/blocks/card/card.config";
+// 4. Include the block in your editor configuration (editor.config.ts)
+import TestimonialConfig from "../blocks/testimonial/testimonial.config";
 
 export const editorConfig = {
   blocks: [
-    CardConfig,
+    TestimonialConfig,
     // Other blocks...
   ],
   // Other configuration options...
 };
 ```
+
+The Card block in this example has the following features:
+
+- **Responsive Design**: Supports different layouts for different screen sizes
+- **Customizable Styling**: Configure background color, padding, border, and box shadow
+- **Text Alignment**: Align content left, center, or right
+- **Multiple Presets**: Choose from different preset layouts
+- **Hover Effects**: Apply different styles on hover using pseudo-classes
 
 ### Overriding an Existing Block
 
