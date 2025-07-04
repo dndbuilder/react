@@ -59,7 +59,7 @@ export function PricingSection({ className }: PricingSectionProps) {
                 </li>
               </ul>
               <Button className="w-full bg-transparent" variant="outline" asChild>
-                <Link href="https://www.npmjs.com/package/@dndbuilder.com/react" target="_blank">
+                <Link href="/docs" target="_blank">
                   Get Started Free
                   <LuArrowRight className="ml-2 h-4 w-4" />
                 </Link>
@@ -78,7 +78,7 @@ export function PricingSection({ className }: PricingSectionProps) {
             <Card.Header className="pb-8 text-center">
               <Card.Title className="text-2xl">Premium</Card.Title>
               <div className="mt-4 text-4xl font-bold text-gray-900">
-                $29<span className="text-lg font-normal text-gray-600">/month</span>
+                $10<span className="text-lg font-normal text-gray-600">/month</span>
               </div>
               <Card.Description className="mt-2">
                 Everything in Free plus advanced components
@@ -92,19 +92,19 @@ export function PricingSection({ className }: PricingSectionProps) {
                 </li>
                 <li className="flex items-center">
                   <FiCheck className="mr-3 h-5 w-5 text-green-600" />
-                  <span className="font-medium">Tabs component</span>
+                  <span className="font-medium">Advanced blocks</span>
                 </li>
                 <li className="flex items-center">
                   <FiCheck className="mr-3 h-5 w-5 text-green-600" />
-                  <span className="font-medium">Drawer component</span>
+                  <span className="font-medium">Global Theme Settings</span>
                 </li>
                 <li className="flex items-center">
                   <FiCheck className="mr-3 h-5 w-5 text-green-600" />
-                  <span className="font-medium">Dropdown menus</span>
+                  <span className="font-medium">Block Library</span>
                 </li>
                 <li className="flex items-center">
                   <FiCheck className="mr-3 h-5 w-5 text-green-600" />
-                  <span className="font-medium">Slider components</span>
+                  <span className="font-medium">Asset Manager</span>
                 </li>
                 <li className="flex items-center">
                   <FiCheck className="mr-3 h-5 w-5 text-green-600" />

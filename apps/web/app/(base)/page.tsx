@@ -32,7 +32,7 @@ export default function LandingPage() {
       <DemoSection />
       <PricingSection />
       <InstallationSection />
-      <CtaSection />
+      {/* <CtaSection /> */}
     </div>
   );
 }

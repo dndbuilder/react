@@ -28,15 +28,22 @@ export function HeroSection({ className }: HeroSectionProps) {
         </p>
         <div className="mb-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button size="lg" className="bg-black px-8 text-white hover:bg-gray-800" asChild>
-            <Link href="https://www.npmjs.com/package/@dndbuilder.com/react" target="_blank">
-              <LuDownload className="mr-2 h-4 w-4" />
-              Get Started Free
+            <Link href="/builder" target="_blank">
+              <LuPlay className="mr-2 h-4 w-4" />
+              Try Demo Now
               <LuArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
-          <Button variant="outline" size="lg" className="border-gray-300 bg-transparent px-8">
-            <LuPlay className="mr-2 h-4 w-4" />
-            View Demo
+          <Button
+            variant="outline"
+            size="lg"
+            className="border-gray-300 bg-transparent px-8"
+            asChild
+          >
+            <Link href="/docs" target="_blank">
+              Documentation
+              <LuArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </Button>
         </div>
       </div>

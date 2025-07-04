@@ -23,32 +23,32 @@ export function PremiumFeaturesShowcase({ className }: PremiumFeaturesShowcasePr
             <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white/20">
               <LuPackage className="h-6 w-6" />
             </div>
-            <h3 className="mb-2 font-semibold">Tabs Component</h3>
-            <p className="text-sm opacity-80">Interactive tabbed interfaces</p>
+            <h3 className="mb-2 font-semibold">Advanced Blocks</h3>
+            <p className="text-sm opacity-80">Tabs, Drawer, Dropdown, Slider</p>
           </div>
 
           <div className="rounded-lg border border-white/20 bg-white/10 p-6 backdrop-blur-sm">
             <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white/20">
               <LuPackage className="h-6 w-6" />
             </div>
-            <h3 className="mb-2 font-semibold">Drawer Component</h3>
-            <p className="text-sm opacity-80">Sliding panel navigation</p>
+            <h3 className="mb-2 font-semibold">Global Theme Settings</h3>
+            <p className="text-sm opacity-80">Customize your site's appearance</p>
           </div>
 
           <div className="rounded-lg border border-white/20 bg-white/10 p-6 backdrop-blur-sm">
             <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white/20">
               <LuPackage className="h-6 w-6" />
             </div>
-            <h3 className="mb-2 font-semibold">Dropdown Menus</h3>
-            <p className="text-sm opacity-80">Advanced dropdown controls</p>
+            <h3 className="mb-2 font-semibold">Block Library</h3>
+            <p className="text-sm opacity-80">Reusable component collection</p>
           </div>
 
           <div className="rounded-lg border border-white/20 bg-white/10 p-6 backdrop-blur-sm">
             <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-white/20">
               <LuPackage className="h-6 w-6" />
             </div>
-            <h3 className="mb-2 font-semibold">Slider Components</h3>
-            <p className="text-sm opacity-80">Interactive range sliders</p>
+            <h3 className="mb-2 font-semibold">Asset Manager</h3>
+            <p className="text-sm opacity-80">Organize and manage media files</p>
           </div>
         </div>
       </div>

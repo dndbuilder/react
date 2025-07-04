@@ -12,9 +12,9 @@ export default function ChangelogPage() {
       changes: [
         {
           type: "feature",
-          title: "Premium Components Released",
+          title: "Premium Features Released",
           description:
-            "Introducing tabs, drawer, dropdown, and slider components for Premium users",
+            "Introducing Advanced blocks, Global Theme Settings, Block Library, and Asset Manager for Premium users",
         },
         {
           type: "feature",
