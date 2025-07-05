@@ -1,47 +1,3 @@
-# @dndbuilder.com/react
-
-A powerful drag-and-drop page builder for React applications. This package provides a comprehensive set of components, hooks, and utilities for building customizable page editors with a block-based approach.
-
-## Table of Contents
-
-- [@dndbuilder.com/react](#dndbuildercomreact)
-  - [Table of Contents](#table-of-contents)
-  - [Features](#features)
-  - [Installation](#installation)
-  - [Quick Start](#quick-start)
-  - [Core Concepts](#core-concepts)
-    - [Editor](#editor)
-    - [Blocks](#blocks)
-    - [Controls](#controls)
-    - [Store](#store)
-  - [API Reference](#api-reference)
-    - [Components](#components)
-    - [Server Components](#server-components)
-    - [Hooks](#hooks)
-    - [Utilities](#utilities)
-  - [Working with Content](#working-with-content)
-    - [Saving Content](#saving-content)
-    - [Rendering Content](#rendering-content)
-  - [Customization](#customization)
-    - [Creating Custom Blocks](#creating-custom-blocks)
-    - [Overriding Existing Blocks](#overriding-existing-blocks)
-    - [Styling](#styling)
-  - [Advanced Usage](#advanced-usage)
-    - [Server-Side Rendering](#server-side-rendering)
-  - [Troubleshooting](#troubleshooting)
-    - [Common Issues](#common-issues)
-
-## Features
-
-- 🧩 **Block-Based Architecture**: Build pages using pre-defined or custom blocks
-- 🖱️ **Drag and Drop Interface**: Intuitive drag-and-drop functionality using React DND
-- 🔄 **Undo/Redo Support**: Built-in history management with Redux Undo
-- 📱 **Responsive Design**: Create responsive layouts that work across devices
-- 🎨 **Customizable UI**: Extensive styling options with Tailwind CSS
-- 🧰 **Extensible API**: Easily extend with custom blocks and functionality
-- 🔌 **Plugin System**: Support for third-party plugins and extensions
-- 📦 **Tree-Shakable**: Import only what you need
-
 ## Installation
 
 ```bash
@@ -85,7 +41,7 @@ export default App;
 
 ## Core Concepts
 
-### Editor
+#### Editor
 
 The Editor is the main component that provides the drag-and-drop interface for building pages. It manages the state of the page content and provides tools for editing blocks.
 
@@ -405,5 +361,3 @@ export async function getServerSideProps() {
 1. **Block not rendering**: Ensure the block component is correctly registered in the editor configuration.
 2. **Styling issues**: Check your CSS classes and ensure they are applied correctly.
 3. **Type errors**: Verify that your TypeScript types match the expected interfaces.
-
-For more information, visit [dndbuilder.com](https://dndbuilder.com/).

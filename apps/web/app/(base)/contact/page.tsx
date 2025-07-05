@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { headers } from "next/headers";
-import { LuMail, LuMapPin, LuPhone, LuSend } from "react-icons/lu";
+import { LuSend } from "react-icons/lu";
 
 export default async function ContactPage() {
   const headersList = await headers();
@@ -22,8 +22,8 @@ export default async function ContactPage() {
             </Badge>
             <h1 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">Contact Us</h1>
             <p className="mx-auto mb-8 max-w-2xl text-xl text-gray-600">
-              Have questions about DnD Builder? We&apos;re here to help. Reach out to our team and we&apos;ll
-              get back to you as soon as possible.
+              Have questions about DnD Builder? We&apos;re here to help. Reach out to our team and
+              we&apos;ll get back to you as soon as possible.
             </p>
           </div>
         </section>
