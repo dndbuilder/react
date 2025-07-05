@@ -1,5 +1,11 @@
 # @dndbuilder.com/react
 
+## 0.1.0
+
+### Minor Changes
+
+- f1c81b6: feat: export useAction hook for undo/redo
+
 ## 0.0.5
 
 ### Patch Changes
