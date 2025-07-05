@@ -30,6 +30,8 @@ A powerful drag-and-drop page builder for React applications. This package provi
     - [Server-Side Rendering](#server-side-rendering)
   - [Troubleshooting](#troubleshooting)
     - [Common Issues](#common-issues)
+  - [Support](#support)
+    - [Getting Help](#getting-help)
 
 ## Features
 
@@ -405,5 +407,15 @@ export async function getServerSideProps() {
 1. **Block not rendering**: Ensure the block component is correctly registered in the editor configuration.
 2. **Styling issues**: Check your CSS classes and ensure they are applied correctly.
 3. **Type errors**: Verify that your TypeScript types match the expected interfaces.
+
+## Support
+
+Need help with @dndbuilder.com/react? We're here to assist you.
+
+### Getting Help
+
+- **Documentation**: Start with this README and visit our [comprehensive documentation](https://dndbuilder.com/docs)
+- **Email Support**: Reach out to our support team at support@dndbuilder.com
+- **Bug Reports**: Report issues through our [Github Repo](https://github.com/dndbuilder/project)
 
 For more information, visit [dndbuilder.com](https://dndbuilder.com/).
