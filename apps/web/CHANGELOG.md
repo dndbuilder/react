@@ -1,5 +1,13 @@
 # web
 
+## 1.0.4
+
+### Patch Changes
+
+- Updated dependencies [3fe097c]
+- Updated dependencies [111bc9a]
+  - @dndbuilder.com/react@0.0.5
+
 ## 1.0.3
 
 ### Patch Changes

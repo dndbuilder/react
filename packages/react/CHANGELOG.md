@@ -1,5 +1,12 @@
 # @dndbuilder.com/react
 
+## 0.0.5
+
+### Patch Changes
+
+- 3fe097c: fix: remove unused export of `useIcons` hooks
+- 111bc9a: feat: add support section with help resources to README
+
 ## 0.0.4
 
 ### Patch Changes
