@@ -1,5 +1,3 @@
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { classNames } from "@/lib/utils";
 
 interface DemoSectionProps {
@@ -18,17 +16,29 @@ export function DemoSection({ className }: DemoSectionProps) {
 
       <div className="mx-auto mt-12 max-w-5xl rounded-lg border border-gray-300 p-2 shadow-lg">
         <div className="relative aspect-video overflow-hidden rounded-lg">
-          <Image
-            src="https://kzmpcgpar3lh532ybiau.lite.vusercontent.net/placeholder.svg?height=720&width=1280"
-            alt="Page Builder Demo"
-            width={1280}
-            height={720}
-            className="object-cover"
-          />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Button size="lg" variant="outline" className="">
-              Watch Demo
-            </Button>
+          <div
+            style={{
+              position: "relative",
+              paddingBottom: "56.25%",
+              height: 0,
+              borderRadius: "0",
+              boxShadow: "0 15px 40px rgba(63,58,79,.3)",
+              overflow: "hidden",
+              minWidth: "320px",
+            }}
+          >
+            <iframe
+              src="https://dndbuilder.portal.trainn.co/share/QL6h2jqmyZRG8q0MAlxtNA/embed?autoplay=false"
+              allowFullScreen
+              allow="autoplay; fullscreen"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+              }}
+            ></iframe>
           </div>
         </div>
       </div>
