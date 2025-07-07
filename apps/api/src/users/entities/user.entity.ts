@@ -43,6 +43,8 @@ export class User {
 
 export const UserSchema = SchemaFactory.createForClass(User);
 
+UserSchema.set("id", true);
+
 UserSchema.pre("save", async function (next) {
   const user = this as UserDocument;
 
