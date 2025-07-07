@@ -92,7 +92,8 @@ export default async function ContactPage() {
                   >
                     {/* FormSubmit.co configuration */}
                     <input type="hidden" name="_subject" value="New contact form submission" />
-                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_captcha" value="true" />
+                    <input type="text" name="_honey" style={{ display: "none" }} />
                     <input type="hidden" name="_template" value="table" />
                     <input type="hidden" name="_next" value={thankYouUrl} />
 
