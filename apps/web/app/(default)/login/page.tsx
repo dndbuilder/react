@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
-import { toast } from "react-hot-toast";
 import { LuArrowRight, LuEye, LuEyeOff, LuGithub, LuLock, LuMail } from "react-icons/lu";
+import { toast } from "sonner";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -16,6 +16,9 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+  const searchparams = useSearchParams();
+
+  const callbackUrl = searchparams.get("callbackUrl") || "/";
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -42,7 +45,7 @@ export default function LoginPage() {
         toast.error("Invalid email or password");
       } else {
         toast.success("Logged in successfully");
-        router.push("/");
+        router.push(callbackUrl);
         router.refresh();
       }
     } catch (error) {
@@ -57,7 +60,7 @@ export default function LoginPage() {
     setIsLoading(true);
 
     try {
-      await signIn(provider, { callbackUrl: "/" });
+      await signIn(provider, { callbackUrl: callbackUrl, redirect: true });
     } catch (error) {
       toast.error(`Error signing in with ${provider}`);
       console.error(`${provider} login error:`, error);
