@@ -7,7 +7,7 @@ async function bootstrap() {
 
   // Enable CORS for the web application
   app.enableCors({
-    origin: "http://localhost:3030",
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     credentials: true,
   });
@@ -20,9 +20,6 @@ async function bootstrap() {
       forbidNonWhitelisted: true,
     })
   );
-
-  // API prefix
-  app.setGlobalPrefix("api");
 
   await app.listen(process.env.PORT || 3000);
 }
