@@ -1,19 +1,18 @@
-'use client';
+"use client";
 
-import { Button } from '@/components/ui/button';
-import { classNames } from '@/lib/utils';
-import { Tabs } from '@dndbuilder.com/react/components';
-import { useState } from 'react';
+import { classNames } from "@/lib/utils";
+import { Tabs } from "@dndbuilder.com/react/components";
+import { useState } from "react";
 
 interface InstallationSectionProps {
   className?: string;
 }
 
 export function InstallationSection({ className }: InstallationSectionProps) {
-  const [activeTab, setActiveTab] = useState('install');
+  const [activeTab, setActiveTab] = useState("install");
 
   return (
-    <section className={classNames('bg-white py-20', className)}>
+    <section className={classNames("bg-white py-20", className)}>
       <div className="container mx-auto px-4">
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">

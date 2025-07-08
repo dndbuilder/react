@@ -1,11 +1,10 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Separator } from "@dndbuilder.com/react/components";
+import { Tooltip } from "@dndbuilder.com/react/components";
 import Link from "next/link";
 import { useState } from "react";
 import { FiCheckCircle } from "react-icons/fi";
@@ -63,7 +62,7 @@ export default function Dashboard() {
               <Card.Header>
                 <div className="flex items-center space-x-2">
                   <LuKey className="h-5 w-5 text-black" />
-                  <Card.Title className="text-black">License Key Management</Card.Title>
+                  <Card.Title className="text-xl text-black">License Key Management</Card.Title>
                 </div>
                 <Card.Description>
                   Your license key is required to access premium blocks and features in production.
@@ -72,7 +71,7 @@ export default function Dashboard() {
               <Card.Content className="space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="license-key">Current License Key</Label>
-                  <div className="flex space-x-2">
+                  <div className="mt-2 flex space-x-2">
                     <div className="relative flex-1">
                       <Input
                         id="license-key"
@@ -123,24 +122,40 @@ export default function Dashboard() {
                 </div>
 
                 <div className="flex space-x-3">
-                  <Button
-                    onClick={handleGenerateKey}
-                    disabled={isGenerating}
-                    className="bg-black text-white hover:bg-gray-800"
-                  >
-                    {isGenerating ? (
-                      <>
-                        <LuRefreshCw className="mr-2 h-4 w-4 animate-spin" />
-                        Generating...
-                      </>
-                    ) : (
-                      <>
-                        <LuRefreshCw className="mr-2 h-4 w-4" />
-                        Regenerate Key
-                      </>
-                    )}
-                  </Button>
-                  <Button variant="outline">View Usage Stats</Button>
+                  <Tooltip>
+                    <Tooltip.Trigger asChild>
+                      <Button
+                        onClick={handleGenerateKey}
+                        disabled={true} // Disable until backend is implemented
+                        className="bg-black text-white hover:bg-gray-800"
+                      >
+                        {isGenerating ? (
+                          <>
+                            <LuRefreshCw className="mr-2 h-4 w-4 animate-spin" />
+                            Generating...
+                          </>
+                        ) : (
+                          <>
+                            <LuRefreshCw className="mr-2 h-4 w-4" />
+                            Regenerate Key
+                          </>
+                        )}
+                      </Button>
+                    </Tooltip.Trigger>
+                    <Tooltip.Content className="rounded text-xs">
+                      Coming soon! Regenerate your license key to refresh access.
+                    </Tooltip.Content>
+                  </Tooltip>
+                  <Tooltip>
+                    <Tooltip.Trigger asChild>
+                      <Button variant="outline" disabled>
+                        View Usage Stats
+                      </Button>
+                    </Tooltip.Trigger>
+                    <Tooltip.Content className="rounded text-xs">
+                      Coming soon! Usage statistics will be available in future updates.
+                    </Tooltip.Content>
+                  </Tooltip>
                 </div>
               </Card.Content>
             </Card>
@@ -148,7 +163,7 @@ export default function Dashboard() {
             {/* Integration Guide */}
             <Card className="mt-6 shadow-sm">
               <Card.Header>
-                <Card.Title className="text-black">Quick Integration</Card.Title>
+                <Card.Title className="text-xl text-black">Quick Integration</Card.Title>
                 <Card.Description>
                   Add your license key to your environment variables to unlock premium features.
                 </Card.Description>
@@ -156,21 +171,27 @@ export default function Dashboard() {
               <Card.Content>
                 <div className="overflow-x-auto rounded-lg bg-gray-900 p-4">
                   <pre className="text-sm text-gray-100">
-                    <code>{`# .env.local
-NEXT_PUBLIC_DND_BUILDER_LICENSE_KEY=${licenseKey}
-
-# In your React app
-import { BuilderProvider } from "@dndbuilder.com/react";
+                    <code>
+                      {" "}
+                      {`import React from "react";
+import { Block } from "@dndbuilder.com/react";
+import { BuilderProvider, Editor } from "@dndbuilder.com/react";
+import "@dndbuilder.com/react/dist/style.css";
+import { store } from "@dndbuilder.com/react";
 
 function App() {
   return (
-    <BuilderProvider 
-      licenseKey={process.env.NEXT_PUBLIC_DND_BUILDER_LICENSE_KEY}
-    >
-      {/* Your app */}
-    </BuilderProvider>
+     <BuilderProvider store={store}>
+        <Editor
+          content={initialContent}
+          licenseKey="dnd_live_sk_1234567890abcdef1234567890abcdef" // Your license key here
+        />
+      </BuilderProvider>
   );
-}`}</code>
+}
+
+export default App;`}
+                    </code>
                   </pre>
                 </div>
               </Card.Content>
@@ -184,7 +205,7 @@ function App() {
               <Card.Header>
                 <div className="flex items-center space-x-2">
                   <LuPlay className="h-5 w-5 text-black" />
-                  <Card.Title className="text-black">Try the Builder</Card.Title>
+                  <Card.Title className="text-xl text-black">Try the Builder</Card.Title>
                 </div>
                 <Card.Description>
                   Experience the full power of DnD Builder with our interactive demo.
@@ -204,14 +225,14 @@ function App() {
             </Card>
 
             {/* Account Status */}
-            <Card className="shadow-sm">
+            {/* <Card className="shadow-sm">
               <Card.Header>
                 <Card.Title className="text-black">Account Status</Card.Title>
               </Card.Header>
               <Card.Content className="space-y-4">
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-600">Plan</span>
-                  <Badge className="bg-black text-white">Premium</Badge>
+                  <Badge className="bg-black text-white">Free</Badge>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-600">Status</span>
@@ -228,12 +249,12 @@ function App() {
                   Manage Subscription
                 </Button>
               </Card.Content>
-            </Card>
+            </Card> */}
 
             {/* Quick Links */}
             <Card className="shadow-sm">
               <Card.Header>
-                <Card.Title className="text-black">Quick Links</Card.Title>
+                <Card.Title className="text-xl text-black">Quick Links</Card.Title>
               </Card.Header>
               <Card.Content className="space-y-3">
                 <Link

@@ -46,13 +46,15 @@ export function ProfileDropdown() {
             <p className="text-sm font-medium text-gray-900">{session.user?.name}</p>
             <p className="truncate text-xs text-gray-500">{session.user?.email}</p>
           </div>
-          <Link
-            href={"/dashboard"}
-            className="flex w-full items-center border-b border-gray-200 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-          >
-            <FiHome className="mr-2 h-4 w-4" />
-            Dashboard
-          </Link>
+          <Popover.Close asChild>
+            <Link
+              href={"/dashboard"}
+              className="flex w-full items-center border-b border-gray-100 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+            >
+              <FiHome className="mr-2 h-4 w-4" />
+              Dashboard
+            </Link>
+          </Popover.Close>
           <button
             onClick={handleSignOut}
             className="flex w-full items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
