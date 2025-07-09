@@ -82,6 +82,8 @@ export const authOptions: AuthOptions = {
             }),
           });
 
+          console.log("Social login response:", response);
+
           if (response.ok) {
             const data = await response.json();
             // Store the API token in the user object to be used in the jwt callback
