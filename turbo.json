@@ -1,11 +1,31 @@
 {
   "$schema": "https://turborepo.org/schema.json",
-  "globalEnv": ["MONGODB_URI", "NODE_ENV"],
+  "globalEnv": [
+    "MONGODB_URI",
+    "NODE_ENV",
+    "DB_NAME",
+    "GITHUB_ID",
+    "GITHUB_SECRET",
+    "GOOGLE_CLIENT_ID",
+    "GOOGLE_CLIENT_SECRET",
+    "NEXTAUTH_SECRET",
+    "JWT_SECRET",
+    "JWT_EXPIRES_IN"
+  ],
   "tasks": {
     "build": {
-      "dependsOn": ["^build"],
-      "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        ".env*"
+      ],
+      "outputs": [
+        "dist/**",
+        ".next/**",
+        "!.next/cache/**"
+      ]
     },
     "lint": {
       "outputs": []
@@ -17,10 +37,14 @@
       "outputs": []
     },
     "dev": {
-      "dependsOn": ["^build"],
+      "dependsOn": [
+        "^build"
+      ],
       "cache": true,
       "persistent": true,
-      "outputs": ["dist/**"]
+      "outputs": [
+        "dist/**"
+      ]
     }
   }
 }
