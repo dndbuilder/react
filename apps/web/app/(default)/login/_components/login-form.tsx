@@ -70,16 +70,6 @@ export default function LoginForm() {
   };
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-slate-100">
-      <button
-        onClick={() => {
-          toast.success("Button clicked!", {
-            duration: 1000000,
-          });
-        }}
-      >
-        Click Me
-      </button>
-
       {/* Login Form */}
       <section className="py-20">
         <div className="container mx-auto px-4">

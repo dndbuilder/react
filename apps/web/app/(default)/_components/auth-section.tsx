@@ -12,7 +12,7 @@ export async function AuthSection() {
       {session ? (
         <ProfileDropdown />
       ) : (
-        <div className="flex items-center space-x-2">
+        <div className="hidden md:flex items-center space-x-2">
           <Button variant="outline" className="border-gray-300" size="sm">
             <Link href="/login" className="flex items-center space-x-1">
               <span>Login</span>

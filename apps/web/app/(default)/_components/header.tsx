@@ -4,6 +4,7 @@ import { TbDragDrop } from "react-icons/tb";
 import { AuthSection } from "./auth-section";
 import { AuthSectionSkeleton } from "./auth-section-skeleton";
 import { Suspense } from "react";
+import MobileMenu from "./mobile-menu";
 
 interface HeaderProps {
   className?: string;
@@ -42,6 +43,7 @@ export function Header({ className }: HeaderProps) {
             <AuthSection />
           </Suspense>
         </nav>
+        <MobileMenu />
       </div>
     </header>
   );
