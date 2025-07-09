@@ -64,6 +64,10 @@ export const authOptions: AuthOptions = {
   session: {
     strategy: "jwt",
   },
+  pages: {
+    signIn: "/login",
+    signOut: "/",
+  },
   callbacks: {
     async signIn({ user, account }: { user: User; account?: Account | null }) {
       // Only process for OAuth providers
