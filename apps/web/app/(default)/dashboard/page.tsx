@@ -47,38 +47,38 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8">
-        <div className="mb-8">
-          <h1 className="mb-2 text-2xl font-bold text-black">Dashboard</h1>
-          <p className="text-gray-600">
+      <main className="container mx-auto px-4 py-6 sm:py-8">
+        <div className="mb-6 sm:mb-8">
+          <h1 className="mb-2 text-xl sm:text-2xl font-bold text-black">Dashboard</h1>
+          <p className="text-sm sm:text-base text-gray-600">
             Manage your DnD Builder license and access developer tools.
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-3">
+        <div className="grid gap-4 sm:gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {/* License Key Management */}
-          <div className="lg:col-span-2">
+          <div className="md:col-span-1 lg:col-span-2">
             <Card className="shadow-sm">
-              <Card.Header>
+              <Card.Header className="space-y-1 sm:space-y-2">
                 <div className="flex items-center space-x-2">
-                  <LuKey className="h-5 w-5 text-black" />
-                  <Card.Title className="text-xl text-black">License Key Management</Card.Title>
+                  <LuKey className="h-4 w-4 sm:h-5 sm:w-5 text-black" />
+                  <Card.Title className="text-lg sm:text-xl text-black">License Key Management</Card.Title>
                 </div>
-                <Card.Description>
+                <Card.Description className="text-sm">
                   Your license key is required to access premium blocks and features in production.
                 </Card.Description>
               </Card.Header>
-              <Card.Content className="space-y-6">
+              <Card.Content className="space-y-4 sm:space-y-6">
                 <div className="space-y-2">
-                  <Label htmlFor="license-key">Current License Key</Label>
-                  <div className="mt-2 flex space-x-2">
+                  <Label htmlFor="license-key" className="text-sm sm:text-base">Current License Key</Label>
+                  <div className="mt-2 flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
                     <div className="relative flex-1">
                       <Input
                         id="license-key"
                         type={showKey ? "text" : "password"}
                         value={showKey ? licenseKey : maskedKey}
                         readOnly
-                        className="pr-10 font-mono text-sm"
+                        className="pr-10 font-mono text-xs sm:text-sm"
                       />
                       <Button
                         variant="ghost"
@@ -92,7 +92,7 @@ export default function Dashboard() {
                     <Button
                       variant="outline"
                       onClick={handleCopyKey}
-                      className="flex items-center space-x-2 bg-transparent"
+                      className="flex items-center justify-center space-x-2 bg-transparent sm:w-auto w-full"
                     >
                       {copied ? (
                         <FiCheckCircle className="h-4 w-4 text-green-500" />
@@ -104,12 +104,12 @@ export default function Dashboard() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border border-yellow-200 bg-yellow-50 p-4">
+                <div className="rounded-lg border border-yellow-200 bg-yellow-50 p-3 sm:p-4">
                   <div className="flex items-start space-x-2">
-                    <div className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-yellow-400">
+                    <div className="mt-0.5 flex h-4 w-4 sm:h-5 sm:w-5 items-center justify-center rounded-full bg-yellow-400">
                       <span className="text-xs font-bold text-yellow-800">!</span>
                     </div>
-                    <div className="text-sm">
+                    <div className="text-xs sm:text-sm">
                       <p className="mb-1 font-medium text-yellow-800">
                         Keep your license key secure
                       </p>
@@ -121,23 +121,23 @@ export default function Dashboard() {
                   </div>
                 </div>
 
-                <div className="flex space-x-3">
+                <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
                   <Tooltip>
                     <Tooltip.Trigger asChild>
                       <Button
                         onClick={handleGenerateKey}
                         disabled={true} // Disable until backend is implemented
-                        className="bg-black text-white hover:bg-gray-800"
+                        className="w-full sm:w-auto bg-black text-white hover:bg-gray-800 text-xs sm:text-sm"
                       >
                         {isGenerating ? (
                           <>
-                            <LuRefreshCw className="mr-2 h-4 w-4 animate-spin" />
-                            Generating...
+                            <LuRefreshCw className="mr-2 h-3 w-3 sm:h-4 sm:w-4 animate-spin" />
+                            <span>Generating...</span>
                           </>
                         ) : (
                           <>
-                            <LuRefreshCw className="mr-2 h-4 w-4" />
-                            Regenerate Key
+                            <LuRefreshCw className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
+                            <span>Regenerate Key</span>
                           </>
                         )}
                       </Button>
@@ -148,7 +148,7 @@ export default function Dashboard() {
                   </Tooltip>
                   <Tooltip>
                     <Tooltip.Trigger asChild>
-                      <Button variant="outline" disabled>
+                      <Button variant="outline" disabled className="w-full sm:w-auto text-xs sm:text-sm">
                         View Usage Stats
                       </Button>
                     </Tooltip.Trigger>
@@ -161,16 +161,16 @@ export default function Dashboard() {
             </Card>
 
             {/* Integration Guide */}
-            <Card className="mt-6 shadow-sm">
-              <Card.Header>
-                <Card.Title className="text-xl text-black">Quick Integration</Card.Title>
-                <Card.Description>
+            <Card className="mt-4 sm:mt-6 shadow-sm">
+              <Card.Header className="space-y-1 sm:space-y-2">
+                <Card.Title className="text-lg sm:text-xl text-black">Quick Integration</Card.Title>
+                <Card.Description className="text-xs sm:text-sm">
                   Add your license key to your environment variables to unlock premium features.
                 </Card.Description>
               </Card.Header>
               <Card.Content>
-                <div className="overflow-x-auto rounded-lg bg-gray-900 p-4">
-                  <pre className="text-sm text-gray-100">
+                <div className="overflow-x-auto rounded-lg bg-gray-900 p-3 sm:p-4">
+                  <pre className="text-xs sm:text-sm text-gray-100">
                     <code>
                       {" "}
                       {`import React from "react";
@@ -199,22 +199,22 @@ export default App;`}
           </div>
 
           {/* Sidebar */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {/* Demo Access */}
             <Card className="shadow-sm">
-              <Card.Header>
+              <Card.Header className="space-y-1 sm:space-y-2">
                 <div className="flex items-center space-x-2">
-                  <LuPlay className="h-5 w-5 text-black" />
-                  <Card.Title className="text-xl text-black">Try the Builder</Card.Title>
+                  <LuPlay className="h-4 w-4 sm:h-5 sm:w-5 text-black" />
+                  <Card.Title className="text-lg sm:text-xl text-black">Try the Builder</Card.Title>
                 </div>
-                <Card.Description>
+                <Card.Description className="text-xs sm:text-sm">
                   Experience the full power of DnD Builder with our interactive demo.
                 </Card.Description>
               </Card.Header>
-              <Card.Content className="space-y-4">
-                <Button className="w-full bg-black text-white hover:bg-gray-800" asChild>
+              <Card.Content className="space-y-3 sm:space-y-4">
+                <Button className="w-full bg-black text-white hover:bg-gray-800 text-xs sm:text-sm py-2" asChild>
                   <Link href={"/builder"} target="_blank">
-                    <LuExternalLink className="mr-2 h-4 w-4" />
+                    <LuExternalLink className="mr-2 h-3 w-3 sm:h-4 sm:w-4" />
                     Open Builder Demo
                   </Link>
                 </Button>
@@ -253,37 +253,37 @@ export default App;`}
 
             {/* Quick Links */}
             <Card className="shadow-sm">
-              <Card.Header>
-                <Card.Title className="text-xl text-black">Quick Links</Card.Title>
+              <Card.Header className="space-y-1 sm:space-y-2">
+                <Card.Title className="text-lg sm:text-xl text-black">Quick Links</Card.Title>
               </Card.Header>
-              <Card.Content className="space-y-3">
+              <Card.Content className="space-y-2 sm:space-y-3">
                 <Link
                   href="/docs"
                   className="flex items-center justify-between rounded-lg p-2 transition-colors hover:bg-gray-50"
                 >
-                  <span className="text-sm">Documentation</span>
-                  <LuExternalLink className="h-4 w-4 text-gray-400" />
+                  <span className="text-xs sm:text-sm">Documentation</span>
+                  <LuExternalLink className="h-3 w-3 sm:h-4 sm:w-4 text-gray-400" />
                 </Link>
                 <Link
                   href="/examples"
                   className="flex items-center justify-between rounded-lg p-2 transition-colors hover:bg-gray-50"
                 >
-                  <span className="text-sm">Code Examples</span>
-                  <LuExternalLink className="h-4 w-4 text-gray-400" />
+                  <span className="text-xs sm:text-sm">Code Examples</span>
+                  <LuExternalLink className="h-3 w-3 sm:h-4 sm:w-4 text-gray-400" />
                 </Link>
                 <Link
                   href="/help"
                   className="flex items-center justify-between rounded-lg p-2 transition-colors hover:bg-gray-50"
                 >
-                  <span className="text-sm">Support Center</span>
-                  <LuExternalLink className="h-4 w-4 text-gray-400" />
+                  <span className="text-xs sm:text-sm">Support Center</span>
+                  <LuExternalLink className="h-3 w-3 sm:h-4 sm:w-4 text-gray-400" />
                 </Link>
                 <Link
                   href="/changelog"
                   className="flex items-center justify-between rounded-lg p-2 transition-colors hover:bg-gray-50"
                 >
-                  <span className="text-sm">Changelog</span>
-                  <LuExternalLink className="h-4 w-4 text-gray-400" />
+                  <span className="text-xs sm:text-sm">Changelog</span>
+                  <LuExternalLink className="h-3 w-3 sm:h-4 sm:w-4 text-gray-400" />
                 </Link>
               </Card.Content>
             </Card>

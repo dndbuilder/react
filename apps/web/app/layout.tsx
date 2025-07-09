@@ -74,7 +74,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <NextAuthSessionProvider>
           <ProgressProvider>{children}</ProgressProvider>
-          <Toaster position="top-center" />
+          <Toaster
+            position="top-center"
+            toastOptions={{
+              classNames: {
+                toast: "max-w-[90vw] !w-fit", // makes toast width adapt to content
+              },
+            }}
+          />
         </NextAuthSessionProvider>
         <Analytics />
       </body>

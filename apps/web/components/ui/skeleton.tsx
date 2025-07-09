@@ -1,11 +1,9 @@
 import { classNames } from "@/lib/utils";
 
-interface SkeletonProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface SkeletonProps extends React.HTMLAttributes<HTMLSpanElement> {}
 
 function Skeleton({ className, ...props }: SkeletonProps) {
-  return (
-    <div className={classNames("animate-pulse rounded-md bg-gray-200", className)} {...props} />
-  );
+  return <span className={classNames("animate-pulse block rounded-md bg-gray-200", className)} {...props} />;
 }
 
 export { Skeleton };
