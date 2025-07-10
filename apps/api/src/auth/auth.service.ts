@@ -75,6 +75,11 @@ export class AuthService {
     return this.usersService.findByIdOrFail(userId);
   }
 
+  async regenerateLicenseKey(userId: string): Promise<{ licenseKey: string }> {
+    const user = await this.usersService.regenerateLicenseKey(userId);
+    return { licenseKey: user.licenseKey };
+  }
+
   private generateToken(user: User): string {
     const payload = {
       sub: user.id,
@@ -92,6 +97,7 @@ export class AuthService {
       firstName: user.firstName,
       lastName: user.lastName,
       role: user.role,
+      licenseKey: user.licenseKey,
       token,
     });
   }

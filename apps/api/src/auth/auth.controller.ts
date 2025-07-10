@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get, UseGuards } from "@nestjs/common";
+import { Controller, Post, Body, Get, UseGuards, Put } from "@nestjs/common";
 import { AuthService } from "./auth.service";
 import { CreateUserDto } from "../users/dto/create-user.dto";
 import { LoginDto } from "./dto/login.dto";
@@ -32,5 +32,11 @@ export class AuthController {
   @Post("social-login")
   async socialLogin(@Body() loginDto: SocialLoginDto): Promise<AuthResponseDto> {
     return this.authService.socialLogin(loginDto);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Put("regenerate-license-key")
+  async regenerateLicenseKey(@CurrentUser() user: User): Promise<{ licenseKey: string }> {
+    return this.authService.regenerateLicenseKey(user.id);
   }
 }
