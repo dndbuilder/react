@@ -32,6 +32,7 @@ export const ProfileManagement: FC<ProfileManagementProps> = ({ profile }) => {
     watch,
     setValue,
     formState: { errors },
+    reset,
   } = useForm<ProfileFormInputs>({
     defaultValues: {
       firstName: profile.firstName || "",
@@ -205,7 +206,12 @@ export const ProfileManagement: FC<ProfileManagementProps> = ({ profile }) => {
                 "Update Profile"
               )}
             </Button>
-            <Button type="button" variant="outline" className="bg-transparent">
+            <Button
+              type="button"
+              variant="outline"
+              className="bg-transparent"
+              onClick={() => reset()}
+            >
               Cancel
             </Button>
           </div>
