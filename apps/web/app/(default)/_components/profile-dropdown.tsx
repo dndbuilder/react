@@ -20,7 +20,7 @@ export function ProfileDropdown() {
 
   return (
     <Popover>
-      <Popover.Trigger className="hidden md:flex items-center px-2 py-1.5 font-medium text-gray-500 hover:text-gray-900">
+      <Popover.Trigger className="hidden items-center px-2 py-1.5 font-medium text-gray-600 hover:text-gray-900 md:flex">
         {session.user?.image ? (
           <div className="relative h-6 w-6 overflow-hidden rounded-full">
             <Image

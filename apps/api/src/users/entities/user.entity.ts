@@ -48,6 +48,9 @@ export class User {
 
   @Prop({ type: String, unique: true })
   licenseKey: string;
+
+  @Prop({ type: String })
+  image?: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

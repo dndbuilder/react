@@ -83,6 +83,10 @@ export class UsersService {
       user.lastName = updateData.lastName;
     }
 
+    if (updateData.image !== undefined) {
+      user.image = updateData.image;
+    }
+
     return user.save();
   }
 

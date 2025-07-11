@@ -12,4 +12,8 @@ export class UpdateProfileDto {
   @IsString({ message: "Last name must be a string" })
   @IsOptional()
   lastName?: string;
+
+  @IsString({ message: "Image must be a string" })
+  @IsOptional()
+  image?: string;
 }
