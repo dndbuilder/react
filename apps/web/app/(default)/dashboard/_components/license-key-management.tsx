@@ -9,21 +9,30 @@ import { LuCopy, LuEye, LuEyeOff, LuKey, LuRefreshCw } from "react-icons/lu";
 import { FiCheckCircle } from "react-icons/fi";
 import { useState } from "react";
 import { toast } from "sonner";
+import { regenerateLicenseKey } from "@/lib/license";
 
-export function LicenseKeyManagement() {
-  const [licenseKey, setLicenseKey] = useState("dnd_live_sk_1234567890abcdef1234567890abcdef");
+type LicenseKeyManagementProps = {
+  licenseKey: string;
+};
+
+export function LicenseKeyManagement({ licenseKey: initialLicenseKey }: LicenseKeyManagementProps) {
+  const [licenseKey, setLicenseKey] = useState(initialLicenseKey);
   const [showKey, setShowKey] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);
   const [copied, setCopied] = useState(false);
 
   const handleGenerateKey = async () => {
     setIsGenerating(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    const newKey = `dnd_live_sk_${Math.random().toString(36).substring(2, 15)}${Math.random().toString(36).substring(2, 15)}`;
-    setLicenseKey(newKey);
-    setIsGenerating(false);
-    toast.success("New license key generated successfully!");
+    try {
+      const newKey = await regenerateLicenseKey();
+      setLicenseKey(newKey);
+      toast.success("New license key generated successfully!");
+    } catch (error) {
+      toast.error("Failed to generate new license key. Please try again.");
+      console.error("Error generating license key:", error);
+    } finally {
+      setIsGenerating(false);
+    }
   };
 
   const handleCopyKey = async () => {
@@ -39,9 +48,7 @@ export function LicenseKeyManagement() {
       <Card.Header className="space-y-1 sm:space-y-2">
         <div className="flex items-center space-x-2">
           <LuKey className="h-4 w-4 text-black sm:h-5 sm:w-5" />
-          <Card.Title className="text-lg text-black sm:text-xl">
-            License Key Management
-          </Card.Title>
+          <Card.Title className="text-lg text-black sm:text-xl">License Key Management</Card.Title>
         </div>
         <Card.Description className="text-sm">
           Your license key is required to access premium blocks and features in production.
@@ -91,9 +98,7 @@ export function LicenseKeyManagement() {
               <span className="text-xs font-bold text-yellow-800">!</span>
             </div>
             <div className="text-xs sm:text-sm">
-              <p className="mb-1 font-medium text-yellow-800">
-                Keep your license key secure
-              </p>
+              <p className="mb-1 font-medium text-yellow-800">Keep your license key secure</p>
               <p className="text-yellow-700">
                 Don&#39;t share your license key publicly. It should only be used in your
                 application&#39;s environment variables.
@@ -107,7 +112,6 @@ export function LicenseKeyManagement() {
             <Tooltip.Trigger asChild>
               <Button
                 onClick={handleGenerateKey}
-                disabled={true} // Disable until backend is implemented
                 className="w-full bg-black text-xs text-white hover:bg-gray-800 sm:w-auto sm:text-sm"
               >
                 {isGenerating ? (
@@ -124,16 +128,12 @@ export function LicenseKeyManagement() {
               </Button>
             </Tooltip.Trigger>
             <Tooltip.Content className="rounded text-xs">
-              Coming soon! Regenerate your license key to refresh access.
+              Regenerate your license key to refresh access. This will invalidate your current key.
             </Tooltip.Content>
           </Tooltip>
           <Tooltip>
             <Tooltip.Trigger asChild>
-              <Button
-                variant="outline"
-                disabled
-                className="w-full text-xs sm:w-auto sm:text-sm"
-              >
+              <Button variant="outline" disabled className="w-full text-xs sm:w-auto sm:text-sm">
                 View Usage Stats
               </Button>
             </Tooltip.Trigger>

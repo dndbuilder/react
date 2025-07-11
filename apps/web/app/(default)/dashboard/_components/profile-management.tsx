@@ -108,7 +108,7 @@ export const ProfileManagement: FC<ProfileManagementProps> = ({ profile }) => {
       </Card.Header>
       <Card.Content className="space-y-6">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="flex items-center space-x-4 mb-6">
+          <div className="mb-6 flex items-center space-x-4">
             <Avatar className="h-20 w-20">
               <Avatar.Image src={formValues.image || "/placeholder.svg"} alt={fullName} />
               <Avatar.Fallback className="bg-black text-lg text-white">
@@ -139,9 +139,11 @@ export const ProfileManagement: FC<ProfileManagementProps> = ({ profile }) => {
             </div>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2 mb-6">
+          <div className="mb-6 grid gap-4 md:grid-cols-2">
             <div className="space-y-2">
-              <Label className={'block'} htmlFor="profile-first-name">First Name</Label>
+              <Label className={"block"} htmlFor="profile-first-name">
+                First Name
+              </Label>
               <Input
                 id="profile-first-name"
                 {...register("firstName", { required: "First name is required" })}
@@ -149,11 +151,13 @@ export const ProfileManagement: FC<ProfileManagementProps> = ({ profile }) => {
                 className={errors.firstName ? "border-red-500" : ""}
               />
               {errors.firstName && (
-                <p className="text-red-500 text-xs mt-1">{errors.firstName.message}</p>
+                <p className="mt-1 text-xs text-red-500">{errors.firstName.message}</p>
               )}
             </div>
             <div className="space-y-2">
-              <Label className={'block'}htmlFor="profile-last-name">Last Name</Label>
+              <Label className={"block"} htmlFor="profile-last-name">
+                Last Name
+              </Label>
               <Input
                 id="profile-last-name"
                 {...register("lastName", { required: "Last name is required" })}
@@ -161,29 +165,29 @@ export const ProfileManagement: FC<ProfileManagementProps> = ({ profile }) => {
                 className={errors.lastName ? "border-red-500" : ""}
               />
               {errors.lastName && (
-                <p className="text-red-500 text-xs mt-1">{errors.lastName.message}</p>
+                <p className="mt-1 text-xs text-red-500">{errors.lastName.message}</p>
               )}
             </div>
           </div>
 
-          <div className="space-y-2 mb-6">
-            <Label className={'block'} htmlFor="profile-email">Email Address</Label>
+          <div className="mb-6 space-y-2">
+            <Label className={"block"} htmlFor="profile-email">
+              Email Address
+            </Label>
             <Input
               id="profile-email"
               type="email"
-              {...register("email", { 
+              {...register("email", {
                 required: "Email is required",
                 pattern: {
                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: "Invalid email address"
-                }
+                  message: "Invalid email address",
+                },
               })}
               placeholder="Enter your email"
               className={errors.email ? "border-red-500" : ""}
             />
-            {errors.email && (
-              <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
-            )}
+            {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email.message}</p>}
           </div>
 
           <div className="flex space-x-3">

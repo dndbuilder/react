@@ -21,7 +21,7 @@ export default async function Dashboard() {
         <div className="grid w-full gap-4 sm:gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
           {/* License Key Management and Quick Integration */}
           <div className="md:col-span-1 lg:col-span-2">
-            <LicenseKeyManagement />
+            <LicenseKeyManagement licenseKey={profile.licenseKey} />
 
             {/* Profile Section */}
             <ProfileManagement profile={profile} />
