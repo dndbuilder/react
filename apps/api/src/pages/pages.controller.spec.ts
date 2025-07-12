@@ -18,6 +18,7 @@ describe("PagesController", () => {
     firstName: "Test",
     lastName: "User",
     role: UserRole.CUSTOMER,
+    licenseKey: "test-license-key",
   };
 
   const mockPage = {

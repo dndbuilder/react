@@ -1,22 +1,17 @@
 "use client";
 
-import { useSession, signOut } from "next-auth/react";
-import { LuUser, LuLogOut, LuChevronDown } from "react-icons/lu";
-import Image from "next/image";
 import { Popover } from "@dndbuilder.com/react/components";
+import { Session } from "next-auth";
+import { signOut } from "next-auth/react";
+import Image from "next/image";
 import Link from "next/link";
 import { FiHome } from "react-icons/fi";
+import { LuChevronDown, LuLogOut, LuUser } from "react-icons/lu";
 
-export function ProfileDropdown() {
-  const { data: session } = useSession();
-
+export function ProfileDropdown({ session }: { session: Session }) {
   const handleSignOut = async () => {
     await signOut({ callbackUrl: "/", redirect: true });
   };
-
-  if (!session) {
-    return null;
-  }
 
   return (
     <Popover>

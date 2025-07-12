@@ -1,5 +1,6 @@
 import { Injectable, UnauthorizedException } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
+import { MailerService } from "@nestjs-modules/mailer";
 import * as bcrypt from "bcrypt";
 import { CreateUserDto } from "../users/dto/create-user.dto";
 import { User } from "../users/entities/user.entity";
@@ -12,7 +13,8 @@ import { SocialLoginDto } from "./dto/social-login.dto";
 export class AuthService {
   constructor(
     private usersService: UsersService,
-    private jwtService: JwtService
+    private jwtService: JwtService,
+    private mailerService: MailerService
   ) {}
 
   async register(createUserDto: CreateUserDto): Promise<AuthResponseDto> {
@@ -84,6 +86,48 @@ export class AuthService {
     const user = await this.usersService.updateProfile(userId, updateData);
     const { password, ...result } = user.toJSON();
     return result as Omit<User, "password">;
+  }
+
+  async forgotPassword(email: string): Promise<{ message: string }> {
+    try {
+      // Generate and save reset token
+      const { token } = await this.usersService.setPasswordResetToken(email);
+
+      // Get user information for the email
+      const user = await this.usersService.findByEmailOrFail(email);
+
+      // Create reset URL (frontend URL where user can reset password)
+      const resetUrl = `${process.env.FRONTEND_URL || 'http://localhost:3000'}/reset-password?token=${token}`;
+
+      // Send email with reset link
+      await this.mailerService.sendMail({
+        to: email,
+        subject: 'Password Reset Request',
+        template: 'password-reset',
+        context: {
+          name: user.firstName || 'User',
+          resetUrl,
+        },
+      });
+
+      return {
+        message: "If the email exists, a password reset link will be sent."
+      };
+    } catch (error) {
+      // We don't want to reveal if an email exists or not for security reasons
+      // So we return a generic message even if the email doesn't exist
+      return {
+        message: "If the email exists, a password reset link will be sent."
+      };
+    }
+  }
+
+  async resetPassword(token: string, newPassword: string): Promise<{ message: string }> {
+    await this.usersService.resetPassword(token, newPassword);
+
+    return {
+      message: "Password has been reset successfully."
+    };
   }
 
   private generateToken(user: User): string {

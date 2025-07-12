@@ -51,6 +51,12 @@ export class User {
 
   @Prop({ type: String })
   image?: string;
+
+  @Prop({ type: String })
+  resetPasswordToken?: string;
+
+  @Prop({ type: Date })
+  resetPasswordExpires?: Date;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

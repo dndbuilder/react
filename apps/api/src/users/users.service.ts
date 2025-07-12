@@ -1,6 +1,7 @@
 import { Injectable, ConflictException, NotFoundException } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
+import * as crypto from "crypto";
 import { User, UserDocument, generateLicenseKey } from "./entities/user.entity";
 import { CreateUserDto } from "./dto/create-user.dto";
 
@@ -100,5 +101,49 @@ export class UsersService {
 
   async removeAll(): Promise<void> {
     await this.userModel.deleteMany({}).exec();
+  }
+
+  async setPasswordResetToken(email: string): Promise<{ token: string; expires: Date }> {
+    const user = await this.findByEmailOrFail(email);
+
+    // Generate a random token
+    const token = crypto.randomBytes(20).toString('hex');
+
+    // Set token expiration to 1 hour from now
+    const expires = new Date();
+    expires.setHours(expires.getHours() + 1);
+
+    // Save the token and expiration to the user
+    user.resetPasswordToken = token;
+    user.resetPasswordExpires = expires;
+    await user.save();
+
+    return { token, expires };
+  }
+
+  async findUserByResetToken(token: string): Promise<UserDocument> {
+    const user = await this.userModel.findOne({
+      resetPasswordToken: token,
+      resetPasswordExpires: { $gt: new Date() }
+    }).exec();
+
+    if (!user) {
+      throw new NotFoundException('Password reset token is invalid or has expired');
+    }
+
+    return user;
+  }
+
+  async resetPassword(token: string, newPassword: string): Promise<UserDocument> {
+    const user = await this.findUserByResetToken(token);
+
+    // Set the new password
+    user.password = newPassword;
+
+    // Clear the reset token and expiration
+    user.resetPasswordToken = undefined;
+    user.resetPasswordExpires = undefined;
+
+    return user.save();
   }
 }

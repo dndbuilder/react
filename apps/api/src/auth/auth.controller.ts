@@ -8,6 +8,8 @@ import { CurrentUser } from "./decorators/current-user.decorator";
 import { User } from "../users/entities/user.entity";
 import { SocialLoginDto } from "./dto/social-login.dto";
 import { UpdateProfileDto } from "./dto/update-profile.dto";
+import { ForgotPasswordDto } from "./dto/forgot-password.dto";
+import { ResetPasswordDto } from "./dto/reset-password.dto";
 
 @Controller("auth")
 export class AuthController {
@@ -48,5 +50,15 @@ export class AuthController {
   @Put("regenerate-license-key")
   async regenerateLicenseKey(@CurrentUser() user: User): Promise<{ licenseKey: string }> {
     return this.authService.regenerateLicenseKey(user.id);
+  }
+
+  @Post("forgot-password")
+  async forgotPassword(@Body() forgotPasswordDto: ForgotPasswordDto): Promise<{ message: string }> {
+    return this.authService.forgotPassword(forgotPasswordDto.email);
+  }
+
+  @Post("reset-password")
+  async resetPassword(@Body() resetPasswordDto: ResetPasswordDto): Promise<{ message: string }> {
+    return this.authService.resetPassword(resetPasswordDto.token, resetPasswordDto.password);
   }
 }

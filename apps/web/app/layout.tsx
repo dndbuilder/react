@@ -71,8 +71,8 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={openSans.className}>
-      <body>
-        <NextAuthSessionProvider>
+      <NextAuthSessionProvider>
+        <body>
           <ProgressProvider>{children}</ProgressProvider>
           <Toaster
             position="top-center"
@@ -87,9 +87,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               justifyContent: "center",
             }}
           />
-        </NextAuthSessionProvider>
-        <Analytics />
-      </body>
+          <Analytics />
+        </body>
+      </NextAuthSessionProvider>
     </html>
   );
 }

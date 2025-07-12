@@ -2,7 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { Popover } from "@dndbuilder.com/react/components";
-import { signOut, useSession } from "next-auth/react";
+import { Session } from "next-auth";
+import { signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -11,11 +12,8 @@ import { LuChevronsUpDown, LuLogOut, LuUser } from "react-icons/lu";
 import { TbDragDrop } from "react-icons/tb";
 import { Drawer } from "vaul";
 
-export default function MobileMenu() {
-  const { data: session } = useSession();
-
+export default function MobileMenu({ session }: { session: Session | null }) {
   const [isOpen, setIsOpen] = useState(false);
-
   const handleSignOut = async () => {
     await signOut({ callbackUrl: "/", redirect: true });
   };

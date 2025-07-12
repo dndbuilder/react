@@ -178,3 +178,59 @@ export async function registerUser({
     throw error;
   }
 }
+
+export async function forgotPassword(email: string) {
+  try {
+    // Validate input
+    if (!email) {
+      throw new Error("Email is required");
+    }
+
+    const response = await fetch(`${BASE_URL}/auth/forgot-password`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || "Failed to process forgot password request");
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error in forgot password:", error);
+    throw error;
+  }
+}
+
+export async function resetPassword(token: string, password: string) {
+  try {
+    // Validate input
+    if (!token || !password) {
+      throw new Error("Token and password are required");
+    }
+
+    const response = await fetch(`${BASE_URL}/auth/reset-password`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ token, password }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || "Failed to reset password");
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error resetting password:", error);
+    throw error;
+  }
+}

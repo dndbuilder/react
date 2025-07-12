@@ -1,18 +1,15 @@
 import { Button } from "@/components/ui/button";
-import { getServerSession } from "next-auth";
+import { Session } from "next-auth";
 import Link from "next/link";
 import { ProfileDropdown } from "./profile-dropdown";
-import { authOptions } from "@/lib/auth";
 
-export async function AuthSection() {
-  const session = await getServerSession(authOptions);
-
+export async function AuthSection({ session }: { session: Session | null }) {
   return (
     <>
       {session ? (
-        <ProfileDropdown />
+        <ProfileDropdown session={session} />
       ) : (
-        <div className="hidden md:flex items-center space-x-2">
+        <div className="hidden items-center space-x-2 md:flex">
           <Button variant="outline" className="border-gray-300" size="sm">
             <Link href="/login" className="flex items-center space-x-1">
               <span>Login</span>

@@ -5,12 +5,16 @@ import { AuthSection } from "./auth-section";
 import { AuthSectionSkeleton } from "./auth-section-skeleton";
 import { Suspense } from "react";
 import MobileMenu from "./mobile-menu";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 
 interface HeaderProps {
   className?: string;
 }
 
-export function Header({ className }: HeaderProps) {
+export async function Header({ className }: HeaderProps) {
+  const session = await getServerSession(authOptions);
+
   return (
     <header
       className={classNames(
@@ -40,10 +44,10 @@ export function Header({ className }: HeaderProps) {
           </Link>
 
           <Suspense fallback={<AuthSectionSkeleton />}>
-            <AuthSection />
+            <AuthSection session={session} />
           </Suspense>
         </nav>
-        <MobileMenu />
+        <MobileMenu session={session} />
       </div>
     </header>
   );
