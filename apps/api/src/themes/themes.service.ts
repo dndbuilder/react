@@ -56,22 +56,20 @@ export class ThemesService {
     }
   }
 
-  async findAll(userId: string): Promise<Theme[]> {
-    return this.themeModel.find({ userId }).exec();
+  async findActive(userId: string): Promise<Theme | null> {
+    return this.themeModel.findOne({ userId, isActive: true }).exec();
   }
 
   async findOneOrFail(id: string, userId: string): Promise<Theme> {
     const theme = await this.themeModel.findOne({ _id: id, userId }).exec();
-
     if (!theme) {
       throw new NotFoundException("Theme not found");
     }
-
     return theme;
   }
 
-  async findActive(userId: string): Promise<Theme | null> {
-    return this.themeModel.findOne({ userId, isActive: true }).exec();
+  async findAll(userId: string): Promise<Theme[]> {
+    return this.themeModel.find({ userId }).exec();
   }
 
   async update(id: string, updateThemeDto: UpdateThemeDto, userId: string): Promise<Theme> {
@@ -158,46 +156,35 @@ export class ThemesService {
    */
   async setActiveTheme(setActiveThemeDto: SetActiveThemeDto, userId: string): Promise<Theme> {
     try {
-      // Case 1: Activate an existing theme
-      if (setActiveThemeDto.id) {
-        // Find the theme and ensure it belongs to the user
-        const theme = await this.findOneOrFail(setActiveThemeDto.id, userId);
+      // Find the theme and ensure it belongs to the user
+      const activeTheme = await this.findActive(userId);
 
-        // If the theme is already active, just return it
-        if (theme.isActive) {
-          return theme;
-        }
-
-        // Deactivate all themes for this user
-        await this.deactivateAllThemes(userId);
-
-        // Activate the specified theme
-        const updatedTheme = await this.themeModel
-          .findOneAndUpdate(
-            { _id: setActiveThemeDto.id, userId },
-            { isActive: true },
-            { new: true }
-          )
-          .exec();
-
-        return updatedTheme?.toJSON() as Theme;
-      }
-
-      // Case 2: Create a new active theme
-      if (setActiveThemeDto.name && setActiveThemeDto.settings) {
-        // Create a new active theme
-        const createdTheme = await this.themeModel.create({
+      if (!activeTheme) {
+        return this.themeModel.create({
           name: setActiveThemeDto.name,
           settings: setActiveThemeDto.settings,
           isActive: true,
           userId,
         });
-
-        return createdTheme;
       }
 
-      // If we get here, the DTO validation should have caught it, but just in case
-      throw new BadRequestException("Either themeId or both name and settings must be provided");
+      const updated = await this.themeModel
+        .findOneAndUpdate(
+          { _id: activeTheme.id, userId },
+          {
+            name: setActiveThemeDto.name,
+            settings: setActiveThemeDto.settings,
+            isActive: true,
+          },
+          { new: true }
+        )
+        .exec();
+
+      if (!updated) {
+        throw new NotFoundException("Active theme not found");
+      }
+
+      return updated;
     } catch (error) {
       // Handle MongoDB duplicate key error (in case the check above fails due to race conditions)
       if (error.name === "MongoServerError" && error.code === 11000) {
