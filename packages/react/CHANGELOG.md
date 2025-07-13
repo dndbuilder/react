@@ -1,5 +1,12 @@
 # @dndbuilder.com/react
 
+## 0.2.0
+
+### Minor Changes
+
+- d2a1f6f: feat: add theme settings
+  feat: add layer panel
+
 ## 0.1.2
 
 ### Patch Changes
