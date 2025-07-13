@@ -1,5 +1,5 @@
 "use client";
-import { BuilderRightPanelType } from "@/store/app-slice";
+import { BuilderRightPanelType } from "@/types";
 import { classNames } from "@/utils";
 import Structure from "./structure";
 import ThemeSettings from "./theme-settings";

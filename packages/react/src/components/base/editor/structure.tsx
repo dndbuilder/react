@@ -4,7 +4,7 @@ import { BuilderConfiguration } from "@/config/builder.config";
 import { useAction } from "@/hooks";
 import { useAppDispatch } from "@/hooks/use-app-dispatch";
 import { useAppSelector } from "@/hooks/use-app-selector";
-import { BuilderRightPanelType } from "@/store/app-slice";
+import { BuilderRightPanelType } from "@/types";
 import { duplicateBlock, removeBlock, selectBlock } from "@/store/builder-slice";
 import {
   getBlock,

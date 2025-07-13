@@ -1,10 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "./index";
-
-export enum BuilderRightPanelType {
-  SETTINGS = "settings",
-  LAYER = "layer",
-}
+import { BuilderRightPanelType } from "@/types";
 
 export interface AppState {
   isSidebarOpen: boolean;

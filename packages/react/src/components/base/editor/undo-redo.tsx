@@ -29,9 +29,8 @@ export const UndoRedo: FC<{ className?: string }> = ({ className, ...rest }) => 
           disabled={!isUndoable}
         >
           <LuUndo2 size={20} />
-
-          <Tooltip.Content>Undo - Ctrl/Cmd+Z</Tooltip.Content>
         </Tooltip.Trigger>
+        <Tooltip.Content>Undo - Ctrl/Cmd+Z</Tooltip.Content>
       </Tooltip>
 
       {/* Redo */}
@@ -43,8 +42,8 @@ export const UndoRedo: FC<{ className?: string }> = ({ className, ...rest }) => 
           disabled={!isRedoable}
         >
           <LuRedo2 size={20} />
-          <Tooltip.Content>Redo - Ctrl/Cmd+Shift+Z</Tooltip.Content>
         </Tooltip.Trigger>
+        <Tooltip.Content>Redo - Ctrl/Cmd+Shift+Z</Tooltip.Content>
       </Tooltip>
     </div>
   );

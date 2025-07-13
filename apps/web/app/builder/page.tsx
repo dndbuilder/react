@@ -1,18 +1,17 @@
 "use client";
 
-import { Block } from "@dndbuilder.com/react";
-import { BuilderProvider, Editor } from "@dndbuilder.com/react";
+import { BASE_URL } from "@/lib/constants";
+import { Block, BuilderProvider, Editor, store, Theme } from "@dndbuilder.com/react";
 import "@dndbuilder.com/react/dist/style.css";
-import { store } from "@dndbuilder.com/react";
+import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { Header } from "./_components/header";
 import { editorConfig } from "./config/editor.config";
-import { BASE_URL } from "@/lib/constants";
-import { useSession } from "next-auth/react";
 
 export default function BuilderPage() {
   const [pageId, setPageId] = useState<string | undefined>(undefined);
   const [initialContent, setInitialContent] = useState<Record<string, Block>>({});
+  const [theme, setTheme] = useState<Theme | null>(null);
   const { data: session } = useSession();
 
   useEffect(() => {
@@ -49,6 +48,34 @@ export default function BuilderPage() {
     fetchContent();
   }, [session?.accessToken]);
 
+  useEffect(() => {
+    if (!session?.accessToken) return;
+
+    // Fetch the active theme
+    const getActiveTheme = async () => {
+      try {
+        const response = await fetch(`${BASE_URL}/themes/active`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${session.accessToken}`,
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch active theme");
+        }
+
+        const data = await response.json();
+        setTheme(data);
+      } catch (error) {
+        console.error("Error fetching active theme:", error);
+      }
+    };
+
+    getActiveTheme();
+  }, [session?.accessToken]);
+
   return (
     <>
       <BuilderProvider store={store}>
@@ -58,6 +85,7 @@ export default function BuilderPage() {
           <Editor
             content={initialContent}
             builderConfig={editorConfig}
+            theme={theme || undefined}
             style={{
               height: "calc(100vh - 60px)", // Adjust height to account for header
             }}

@@ -35,7 +35,7 @@ export const BlockControlPanel: FC<BlockControlPanelProps> = ({ type }) => {
   }
 
   return (
-    <div className="h-full bg-white">
+    <div className="block-control-panel h-full bg-white">
       <Tabs
         value={String(currentTabIndex)}
         onValueChange={(val) => setCurrentTabIndex(Number(val))}

@@ -2,7 +2,7 @@
 import { Tooltip } from "@/components/shared/tooltip";
 import { useAction } from "@/hooks";
 import { useAppSelector } from "@/hooks/use-app-selector";
-import { BuilderRightPanelType } from "@/store/app-slice";
+import { BuilderRightPanelType } from "@/types";
 import { classNames } from "@/utils";
 import { FC } from "react";
 import { FiLayers } from "react-icons/fi";
@@ -19,6 +19,7 @@ const StructureToggle: FC<StructureToggleProps> = ({ className }) => {
   return (
     <Tooltip>
       <Tooltip.Trigger
+        asChild
         onClick={() => {
           toggleRightPanel(BuilderRightPanelType.LAYER);
         }}
@@ -27,7 +28,9 @@ const StructureToggle: FC<StructureToggleProps> = ({ className }) => {
           className,
         })}
       >
-        <FiLayers size={16} />
+        <button type="button">
+          <FiLayers size={16} />
+        </button>
       </Tooltip.Trigger>
       <Tooltip.Content>Layers</Tooltip.Content>
     </Tooltip>

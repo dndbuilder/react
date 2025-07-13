@@ -49,3 +49,8 @@ export enum ThemeSettingsType {
 export type LocalizedValue<T = string> = {
   [key: string]: T;
 };
+
+export enum BuilderRightPanelType {
+  SETTINGS = "settings",
+  LAYER = "layer",
+}

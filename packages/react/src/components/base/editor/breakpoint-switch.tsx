@@ -34,7 +34,7 @@ export const BreakpointSwitch: FC<BreakpointSwitcherProps> = ({ className }) => 
       {breakpoints.map((breakpoint) => {
         return (
           <Tooltip key={breakpoint.key}>
-            <Tooltip.Trigger>
+            <Tooltip.Trigger asChild>
               <div
                 onClick={() => changeBreakpoint(breakpoint.key)}
                 className={classNames("cursor-pointer p-2 text-gray-400 hover:text-gray-800", {
@@ -43,8 +43,8 @@ export const BreakpointSwitch: FC<BreakpointSwitcherProps> = ({ className }) => 
               >
                 {<breakpoint.icon />}
               </div>
-              <Tooltip.Content>{breakpoint.label}</Tooltip.Content>
             </Tooltip.Trigger>
+            <Tooltip.Content>{breakpoint.label}</Tooltip.Content>
           </Tooltip>
         );
       })}

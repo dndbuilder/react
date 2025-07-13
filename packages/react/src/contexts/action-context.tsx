@@ -3,7 +3,7 @@
 import { useAppDispatch } from "@/hooks/use-app-dispatch";
 import { useAppSelector } from "@/hooks/use-app-selector";
 import useLocalstorage from "@/hooks/use-localstorage";
-import { BuilderRightPanelType } from "@/store/app-slice";
+import { BuilderRightPanelType } from "@/types";
 import { getSelectedBlock } from "@/store/selectors";
 import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useState } from "react";
 import toast from "react-hot-toast";

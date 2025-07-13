@@ -5,6 +5,7 @@ import { BuilderConfiguration } from "@/config";
 import { useAppDispatch } from "@/hooks/use-app-dispatch";
 import { clearContent, setContent } from "@/store/builder-slice";
 import { BuilderConfig } from "@/types";
+import { Theme } from "@/types/theme";
 import { Block } from "@/types/block";
 import { classNames } from "@/utils";
 import { FC, useEffect } from "react";
@@ -12,14 +13,16 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { LeftPanel } from "./left-panel";
 import { RightPanel } from "./right-panel";
+import { setActiveTheme } from "@/store/theme-slice";
 
 export type EditorProps = {
   content: Record<string, Block>;
   className?: string;
   builderConfig?: BuilderConfig; // Add builderConfig prop
+  theme?: Theme;
 } & Omit<React.HTMLAttributes<HTMLDivElement>, "content" | "className">;
 
-export const Editor: FC<EditorProps> = ({ content, className, builderConfig, ...props }) => {
+export const Editor: FC<EditorProps> = ({ content, className, builderConfig, theme, ...props }) => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -30,6 +33,13 @@ export const Editor: FC<EditorProps> = ({ content, className, builderConfig, ...
 
     dispatch(setContent(content));
   }, [content]);
+
+  useEffect(() => {
+    if (!theme) return;
+
+    // Dispatch an action to set the theme in the store
+    dispatch(setActiveTheme(theme));
+  }, [dispatch, theme]);
 
   // Apply custom builder configuration if provided
   useEffect(() => {

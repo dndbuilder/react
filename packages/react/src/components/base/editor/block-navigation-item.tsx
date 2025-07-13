@@ -7,11 +7,11 @@ import { FiGrid, FiLock } from "react-icons/fi";
 import { LicenseManager } from "@/licensing";
 import { classNames } from "@/utils";
 
-type Props = {
+export type BlockNavigationItemProps = {
   block: BlockConfig;
-};
+} & React.HTMLAttributes<HTMLDivElement>;
 
-const BlockNavigationItem = memo(({ block }: Props) => {
+const BlockNavigationItem = memo(({ block, ...props }: BlockNavigationItemProps) => {
   const isPremium = LicenseManager.isBlockPremium(block.type);
   const canUseBlock = LicenseManager.canUseBlock(block.type);
 
@@ -48,6 +48,7 @@ const BlockNavigationItem = memo(({ block }: Props) => {
           ? "cursor-move hover:border-gray-600 hover:bg-gray-100 hover:text-gray-800 hover:ring-gray-600"
           : "cursor-not-allowed !opacity-70"
       )}
+      {...props}
     >
       {isPremium && (
         <div className={classNames("absolute right-1 top-1")}>

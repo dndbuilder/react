@@ -1,8 +1,8 @@
 "use client";
 
 import { ScrollArea } from "@/components/shared/scroll-area";
-import { ThemeSettingsType } from "@/types";
-import { BuilderRightPanelType } from "@/store/app-slice";
+import { useAction } from "@/hooks";
+import { BuilderRightPanelType, ThemeSettingsType } from "@/types";
 import { useState } from "react";
 import { BsFiletypeCss } from "react-icons/bs";
 import { FiLink, FiSettings, FiX } from "react-icons/fi";
@@ -11,14 +11,12 @@ import { RxButton } from "react-icons/rx";
 import { TbTypography } from "react-icons/tb";
 import { TfiLayout } from "react-icons/tfi";
 import { VscSymbolColor } from "react-icons/vsc";
-import ThemeActionDropdown from "./theme-action-dropdown";
 import ThemeButtonSettings from "./theme-button-settings";
 import ThemeColorSettings from "./theme-color-settings";
 import ThemeCustomCssSettings from "./theme-custom-css-settings";
 import ThemeLayoutSettings from "./theme-layout-settings";
 import ThemeLinkSettings from "./theme-link-settings";
 import ThemeTypographySettings from "./theme-typography-settings";
-import { useAction } from "@/hooks";
 
 interface SettingItemProps {
   label: React.ReactNode;
@@ -130,9 +128,9 @@ const ThemeSettings = () => {
           <Navigation />
         </div>
       </ScrollArea>
-      <div className="absolute bottom-0 left-0 w-full p-4">
+      {/* <div className="absolute bottom-0 left-0 w-full p-4">
         <ThemeActionDropdown />
-      </div>
+      </div> */}
     </div>
   );
 };

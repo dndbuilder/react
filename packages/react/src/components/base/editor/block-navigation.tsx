@@ -30,8 +30,8 @@ export const BlockNavigation = () => {
   }, [search, blocks]);
 
   return (
-    <div>
-      <div className="mt-4 h-14 w-full bg-white px-4">
+    <div className="block-navigation">
+      <div className="mt-4 h-12 w-full bg-white px-4">
         <div className="group flex items-center  overflow-hidden rounded-sm  ring-1 ring-gray-300 focus-within:ring-2 focus-within:ring-gray-600">
           <div className="ms-2.5 flex w-7 items-center justify-center">
             <BiSearch className=" text-gray-500 group-focus-within:text-gray-700" size={18} />
@@ -52,7 +52,7 @@ export const BlockNavigation = () => {
         <div className="py-2 text-center text-sm text-gray-600">No blocks found</div>
       )}
 
-      <ScrollArea className="h-[calc(100vh-145px)]">
+      <ScrollArea className="h-[calc(100vh-125px)]">
         <Accordion defaultValue={Object.keys(availableGroups)} type="multiple">
           {objectKeys(availableGroups)
             .sort((a, b) => {

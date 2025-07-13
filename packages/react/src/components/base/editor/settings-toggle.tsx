@@ -2,7 +2,7 @@
 import { Tooltip } from "@/components/shared/tooltip";
 import { useAction } from "@/hooks";
 import { useAppSelector } from "@/hooks/use-app-selector";
-import { BuilderRightPanelType } from "@/store/app-slice";
+import { BuilderRightPanelType } from "@/types";
 import { classNames } from "@/utils";
 import { FC } from "react";
 import { FiSettings } from "react-icons/fi";
@@ -19,6 +19,7 @@ const SettingsToggle: FC<SettingsToggleProps> = ({ className }) => {
   return (
     <Tooltip>
       <Tooltip.Trigger
+        asChild
         onClick={() => {
           toggleRightPanel(BuilderRightPanelType.SETTINGS);
         }}
@@ -28,7 +29,9 @@ const SettingsToggle: FC<SettingsToggleProps> = ({ className }) => {
           className
         )}
       >
-        <FiSettings size={18} />
+        <button type="button">
+          <FiSettings size={18} />
+        </button>
       </Tooltip.Trigger>
       <Tooltip.Content>Settings</Tooltip.Content>
     </Tooltip>
