@@ -1,35 +1,35 @@
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import Link from 'next/link';
-import { FiHome } from 'react-icons/fi';
-import { LuArrowRight, LuBell, LuBookOpen, LuCalendar, LuMessageCircle } from 'react-icons/lu';
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import Link from "next/link";
+import { FiHome } from "react-icons/fi";
+import { LuBookOpen, LuCalendar, LuMessageCircle } from "react-icons/lu";
 
 export default function BlogPostPage() {
   const upcomingTopics = [
     {
-      title: 'Getting Started with DnD Builder',
-      description: 'A comprehensive guide to building your first drag-and-drop interface',
-      category: 'Tutorial',
-      estimatedDate: 'Coming Soon',
+      title: "Getting Started with DnD Builder",
+      description: "A comprehensive guide to building your first drag-and-drop interface",
+      category: "Tutorial",
+      estimatedDate: "Coming Soon",
     },
     {
-      title: 'Advanced Component Customization',
-      description: 'Learn how to create and customize components for your specific needs',
-      category: 'Advanced',
-      estimatedDate: 'Coming Soon',
+      title: "Advanced Component Customization",
+      description: "Learn how to create and customize components for your specific needs",
+      category: "Advanced",
+      estimatedDate: "Coming Soon",
     },
     {
-      title: 'Performance Optimization Tips',
-      description: 'Best practices for optimizing your page builder performance',
-      category: 'Performance',
-      estimatedDate: 'Coming Soon',
+      title: "Performance Optimization Tips",
+      description: "Best practices for optimizing your page builder performance",
+      category: "Performance",
+      estimatedDate: "Coming Soon",
     },
     {
-      title: 'Building E-commerce Pages',
-      description: 'Step-by-step guide to creating product pages and shopping experiences',
-      category: 'Use Case',
-      estimatedDate: 'Coming Soon',
+      title: "Building E-commerce Pages",
+      description: "Step-by-step guide to creating product pages and shopping experiences",
+      category: "Use Case",
+      estimatedDate: "Coming Soon",
     },
   ];
 

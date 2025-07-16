@@ -4,6 +4,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "./auth";
 import { BASE_URL } from "./constants";
 import { Theme } from "@dndbuilder.com/react";
+import { signOut } from "next-auth/react";
 
 /**
  * Fetches the active theme for the current user
@@ -32,6 +33,12 @@ export async function fetchActiveTheme(): Promise<Theme | null> {
     });
 
     if (!response.ok) {
+      if (response.status === 401) {
+        signOut({
+          callbackUrl: "/login",
+        });
+      }
+
       throw new Error(`Failed to fetch active theme: ${response.statusText}`);
     }
 
@@ -69,6 +76,12 @@ export async function saveActiveTheme(theme: Partial<Theme>): Promise<void> {
   });
 
   if (!response.ok) {
+    if (response.status === 401) {
+      signOut({
+        callbackUrl: "/login",
+      });
+    }
+
     throw new Error("Failed to save theme.");
   }
 }

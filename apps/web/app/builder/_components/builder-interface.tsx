@@ -1,10 +1,10 @@
 "use client";
 
-import { Page } from "@/lib/page";
 import { BuilderProvider, Editor, store, Theme } from "@dndbuilder.com/react";
 import { useState } from "react";
 import { editorConfig } from "../config/editor.config";
 import { Header } from "./header";
+import { Page } from "@/lib/page";
 
 type BuilderPageClientProps = {
   initialPage: Page | null;

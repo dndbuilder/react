@@ -5,6 +5,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "./auth";
 import { BASE_URL } from "./constants";
 import { revalidateTag } from "next/cache";
+import { signOut } from "next-auth/react";
 
 export type Page = {
   id?: string;
@@ -34,6 +35,12 @@ export async function fetchPage(): Promise<Page | null> {
   });
 
   if (!response.ok) {
+    if (response.status === 401) {
+      signOut({
+        callbackUrl: "/login",
+      });
+    }
+
     throw new Error("Failed to fetch content.");
   }
 
@@ -82,6 +89,12 @@ export async function savePage(page: Page): Promise<void> {
   revalidateTag("page"); // Invalidate the page tag to refresh cache
 
   if (!response.ok) {
+    if (response.status === 401) {
+      signOut({
+        callbackUrl: "/login",
+      });
+    }
+
     throw new Error("Failed to save content.");
   }
 

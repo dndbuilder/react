@@ -1,6 +1,5 @@
 import { Injectable, UnauthorizedException } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
-import { MailerService } from "@nestjs-modules/mailer";
 import * as bcrypt from "bcrypt";
 import { CreateUserDto } from "../users/dto/create-user.dto";
 import { User } from "../users/entities/user.entity";
@@ -8,13 +7,14 @@ import { UsersService } from "../users/users.service";
 import { AuthResponseDto } from "./dto/auth-response.dto";
 import { LoginDto } from "./dto/login.dto";
 import { SocialLoginDto } from "./dto/social-login.dto";
+import { MailService } from "../mail/mail.service";
 
 @Injectable()
 export class AuthService {
   constructor(
     private usersService: UsersService,
     private jwtService: JwtService,
-    private mailerService: MailerService
+    private mailService: MailService
   ) {}
 
   async register(createUserDto: CreateUserDto): Promise<AuthResponseDto> {
@@ -96,19 +96,8 @@ export class AuthService {
       // Get user information for the email
       const user = await this.usersService.findByEmailOrFail(email);
 
-      // Create reset URL (frontend URL where user can reset password)
-      const resetUrl = `${process.env.FRONTEND_URL || 'http://localhost:3000'}/reset-password?token=${token}`;
-
-      // Send email with reset link
-      await this.mailerService.sendMail({
-        to: email,
-        subject: 'Password Reset Request',
-        template: 'password-reset',
-        context: {
-          name: user.firstName || 'User',
-          resetUrl,
-        },
-      });
+      // Send email with reset link using the mail service
+      await this.mailService.sendPasswordResetEmail(email, user.firstName, token);
 
       return {
         message: "If the email exists, a password reset link will be sent."
