@@ -1,10 +1,10 @@
-# @dndbuilder.com/react
+# @dndbuilder/react
 
 A powerful drag-and-drop page builder for React applications. This package provides a comprehensive set of components, hooks, and utilities for building customizable page editors with a block-based approach.
 
 ## Table of Contents
 
-- [@dndbuilder.com/react](#dndbuildercomreact)
+- [@dndbuilder/react](#dndbuildercomreact)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Installation](#installation)
@@ -55,22 +55,22 @@ A powerful drag-and-drop page builder for React applications. This package provi
 
 ```bash
 # Using npm
-npm install @dndbuilder.com/react
+npm install @dndbuilder/react
 
 # Using yarn
-yarn add @dndbuilder.com/react
+yarn add @dndbuilder/react
 
 # Using pnpm
-pnpm add @dndbuilder.com/react
+pnpm add @dndbuilder/react
 ```
 
 ## Quick Start
 
 ```jsx
 import React, { useState } from "react";
-import { Editor, BuilderProvider } from "@dndbuilder.com/react";
-import { store } from "@dndbuilder.com/react";
-import "@dndbuilder.com/react/dist/style.css";
+import { Editor, BuilderProvider } from "@dndbuilder/react";
+import { store } from "@dndbuilder/react";
+import "@dndbuilder/react/dist/style.css";
 
 // Basic editor configuration
 const editorConfig = {
@@ -120,7 +120,7 @@ The package exports several components for building and rendering pages:
 - `BuilderProvider`: Provider component for the editor state
 
 ```jsx
-import { Editor, BuilderProvider } from "@dndbuilder.com/react";
+import { Editor, BuilderProvider } from "@dndbuilder/react";
 ```
 
 ### Server Components
@@ -128,7 +128,7 @@ import { Editor, BuilderProvider } from "@dndbuilder.com/react";
 For server-side rendering, you can use the `RenderContent` component to render content fetched from your backend
 
 ```jsx
-import { RenderContent } from "@dndbuilder.com/react/components/server";
+import { RenderContent } from "@dndbuilder/react/components/server";
 ```
 
 ### Hooks
@@ -151,7 +151,7 @@ import {
   useSettings,
   useFieldName,
   useTheme,
-} from "@dndbuilder.com/react/hooks";
+} from "@dndbuilder/react/hooks";
 ```
 
 ### Utilities
@@ -179,7 +179,7 @@ import {
   generateUnitValue,
   generateBoxShadow,
   generateBackground,
-} from "@dndbuilder.com/react/utils";
+} from "@dndbuilder/react/utils";
 ```
 
 ## Working with Content
@@ -189,7 +189,7 @@ import {
 To save content, you can use the `useContent` hook to access the editor state:
 
 ```jsx
-import { useContent } from "@dndbuilder.com/react/hooks";
+import { useContent } from "@dndbuilder/react/hooks";
 
 function SaveButton() {
   const { content, saveContent } = useContent();
@@ -217,7 +217,7 @@ function SaveButton() {
 To render content on the frontend, use the `RenderContent` component:
 
 ```jsx
-import { RenderContent } from "@dndbuilder.com/react/components/server";
+import { RenderContent } from "@dndbuilder/react/components/server";
 import { editorConfig } from "./editorConfig"; // Your editor configuration
 
 async function ContentPage() {
@@ -248,7 +248,7 @@ Here's a simplified example of creating a custom block:
 ```jsx
 // 1. Create your block component (my-block.tsx)
 import React from "react";
-import { BlockProps } from "@dndbuilder.com/react/types";
+import { BlockProps } from "@dndbuilder/react/types";
 
 const MyBlock = ({ settings, meta }: BlockProps) => {
   return (
@@ -263,8 +263,8 @@ export default MyBlock;
 
 // 2. Create a control component (my-block-control.tsx)
 import React from "react";
-import { ControlProps } from "@dndbuilder.com/react/types";
-import { TextInput } from "@dndbuilder.com/react/components";
+import { ControlProps } from "@dndbuilder/react/types";
+import { TextInput } from "@dndbuilder/react/components";
 
 const MyBlockControl = ({ settings, updateSettings }: ControlProps) => {
   return (
@@ -286,7 +286,7 @@ const MyBlockControl = ({ settings, updateSettings }: ControlProps) => {
 export default MyBlockControl;
 
 // 3. Define your block configuration (my-block.config.ts)
-import { createBlockConfig } from "@dndbuilder.com/react/utils";
+import { createBlockConfig } from "@dndbuilder/react/utils";
 import { lazy } from "react";
 import { FiBox } from "react-icons/fi";
 
@@ -327,8 +327,8 @@ export const editorConfig = {
 You can override the configuration of an existing block by extending it:
 
 ```jsx
-import { BlockType } from "@dndbuilder.com/react/types";
-import { createBlockConfig } from "@dndbuilder.com/react/utils";
+import { BlockType } from "@dndbuilder/react/types";
+import { createBlockConfig } from "@dndbuilder/react/utils";
 import { lazy } from "react";
 
 // Override the Heading block configuration
@@ -411,7 +411,7 @@ The theme settings include:
 You can access and update the current theme using the `useTheme` hook:
 
 ```jsx
-import { useTheme } from "@dndbuilder.com/react/hooks";
+import { useTheme } from "@dndbuilder/react/hooks";
 
 function ThemeToggle() {
   const [theme, setTheme] = useTheme();
@@ -440,7 +440,7 @@ function ThemeToggle() {
 To save a theme, you can use the same approach as saving content:
 
 ```jsx
-import { useTheme } from "@dndbuilder.com/react/hooks";
+import { useTheme } from "@dndbuilder/react/hooks";
 
 function SaveThemeButton() {
   const [theme] = useTheme();
@@ -470,7 +470,7 @@ The package supports server-side rendering (SSR) with Next.js.
 
 ```jsx
 // Next.js page component
-import { RenderContent } from "@dndbuilder.com/react/components/server";
+import { RenderContent } from "@dndbuilder/react/components/server";
 import { editorConfig } from "../editorConfig"; // Your editor configuration
 
 export default function Page({ content }) {
@@ -498,7 +498,7 @@ export async function getServerSideProps() {
 
 ## Support
 
-Need help with @dndbuilder.com/react? We're here to assist you.
+Need help with @dndbuilder/react? We're here to assist you.
 
 ### Getting Help
 

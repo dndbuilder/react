@@ -1,7 +1,7 @@
 "use client";
 
 import { classNames } from "@/lib/utils";
-import { Tabs } from "@dndbuilder.com/react/components";
+import { Tabs } from "@dndbuilder/react/components";
 import { useState } from "react";
 
 interface InstallationSectionProps {
@@ -56,13 +56,13 @@ export function InstallationSection({ className }: InstallationSectionProps) {
               <pre className="overflow-x-auto rounded-md bg-gray-100 p-4 text-gray-800">
                 <code className="text-sm">
                   {`# Using npm
-npm install @dndbuilder.com/react
+npm install @dndbuilder/react
 
 # Using yarn
-yarn add @dndbuilder.com/react
+yarn add @dndbuilder/react
 
 # Using pnpm
-pnpm add @dndbuilder.com/react`}
+pnpm add @dndbuilder/react`}
                 </code>
               </pre>
             </Tabs.Content>
@@ -70,10 +70,10 @@ pnpm add @dndbuilder.com/react`}
               <pre className="overflow-x-auto rounded-md bg-gray-100 p-4 text-gray-800">
                 <code className="text-sm">
                   {`import React from "react";
-import { Block } from "@dndbuilder.com/react";
-import { BuilderProvider, Editor } from "@dndbuilder.com/react";
-import "@dndbuilder.com/react/dist/style.css";
-import { store } from "@dndbuilder.com/react";
+import { Block } from "@dndbuilder/react";
+import { BuilderProvider, Editor } from "@dndbuilder/react";
+import "@dndbuilder/react/dist/style.css";
+import { store } from "@dndbuilder/react";
 
 function App() {
   return (
@@ -92,7 +92,7 @@ export default App;`}
             <Tabs.Content value="usage" className="p-4">
               <pre className="overflow-x-auto rounded-md bg-gray-100 p-4 text-gray-800">
                 <code className="text-sm">
-                  {`import { useContent } from "@dndbuilder.com/react";
+                  {`import { useContent } from "@dndbuilder/react";
 
 function SaveButton() {
   const { content } = useContent();
@@ -106,7 +106,7 @@ function SaveButton() {
 }
 
 // To render content on frontend
-import { RenderContent } from "@dndbuilder.com/react/components/server";
+import { RenderContent } from "@dndbuilder/react/components/server";
 
 async function MyPage() {
   const content = await fetchContent(); // Fetch from your backend

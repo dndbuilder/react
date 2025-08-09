@@ -1,6 +1,6 @@
-import { BlockProps } from '@dndbuilder.com/react';
-import Link from 'next/link';
-import { FC } from 'react';
+import { BlockProps } from "@dndbuilder/react";
+import Link from "next/link";
+import { FC } from "react";
 
 // We're using the same type as the original LinkBlock
 type LinkSettingsType = {
@@ -13,7 +13,7 @@ type LinkSettingsType = {
 };
 
 const LinkBlock: FC<BlockProps<LinkSettingsType>> = ({ settings, meta }) => {
-  const locale = meta?.locale || 'en';
+  const locale = meta?.locale || "en";
 
   if (!settings.text) return null;
 
@@ -21,16 +21,16 @@ const LinkBlock: FC<BlockProps<LinkSettingsType>> = ({ settings, meta }) => {
 
   let url = settings.link?.url;
 
-  if (!rules.test(settings.link?.url ?? '')) {
+  if (!rules.test(settings.link?.url ?? "")) {
     url = `https://${url}`;
   }
 
   return (
     <div className="link-block">
       <Link
-        href={url || '#'}
-        target={settings.link?.newWindow ? '_blank' : undefined}
-        rel={settings.link?.nofollow ? 'nofollow' : undefined}
+        href={url || "#"}
+        target={settings.link?.newWindow ? "_blank" : undefined}
+        rel={settings.link?.nofollow ? "nofollow" : undefined}
         className="hover:underline"
       >
         {settings.text?.[locale]}

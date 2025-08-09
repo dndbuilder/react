@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { PseudoClass, SettingsType, Unit } from '@dndbuilder.com/react';
+import { PseudoClass, SettingsType, Unit } from "@dndbuilder/react";
 import {
   Accordion,
   BorderControl,
@@ -13,13 +13,13 @@ import {
   Tabs,
   ToggleGroupControl,
   TypographyControl,
-} from '@dndbuilder.com/react/components';
-import { AiOutlineAlignCenter, AiOutlineAlignLeft, AiOutlineAlignRight } from 'react-icons/ai';
-import { TfiAlignJustify } from 'react-icons/tfi';
+} from "@dndbuilder/react/components";
+import { AiOutlineAlignCenter, AiOutlineAlignLeft, AiOutlineAlignRight } from "react-icons/ai";
+import { TfiAlignJustify } from "react-icons/tfi";
 
 const CardStyleControl = () => {
   return (
-    <Accordion defaultValue={'Card'} type="single" collapsible>
+    <Accordion defaultValue={"Card"} type="single" collapsible>
       <Accordion.Item value="Card">
         <Accordion.Trigger className="p-4">Card</Accordion.Trigger>
         <Accordion.Content className="px-4">
@@ -62,13 +62,13 @@ const CardStyleControl = () => {
                 className="flex-1 rounded-full p-[3px] text-[13px]"
                 value={PseudoClass.DEFAULT}
               >
-                {'Normal'}
+                {"Normal"}
               </Tabs.Trigger>
               <Tabs.Trigger
                 className="flex-1 rounded-full p-[3px] text-[13px]"
                 value={PseudoClass.HOVER}
               >
-                {'Hover'}
+                {"Hover"}
               </Tabs.Trigger>
             </Tabs.List>
             <Tabs.Content value={PseudoClass.DEFAULT}>
@@ -167,30 +167,30 @@ const CardStyleControl = () => {
           {/* Text Align */}
           <ToggleGroupControl
             type={SettingsType.BLOCK}
-            fieldName={'title.textAlign'}
+            fieldName={"title.textAlign"}
             responsive
-            label={'Alignment'}
+            label={"Alignment"}
             className="mt-0"
             controls={[
               {
-                tooltipContent: 'Left',
+                tooltipContent: "Left",
                 toggleTrigger: <AiOutlineAlignLeft className="text-sm" />,
-                value: 'left',
+                value: "left",
               },
               {
-                tooltipContent: 'Center',
+                tooltipContent: "Center",
                 toggleTrigger: <AiOutlineAlignCenter className="text-sm" />,
-                value: 'center',
+                value: "center",
               },
               {
-                tooltipContent: 'Right',
+                tooltipContent: "Right",
                 toggleTrigger: <AiOutlineAlignRight className="text-sm" />,
-                value: 'right',
+                value: "right",
               },
               {
-                tooltipContent: 'Justified',
+                tooltipContent: "Justified",
                 toggleTrigger: <TfiAlignJustify className="text-sm" />,
-                value: 'justify',
+                value: "justify",
               },
             ]}
           />
@@ -294,13 +294,13 @@ const CardStyleControl = () => {
                 className="flex-1 rounded-full p-[3px] text-[13px]"
                 value={PseudoClass.DEFAULT}
               >
-                {'Normal'}
+                {"Normal"}
               </Tabs.Trigger>
               <Tabs.Trigger
                 className="flex-1 rounded-full p-[3px] text-[13px]"
                 value={PseudoClass.HOVER}
               >
-                {'Hover'}
+                {"Hover"}
               </Tabs.Trigger>
             </Tabs.List>
             <Tabs.Content value={PseudoClass.DEFAULT}>

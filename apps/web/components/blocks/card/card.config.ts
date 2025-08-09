@@ -6,22 +6,22 @@ import {
   generateSpacingValue,
   generateTypography,
   generateUnitValue,
-} from '@dndbuilder.com/react/utils';
-import { lazy } from 'react';
-import { FiSquare } from 'react-icons/fi';
-import { CardSettingsType } from './types';
+} from "@dndbuilder/react/utils";
+import { lazy } from "react";
+import { FiSquare } from "react-icons/fi";
+import { CardSettingsType } from "./types";
 
 const CardConfig = createBlockConfig<CardSettingsType>({
-  type: 'card', // Custom block type
-  label: 'Card',
+  type: "card", // Custom block type
+  label: "Card",
   icon: FiSquare,
-  component: lazy(() => import('./components/card.block')),
+  component: lazy(() => import("./components/card.block")),
   isVisible: () => true,
-  group: 'Custom', // Group under Basic blocks
+  group: "Custom", // Group under Basic blocks
   settings: {},
   style: ({ settings, breakpoints }) => {
     return {
-      '.card': {
+      ".card": {
         ...generateResponsiveStyle(breakpoints, (breakpoint) => {
           const {
             top: paddingTop,
@@ -88,7 +88,7 @@ const CardConfig = createBlockConfig<CardSettingsType>({
           };
         }),
 
-        '.card-image': {
+        ".card-image": {
           ...generateResponsiveStyle(breakpoints, (breakpoint) => {
             const {
               top: imagePaddingTop,
@@ -118,7 +118,7 @@ const CardConfig = createBlockConfig<CardSettingsType>({
           }),
         },
 
-        '.card-title': {
+        ".card-title": {
           ...generateResponsiveStyle(breakpoints, (breakpoint) => {
             const {
               top: titlePaddingTop,
@@ -156,7 +156,7 @@ const CardConfig = createBlockConfig<CardSettingsType>({
           ...generateTypography(breakpoints, settings.title?.typography),
         },
 
-        '.card-description': {
+        ".card-description": {
           ...generateResponsiveStyle(breakpoints, (breakpoint) => {
             const {
               top: descriptionPaddingTop,
@@ -193,7 +193,7 @@ const CardConfig = createBlockConfig<CardSettingsType>({
           ...generateTypography(breakpoints, settings.description?.typography),
         },
 
-        '.card-link': {
+        ".card-link": {
           ...generateResponsiveStyle(breakpoints, (breakpoint) => {
             const {
               top: linkPaddingTop,
@@ -235,12 +235,12 @@ const CardConfig = createBlockConfig<CardSettingsType>({
   },
   controls: [
     {
-      label: 'Content',
-      component: lazy(() => import('./components/card-content.control')),
+      label: "Content",
+      component: lazy(() => import("./components/card-content.control")),
     },
     {
-      label: 'Style',
-      component: lazy(() => import('./components/card-style.control')),
+      label: "Style",
+      component: lazy(() => import("./components/card-style.control")),
     },
   ],
 });

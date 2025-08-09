@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   Accordion,
@@ -8,12 +8,12 @@ import {
   MediaControl,
   Separator,
   TextareaControl,
-} from '@dndbuilder.com/react/components';
-import { SettingsType } from '@dndbuilder.com/react';
+} from "@dndbuilder/react/components";
+import { SettingsType } from "@dndbuilder/react";
 
 const CardContentControl = () => {
   return (
-    <Accordion defaultValue={'General'} type="single" collapsible>
+    <Accordion defaultValue={"General"} type="single" collapsible>
       <Accordion.Item value="General">
         <Accordion.Trigger className="p-4">General</Accordion.Trigger>
         <Accordion.Content className="px-4">
@@ -30,7 +30,7 @@ const CardContentControl = () => {
             fieldName="title.text"
             type={SettingsType.BLOCK}
             placeholder="Enter title"
-            direction={'col'}
+            direction={"col"}
             isLocalized
           />
 
@@ -52,7 +52,7 @@ const CardContentControl = () => {
             fieldName="link.text"
             type={SettingsType.BLOCK}
             placeholder="Enter link text"
-            direction={'col'}
+            direction={"col"}
             isLocalized
           />
 

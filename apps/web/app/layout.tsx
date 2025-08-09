@@ -3,6 +3,7 @@ import React from "react";
 // import { Toaster } from 'react-hot-toast';
 import { Toaster } from "sonner";
 import "./globals.css";
+import "@dndbuilder/react/dist/style.css";
 import ProgressProvider from "@/providers/progress-provider";
 import NextAuthSessionProvider from "@/providers/session-provider";
 import { Analytics } from "@vercel/analytics/next";
