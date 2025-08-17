@@ -24,83 +24,37 @@ export function PricingSection({ className }: PricingSectionProps) {
         </div>
 
         <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
-          {/* Free Plan */}
-          <Card className="relative border-2 border-gray-200">
+
+          {/* Lifetime Deal */}
+          <Card className="relative border-2 border-gray-900 shadow-xl">
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 transform">
+              <Badge className="bg-black px-4 py-1 text-white">
+                <FiStar className="mr-1 h-4 w-4" />
+                Limited Time
+              </Badge>
+            </div>
             <Card.Header className="pb-8 text-center">
-              <Card.Title className="text-2xl">Free</Card.Title>
+              <Card.Title className="text-2xl">Lifetime Deal</Card.Title>
               <div className="mt-4 text-4xl font-bold text-gray-900">
-                $0
-                <span className="text-lg font-normal text-gray-600">/month</span>
+                $50
+                <span className="text-lg font-normal text-gray-600">/once</span>
               </div>
               <Card.Description className="mt-2">
-                Perfect for getting started and small projects
+                Everything in Premium plus enterprise features
               </Card.Description>
             </Card.Header>
             <Card.Content>
               <ul className="mb-8 space-y-3">
-                <li className="flex items-center">
-                  <FiCheck className="mr-3 h-5 w-5 text-green-600" />
-                  <span>Basic block components</span>
-                </li>
 
                 <li className="flex items-center">
                   <FiCheck className="mr-3 h-5 w-5 text-green-600" />
-                  <span>Undo/Redo functionality</span>
+                  <span>All blocks</span>
                 </li>
                 <li className="flex items-center">
                   <FiCheck className="mr-3 h-5 w-5 text-green-600" />
                   <span>Responsive design</span>
                 </li>
-                <li className="flex items-center">
-                  <FiCheck className="mr-3 h-5 w-5 text-green-600" />
-                  <span>Community support</span>
-                </li>
-                <li className="flex items-center">
-                  <FiCheck className="mr-3 h-5 w-5 text-green-600" />
-                  <span>Full Customization</span>
-                </li>
-                <li className="flex items-center">
-                  <FiCheck className="mr-3 h-5 w-5 text-green-600" />
-                  <span>Unlimited Projects</span>
-                </li>
-              </ul>
-              <Button className="w-full bg-transparent" variant="outline" asChild>
-                <Link href="/docs" target="_blank">
-                  Get Started Free
-                  <LuArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </Card.Content>
-          </Card>
 
-          {/* Premium Plan */}
-          <Card className="relative border-2 border-gray-900 shadow-xl">
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 transform">
-              <Badge className="bg-black px-4 py-1 text-white">
-                <FiStar className="mr-1 h-4 w-4" />
-                Most Popular
-              </Badge>
-            </div>
-            <Card.Header className="pb-8 text-center">
-              <Card.Title className="text-2xl">Premium</Card.Title>
-              <div className="mt-4 text-4xl font-bold text-gray-900">
-                $10
-                <span className="text-lg font-normal text-gray-600">/month</span>
-              </div>
-              <Card.Description className="mt-2">
-                Everything in Free plus advanced components
-              </Card.Description>
-            </Card.Header>
-            <Card.Content>
-              <ul className="mb-8 space-y-3">
-                <li className="flex items-center">
-                  <FiCheck className="mr-3 h-5 w-5 text-green-600" />
-                  <span>Everything in Free</span>
-                </li>
-                <li className="flex items-center">
-                  <FiCheck className="mr-3 h-5 w-5 text-green-600" />
-                  <span>Advanced blocks</span>
-                </li>
                 <li className="flex items-center">
                   <FiCheck className="mr-3 h-5 w-5 text-green-600" />
                   <span>Global Theme Settings</span>
@@ -125,13 +79,79 @@ export function PricingSection({ className }: PricingSectionProps) {
                     Coming Soon
                   </Badge>
                 </li>
+
+
                 <li className="flex items-center">
                   <FiCheck className="mr-3 h-5 w-5 text-green-600" />
-                  <span>Priority support</span>
+                  <span>Full Customization</span>
+                </li>
+
+                <li className="flex items-center">
+                  <FiCheck className="mr-3 h-5 w-5 text-green-600" />
+                  <span>Community support</span>
                 </li>
               </ul>
-              <Button className="w-full bg-black hover:bg-gray-800" disabled>
-                Upgrade to Premium
+              <Button className="w-full bg-black hover:bg-gray-800" asChild>
+                <Link href="https://mostafizurhimself.gumroad.com/l/dnd-builder">
+                  Get Lifetime Access
+                </Link>
+              </Button>
+            </Card.Content>
+          </Card>
+
+          {/* Custom Plan */}
+          <Card className="relative border-2 border-gray-200 shadow-xl">
+            <Card.Header className="pb-8 text-center">
+              <Card.Title className="text-2xl">Custom Plan</Card.Title>
+              <div className="mt-4 text-4xl font-bold text-gray-900">
+                Custom
+                <span className="text-lg font-normal text-gray-600">/pricing</span>
+              </div>
+              <Card.Description className="mt-2">
+                Everything in LTD plus custom development
+              </Card.Description>
+            </Card.Header>
+            <Card.Content>
+              <ul className="mb-8 space-y-3">
+                <li className="flex items-center">
+                  <FiCheck className="mr-3 h-5 w-5 text-green-600" />
+                  <span>Everything in LTD plus...</span>
+                </li>
+                <li className="flex items-center">
+                  <FiCheck className="mr-3 h-5 w-5 text-green-600" />
+                  <span>24x7 Phone Support</span>
+                </li>
+                <li className="flex items-center">
+                  <FiCheck className="mr-3 h-5 w-5 text-green-600" />
+                  <span>Dedicated Slack Channel</span>
+                </li>
+                <li className="flex items-center">
+                  <FiCheck className="mr-3 h-5 w-5 text-green-600" />
+                  <span>Unlimited Sessions</span>
+                </li>
+                <li className="flex items-center">
+                  <FiCheck className="mr-3 h-5 w-5 text-green-600" />
+                  <span>Unlimited Cloud Storage</span>
+                </li>
+                <li className="flex items-center">
+                  <FiCheck className="mr-3 h-5 w-5 text-green-600" />
+                  <span>Custom Plugin Support</span>
+                </li>
+                <li className="flex items-center">
+                  <FiCheck className="mr-3 h-5 w-5 text-green-600" />
+                  <span>Custom Development</span>
+                </li>
+              </ul>
+              <Button
+                  variant="outline"
+                  size="lg"
+                  className="w-full"
+                  asChild
+              >
+                <Link href="mailto:sales@dndbuilder.com">
+                  Contact Sales
+                  <LuArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
             </Card.Content>
           </Card>

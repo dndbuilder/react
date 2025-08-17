@@ -1,4 +1,4 @@
-import { classNames } from '@/lib/utils';
+import { classNames } from "@/lib/utils";
 
 interface DemoSectionProps {
   className?: string;
@@ -6,7 +6,7 @@ interface DemoSectionProps {
 
 export function DemoSection({ className }: DemoSectionProps) {
   return (
-    <section className={classNames('bg-white py-20', className)} id="demo">
+    <section className={classNames("bg-white py-20", className)} id="demo">
       <div className="container mx-auto flex flex-col items-center justify-center gap-4 text-center">
         <h2 className="mb-2 text-3xl font-bold text-gray-900 lg:text-4xl">See it in action</h2>
         <p className="mx-auto text-xl text-gray-600">
@@ -18,16 +18,16 @@ export function DemoSection({ className }: DemoSectionProps) {
         <div className="relative aspect-video overflow-hidden rounded-lg">
           <div
             style={{
-              position: 'relative',
-              paddingBottom: '56.25%',
+              position: "relative",
+              paddingBottom: "56.25%",
               height: 0,
-              borderRadius: '0',
-              boxShadow: '0 15px 40px rgba(63,58,79,.3)',
-              overflow: 'hidden',
-              minWidth: '320px',
+              borderRadius: "0",
+              boxShadow: "0 15px 40px rgba(63,58,79,.3)",
+              overflow: "hidden",
+              minWidth: "320px",
             }}
           >
-            <iframe
+            {/* <iframe
               src="https://dndbuilder.portal.trainn.co/share/QL6h2jqmyZRG8q0MAlxtNA/embed?autoplay=false"
               allowFullScreen
               allow="autoplay; fullscreen"
@@ -38,6 +38,21 @@ export function DemoSection({ className }: DemoSectionProps) {
                 width: '100%',
                 height: '100%',
               }}
+            ></iframe> */}
+
+            <iframe
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+              }}
+              src="https://www.youtube.com/embed/2tUUOm-H1l8?si=Z0Sp0Rx2PpBZE6o5"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             ></iframe>
           </div>
         </div>
