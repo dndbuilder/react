@@ -53,6 +53,35 @@ A powerful drag-and-drop page builder for React applications. This package provi
 
 ## Installation
 
+This package is hosted as a private package on GitHub Package Registry. You'll need to authenticate with GitHub and configure your package manager to install it.
+
+### Prerequisites
+
+- A GitHub account with access to the private repository
+- A GitHub Personal Access Token (PAT) with `read:packages` permission
+
+### Step 1: Create a GitHub Personal Access Token
+
+1. Go to GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)
+2. Click "Generate new token (classic)"
+3. Give it a descriptive name (e.g., "dndbuilder-package-access")
+4. Select the `read:packages` scope
+5. Click "Generate token" and copy the token
+
+### Step 2: Configure Authentication
+
+Create or update your `.npmrc` file in your project root or home directory:
+
+```bash
+# .npmrc
+@dndbuilder:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
+```
+
+Replace `YOUR_GITHUB_TOKEN` with the token you created in Step 1.
+
+### Step 3: Install the Package
+
 ```bash
 # Using npm
 npm install @dndbuilder/react
@@ -62,6 +91,34 @@ yarn add @dndbuilder/react
 
 # Using pnpm
 pnpm add @dndbuilder/react
+```
+
+### Alternative: Install with Token in Command
+
+You can also install directly with authentication:
+
+```bash
+# Using npm
+npm install @dndbuilder/react --registry=https://npm.pkg.github.com
+
+# Using yarn (after configuring .npmrc)
+yarn add @dndbuilder/react
+
+# Using pnpm (after configuring .npmrc)
+pnpm add @dndbuilder/react
+```
+
+### Environment Variables (Recommended for CI/CD)
+
+For production deployments and CI/CD pipelines, use environment variables:
+
+```bash
+# Set environment variable
+export NPM_TOKEN=your_github_token
+
+# .npmrc file
+@dndbuilder:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${NPM_TOKEN}
 ```
 
 ## Quick Start

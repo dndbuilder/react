@@ -1,5 +1,25 @@
 ## Installation
 
+This package is hosted as a private package on GitHub Package Registry. You'll need to authenticate with GitHub first.
+
+### Step 1: Create GitHub Personal Access Token
+
+1. Go to GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)
+2. Click "Generate new token (classic)"
+3. Select the `read:packages` scope
+4. Copy the generated token
+
+### Step 2: Configure Authentication
+
+Create a `.npmrc` file in your project root:
+
+```bash
+@dndbuilder:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
+```
+
+### Step 3: Install the Package
+
 ```bash
 # Using npm
 npm install @dndbuilder/react

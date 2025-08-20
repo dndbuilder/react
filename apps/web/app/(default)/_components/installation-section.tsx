@@ -55,14 +55,22 @@ export function InstallationSection({ className }: InstallationSectionProps) {
             <Tabs.Content value="install" className="p-4">
               <pre className="overflow-x-auto rounded-md bg-gray-100 p-4 text-gray-800">
                 <code className="text-sm">
-                  {`# Using npm
+                  {`# Step 1: Configure .npmrc file
+echo "@dndbuilder:registry=https://npm.pkg.github.com" >> .npmrc
+echo "//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN" >> .npmrc
+
+# Step 2: Install the package
+# Using npm
 npm install @dndbuilder/react
 
 # Using yarn
 yarn add @dndbuilder/react
 
 # Using pnpm
-pnpm add @dndbuilder/react`}
+pnpm add @dndbuilder/react
+
+# Note: Replace YOUR_GITHUB_TOKEN with your GitHub Personal Access Token
+# Token needs 'read:packages' permission`}
                 </code>
               </pre>
             </Tabs.Content>
