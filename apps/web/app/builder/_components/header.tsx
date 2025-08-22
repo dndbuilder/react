@@ -46,7 +46,7 @@ export const Header: FC<HeaderProps> = ({ pageId }) => {
   };
 
   return (
-    <header className="fixed left-0 top-0 z-[100] flex h-[60px] w-full items-center justify-between border-b bg-white px-4 shadow-sm">
+    <header className="fixed left-0 top-0 z-[100] flex h-[60px] w-full items-center justify-between border-b border-gray-300 bg-white px-4 shadow-sm">
       <div className="text-xl font-bold text-white">
         {/* Placeholder logo */}
         <Link href={"/"} className="flex items-center space-x-2">
