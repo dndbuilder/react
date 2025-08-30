@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@bprogress/next": "^3.2.12",
-    "@dndbuilder/react": "workspace:*",
+    "@dndbuilder.com/react": "workspace:*",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.3.5",

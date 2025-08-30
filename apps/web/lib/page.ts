@@ -1,6 +1,6 @@
 "use server";
 
-import { Block } from "@dndbuilder/react";
+import { Block } from "@dndbuilder.com/react";
 import { getServerSession } from "next-auth";
 import { authOptions } from "./auth";
 import { BASE_URL } from "./constants";

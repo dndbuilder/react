@@ -1,8 +1,8 @@
 import CustomLinkBlock from "@/components/blocks/link/link.preview";
 import { fetchPage } from "@/lib/page";
-import { BlockType, BuilderConfig } from "@dndbuilder/react";
-import { RenderContent } from "@dndbuilder/react/components/server";
-import "@dndbuilder/react/dist/style.css";
+import { BlockType, BuilderConfig } from "@dndbuilder.com/react";
+import { RenderContent } from "@dndbuilder.com/react/components/server";
+import "@dndbuilder.com/react/dist/style.css";
 
 // async function fetchContent(): Promise<Record<string, Block>> {
 //   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000/api";

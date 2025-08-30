@@ -1,7 +1,7 @@
 "use client";
 
 import { classNames } from "@/lib/utils";
-import { Tabs } from "@dndbuilder/react/components";
+import { Tabs } from "@dndbuilder.com/react/components";
 import { useState } from "react";
 
 interface InstallationSectionProps {
@@ -12,7 +12,7 @@ export function InstallationSection({ className }: InstallationSectionProps) {
   const [activeTab, setActiveTab] = useState("install");
 
   return (
-    <section className={classNames("bg-white py-20", className)}>
+    <section id="installation" className={classNames("bg-white py-20", className)}>
       <div className="container mx-auto px-4">
         <div className="mb-16 text-center">
           <h2 className="mb-4 text-3xl font-bold text-gray-900 lg:text-4xl">
@@ -55,19 +55,16 @@ export function InstallationSection({ className }: InstallationSectionProps) {
             <Tabs.Content value="install" className="p-4">
               <pre className="overflow-x-auto rounded-md bg-gray-100 p-4 text-gray-800">
                 <code className="text-sm">
-                  {`# Step 1: Configure .npmrc file
-echo "@dndbuilder:registry=https://npm.pkg.github.com" >> .npmrc
-echo "//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN" >> .npmrc
-
-# Step 2: Install the package
+                  {`
+# Install the package
 # Using npm
-npm install @dndbuilder/react
+npm install @dndbuilder.com/react
 
 # Using yarn
-yarn add @dndbuilder/react
+yarn add @dndbuilder.com/react
 
 # Using pnpm
-pnpm add @dndbuilder/react
+pnpm add @dndbuilder.com/react
 
 # Note: Replace YOUR_GITHUB_TOKEN with your GitHub Personal Access Token
 # Token needs 'read:packages' permission`}
@@ -78,10 +75,10 @@ pnpm add @dndbuilder/react
               <pre className="overflow-x-auto rounded-md bg-gray-100 p-4 text-gray-800">
                 <code className="text-sm">
                   {`import React from "react";
-import { Block } from "@dndbuilder/react";
-import { BuilderProvider, Editor } from "@dndbuilder/react";
-import "@dndbuilder/react/dist/style.css";
-import { store } from "@dndbuilder/react";
+import { Block } from "@dndbuilder.com/react";
+import { BuilderProvider, Editor } from "@dndbuilder.com/react";
+import "@dndbuilder.com/react/dist/style.css";
+import { store } from "@dndbuilder.com/react";
 
 function App() {
   return (
@@ -100,7 +97,7 @@ export default App;`}
             <Tabs.Content value="usage" className="p-4">
               <pre className="overflow-x-auto rounded-md bg-gray-100 p-4 text-gray-800">
                 <code className="text-sm">
-                  {`import { useContent } from "@dndbuilder/react";
+                  {`import { useContent } from "@dndbuilder.com/react";
 
 function SaveButton() {
   const { content } = useContent();
@@ -114,7 +111,7 @@ function SaveButton() {
 }
 
 // To render content on frontend
-import { RenderContent } from "@dndbuilder/react/components/server";
+import { RenderContent } from "@dndbuilder.com/react/components/server";
 
 async function MyPage() {
   const content = await fetchContent(); // Fetch from your backend

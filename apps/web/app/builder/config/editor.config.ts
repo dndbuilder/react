@@ -1,4 +1,4 @@
-import { BuilderConfig } from "@dndbuilder/react";
+import { BuilderConfig } from "@dndbuilder.com/react";
 
 export const editorConfig: BuilderConfig = {
   blocks: [],

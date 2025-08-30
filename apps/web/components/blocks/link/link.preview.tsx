@@ -1,4 +1,4 @@
-import { BlockProps } from "@dndbuilder/react";
+import { BlockProps } from "@dndbuilder.com/react";
 import Link from "next/link";
 import { FC } from "react";
 

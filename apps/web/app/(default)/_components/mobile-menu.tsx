@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Popover } from "@dndbuilder/react/components";
+import { Popover } from "@dndbuilder.com/react/components";
 import { Session } from "next-auth";
 import { signOut } from "next-auth/react";
 import Image from "next/image";

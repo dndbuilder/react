@@ -1,6 +1,6 @@
 "use client";
 
-import { PseudoClass, SettingsType, Unit } from "@dndbuilder/react";
+import { PseudoClass, SettingsType, Unit } from "@dndbuilder.com/react";
 import {
   Accordion,
   BorderControl,
@@ -13,7 +13,7 @@ import {
   Tabs,
   ToggleGroupControl,
   TypographyControl,
-} from "@dndbuilder/react/components";
+} from "@dndbuilder.com/react/components";
 import { AiOutlineAlignCenter, AiOutlineAlignLeft, AiOutlineAlignRight } from "react-icons/ai";
 import { TfiAlignJustify } from "react-icons/tfi";
 

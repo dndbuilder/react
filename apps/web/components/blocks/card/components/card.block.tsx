@@ -1,6 +1,6 @@
 "use client";
 
-import { BlockProps } from "@dndbuilder/react";
+import { BlockProps } from "@dndbuilder.com/react";
 import { FC } from "react";
 import { CardSettingsType } from "../types";
 import { Card } from "@/components/ui/card";

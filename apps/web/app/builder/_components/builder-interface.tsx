@@ -1,6 +1,6 @@
 "use client";
 
-import { BuilderProvider, Editor, store, Theme } from "@dndbuilder/react";
+import { BuilderProvider, Editor, store, Theme } from "@dndbuilder.com/react";
 import { useState } from "react";
 import { editorConfig } from "../config/editor.config";
 import { Header } from "./header";

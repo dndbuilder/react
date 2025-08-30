@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Tooltip } from "@dndbuilder/react/components";
+import { Tooltip } from "@dndbuilder.com/react/components";
 import { LuCopy, LuEye, LuEyeOff, LuKey, LuRefreshCw } from "react-icons/lu";
 import { FiCheckCircle } from "react-icons/fi";
 import { useState } from "react";

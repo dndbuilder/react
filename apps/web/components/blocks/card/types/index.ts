@@ -9,7 +9,7 @@ import {
   TypographyType,
   UnitValue,
   WithPseudoClass,
-} from "@dndbuilder/react";
+} from "@dndbuilder.com/react";
 
 export type CardSettingsType = {
   width?: ResponsiveValue<UnitValue>;

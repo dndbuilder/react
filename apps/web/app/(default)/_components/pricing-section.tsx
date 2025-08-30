@@ -23,9 +23,79 @@ export function PricingSection({ className }: PricingSectionProps) {
           </p>
         </div>
 
-        <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
+        <div className="mx-auto grid max-w-3xl gap-8 sm:grid-cols-2">
+          {/* Free License */}
+          <Card className="relative border-2 border-gray-900 shadow-lg">
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 transform">
+              <Badge className="bg-black px-4 py-1 text-white">
+                <FiStar className="mr-1 h-4 w-4" />
+                Most Popular
+              </Badge>
+            </div>
+            <Card.Header className="pb-8 text-center">
+              <Card.Title className="text-2xl">Free License</Card.Title>
+              <div className="mt-4 text-4xl font-bold text-gray-900">
+                $0
+                {/* <span className="text-lg font-normal text-gray-600">/forever</span> */}
+              </div>
+              <Card.Description className="mt-2">
+                Perfect for trying out the page builder
+              </Card.Description>
+            </Card.Header>
+            <Card.Content>
+              <ul className="mb-8 space-y-3">
+                <li className="flex items-center">
+                  <FiCheck className="mr-3 h-5 w-5 text-green-600" />
+                  <span>All blocks included</span>
+                </li>
+                <li className="flex items-center">
+                  <FiCheck className="mr-3 h-5 w-5 text-green-600" />
+                  <span>Responsive design</span>
+                </li>
+                <li className="flex items-center">
+                  <FiCheck className="mr-3 h-5 w-5 text-green-600" />
+                  <span>Full customization</span>
+                </li>
+                <li className="flex items-center">
+                  <FiCheck className="mr-3 h-5 w-5 text-green-600" />
+                  <span>Community support</span>
+                </li>
+                <li className="flex items-center">
+                  <FiCheck className="mr-3 h-5 w-5 text-green-600" />
+                  <span>Global Theme Settings</span>
+                </li>
+                <li className="flex items-center">
+                  <FiCheck className="mr-3 h-5 w-5 text-green-600" />
+                  <span>Block Library</span>
+                  <Badge
+                    variant="outline"
+                    className="ml-2 border-yellow-300 bg-yellow-500/10 text-yellow-500"
+                  >
+                    Coming Soon
+                  </Badge>
+                </li>
+                <li className="flex items-center">
+                  <FiCheck className="mr-3 h-5 w-5 text-green-600" />
+                  <span>Asset Manager</span>
+                  <Badge
+                    variant="outline"
+                    className="ml-2 border-yellow-300 bg-yellow-500/10 text-yellow-500"
+                  >
+                    Coming Soon
+                  </Badge>
+                </li>
+              </ul>
+              <Button className="w-full" asChild>
+                <Link href="#installation">
+                  <LuDownload className="mr-2 h-4 w-4" />
+                  Install Now
+                </Link>
+              </Button>
+            </Card.Content>
+          </Card>
+
           {/* Lifetime Deal */}
-          <Card className="relative border-2 border-gray-900 shadow-xl">
+          {/* <Card className="relative border-2 border-gray-900 shadow-xl">
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 transform">
               <Badge className="bg-black px-4 py-1 text-white">
                 <FiStar className="mr-1 h-4 w-4" />
@@ -34,10 +104,7 @@ export function PricingSection({ className }: PricingSectionProps) {
             </div>
             <Card.Header className="pb-8 text-center">
               <Card.Title className="text-2xl">Lifetime Deal</Card.Title>
-              <div className="mt-4 text-4xl font-bold text-gray-900">
-                $99
-                {/* <span className="text-lg font-normal text-gray-600">/once</span> */}
-              </div>
+              <div className="mt-4 text-4xl font-bold text-gray-900">$99</div>
               <Card.Description className="mt-2">
                 Lifetime access with 1 year of updates
               </Card.Description>
@@ -89,12 +156,10 @@ export function PricingSection({ className }: PricingSectionProps) {
                 </li>
               </ul>
               <Button className="w-full bg-black hover:bg-gray-800" asChild>
-                <Link href="https://purchase.dndbuilder.com/">
-                  Get Lifetime Access
-                </Link>
+                <Link href="https://purchase.dndbuilder.com/">Get Lifetime Access</Link>
               </Button>
             </Card.Content>
-          </Card>
+          </Card> */}
 
           {/* Custom Plan */}
           <Card className="relative border-2 border-gray-200 shadow-xl">

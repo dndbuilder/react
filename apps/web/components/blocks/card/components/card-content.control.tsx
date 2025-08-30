@@ -8,8 +8,8 @@ import {
   MediaControl,
   Separator,
   TextareaControl,
-} from "@dndbuilder/react/components";
-import { SettingsType } from "@dndbuilder/react";
+} from "@dndbuilder.com/react/components";
+import { SettingsType } from "@dndbuilder.com/react";
 
 const CardContentControl = () => {
   return (

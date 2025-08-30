@@ -6,7 +6,7 @@ import {
   generateSpacingValue,
   generateTypography,
   generateUnitValue,
-} from "@dndbuilder/react/utils";
+} from "@dndbuilder.com/react/utils";
 import { lazy } from "react";
 import { FiSquare } from "react-icons/fi";
 import { CardSettingsType } from "./types";

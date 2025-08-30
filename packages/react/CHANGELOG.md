@@ -1,4 +1,4 @@
-# @dndbuilder/react
+# @dndbuilder.com/react
 
 ## 0.2.1
 

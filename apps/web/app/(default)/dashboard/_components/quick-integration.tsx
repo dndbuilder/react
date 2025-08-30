@@ -16,10 +16,10 @@ export function QuickIntegration() {
           <pre>
             <code className="language-js">
               {`import React from "react";
-import { Block } from "@dndbuilder/react";
-import { BuilderProvider, Editor } from "@dndbuilder/react";
-import "@dndbuilder/react/dist/style.css";
-import { store } from "@dndbuilder/react";
+import { Block } from "@dndbuilder.com/react";
+import { BuilderProvider, Editor } from "@dndbuilder.com/react";
+import "@dndbuilder.com/react/dist/style.css";
+import { store } from "@dndbuilder.com/react";
 
 function App() {
   return (

@@ -159,7 +159,7 @@ importers:
       '@bprogress/next':
         specifier: ^3.2.12
         version: 3.2.12(next@15.1.7(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@dndbuilder/react':
+      '@dndbuilder.com/react':
         specifier: workspace:*
         version: link:../../packages/react
       '@mdx-js/loader':

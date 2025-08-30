@@ -1,5 +1,5 @@
 import { fetchActiveTheme } from "@/lib/theme";
-import "@dndbuilder/react/dist/style.css";
+import "@dndbuilder.com/react/dist/style.css";
 import { BuilderInterface } from "./_components/builder-interface";
 import { fetchPage } from "@/lib/page";
 

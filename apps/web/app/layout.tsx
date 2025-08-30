@@ -2,7 +2,7 @@ import { Open_Sans } from "next/font/google";
 import React from "react";
 // import { Toaster } from 'react-hot-toast';
 import { Toaster } from "sonner";
-import "@dndbuilder/react/dist/style.css";
+import "@dndbuilder.com/react/dist/style.css";
 import "./globals.css";
 import ProgressProvider from "@/providers/progress-provider";
 import NextAuthSessionProvider from "@/providers/session-provider";

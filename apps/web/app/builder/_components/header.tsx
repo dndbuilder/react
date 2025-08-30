@@ -2,9 +2,9 @@
 
 import { savePage } from "@/lib/page";
 import { saveActiveTheme } from "@/lib/theme";
-import { BuilderRightPanelType } from "@dndbuilder/react";
-import { BreakpointSwitch, Tooltip, UndoRedo } from "@dndbuilder/react/components";
-import { useAction, useContent, useTheme } from "@dndbuilder/react/hooks";
+import { BuilderRightPanelType } from "@dndbuilder.com/react";
+import { BreakpointSwitch, Tooltip, UndoRedo } from "@dndbuilder.com/react/components";
+import { useAction, useContent, useTheme } from "@dndbuilder.com/react/hooks";
 import Link from "next/link";
 import { FC, useState } from "react";
 import { FiLayers } from "react-icons/fi";

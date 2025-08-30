@@ -3,7 +3,7 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "./auth";
 import { BASE_URL } from "./constants";
-import { Theme } from "@dndbuilder/react";
+import { Theme } from "@dndbuilder.com/react";
 import { signOut } from "next-auth/react";
 
 /**
