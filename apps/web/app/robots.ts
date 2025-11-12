@@ -1,15 +1,15 @@
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
+      userAgent: "*",
+      allow: "/",
       disallow: [
-        '/api/', // Disallow API routes
-        '/_components/', // Disallow internal components
+        "/api/", // Disallow API routes
+        "/_components/", // Disallow internal components
       ],
     },
-    sitemap: 'https://pagebuilder.example.com/sitemap.xml',
+    sitemap: "https://dndbuilder.com/sitemap.xml",
   };
 }
