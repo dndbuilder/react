@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     'configuration',
     'tutorials',
   ],
+  alternates: {
+    canonical: 'https://dndbuilder.com/changelog',
+  },
   robots: {
     index: true,
     follow: true,

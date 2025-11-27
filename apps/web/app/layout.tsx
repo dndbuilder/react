@@ -44,7 +44,6 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://dndbuilder.com",
     title: "DnD Builder - Create Beautiful Pages with Drag and Drop",
     description:
       "A powerful drag-and-drop page builder for creating beautiful, responsive web pages without coding.",

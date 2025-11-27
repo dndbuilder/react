@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "DnD Builder - Create Your Page",
   description:
     "Use our intuitive drag-and-drop editor to build beautiful, responsive web pages without coding knowledge.",
+  alternates: {
+    canonical: "https://dndbuilder.com/builder",
+  },
   robots: {
     index: true,
     follow: true,
