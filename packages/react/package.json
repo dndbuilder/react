@@ -14,7 +14,7 @@
   "homepage": "https://dndbuilder.com/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dndbuilder/project"
+    "url": "https://github.com/dndbuilder/react"
   },
   "keywords": [
     "react",
