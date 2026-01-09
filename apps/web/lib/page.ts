@@ -4,7 +4,7 @@ import { Block } from "@dndbuilder.com/react";
 import { getServerSession } from "next-auth";
 import { authOptions } from "./auth";
 import { BASE_URL } from "./constants";
-import { revalidateTag } from "next/cache";
+import { updateTag } from "next/cache";
 import { signOut } from "next-auth/react";
 
 export type Page = {
@@ -76,7 +76,7 @@ export async function savePage(page: Page): Promise<void> {
     }),
   });
 
-  revalidateTag("page"); // Invalidate the page tag to refresh cache
+  updateTag("page"); // Invalidate the page tag to refresh cache (uses updateTag for Server Action context)
 
   const data = await response.json();
 

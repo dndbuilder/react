@@ -11,7 +11,7 @@ const compat = new FlatCompat({
 
 module.exports = [
   ...compat.config({
-    extends: ['@repo/eslint-config/next.js'],
+    extends: ['@repo/eslint-config/next.js']
   }),
   {
     languageOptions: {
